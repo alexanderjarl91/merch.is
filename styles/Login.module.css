@@ -1,0 +1,20 @@
+.login {
+  background-color: #252525;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.login__container {
+  width: 80vw;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.login__header {
+  display: flex;
+  justify-content: space-around;
+}
