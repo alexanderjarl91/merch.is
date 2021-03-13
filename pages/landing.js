@@ -7,6 +7,9 @@ import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import Login from "../components/Login";
 
+//firebase
+import fire from "./fire";
+
 //context
 import { UsersContext } from "./context";
 
@@ -29,7 +32,7 @@ export default function Landing() {
       <Navbar />
       <button
         onClick={() => {
-          console.log(user);
+          console.log(fire);
         }}
       >
         console log
