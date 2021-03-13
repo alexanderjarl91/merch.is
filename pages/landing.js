@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
 import Head from "next/head";
 
 //components
@@ -8,7 +7,12 @@ import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import Login from "../components/Login";
 
+//context
+import { UsersContext } from "./context";
+
 export default function Landing() {
+  const { user } = useContext(UsersContext);
+
   const [showSignUp, setShowSignup] = useState(false);
 
   // function that toggles from carousel to signup
@@ -23,6 +27,13 @@ export default function Landing() {
       </Head>
 
       <Navbar />
+      <button
+        onClick={() => {
+          console.log(user);
+        }}
+      >
+        console log
+      </button>
 
       {showSignUp ? (
         <Login toggleSignUp={toggleSignUp} />

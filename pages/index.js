@@ -9,24 +9,22 @@ export default function Home() {
   console.log(users);
 
   return (
-    <UsersProvider>
-      <div className={styles.container}>
-        <Head>
-          <title>merch.is</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+    <div className={styles.container}>
+      <Head>
+        <title>merch.is</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <main className={styles.main}>
-          <h1>MERCH.IS</h1>
-          <button
-            onClick={() => {
-              console.log(users);
-            }}
-          >
-            hello
-          </button>
-        </main>
-      </div>
-    </UsersProvider>
+      <main className={styles.main}>
+        <h1>MERCH.IS</h1>
+        <button
+          onClick={() => {
+            console.log(users);
+          }}
+        >
+          hello
+        </button>
+      </main>
+    </div>
   );
 }
