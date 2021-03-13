@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import Head from "next/head";
+import styles from "../styles/landing.module.css";
+import Image from "next/image";
 
 //components
-import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
-import Footer from "../components/Footer";
 import Login from "../components/Login";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 //firebase
 import fire from "./fire";
@@ -28,22 +30,15 @@ export default function Landing() {
         <title>merch.is</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <div className={styles.mobileBgImg}>
+        <Image src="/white.png" layout="fill" objectFit="cover" quality={100} />
+      </div>
       <Navbar />
-      <button
-        onClick={() => {
-          console.log(fire);
-        }}
-      >
-        console log
-      </button>
-
       {showSignUp ? (
         <Login toggleSignUp={toggleSignUp} />
       ) : (
         <Carousel toggleSignUp={toggleSignUp} />
       )}
-
       <Footer />
     </div>
   );

@@ -10,54 +10,86 @@ export default function Login({ toggleSignUp }) {
   };
   return (
     <div className={styles.login}>
-      {isLoggingIn ? 
+      {isLoggingIn ? (
         <div className={styles.login__container}>
-            <div className={styles.login__header}>
-                <h1>Innskráning</h1>
-                <button onClick={()=>{toggleSignUp()}}>X</button>
+          <button
+            className={styles.login__close_btn}
+            onClick={() => {
+              toggleSignUp();
+            }}
+          >
+            X
+          </button>
+          <div className={styles.login__header}>
+            <p>Innskráning</p>
+          </div>
+          <form>
+            <div>
+              <label className={styles.login__label}>Netfang</label>
+              <input className={styles.login__input} type="email" />
             </div>
-            <form>
-                <div>
-                    <label>Netfang</label>
-                    <input type="email"/>
-                </div>
-                <div>
-                    <label>Lykilorð</label>
-                    <input type="password"/>
-                </div>
-                <button>submit</button>
-                <p>eða <button onClick={()=>{
-                    toggleLogIn()
-                }}>nýskráðu þig</button> ef þú átt ekki reikning</p>
-            </form></div> 
-      
-    //   SIGN UP FORM
-      : <div className={styles.login__container}>
-            <div className={styles.login__header}>
-                <h1>Skráning</h1>
-                <button onClick={()=>{
-                    toggleSignUp()
-                }}>X</button>
+            <div>
+              <label className={styles.login__label}>Lykilorð</label>
+              <input className={styles.login__input} type="password" />
             </div>
-            <form>
-                <div>
-                    <label>Nafn</label>
-                    <input type="text"/>
-                </div>
-                <div>
-                    <label>Netfang</label>
-                    <input type="email"/>
-                </div>
-                <div>
-                    <label>Lykilorð</label>
-                    <input type="password"/>
-                </div>
-                <button>submit</button>
-                <p>eða <button onClick={()=>{
-                    toggleLogIn()
-                }}>skráðu þig inn</button> ef þú átt reikning</p>
-            </form>
-      </div>}
+            <button className={styles.login__btn}>SKRÁ</button>
+            <p>
+              eða{" "}
+              <button
+                className={styles.login__text_btn}
+                onClick={() => {
+                  toggleLogIn();
+                }}
+              >
+                nýskráðu þig
+              </button>{" "}
+              ef þú átt ekki reikning
+            </p>
+          </form>
+        </div>
+      ) : (
+        //   SIGN UP FORM
+        <div className={styles.login__container}>
+          <button
+            className={styles.login__close_btn}
+            onClick={() => {
+              toggleSignUp();
+            }}
+          >
+            X
+          </button>
+          <div className={styles.login__header}>
+            <p>Skráning</p>
+          </div>
+          <form>
+            <div>
+              <label className={styles.login__label}>Nafn</label>
+              <input className={styles.login__input} type="text" />
+            </div>
+            <div>
+              <label className={styles.login__label}>Netfang</label>
+              <input className={styles.login__input} type="email" />
+            </div>
+            <div>
+              <label className={styles.login__label}>Lykilorð</label>
+              <input className={styles.login__input} type="password" />
+            </div>
+            <button className={styles.login__btn}>SKRÁ</button>
+            <p>
+              eða{" "}
+              <button
+                className={styles.login__text_btn}
+                onClick={() => {
+                  toggleLogIn();
+                }}
+              >
+                skráðu þig inn
+              </button>{" "}
+              ef þú átt reikning
+            </p>
+          </form>
+        </div>
+      )}
     </div>
   );
 }
