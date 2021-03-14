@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import styles from "../styles/landing.module.css";
+import Image from "next/image";
 
 //components
-import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
-import Footer from "../components/Footer";
 import Login from "../components/Login";
 import { auth, db } from "./fire";
 import { UsersContext } from "./context";
@@ -37,7 +37,9 @@ export default function Landing() {
         <title>merch.</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <div className={styles.mobileBgImg}>
+        <Image src="/white.png" layout="fill" objectFit="cover" quality={100} />
+      </div>
       <Navbar />
       <button
         onClick={() => {
@@ -74,7 +76,6 @@ export default function Landing() {
       ) : (
         <Carousel toggleSignUp={toggleSignUp} />
       )}
-
       <Footer />
     </div>
   );

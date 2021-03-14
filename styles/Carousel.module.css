@@ -1,12 +1,207 @@
 .container {
-  background-color: #252525;
-  width: 100vw;
-  height: 80vh;
-  color: white;
-  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+ background: none;
 }
+@media (min-width: 668px) {
+  .container {
+  margin-bottom: 200px;
+  justify-content: center;
+  display: flex;
+  max-width: 1440px;
+  }
+}
+
 
 .login__header {
   display: flex;
   justify-content: space-around;
+}
+
+/* grid for the landing frontpage on mobile */
+.fronpageGrid {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+
+.headlineGrid{
+  /* border: solid gold 2px; */
+  margin-top: 90px;
+  display: grid;
+  max-width: 750px;
+}
+.descriptionGrid {
+  /* border: solid gold 2px; */
+  display: grid;
+  margin-left: 30px;
+  max-width: 560px;
+}
+.nyskraGrid {
+  /* border: solid gold 2px; */
+  display: grid;
+  margin-top: 60px;
+  max-width: 400px;
+}
+
+/* made a fiew classNames for the text on frontpage becuase */
+/* they have seperate font styles and margins */
+.seldu {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 70px;
+  margin-left: 30px;
+}
+@media (min-width: 668px) {
+  .seldu {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 70px;
+    margin-left: 40px;
+  }
+}
+@media (min-width: 900px) {
+  .seldu {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 90px;
+    margin-left: 60px;
+  }
+}
+
+
+.vörur {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 40px;
+}
+@media (min-width: 668px) {
+  .vörur {
+    font-size: 70px;
+  }
+}
+@media (min-width: 900px) {
+  .vörur {
+    font-size: 90px;
+  }
+}
+
+
+.byrjaðu {
+  font-style: italic;
+  font-size: 20px;
+  text-align: left;
+}
+@media (min-width: 668px) {
+  .byrjaðu {
+    font-size: 24px;
+    margin-left: 30px;
+  }
+}
+@media (min-width: 900px) {
+  .byrjaðu {
+    font-size: 30px;
+    margin-left: 60px;
+  }
+}
+
+
+/* frontpage buttons */
+.lesaMeira {
+  border: 1px solid white;
+  height: 40px;
+  width: 110px;
+  border-radius: 3px;
+  background: none;
+  color: white;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 5px;
+}
+@media (min-width: 668px) {
+  .lesaMeira {
+    font-size: 16px;
+    margin-left: 60px;
+    height: 33px;
+    width: 126px;
+  }
+}
+
+
+.nyskraBtn {
+  height: 54px;
+  width: 160px;
+  border-radius: 6px;
+  background: rgba(196, 196, 196, 0.53);
+  border: 1px solid white;
+  color: white;
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+@media (min-width: 668px) {
+  .nyskraBtn {
+    height: 66px;
+    width: 180px;
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 900px) {
+  .nyskraBtn {
+    height: 60px;
+    width: 206px;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+}
+
+.skraInnP {
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (min-width: 668px) {
+  .skraInnP {
+    font-size: 18px;
+  }
+}
+
+/* grid for the images desktop front page */
+/* .imgageGrid{
+  position: absolute;
+} */
+ .pink {
+    position: absolute;
+    /* border: solid gold 2px; */
+   display: grid;
+   max-width: 275px;
+   margin-top: 160px;
+   z-index: 2;
+   margin-left: 1020px;
+   border-radius: 2px;
+ }
+ .black {
+  position: absolute;
+  /* border: solid gold 2px; */
+  display: grid;
+  max-width: 275px;
+  margin-top: 20px;
+  margin-left: 790px;
+  border-radius: 2px;
+}
+.white {
+  position: absolute;
+  /* border: solid gold 2px; */
+  display: grid;
+  max-width: 275px;
+  z-index: 1;
+  margin-left: 820px;
+  margin-top: 360px;
+  border-radius: 2px;
+}
+@media (max-width: 1500px) {
+  .pink, .black, .white {
+    display: none;
+  }
 }
