@@ -1,12 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { useRouter } from "next/router";
 
 import { UsersProvider, UsersContext } from "./context";
 
 export default function Home() {
   const { users } = useContext(UsersContext);
   console.log(users);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/landing");
+  }, []);
 
   return (
     <div className={styles.container}>
