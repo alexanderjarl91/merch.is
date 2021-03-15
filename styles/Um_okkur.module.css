@@ -1,16 +1,11 @@
-
-.container {
-  margin-left: 20px;
-  margin-right: 20px;
-  }
 @media (min-width: 900px) {
 .container {
   display: grid;
   grid-template-columns:  auto auto auto;
 }}
 .umOkkur {
+    margin-left: 30px;
     margin-top: 30px;
-    margin-left: 50px;
     font-weight: 700;
     font-style: italic;
     font-size: 50px;
@@ -19,16 +14,16 @@
 .umOkkur {
     font-weight: 700;
     font-style: italic;
-    font-size: 90px;
+    font-size: 70px;
     grid-row-end: 1;
     max-width: 500px;
 }}
 .aukaP {
+    margin-left: 60px;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
-    max-width: 220px;
-    margin-left: 100px;
+    max-width: 300px;
     margin-bottom: 50px;
 }
 @media (min-width: 900px) {
@@ -36,8 +31,7 @@
     grid-row-end: 2;
     font-weight: 400;
     font-style: normal;
-    font-size: 48px;
-    max-width: 550px;
+    font-size: 28px;
 }}
 .umOkkurTexti {
     margin-left: 30px;
@@ -45,7 +39,6 @@
     font-style: normal;
     font-size: 16px;
     line-height: 24px;
-    /* max-width: 380px; */
     padding-bottom: 10px;
 }
 @media (min-width: 900px) {
@@ -55,9 +48,8 @@
         height: 90px;
         font-weight: 200;
         font-style: normal;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 36px;
-        max-width: 550px;
     }
   }
 

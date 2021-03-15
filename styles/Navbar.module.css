@@ -1,32 +1,87 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  background-color: #252525;
-  color: white;
-  width: 100vw;
-  height: 10vh;
-  padding: 0 40px;
-  padding-top: 3px;
-}
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.hamburger__line {
-  width: 18px;
-  height: 3px;
-  color: white;
-  background-color: white;
-  margin-bottom: 4px;
+.logo{
+    margin-right: auto;
+    color: #fff;
+    font-size: 36px;
+    margin-left: 40px;
+    margin-top: 20px;
 }
 
-.hamburger__line2 {
-  width: 30px;
-  height: 3px;
-  color: white;
-  background-color: white;
-  margin-bottom: 4px;
+/* navbar on desktop */
+.nav {
+    margin: 10px auto 80px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-decoration: none;
+    list-style: none;
 }
+.nav_link {
+    list-style: none;
+    display: inline;
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    
+}
+/* innskrá button on desktop */
+@media (min-width: 860px) {
+.nav_link:last-child {
+   background-color: rgba(196, 196, 196, 0.48);
+   border: 1px solid white;
+   border-radius: 4px;
+   padding: 12px 20px 12px 20px;
+  }}
 
 
+/* burger navbar on mobile */
+@media (max-width: 860px) {
+  .nav_link {
+    margin-left: 12px;
+    display: block;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: #1e1e1e;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}}
+/* innskrá button on mobile */
+@media (max-width: 860px) {
+    .nav_link:last-child {
+      background-color: #252525;
+      color: white;
+      border-radius: 4px;
+      margin-top: 40px;
+      margin-right: 10%;
+      margin-left: 10%;
+      letter-spacing: 3px;
+}}
+.burger_button {
+    position: fixed;
+    right: 40px;
+    top: 60px;
+    z-index: 10;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+/* dont show burger button on desktop */
+@media (min-width: 860px) {
+    .burger_button{
+     display: none;
+    }
+  }
+
+.burger_icon_close {
+    color: #252525;
+    width: 40px;
+    height: 40px;
+}
+.burger_icon {
+    color: #F4F5F5;
+    background: #252525;
+    width: 40px;
+    height: 40px;
+    border: none;
+}

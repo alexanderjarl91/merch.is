@@ -6,8 +6,6 @@ import Image from "next/image";
 //components
 import Carousel from "../components/Carousel";
 import Login from "../components/Login";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 //firebase
 import fire from "./fire";
@@ -30,16 +28,12 @@ export default function Landing() {
         <title>merch.is</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.mobileBgImg}>
-        <Image src="/white.png" layout="fill" objectFit="cover" quality={100} />
-      </div>
-      <Navbar />
+
       {showSignUp ? (
         <Login toggleSignUp={toggleSignUp} />
       ) : (
         <Carousel toggleSignUp={toggleSignUp} />
       )}
-      <Footer />
     </div>
   );
 }

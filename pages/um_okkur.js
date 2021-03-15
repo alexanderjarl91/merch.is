@@ -1,17 +1,14 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import styles from "../styles/Um_okkur.module.css";
 
-function um_okkur(props) {
+function um_okkur() {
   return (
     <>
-      <Navbar />
       <div className={styles.container}>
         <p className={styles.umOkkur}>UM OKKUR</p>
         <p className={styles.aukaP}>Hér getur komið stutt setning um okkur</p>
         <div className={styles.umOkkurTexti}>
-          <p style={{ marginBottom: 20 }}>
+          <p>
             {" "}
             Og hér getur verið lengri texti um okkur.. adipiscing elit. Id sit
             magna enim lectus sed pellentesque arcu. Mi aliquam dui quis sed
@@ -26,7 +23,6 @@ function um_okkur(props) {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

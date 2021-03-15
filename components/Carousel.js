@@ -6,20 +6,12 @@ import Link from "next/link";
 export default function Carousel({ toggleSignUp }) {
   return (
     <>
-      <div className={styles.container}>
+      <div>
         <div className={styles.frontpageGrid}>
           {/* Image grid for desktop ladning frontpage */}
-
-          <div className={styles.pink}>
-            <Image src="/pink.png" width={275} height={360}></Image>
+          <div className={styles.frontpage_img}>
+            <Image src="/frontpage_img.png" width={375} height={460}></Image>
           </div>
-          <div className={styles.black}>
-            <Image src="/black.png" width={275} height={360}></Image>
-          </div>
-          <div className={styles.white}>
-            <Image src="/white.png" width={275} height={360}></Image>
-          </div>
-
           <div className={styles.headlineGrid}>
             <p className={styles.seldu}>SELDU </p>{" "}
             <p className={styles.vörur}> ÞÍNAR VÖRUR</p>
@@ -55,6 +47,14 @@ export default function Carousel({ toggleSignUp }) {
         </div>
       </div>
       {/* </div> */}
+      <div className={styles.mobileBgImg}>
+        {/* <Image
+          src="/mobile-bg.jpg"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        /> */}
+      </div>
     </>
   );
 }
