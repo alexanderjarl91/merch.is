@@ -5,7 +5,14 @@ import { UsersContext } from "../context";
 
 export default function dashboard() {
   const router = useRouter();
-  const { userData, currentUser, handleLogout } = useContext(UsersContext);
+  const {
+    userData,
+    users,
+    currentUser,
+    handleLogout,
+    getUsers,
+    getUserData,
+  } = useContext(UsersContext);
 
   return (
     <div>
@@ -15,14 +22,28 @@ export default function dashboard() {
           console.log(currentUser);
         }}
       >
-        log user
+        currentUser
+      </button>
+      <button
+        onClick={() => {
+          getUsers();
+        }}
+      >
+        getUsers()
+      </button>
+      <button
+        onClick={() => {
+          getUserData();
+        }}
+      >
+        getUserData()
       </button>
       <button
         onClick={() => {
           console.log(userData);
         }}
       >
-        DATA
+        userData
       </button>
       <button
         onClick={() => {

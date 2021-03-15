@@ -11,7 +11,8 @@ export const UsersProvider = ({ children }) => {
 
   //signup/login string states
   const [currentUser, setCurrentUser] = useState();
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState({});
+  const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("alexanderjarl91@gmail.com");
   const [password, setPassword] = useState("test123");
@@ -20,16 +21,13 @@ export const UsersProvider = ({ children }) => {
   useEffect(() => {
     auth.onAuthStateChanged(() => {
       if (auth.currentUser) {
-        setUserData("virkar");
         console.log("user is signed in from subscriber");
+        // router.push("/your-store/dashboard");
         //match auth user email to database and send that document as userData
-
         setCurrentUser(auth.currentUser);
-        router.push("/your-store/dashboard");
+        getUserData();
       } else {
         console.log("no user signed in from subscriber");
-        setCurrentUser();
-        router.push("/landing");
       }
     });
   }, []);
@@ -57,7 +55,8 @@ export const UsersProvider = ({ children }) => {
           name: name,
           userid: userUid,
           store: {
-            logo: "img.png",
+            name: "yourstore",
+            logo: "https://www.dafont.com/forum/attach/orig/8/3/830759.png",
             url: "www.yourwebsite.com",
             bio: "a description of your page",
           },
@@ -103,28 +102,44 @@ export const UsersProvider = ({ children }) => {
     }
   };
 
-  //////////
+  //FIRESTORE STUFF
   const getUsers = async () => {
     const usersRef = db.collection("users");
     const snapshot = await usersRef.get();
-    snapshot.forEach((doc) => {
-      console.log(doc.id, "=>", doc.data());
+
+    let tempUsers = [];
+    await snapshot.forEach((doc) => {
+      tempUsers = [...tempUsers, doc.data()];
     });
-    //matching users UNFINISHED
-    const foundUser = users.find((x) => x.email === user.email);
+    setUsers(tempUsers);
+    console.log(users);
   };
 
   useEffect(() => {
     getUsers();
-  }, [userData]);
+  }, [currentUser]);
+
+  //function to match auth user to firestore user
+  const getUserData = () => {
+    if (currentUser) {
+      const foundUser = users.find((x) => x.email === currentUser.email);
+      setUserData(foundUser);
+      console.log("USER FOUND:", foundUser);
+    } else {
+      console.log("no currentUser");
+    }
+  };
 
   return (
     <UsersContext.Provider
       value={{
         currentUser,
+        userData,
+        users,
         name,
         email,
         password,
+        getUserData,
         getUsers,
         setCurrentUser,
         setEmail,

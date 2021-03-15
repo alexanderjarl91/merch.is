@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
+  const [showingMenu, setShowingMenu] = useState(false);
+
   return (
     <div className={styles.mobileLandingPage}>
       <div className={styles.container}>

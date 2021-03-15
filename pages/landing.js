@@ -6,6 +6,8 @@ import Image from "next/image";
 
 //components
 import Carousel from "../components/Carousel";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Login from "../components/Login";
 import { auth, db } from "./fire";
 import { UsersContext } from "./context";
@@ -17,12 +19,9 @@ export default function Landing() {
   );
   const [showSignUp, setShowSignup] = useState(false);
 
-  //if user is logged in, redirect to dashboard
   useEffect(() => {
     if (currentUser) {
       router.push("/your-store/dashboard");
-    } else {
-      return;
     }
   }, [currentUser]);
 
@@ -41,7 +40,7 @@ export default function Landing() {
         <Image src="/white.png" layout="fill" objectFit="cover" quality={100} />
       </div>
       <Navbar />
-      <button
+      {/* <button
         onClick={() => {
           getUsers();
         }}
@@ -69,7 +68,7 @@ export default function Landing() {
         }}
       >
         log out
-      </button>
+      </button> */}
 
       {showSignUp ? (
         <Login toggleSignUp={toggleSignUp} />

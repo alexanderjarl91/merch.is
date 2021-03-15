@@ -1,19 +1,23 @@
 import React, { useContext, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { UsersContext } from "./context";
+import { auth } from "./fire";
+
 import { useRouter } from "next/router";
 
-import { UsersProvider, UsersContext } from "./context";
-
 export default function Home() {
-  const { users } = useContext(UsersContext);
-  console.log(users);
-
+  const { currentUser } = useContext(UsersContext);
   const router = useRouter();
 
-  useEffect(() => {
-    router.push("/landing");
-  }, []);
+  // useEffect(() => {
+  //   if (currentUser) {
+  //     console.log("from index:", auth.currentUser);
+  //     router.push("/your-store/dashboard");
+  //   } else {
+  //     router.push("/landing");
+  //   }
+  // }, []);
 
   return (
     <div className={styles.container}>
@@ -23,14 +27,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>MERCH.IS</h1>
-        <button
-          onClick={() => {
-            console.log(users);
-          }}
-        >
-          hello
-        </button>
+        <h1>LOADING...</h1>
       </main>
     </div>
   );
