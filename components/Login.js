@@ -1,7 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useRouter } from "next/router";
+
 import styles from "../styles/Login.module.css";
+import { UsersContext } from "../pages/context";
 
 export default function Login({ toggleSignUp }) {
+  const router = useRouter();
+
+  const {
+    name,
+    email,
+    password,
+    setName,
+    setEmail,
+    setPassword,
+    handleSignup,
+    handleLogin,
+    handleLogout,
+  } = useContext(UsersContext);
+
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   //function that toggles between signup and login
@@ -12,31 +29,49 @@ export default function Login({ toggleSignUp }) {
     <div className={styles.login}>
       {isLoggingIn ? (
         <div className={styles.login__container}>
-          <button
-            className={styles.login__close_btn}
-            onClick={() => {
-              toggleSignUp();
-            }}
-          >
-            X
-          </button>
           <div className={styles.login__header}>
-            <p>Innskráning</p>
+            <h1>Innskráning</h1>
+            <button
+              onClick={() => {
+                toggleSignUp();
+              }}
+            >
+              X
+            </button>
           </div>
           <form>
             <div>
-              <label className={styles.login__label}>Netfang</label>
-              <input className={styles.login__input} type="email" />
+              <label>Netfang</label>
+              <input
+                type="email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  console.log(email);
+                }}
+              />
             </div>
             <div>
-              <label className={styles.login__label}>Lykilorð</label>
-              <input className={styles.login__input} type="password" />
+              <label>Lykilorð</label>
+              <input
+                type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  console.log(password);
+                }}
+              />
             </div>
-            <button className={styles.login__btn}>SKRÁ</button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleLogin(email, password);
+                router.push("your-store/dashboard");
+              }}
+            >
+              Skrá inn
+            </button>
             <p>
               eða{" "}
               <button
-                className={styles.login__text_btn}
                 onClick={() => {
                   toggleLogIn();
                 }}
@@ -50,35 +85,58 @@ export default function Login({ toggleSignUp }) {
       ) : (
         //   SIGN UP FORM
         <div className={styles.login__container}>
-          <button
-            className={styles.login__close_btn}
-            onClick={() => {
-              toggleSignUp();
-            }}
-          >
-            X
-          </button>
           <div className={styles.login__header}>
-            <p>Skráning</p>
+            <h1>Skráning</h1>
+            <button
+              onClick={() => {
+                toggleSignUp();
+              }}
+            >
+              X
+            </button>
           </div>
           <form>
             <div>
-              <label className={styles.login__label}>Nafn</label>
-              <input className={styles.login__input} type="text" />
+              <label>Nafn</label>
+              <input
+                type="text"
+                onChange={(e) => {
+                  setName(e.target.value);
+                  console.log(name);
+                }}
+              />
             </div>
             <div>
-              <label className={styles.login__label}>Netfang</label>
-              <input className={styles.login__input} type="email" />
+              <label>Netfang</label>
+              <input
+                type="email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  console.log(email);
+                }}
+              />
             </div>
             <div>
-              <label className={styles.login__label}>Lykilorð</label>
-              <input className={styles.login__input} type="password" />
+              <label>Lykilorð</label>
+              <input
+                type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  console.log(password);
+                }}
+              />
             </div>
-            <button className={styles.login__btn}>SKRÁ</button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleSignup();
+              }}
+            >
+              Nýskrá
+            </button>
             <p>
               eða{" "}
               <button
-                className={styles.login__text_btn}
                 onClick={() => {
                   toggleLogIn();
                 }}
