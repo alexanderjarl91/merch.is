@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
+import { auth } from "../fire";
 
 import { UsersContext } from "../context";
 
@@ -12,7 +13,19 @@ export default function dashboard() {
     handleLogout,
     getUsers,
     getUserData,
+    setCurrentUser,
   } = useContext(UsersContext);
+
+  useEffect(() => {
+    setCurrentUser(auth.currentUser);
+  }, [auth.currentUser]);
+
+  useEffect(() => {
+    getUserData();
+    if (!currentUser) {
+      router.push("/");
+    }
+  }, [users]);
 
   return (
     <div>
@@ -20,6 +33,7 @@ export default function dashboard() {
       <button
         onClick={() => {
           console.log(currentUser);
+          console.log("auth:", auth.currentUser);
         }}
       >
         currentUser

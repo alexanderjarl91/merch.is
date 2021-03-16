@@ -1,34 +1,78 @@
-import React, { useContext, useEffect } from "react";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { UsersContext } from "./context";
-import { auth } from "./fire";
-
+import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
+import styles from "../styles/landing.module.css";
+import Image from "next/image";
 
-export default function Home() {
-  const { currentUser } = useContext(UsersContext);
+//components
+import Carousel from "../components/Carousel";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Login from "../components/Login";
+import { auth, db } from "./fire";
+import { UsersContext } from "./context";
+
+export default function Landing() {
   const router = useRouter();
+  const {
+    currentUser,
+    getUsers,
+    handleLogin,
+    handleLogout,
+    setCurrentUser,
+  } = useContext(UsersContext);
+  const [showSignUp, setShowSignup] = useState(false);
 
-  // useEffect(() => {
-  //   if (currentUser) {
-  //     console.log("from index:", auth.currentUser);
-  //     router.push("/your-store/dashboard");
-  //   } else {
-  //     router.push("/landing");
-  //   }
-  // }, []);
+  // whenever authstate changes, if the user is logged in, redirect to dashboard
+  useEffect(() => {
+    auth.onAuthStateChanged(() => {
+      if (auth.currentUser) {
+        router.push("/store/dashboard");
+        console.log("authstate is pushing to dashboard");
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (currentUser) {
+      router.push("/store/dashboard");
+    }
+  }, [currentUser]);
+
+  // function that toggles from carousel to signup
+  const toggleSignUp = () => {
+    setShowSignup(!showSignUp);
+  };
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>merch.is</title>
+        <title>merch.</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1>LOADING...</h1>
-      </main>
+      {auth.currentUser ? (
+        <p>loading..</p>
+      ) : (
+        <>
+          <div className={styles.mobileBgImg}>
+            <Image
+              src="/white.png"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+            />
+          </div>
+          <Navbar />
+
+          {showSignUp ? (
+            <Login toggleSignUp={toggleSignUp} />
+          ) : (
+            <Carousel toggleSignUp={toggleSignUp} />
+          )}
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

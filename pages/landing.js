@@ -21,7 +21,7 @@ export default function Landing() {
 
   useEffect(() => {
     if (currentUser) {
-      router.push("/your-store/dashboard");
+      router.push("/store/dashboard");
     }
   }, [currentUser]);
 

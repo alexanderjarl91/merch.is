@@ -19,10 +19,10 @@ export default function Footer() {
         <p>copyright merch.is 2021</p>
         <button
           onClick={() => {
-            getUsers();
+            console.log(currentUser);
           }}
         >
-          userData
+          currentUser
         </button>
         <button
           onClick={() => {
@@ -31,14 +31,14 @@ export default function Footer() {
         >
           users
         </button>
-
         <button
           onClick={() => {
-            console.log(auth.currentUser);
+            getUsers();
           }}
         >
-          log user
+          getUserData()
         </button>
+
         <button
           onClick={() => {
             handleLogin();

@@ -64,7 +64,7 @@ export default function Login({ toggleSignUp }) {
               onClick={(e) => {
                 e.preventDefault();
                 handleLogin(email, password);
-                router.push("your-store/dashboard");
+                router.push("/store/dashboard");
               }}
             >
               Skrá inn

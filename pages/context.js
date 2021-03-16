@@ -10,28 +10,14 @@ export const UsersProvider = ({ children }) => {
   const router = useRouter();
 
   //signup/login string states
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState(auth.currentUser);
   const [userData, setUserData] = useState({});
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("alexanderjarl91@gmail.com");
-  const [password, setPassword] = useState("test123");
+  const [password, setPassword] = useState("allicool1");
 
-  //auth state listener, if not user is found, redirects
-  useEffect(() => {
-    auth.onAuthStateChanged(() => {
-      if (auth.currentUser) {
-        console.log("user is signed in from subscriber");
-        // router.push("/your-store/dashboard");
-        //match auth user email to database and send that document as userData
-        setCurrentUser(auth.currentUser);
-        getUserData();
-      } else {
-        console.log("no user signed in from subscriber");
-      }
-    });
-  }, []);
-
+  console.log("currentUser from context:", currentUser);
   const handleSignup = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -43,12 +29,10 @@ export const UsersProvider = ({ children }) => {
         });
       })
       .then(async () => {
-        console.log("first log");
         //creating users data in firebase
         const userUid = auth.currentUser.uid;
         const email = auth.currentUser.email;
         const name = auth.currentUser.displayName;
-        console.log("second log");
 
         const account = {
           email: email,
@@ -71,10 +55,11 @@ export const UsersProvider = ({ children }) => {
             },
           ],
         };
-        console.log("third log");
 
         //pushing account to users with the email as document name
         db.collection("users").doc(email).set(account);
+        setCurrentUser(auth.currentUser);
+        getUserData();
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -84,22 +69,25 @@ export const UsersProvider = ({ children }) => {
   };
 
   // login with email and password
-  const handleLogin = async () => {
-    await auth.signInWithEmailAndPassword(email, password).catch((err) => {
-      console.log(err);
-    });
+  const handleLogin = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        setCurrentUser(auth.currentUser);
+        getUserData();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   //log user out
   const handleLogout = async () => {
-    await auth.signOut().then(() => {
-      router.push("/landing");
+    auth.signOut().then(() => {
+      console.log("logout successful");
+      setCurrentUser();
+      router.push("/");
     });
-    if (auth.currentUser) {
-      console.log("something went wrong with logout");
-    } else {
-      console.log("user logged out");
-    }
   };
 
   //FIRESTORE STUFF
