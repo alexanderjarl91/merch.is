@@ -1,3 +1,14 @@
+/* navbar on desktop */
+.nav {
+    margin: 10px auto 80px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align:center;
+    text-decoration: none;
+    list-style: none;
+}
 .logo{
     margin-right: auto;
     color: #fff;
@@ -6,16 +17,6 @@
     margin-top: 20px;
 }
 
-/* navbar on desktop */
-.nav {
-    margin: 10px auto 80px;
-    padding: 10px 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    text-decoration: none;
-    list-style: none;
-}
 .nav_link {
     list-style: none;
     display: inline;
@@ -79,7 +80,7 @@
 }
 .burger_icon {
     color: #F4F5F5;
-    background: #252525;
+     background: #252525;
     width: 40px;
     height: 40px;
     border: none;

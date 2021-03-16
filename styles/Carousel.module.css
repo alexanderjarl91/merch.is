@@ -33,7 +33,7 @@
   }
 }
 
-/* made a fiew classNames for the text on frontpage becuase */
+/* made a few classNames for the text on frontpage becuase */
 /* they have seperate font styles and margins */
 .seldu {
   font-weight: 600;
@@ -112,6 +112,7 @@
   font-weight: 500;
   font-size: 22px;
   margin-bottom: 5px;
+  margin: 0 auto;
 }
 @media (min-width: 668px) {
   .nyskraBtn {
@@ -133,6 +134,7 @@
 .skraInnP {
   font-size: 14px;
   font-weight: 700;
+  margin: 0 auto;
 }
 @media (min-width: 668px) {
   .skraInnP {

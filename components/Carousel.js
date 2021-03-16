@@ -47,14 +47,6 @@ export default function Carousel({ toggleSignUp }) {
         </div>
       </div>
       {/* </div> */}
-      <div className={styles.mobileBgImg}>
-        {/* <Image
-          src="/mobile-bg.jpg"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        /> */}
-      </div>
     </>
   );
 }

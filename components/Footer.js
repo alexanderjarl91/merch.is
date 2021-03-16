@@ -1,22 +1,23 @@
 import React, { useContext } from "react";
 import { UsersContext } from "../pages/context";
 import { auth, db } from "../pages/fire";
+import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
-  const {
-    currentUser,
-    userData,
-    users,
-    getUsers,
-    handleLogin,
-    handleLogout,
-  } = useContext(UsersContext);
+  // const {
+  //   currentUser,
+  //   userData,
+  //   users,
+  //   getUsers,
+  //   handleLogin,
+  //   handleLogout,
+  // } = useContext(UsersContext);
 
   return (
     <div className={styles.mobileFrontPage}>
       <div className={styles.container}>
         <p>copyright merch.is 2021</p>
-        <button
+        {/* <button
           onClick={() => {
             console.log(currentUser);
           }}
@@ -51,7 +52,7 @@ export default function Footer() {
           }}
         >
           log out
-        </button>
+        </button> */}
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { auth } from "../fire";
-
 import { UsersContext } from "../context";
 
 export default function dashboard() {
@@ -16,10 +15,13 @@ export default function dashboard() {
     setCurrentUser,
   } = useContext(UsersContext);
 
+  //set currentUser when auth.currentUser changes
   useEffect(() => {
     setCurrentUser(auth.currentUser);
   }, [auth.currentUser]);
 
+  //get user data when users changes
+  //push to root if theres no currentUser
   useEffect(() => {
     getUserData();
     if (!currentUser) {

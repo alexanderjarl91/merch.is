@@ -63,14 +63,12 @@ export default function Landing() {
               quality={100}
             />
           </div>
-          <Navbar />
 
           {showSignUp ? (
             <Login toggleSignUp={toggleSignUp} />
           ) : (
             <Carousel toggleSignUp={toggleSignUp} />
           )}
-          <Footer />
         </>
       )}
     </div>
