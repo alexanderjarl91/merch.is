@@ -1,12 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import styles from "../styles/Hafa_samabnd.module.css";
 
 function hafa_samband(props) {
   return (
     <>
-      <Navbar />
       <div className={styles.container}>
         <p className={styles.hafa_samaband_h1}>
           Hafðu samband, við elskum að fá ný skilaboð
@@ -34,7 +31,6 @@ function hafa_samband(props) {
           </button>
         </form>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,11 +1,14 @@
 import "../styles/globals.css";
 import { UsersContext, UsersProvider } from "./context";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <UsersProvider>
-      <Component {...pageProps} />
-    </UsersProvider>
+    <Layout>
+      <UsersProvider>
+        <Component {...pageProps} />
+      </UsersProvider>
+    </Layout>
   );
 }
 

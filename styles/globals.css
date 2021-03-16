@@ -10,23 +10,70 @@ Medium 500 italic
 Bold 700 italic
  */
 
-
-html,
-body {
-  color: white;
-  padding: 0;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #252525;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+ * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+html,
+body {
+  color: #F4F5F5;;
+  font-family: 'Poppins', sans-serif;
+  background-color: #252525;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+a {
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* layout.js */
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+/*  navbar.js - burger when open on mobile */
+@media (max-width: 860px) {
+  .burgerNav {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background: #F4F5F5;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    text-align: center;
+    z-index: 9;
+    transition:  0.3s;
+  }
+}
+@media (max-width: 860px) {
+  .burgerNav.showMenu {
+    width: 100%;
+  
+  }
+}
+@media (max-width: 860px) {
+  .burgerNav li:first-child {
+    margin-top: 12rem;
+  }
+}
+
+
+/*  footer  */
+footer {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 200px;
+}
+

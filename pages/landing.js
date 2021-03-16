@@ -6,9 +6,9 @@ import Image from "next/image";
 
 //components
 import Carousel from "../components/Carousel";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Login from "../components/Login";
+
+//context
 import { auth, db } from "./fire";
 import { UsersContext } from "./context";
 
@@ -36,10 +36,7 @@ export default function Landing() {
         <title>merch.</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.mobileBgImg}>
-        <Image src="/white.png" layout="fill" objectFit="cover" quality={100} />
-      </div>
-      <Navbar />
+
       {/* <button
         onClick={() => {
           getUsers();
@@ -75,7 +72,6 @@ export default function Landing() {
       ) : (
         <Carousel toggleSignUp={toggleSignUp} />
       )}
-      <Footer />
     </div>
   );
 }

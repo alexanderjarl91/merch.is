@@ -1,26 +1,22 @@
-.container {
-    margin-left: 20px;
-    margin-right: 20px;
-    }
+
   @media (min-width: 900px) {
   .container {
-      margin-top: 50px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns:  auto auto auto;
   }}
 
   .hafa_samaband_h1 {
     margin-top: 30px;
-    margin-left: 50px;
     font-weight: 700;
     font-style: italic;
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 20px;
   }
   @media (min-width: 900px) {
     .hafa_samaband_h1 {
         font-size: 49px;
-        max-width: 520px;
+        max-width: 340px;
       }}
 
 @media (min-width: 900px) {
@@ -29,10 +25,17 @@
           margin-top: 50px;
           margin-left: 10px;
     }}
-  .contact_label{
-      font-size: 18px;
-      font-weight: 300;
+    .contact_label{
+      font-size: 22px;
+      font-weight: 500;
+      color: rgba(196, 196, 196, 0.48);
   }
+    @media (min-width: 900px) {
+  .contact_label{
+      font-size: 28px;
+      font-weight: 500;
+      color: rgba(196, 196, 196, 0.48);
+  }}
   .contact_input {
       outline: none;
       font-size: 24px;
@@ -41,7 +44,9 @@
       margin-bottom: 10px;
       background: none;
       border: none;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid #f4f5f5bd;
+      letter-spacing: 1px;
+      line-height: 30px;
   }
   .contact_textarea {
       outline: none;
@@ -50,21 +55,23 @@
       width: 100%;
       background: none;
       border: none;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid #f4f5f5bd;
+      font-family: 'Poppins', sans-serif;
   }
   .contact_btn {
     height: 57px;
     width: 373px;
-    border-radius: 8px;
-    background: rgba(196, 196, 196, 0.53);
+    border-radius: 4px;
+    background: rgba(196, 196, 196, 0.48);
     border: 2px solid #F4F5F5;
     box-sizing: border-box;
     color: white;
     font-size: 24px;
     font-weight: 500;
     margin-top: 40px;
+    width: 100%;
   }
-  @media (min-width: 900px) {
-    .contact_btn {
-        width: 100%;
-    }}
+  .contact_btn:hover {
+    background: rgba(196, 196, 196, 0.612);
+  }
+  

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import styles from "../styles/Footer.module.css";
 import { UsersContext } from "../pages/context";
 import { auth, db } from "../pages/fire";
 
