@@ -13,15 +13,13 @@ export default function Carousel({ toggleSignUp }) {
             <Image src="/frontpage_img.png" width={375} height={460}></Image>
           </div>
           <div className={styles.headlineGrid}>
-            <p className={styles.seldu}>SELDU </p>{" "}
-            <p className={styles.vörur}> ÞÍNAR VÖRUR</p>
+            <p className={styles.front_headline}>SELDU ÞÍNAR VÖRUR</p>
           </div>
 
           <div className={styles.descriptionGrid}>
-            <p className={styles.byrjaðu}>
+            <p className={styles.front_description}>
               Byrjaðu að selja vörurnar þínar strax í dag!
             </p>
-            <button className={styles.lesaMeira}>lesa meira</button>
           </div>
 
           <div className={styles.nyskraGrid}>
@@ -33,7 +31,7 @@ export default function Carousel({ toggleSignUp }) {
             >
               Nýskrá
             </button>
-            <p className={styles.skraInnP}>
+            <p className="login_paragraph">
               eða{" "}
               <strong>
                 <Link href="/">

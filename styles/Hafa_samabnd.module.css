@@ -1,7 +1,11 @@
+@media (max-width: 900px) {
+.container{
+  margin-left: 3%;
+  margin-right: 3%;
+}}
 
   @media (min-width: 900px) {
   .container {
-    margin-top: 50px;
     display: grid;
     grid-template-columns:  auto auto auto;
   }}
@@ -26,26 +30,27 @@
           margin-left: 10px;
     }}
     .contact_label{
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 500;
       color: rgba(196, 196, 196, 0.48);
   }
     @media (min-width: 900px) {
   .contact_label{
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 500;
       color: rgba(196, 196, 196, 0.48);
   }}
   .contact_input {
       outline: none;
       font-size: 24px;
-      color: white;
+      font-weight: normal;
+      color: #F4F5F5;
       width: 100%;
       margin-bottom: 10px;
       background: none;
       border: none;
       border-bottom: 1px solid #f4f5f5bd;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       line-height: 30px;
   }
   .contact_textarea {
@@ -59,19 +64,10 @@
       font-family: 'Poppins', sans-serif;
   }
   .contact_btn {
-    height: 57px;
-    width: 373px;
-    border-radius: 4px;
-    background: rgba(196, 196, 196, 0.48);
-    border: 2px solid #F4F5F5;
-    box-sizing: border-box;
-    color: white;
-    font-size: 24px;
-    font-weight: 500;
     margin-top: 40px;
     width: 100%;
   }
   .contact_btn:hover {
-    background: rgba(196, 196, 196, 0.612);
+    background: rgba(196, 196, 196, 0.359);
   }
   

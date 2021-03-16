@@ -14,10 +14,9 @@ export default function Footer() {
   // } = useContext(UsersContext);
 
   return (
-    <div className={styles.mobileFrontPage}>
-      <div className={styles.container}>
-        <p>copyright merch.is 2021</p>
-        {/* <button
+    <div className={styles.footer}>
+      copyright merch.is 2021
+      {/* <button
           onClick={() => {
             console.log(currentUser);
           }}
@@ -53,7 +52,6 @@ export default function Footer() {
         >
           log out
         </button> */}
-      </div>
     </div>
   );
 }

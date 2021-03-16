@@ -1,0 +1,12 @@
+
+  .mobile_bg_img {
+    background-image: url(/mobile-bg.jpeg);
+    height: 100vh;
+    background-size: cover;
+    
+  }
+  @media (min-width: 861px) {
+    .mobile_bg_img {
+      background-image: none;
+    }
+  }

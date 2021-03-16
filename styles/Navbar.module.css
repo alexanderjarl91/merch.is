@@ -1,7 +1,9 @@
+/* ----- navbar on desktop ----- */
+
 /* navbar on desktop */
 .nav {
-    margin: 10px auto 80px;
-    padding: 10px 0;
+    padding-top: 3rem;
+    margin-bottom: 8rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -12,28 +14,35 @@
 .logo{
     margin-right: auto;
     color: #fff;
-    font-size: 36px;
+    font-size: 34px;
+    line-height: 30px;
+    font-weight: 500;
     margin-left: 40px;
-    margin-top: 20px;
 }
 
+/* navbar style for desktop */
 .nav_link {
     list-style: none;
     display: inline;
     margin-left: 30px;
     font-size: 18px;
-    font-weight: 500;
-    
+    font-weight: 300;
 }
-/* innskrá button on desktop */
+
+/* innskrá button in navbar on desktop */
 @media (min-width: 860px) {
 .nav_link:last-child {
-   background-color: rgba(196, 196, 196, 0.48);
+   background-color: rgba(196, 196, 196, 0.147);
    border: 1px solid white;
    border-radius: 4px;
    padding: 12px 20px 12px 20px;
   }}
+  .nav_link:last-child:hover {
+    background-color:rgba(196, 196, 196, 0.256);
+  }
 
+  
+/* ----- navbar on mobile ----- */
 
 /* burger navbar on mobile */
 @media (max-width: 860px) {
@@ -43,36 +52,40 @@
     padding: 10px 40px;
     text-decoration: none;
     color: #1e1e1e;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 18px;
 }}
-/* innskrá button on mobile */
+/* innskrá button on navbar when burger is oopen on mobile */
 @media (max-width: 860px) {
     .nav_link:last-child {
       background-color: #252525;
       color: white;
       border-radius: 4px;
       margin-top: 40px;
-      margin-right: 10%;
-      margin-left: 10%;
+      margin-right: 20%;
+      margin-left: 20%;
       letter-spacing: 3px;
+}}
+@media (max-width: 860px) {
+.logo{
+  padding-top: 10px;
 }}
 .burger_button {
     position: fixed;
-    right: 40px;
-    top: 60px;
+    right: 0;
+    top: 50px;
     z-index: 10;
     cursor: pointer;
     border: none;
     outline: none;
+    background: transparent;
 }
 /* dont show burger button on desktop */
-@media (min-width: 860px) {
+@media (min-width: 861px) {
     .burger_button{
      display: none;
     }
   }
-
 .burger_icon_close {
     color: #252525;
     width: 40px;
@@ -80,14 +93,6 @@
 }
 .burger_icon {
     color: #F4F5F5;
-     background: #252525;
     width: 40px;
     height: 40px;
-}
-
-
-.burger_line {
-    width: 50px;
-    height: 20px;
-    color: white;
 }

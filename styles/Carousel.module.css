@@ -6,150 +6,76 @@
   position: relative;
   grid-template-columns: auto auto auto auto auto auto;
 }
-.headlineGrid{
-  /* border: solid gold 2px; */
-  margin-top: 90px;
-  display: grid;
-  max-width: 750px;
-}
-.descriptionGrid {
-  /* border: solid gold 2px; */
-  display: grid;
-  margin-left: 30px;
-  max-width: 460px;
-}
-.nyskraGrid {
-  /* border: solid gold 2px; */
-  display: grid;
-  margin-top: 60px;
-  max-width: 400px;
-}
+
+/* desktop images ( the mobile background img is in index.module.css ) */
 .frontpage_img {
  float: right;
 }
-@media (max-width: 868px) {
+@media (max-width: 860px) {
   .frontpage_img {
     display: none;
   }
 }
 
-/* made a few classNames for the text on frontpage becuase */
-/* they have seperate font styles and margins */
-.seldu {
+/* ------ frontapage content ------ */
+
+.front_headline {
+  max-width: 750px;
   font-weight: 600;
   font-style: italic;
-  font-size: 70px;
+  font-size: 50px;
+  margin-left: 10px;
+}
+/* desktop */
+@media (min-width: 860px) {
+  .front_headline {
+    font-size: 70px;
+    text-align: left;
+  }
+}
+
+
+.descriptionGrid {
   margin-left: 30px;
+  max-width: 460px;
 }
-@media (min-width: 668px) {
-  .seldu {
-    font-weight: 600;
-    font-style: italic;
-    font-size: 70px;
-    margin-left: 40px;
-  }
-}
-
-
-
-.vörur {
-  font-weight: 600;
-  font-style: italic;
-  font-size: 40px;
-}
-@media (min-width: 668px) {
-  .vörur {
-    font-size: 70px;
-  }
-}
-
-
-
-.byrjaðu {
+.front_description {
   font-style: italic;
   font-size: 20px;
-  text-align: left;
+  margin-left: 20px;
 }
-@media (min-width: 668px) {
-  .byrjaðu {
+/* desktop */
+@media (min-width: 860px) {
+  .front_description {
     font-size: 24px;
-    margin-left: 30px;
-  }
-}
-
-
-
-/* frontpage buttons */
-.lesaMeira {
-  border: 1px solid white;
-  height: 40px;
-  width: 110px;
-  border-radius: 3px;
-  background: none;
-  color: white;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 14px;
-  margin-top: 5px;
-}
-@media (min-width: 668px) {
-  .lesaMeira {
-    font-size: 16px;
     margin-left: 60px;
-    height: 33px;
-    width: 126px;
+    text-align: left;
   }
 }
 
-
+/* the nyskra button & text on mobile */
+@media (max-width: 860px) {
+  .nyskraGrid {
+    margin-left: 50px;
+    margin-top: 4rem;
+  }}
 .nyskraBtn {
-  height: 54px;
-  width: 160px;
-  border-radius: 6px;
-  background: rgba(196, 196, 196, 0.53);
-  border: 1px solid white;
-  color: white;
-  font-weight: 500;
-  font-size: 22px;
   margin-bottom: 5px;
-  margin: 0 auto;
+  margin-top: 20%;
 }
-@media (min-width: 668px) {
+.nyskraBtn:hover {
+  background: rgba(196, 196, 196, 0.256);
+}
+/* desktop */
+@media (min-width: 860px) {
   .nyskraBtn {
     height: 66px;
-    width: 180px;
+    width: 20%;
     font-size: 26px;
     margin-bottom: 15px;
-  }
-}
-@media (min-width: 900px) {
-  .nyskraBtn {
-    height: 60px;
-    width: 206px;
-    font-size: 28px;
-    margin-bottom: 15px;
+    margin-top: 60px;
   }
 }
 
-.skraInnP {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 auto;
-}
-@media (min-width: 668px) {
-  .skraInnP {
-    font-size: 18px;
-  }
-}
 
-.mobileBgImg {
-  overflow: hidden;
-  z-index: -2;
-  opacity: 0.2;
-}
 
-@media (min-width: 860px) {
-  .mobileBgImg {
- display: none;
-  }
-}

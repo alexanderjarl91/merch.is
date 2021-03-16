@@ -1,13 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import styles from "../styles/landing.module.css";
-import Image from "next/image";
+import styles from "../styles/Index.module.css";
 
 //components
 import Carousel from "../components/Carousel";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Login from "../components/Login";
 import { auth, db } from "./fire";
 import { UsersContext } from "./context";
@@ -52,28 +49,21 @@ export default function Landing() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
-        {auth.currentUser ? (
-          <p>loading..</p>
-        ) : (
-          <>
-            <div className={styles.mobileBgImg}>
-              {/* <Image
-              src="/white.png"
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-            /> */}
-            </div>
-
-            {showSignUp ? (
-              <Login toggleSignUp={toggleSignUp} />
-            ) : (
-              <Carousel toggleSignUp={toggleSignUp} />
-            )}
-          </>
-        )}
-      </Layout>
+      {auth.currentUser ? (
+        <p>loading..</p>
+      ) : (
+        <>
+          <div className={styles.mobile_bg_img}>
+            <Layout>
+              {showSignUp ? (
+                <Login toggleSignUp={toggleSignUp} />
+              ) : (
+                <Carousel toggleSignUp={toggleSignUp} />
+              )}
+            </Layout>
+          </div>
+        </>
+      )}
     </div>
   );
 }
