@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import Login from "../components/Login";
 import { auth, db } from "./fire";
 import { UsersContext } from "./context";
+import Layout from "../components/Layout";
 
 export default function Landing() {
   const router = useRouter();
@@ -51,26 +52,28 @@ export default function Landing() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {auth.currentUser ? (
-        <p>loading..</p>
-      ) : (
-        <>
-          <div className={styles.mobileBgImg}>
-            <Image
+      <Layout>
+        {auth.currentUser ? (
+          <p>loading..</p>
+        ) : (
+          <>
+            <div className={styles.mobileBgImg}>
+              {/* <Image
               src="/white.png"
               layout="fill"
               objectFit="cover"
               quality={100}
-            />
-          </div>
+            /> */}
+            </div>
 
-          {showSignUp ? (
-            <Login toggleSignUp={toggleSignUp} />
-          ) : (
-            <Carousel toggleSignUp={toggleSignUp} />
-          )}
-        </>
-      )}
+            {showSignUp ? (
+              <Login toggleSignUp={toggleSignUp} />
+            ) : (
+              <Carousel toggleSignUp={toggleSignUp} />
+            )}
+          </>
+        )}
+      </Layout>
     </div>
   );
 }

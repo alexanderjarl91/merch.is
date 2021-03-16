@@ -21,8 +21,7 @@ body {
   color: #F4F5F5;;
   font-family: 'Poppins', sans-serif;
   background-color: #252525;
-  margin-right: 10px;
-  margin-left: 10px;
+
 }
 
 a {
@@ -35,6 +34,8 @@ a {
 .content {
   max-width: 960px;
   margin: 0 auto;
+  padding-right: 10px;
+  padding-left: 10px; 
 }
 
 

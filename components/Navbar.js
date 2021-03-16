@@ -11,9 +11,11 @@ export default function Navbar() {
   // updating the state using the updater function - showing burger icon or the closing icon
   const handleToggle = () => {
     setNavbarOpen((prev) => !prev);
+    console.log("menu toggled");
   };
   // this is triggered when a Link is clicked, so the menu will close after the click
   const closeMenu = () => {
+    console.log("navbar closed");
     setNavbarOpen(false);
   };
 
@@ -21,7 +23,7 @@ export default function Navbar() {
     <>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Link href="/landing">merch.</Link>
+          <Link href="/">merch.</Link>
         </div>
 
         <div className={styles.burger}>
@@ -41,32 +43,47 @@ export default function Navbar() {
           <ul className={`burgerNav ${navbarOpen ? " showMenu" : ""}`}>
             <li className={styles.nav_link}>
               <Link
-                href="/"
-                activeClassName="active-link"
-                onClick={() => closeMenu()}
-                exact
+                href={{
+                  pathname: "/",
+                }}
               >
-                Hvernig þetta virkar
+                <a
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
+                  Hvernig virkar þetta?
+                </a>
               </Link>
             </li>
             <li className={styles.nav_link}>
               <Link
-                href="/um_okkur"
-                activeClassName="active-link"
-                onClick={() => closeMenu()}
-                exact
+                href={{
+                  pathname: "/um_okkur",
+                }}
               >
-                Um okkur
+                <a
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
+                  Um okkur
+                </a>
               </Link>
             </li>
             <li className={styles.nav_link}>
               <Link
-                href="/hafa_samband"
-                activeClassName="active-link"
-                onClick={() => closeMenu()}
-                exact
+                href={{
+                  pathname: "/hafa_samband",
+                }}
               >
-                Hafa samband
+                <a
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
+                  Hafa samband
+                </a>
               </Link>
             </li>
             <li className={styles.nav_link}>
