@@ -10,7 +10,7 @@
     margin-top: 30px;
     font-weight: 700;
     font-style: italic;
-    font-size: 40px;
+    font-size: 36px;
     margin-bottom: 20px;
   }
   @media (min-width: 900px) {
@@ -25,12 +25,17 @@
           margin-top: 50px;
           margin-left: 10px;
     }}
+    .contact_label{
+      font-size: 22px;
+      font-weight: 500;
+      color: rgba(196, 196, 196, 0.48);
+  }
+    @media (min-width: 900px) {
   .contact_label{
       font-size: 28px;
       font-weight: 500;
       color: rgba(196, 196, 196, 0.48);
-
-  }
+  }}
   .contact_input {
       outline: none;
       font-size: 24px;

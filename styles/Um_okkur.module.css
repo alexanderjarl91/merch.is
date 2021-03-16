@@ -1,3 +1,6 @@
+.container {
+   
+}
 @media (min-width: 900px) {
 .container {
   display: grid;
