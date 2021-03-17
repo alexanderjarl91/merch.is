@@ -1,29 +1,23 @@
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "./context";
-import { auth, db } from "./fire";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import { CgEnter } from "react-icons/cg";
+import Link from "next/link";
+import styles from "../styles/Store.module.css";
 
 const Store = () => {
   const router = useRouter();
   const { users } = useContext(UsersContext);
-
   const storeNameQuery = router.query ? router.query.username : null;
   const storeOwner = users.find((x) => x.store.name == storeNameQuery);
   const store = storeOwner ? storeOwner.store : null;
-
   useEffect(() => {
-    if (!store) {
-      // router.push("/hafa_samband");
+    if (storeNameQuery && !storeOwner) {
+      router.push("/hafa_samband");
     }
   }, [users]);
-
   return (
-    <div style={{ backgroundColor: "white", width: "100vw", height: "100vh" }}>
-      <h1>merch.</h1>
-
+    <div className={styles.container}>
+      <h1 className={styles.logo}>merch.</h1>
       {store ? (
         <div
           style={{
@@ -32,24 +26,45 @@ const Store = () => {
             backgroundColor: "white",
           }}
         >
-          <h2>{storeOwner.store.name}</h2>
-          <img src={store.logo} />
-          <p>{store.url}</p>
-          <p>{store.bio}</p>
-
-          {/* {store
-            ? store.products.map((product) => (
-                <p style={{ color: "black" }}>product</p>
-              ))
-            : null} */}
+          <img className={styles.store_img} src={store.logo} />
+          <h2 className={styles.store_title}>{storeOwner.store.name}</h2>
+          <p className={styles.store_url}>{store.url}</p>
+          <p className={styles.store_bio}>{store.bio}</p>
+          <div className={styles.grid}>
+            {storeOwner.products.map((product) => {
+              console.log("product");
+              return (
+                <Link
+                  href={`/${storeNameQuery}/${product.productName}`}
+                  key={product.productImg}
+                >
+                  <div className={styles.product}>
+                    <img
+                      className={styles.product_img}
+                      src={product.productImg}
+                    />
+                    <p className={styles.product_name}>{product.productName}</p>
+                    <p className={styles.product_price}>
+                      {product.productPrice} ISK
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       ) : null}
-
-      <div>
-        <p style={{ color: "black" }}>footer text</p>
+      <div className={styles.footer}>
+        <p className={styles.copyright}>
+          Þessi vefverslun var smíðuð með ©
+          <Link href="/">
+            <b>
+              <a>merch.is</a>
+            </b>
+          </Link>
+        </p>
       </div>
     </div>
   );
 };
-
 export default Store;

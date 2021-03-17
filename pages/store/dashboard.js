@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { auth } from "../fire";
 import { UsersContext } from "../context";
+import DashHeader from "../../components/dashboard/DashHeader";
+import Products from "../../components/dashboard/Products";
 
 export default function dashboard() {
   const router = useRouter();
@@ -31,6 +33,8 @@ export default function dashboard() {
 
   return (
     <div>
+      <DashHeader />
+      <Products />
       <p>DASHBOARD</p>
       <button
         onClick={() => {

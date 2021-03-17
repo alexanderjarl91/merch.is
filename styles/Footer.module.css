@@ -22,10 +22,11 @@
 .skilmalar {
   float: left;
 }
+@media (max-width: 860px) {
   .social {
     width: 30px;
     height: 30px;
     padding-left: 5px;
-  
-  }
+    float: right;
+  }}
 
