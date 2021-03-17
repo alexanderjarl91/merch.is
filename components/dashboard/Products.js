@@ -5,6 +5,6 @@ import React, { useContext } from "react";
 
 export default function Products() {
   const { userData, users, currentUser } = useContext(UsersContext);
-
-  return <p> {userData.products[0].productDescription} </p>;
+  return <p> Products</p>;
+  // return <p> {userData.products[0].productDescription} </p>;
 }

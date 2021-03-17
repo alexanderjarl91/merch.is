@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="content">
         <IoLogoInstagram className={styles.social} />{" "}
         <FaFacebook className={styles.social} />
-        <p lassName={styles.skilmalar}>Skilmálar</p>
+        <p className={styles.skilmalar}>Skilmálar</p>
         <p>copyright merch.is 2021 </p>
         {/* <button
           onClick={() => {

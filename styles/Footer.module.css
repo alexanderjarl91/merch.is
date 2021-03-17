@@ -18,11 +18,11 @@
     width: 100%;
   }}
 
-
+  @media (min-width: 860px) {
 .skilmalar {
   float: left;
-}
-@media (max-width: 860px) {
+}}
+@media (min-width: 860px) {
   .social {
     width: 30px;
     height: 30px;

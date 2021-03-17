@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { UsersContext } from "./context";
 import Link from "next/link";
 import styles from "../styles/Store.module.css";
+import Footer from "../components/Footer";
 
 const Store = () => {
   const router = useRouter();
@@ -17,7 +18,9 @@ const Store = () => {
   }, [users]);
   return (
     <div className={styles.container}>
-      <h1 className={styles.logo}>merch.</h1>
+      <Link href="/">
+        <h1 className={styles.logo}> merch. </h1>
+      </Link>
       {store ? (
         <div
           style={{
@@ -54,16 +57,7 @@ const Store = () => {
           </div>
         </div>
       ) : null}
-      <div className={styles.footer}>
-        <p className={styles.copyright}>
-          Þessi vefverslun var smíðuð með ©
-          <Link href="/">
-            <b>
-              <a>merch.is</a>
-            </b>
-          </Link>
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 };

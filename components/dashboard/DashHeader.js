@@ -9,7 +9,10 @@ export default function DashHeader() {
 
   return (
     <div className={styles.dashboardHeader}>
-      <div className={styles.logo}>merch</div>
+      <Link href="/">
+        <p className={styles.logo}> merch. </p>
+      </Link>
+
       <p className={styles.marginRight30}>display name</p>
       <p className={styles.marginRight30}>|</p>
       <button

@@ -13,21 +13,17 @@ function hafa_samband(props) {
             Hafðu samband, við elskum að fá ný skilaboð
           </p>
           <form className={styles.contact_form} action="/" method="POST">
-            <label className={styles.contact_label} for="name">
-              Nafn
-            </label>
+            <label className={styles.contact_label}>Nafn</label>
             <input
               className={styles.contact_input}
               type="text"
               required
             ></input>
 
-            <label className={styles.contact_label} for="email">
-              Netfang
-            </label>
+            <label className={styles.contact_label}>Netfang</label>
             <input
               className={styles.contact_input}
-              type="text"
+              type="email"
               required
             ></input>
 

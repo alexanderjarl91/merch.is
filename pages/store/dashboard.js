@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { auth } from "../fire";
 import { UsersContext } from "../context";
 import DashHeader from "../../components/dashboard/DashHeader";
 import Products from "../../components/dashboard/Products";
+import Sidemenu from "../../components/dashboard/sidemenu";
 
 export default function dashboard() {
   const router = useRouter();
@@ -31,10 +32,17 @@ export default function dashboard() {
     }
   }, [users]);
 
+  const [componentShowing, setComponentShowing] = useState("dashboard");
+
   return (
     <div>
       <DashHeader />
-      <Products />
+      <Sidemenu
+        componentShowing={componentShowing}
+        setComponentShowing={setComponentShowing}
+      />
+      {componentShowing == "products" ? <Products /> : null}
+
       <p>DASHBOARD</p>
       <button
         onClick={() => {
