@@ -5,13 +5,9 @@ import Link from "next/link";
 
 export default function Carousel({ toggleSignUp }) {
   return (
-    <>
-      <div>
-        <div className={styles.frontpageGrid}>
-          {/* Image grid for desktop ladning frontpage */}
-          <div className={styles.frontpage_img}>
-            <Image src="/frontpage_img.png" width={375} height={460}></Image>
-          </div>
+    <div>
+      <div className={styles.frontpageGrid}>
+        <div className={styles.content}>
           <div className={styles.headlineGrid}>
             <p className={styles.front_headline}>SELDU ÞÍNAR VÖRUR</p>
           </div>
@@ -44,7 +40,6 @@ export default function Carousel({ toggleSignUp }) {
           </div>
         </div>
       </div>
-      {/* </div> */}
-    </>
+    </div>
   );
 }

@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { UsersContext } from "../pages/context";
 import { auth, db } from "../pages/fire";
 import styles from "../styles/Footer.module.css";
+import { IoLogoInstagram } from "react-icons/io";
+import { FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   // const {
@@ -15,8 +17,12 @@ export default function Footer() {
 
   return (
     <div className={styles.footer}>
-      copyright merch.is 2021
-      {/* <button
+      <div className="content">
+        <IoLogoInstagram className={styles.social} />{" "}
+        <FaFacebook className={styles.social} />
+        <p lassName={styles.skilmalar}>Skilmálar</p>
+        <p>copyright merch.is 2021 </p>
+        {/* <button
           onClick={() => {
             console.log(currentUser);
           }}
@@ -52,6 +58,7 @@ export default function Footer() {
         >
           log out
         </button> */}
+      </div>
     </div>
   );
 }

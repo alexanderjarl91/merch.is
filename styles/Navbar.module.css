@@ -1,9 +1,13 @@
 /* ----- navbar on desktop ----- */
-
+@media (min-width: 860px) {
+.deskNav {
+  background-color: #252525;
+  width: 100%;
+}}
 /* navbar on desktop */
 .nav {
     padding-top: 3rem;
-    margin-bottom: 8rem;
+    padding-bottom: 3rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -11,6 +15,12 @@
     text-decoration: none;
     list-style: none;
 }
+@media (max-width: 860px) {
+  .nav {
+    padding-top: 0rem;
+    margin-bottom: 1rem;
+  }}
+
 .logo{
     margin-right: auto;
     color: #fff;
@@ -68,10 +78,11 @@
 }}
 @media (max-width: 860px) {
 .logo{
-  padding-top: 10px;
+  padding-top: 0px;
 }}
 .burger_button {
-    position: fixed;
+    padding-top: 20px;
+    position: sticky;
     right: 0;
     top: 50px;
     z-index: 10;

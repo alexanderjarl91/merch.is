@@ -1,4 +1,21 @@
 
+@media (max-width: 860px) {
+  .content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 6rem;
+    padding-right: 10px;
+    padding-left: 10px; 
+  }
+}
+@media (min-width: 860px) {
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 10rem;
+    padding-right: 10px;
+    padding-left: 10px; 
+}}
 /* grid for the landing frontpage on mobile */
 .fronpageGrid {
   justify-content: center;
@@ -9,7 +26,7 @@
 
 /* desktop images ( the mobile background img is in index.module.css ) */
 .frontpage_img {
- float: right;
+  display: none;
 }
 @media (max-width: 860px) {
   .frontpage_img {
@@ -25,12 +42,14 @@
   font-style: italic;
   font-size: 50px;
   margin-left: 10px;
+  margin-top: 3rem;
 }
 /* desktop */
 @media (min-width: 860px) {
   .front_headline {
     font-size: 70px;
     text-align: left;
+    margin-top: 0rem;
   }
 }
 
@@ -57,14 +76,15 @@
 @media (max-width: 860px) {
   .nyskraGrid {
     margin-left: 50px;
-    margin-top: 4rem;
+    margin-top: 1rem;
   }}
 .nyskraBtn {
   margin-bottom: 5px;
   margin-top: 20%;
+  background: rgba(196, 196, 196, 0.256);
 }
 .nyskraBtn:hover {
-  background: rgba(196, 196, 196, 0.256);
+  background: rgba(196, 196, 196, 0.356);
 }
 /* desktop */
 @media (min-width: 860px) {

@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "../styles/Um_okkur.module.css";
-import Layout from "../components/Layout";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 function um_okkur() {
   return (
     <>
-      <Layout>
+      <div className="content">
+        <Navbar />
         <div className={styles.container}>
           <p className={styles.umOkkur}>UM OKKUR</p>
           <p className={styles.aukaP}>Hér getur komið stutt setning um okkur</p>
@@ -26,7 +28,8 @@ function um_okkur() {
             </p>
           </div>
         </div>
-      </Layout>
+      </div>
+      <Footer />
     </>
   );
 }

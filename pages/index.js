@@ -8,7 +8,8 @@ import Carousel from "../components/Carousel";
 import Login from "../components/Login";
 import { auth, db } from "./fire";
 import { UsersContext } from "./context";
-import Layout from "../components/Layout";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Landing() {
   const router = useRouter();
@@ -54,13 +55,14 @@ export default function Landing() {
       ) : (
         <>
           <div className={styles.mobile_bg_img}>
-            <Layout>
-              {showSignUp ? (
-                <Login toggleSignUp={toggleSignUp} />
-              ) : (
-                <Carousel toggleSignUp={toggleSignUp} />
-              )}
-            </Layout>
+            {" "}
+            <Navbar />
+            {showSignUp ? (
+              <Login toggleSignUp={toggleSignUp} />
+            ) : (
+              <Carousel toggleSignUp={toggleSignUp} />
+            )}
+            <Footer />
           </div>
         </>
       )}
