@@ -1,57 +1,50 @@
 /* ----- navbar on desktop ----- */
 @media (min-width: 860px) {
-.deskNav {
-  background-color: #252525;
-  width: 100%;
-}}
+  .deskNav {
+    background: linear-gradient(180deg, #222121 50.83%, rgba(0, 0, 0, 0) 100%);
+
+    width: 100%;
+  }
+}
 /* navbar on desktop */
 .nav {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    text-align:center;
-    text-decoration: none;
-    list-style: none;
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  z-index: 55;
 }
 @media (max-width: 860px) {
   .nav {
     padding-top: 0rem;
     margin-bottom: 1rem;
-  }}
+  }
+}
 
-.logo{
-    margin-right: auto;
-    color: #fff;
-    font-size: 34px;
-    line-height: 30px;
-    font-weight: 500;
-    margin-left: 40px;
+.logo {
+  margin-right: auto;
+  color: #fff;
+  font-size: 34px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-left: 40px;
 }
 
 /* navbar style for desktop */
 .nav_link {
-    list-style: none;
-    display: inline;
-    margin-left: 30px;
-    font-size: 18px;
-    font-weight: 300;
+  list-style: none;
+  display: inline;
+  margin-left: 30px;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 /* innskrá button in navbar on desktop */
-@media (min-width: 860px) {
-.nav_link:last-child {
-   background-color: rgba(196, 196, 196, 0.147);
-   border: 1px solid white;
-   border-radius: 4px;
-   padding: 12px 20px 12px 20px;
-  }}
-  .nav_link:last-child:hover {
-    background-color:rgba(196, 196, 196, 0.256);
-  }
 
-  
 /* ----- navbar on mobile ----- */
 
 /* burger navbar on mobile */
@@ -64,46 +57,49 @@
     color: #1e1e1e;
     font-weight: 500;
     font-size: 18px;
-}}
+  }
+}
 /* innskrá button on navbar when burger is oopen on mobile */
 @media (max-width: 860px) {
-    .nav_link:last-child {
-      background-color: #252525;
-      color: white;
-      border-radius: 4px;
-      margin-top: 40px;
-      margin-right: 20%;
-      margin-left: 20%;
-      letter-spacing: 3px;
-}}
+  .nav_link:last-child {
+    background-color: #252525;
+    color: white;
+    border-radius: 4px;
+    margin-top: 40px;
+    margin-right: 20%;
+    margin-left: 20%;
+    letter-spacing: 3px;
+  }
+}
 @media (max-width: 860px) {
-.logo{
-  padding-top: 0px;
-}}
+  .logo {
+    padding-top: 0px;
+  }
+}
 .burger_button {
-    padding-top: 20px;
-    position: sticky;
-    right: 0;
-    top: 50px;
-    z-index: 10;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: transparent;
+  padding-top: 20px;
+  position: sticky;
+  right: 0;
+  top: 50px;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 /* dont show burger button on desktop */
 @media (min-width: 861px) {
-    .burger_button{
-     display: none;
-    }
+  .burger_button {
+    display: none;
   }
+}
 .burger_icon_close {
-    color: #252525;
-    width: 40px;
-    height: 40px;
+  color: #252525;
+  width: 40px;
+  height: 40px;
 }
 .burger_icon {
-    color: #F4F5F5;
-    width: 40px;
-    height: 40px;
+  color: #f4f5f5;
+  width: 40px;
+  height: 40px;
 }

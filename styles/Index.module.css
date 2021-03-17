@@ -1,7 +1,5 @@
-
-  .mobile_bg_img {
-    background-image: url(/mobile-bg.jpeg);
-    background-size: cover;
-    height: 100vh;
-  }
-  
+.mobile_bg_img {
+  background-image: url(/mobile-bg.jpeg);
+  background-size: cover;
+  height: 100vh;
+}

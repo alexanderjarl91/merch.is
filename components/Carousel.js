@@ -3,7 +3,7 @@ import styles from "../styles/Carousel.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Carousel({ toggleSignUp }) {
+export default function Carousel() {
   return (
     <div>
       <div className={styles.frontpageGrid}>
@@ -19,14 +19,9 @@ export default function Carousel({ toggleSignUp }) {
           </div>
 
           <div className={styles.nyskraGrid}>
-            <button
-              className={styles.nyskraBtn}
-              onClick={() => {
-                toggleSignUp();
-              }}
-            >
-              Nýskrá
-            </button>
+            <Link href="/signup">
+              <button className={styles.nyskraBtn}>Nýskrá</button>
+            </Link>
             <p className="login_paragraph">
               eða{" "}
               <strong>

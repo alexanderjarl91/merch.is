@@ -5,7 +5,6 @@ import styles from "../styles/Index.module.css";
 
 //components
 import Carousel from "../components/Carousel";
-import Login from "../components/Login";
 import { auth, db } from "./fire";
 import { UsersContext } from "./context";
 import Navbar from "../components/Navbar";
@@ -13,14 +12,7 @@ import Footer from "../components/Footer";
 
 export default function Landing() {
   const router = useRouter();
-  const {
-    currentUser,
-    getUsers,
-    handleLogin,
-    handleLogout,
-    setCurrentUser,
-  } = useContext(UsersContext);
-  const [showSignUp, setShowSignup] = useState(false);
+  const { currentUser } = useContext(UsersContext);
 
   // whenever authstate changes, if the user is logged in, redirect to dashboard
   useEffect(() => {
@@ -38,11 +30,6 @@ export default function Landing() {
     }
   }, [currentUser]);
 
-  // function that toggles from carousel to signup
-  const toggleSignUp = () => {
-    setShowSignup(!showSignUp);
-  };
-
   return (
     <div>
       <Head>
@@ -55,13 +42,8 @@ export default function Landing() {
       ) : (
         <>
           <div className={styles.mobile_bg_img}>
-            {" "}
             <Navbar />
-            {showSignUp ? (
-              <Login toggleSignUp={toggleSignUp} />
-            ) : (
-              <Carousel toggleSignUp={toggleSignUp} />
-            )}
+            <Carousel />
             <Footer />
           </div>
         </>

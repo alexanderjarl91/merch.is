@@ -88,13 +88,8 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className={styles.nav_link}>
-                <Link
-                  href="/"
-                  activeClassName="active-link"
-                  onClick={() => closeMenu()}
-                  exact
-                >
-                  Innskrá
+                <Link href="/login" activeClassName="active-link" exact>
+                  <button onClick={() => closeMenu()}>Innskrá</button>
                 </Link>
               </li>
             </ul>
