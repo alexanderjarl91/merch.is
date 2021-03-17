@@ -13,7 +13,7 @@ const Store = () => {
   const store = storeOwner ? storeOwner.store : null;
   useEffect(() => {
     if (storeNameQuery && !storeOwner) {
-      router.push("/hafa_samband");
+      router.push("/404");
     }
   }, [users]);
   return (
