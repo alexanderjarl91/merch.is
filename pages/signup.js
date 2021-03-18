@@ -83,27 +83,30 @@ export default function Landing() {
                     }}
                   />
                 </div>
-                <div className={styles.bottom__container}>
-                  <button
+                <div className={styles.login__btn}>
+                  <a
                     onClick={(e) => {
                       e.preventDefault();
                       handleSignup();
                     }}
                   >
                     Nýskrá
-                  </button>
-                  <p>
-                    eða <button onClick={() => {}}>skráðu þig inn</button> ef þú
-                    átt reikning
+                  </a>
+                  <p className={styles.login_paragraph}>
+                    eða{" "}
+                    <a onClick={() => {}}>
+                      {" "}
+                      <strong>skráðu þig inn </strong>
+                    </a>{" "}
+                    ef þú átt reikning
                   </p>
                 </div>
               </form>
             </div>
-
-            <Footer />
           </div>
         </>
       )}
+      <Footer />
     </div>
   );
 }

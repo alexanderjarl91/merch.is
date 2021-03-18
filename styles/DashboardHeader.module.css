@@ -1,9 +1,9 @@
 .dashboardHeader {
-    width: 100%;
+    max-width: 1400px;
     height: 60px;
-    color: black;
-    background-color: #F4F5F5;
-    padding: 10px 100px;
+    color: 252525;
+    margin: 0 auto;
+    background-color: transparent;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -11,12 +11,18 @@
     text-decoration: none;
     list-style: none;
   }
-​
-  .marginRight30{
+  @media (max-width: 1025px) {
+    .dashboardHeader {
+       display: none;
+      }}
+
+  .userName{
       margin-right: 30px;
   }
   .logo{
+    padding-left: 20px;
     margin-right: auto;
-    color: black;
-    font-size: 36px;
+    color: 252525;
+    font-size: 30px;
+    line-height: 36px;
 }

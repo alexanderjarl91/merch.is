@@ -13,16 +13,16 @@ export default function DashHeader() {
         <p className={styles.logo}> merch. </p>
       </Link>
 
-      <p className={styles.marginRight30}>display name</p>
-      <p className={styles.marginRight30}>|</p>
-      <button
+      <p className={styles.userName}>display name</p>
+      <p className={styles.userName}>|</p>
+      <a
         onClick={() => {
           handleLogout();
         }}
-        className={styles.marginRight30}
+        className={styles.userName}
       >
         Útskrá
-      </button>
+      </a>
     </div>
   );
 }

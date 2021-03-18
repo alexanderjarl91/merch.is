@@ -33,71 +33,71 @@ export default function Landing() {
   }, [currentUser]);
 
   return (
-    <div>
-      <Head>
-        <title>merch.</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <div>
+        <Head>
+          <title>merch.</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      {auth.currentUser ? (
-        <p>loading..</p>
-      ) : (
-        <>
-          <div className={styles.mobile_bg_img}>
-            <Navbar />
-            {/* LOGIN FORM */}
-            <div className={styles.login__container}>
-              <div className={styles.login__header}>
-                <h1>Skráðu þig inn</h1>
-              </div>
-              <form>
-                <div>
-                  <label>Netfang</label>
-                  <input
-                    type="email"
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      console.log(email);
-                    }}
-                  />
+        {auth.currentUser ? (
+          <p>loading..</p>
+        ) : (
+          <>
+            <div className={styles.mobile_bg_img}>
+              <Navbar />
+              {/* LOGIN FORM */}
+              <div className={styles.login__container}>
+                <div className={styles.login__header}>
+                  <h1>Skráðu þig inn</h1>
                 </div>
-                <div>
-                  <label>Lykilorð</label>
-                  <input
-                    type="password"
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                      console.log(password);
-                    }}
-                  />
-                </div>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLogin(email, password);
-                    router.push("/store/dashboard");
-                  }}
-                >
-                  Skrá inn
-                </button>
-                <p>
-                  eða{" "}
+                <form>
+                  <div>
+                    <label>Netfang</label>
+                    <input
+                      type="email"
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        console.log(email);
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label>Lykilorð</label>
+                    <input
+                      type="password"
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                        console.log(password);
+                      }}
+                    />
+                  </div>
                   <button
-                    onClick={() => {
-                      toggleLogIn();
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLogin(email, password);
+                      router.push("/store/dashboard");
                     }}
                   >
-                    nýskráðu þig
-                  </button>{" "}
-                  ef þú átt ekki reikning
-                </p>
-              </form>
+                    Skrá inn
+                  </button>
+                  <p>
+                    eða{" "}
+                    <button
+                      onClick={() => {
+                        toggleLogIn();
+                      }}
+                    >
+                      nýskráðu þig
+                    </button>{" "}
+                    ef þú átt ekki reikning
+                  </p>
+                </form>
+              </div>
             </div>
-
-            <Footer />
-          </div>
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </div>
+    </>
   );
 }

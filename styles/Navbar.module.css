@@ -1,22 +1,22 @@
 /* ----- navbar on desktop ----- */
 @media (min-width: 860px) {
   .deskNav {
-    background: linear-gradient(180deg, #222121 50.83%, rgba(0, 0, 0, 0) 100%);
-
+   /* background-color: #25252571;
+    backdrop-filter: blur(15px); */
+     /* mask-image: linear-gradient(to top, transparent 10%, black); */
     width: 100%;
   }
 }
 /* navbar on desktop */
 .nav {
   padding-top: 3rem;
-  padding-bottom: 7rem;
+  padding-bottom: 3rem;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   text-align: center;
   text-decoration: none;
   list-style: none;
-  z-index: 55;
 }
 @media (max-width: 860px) {
   .nav {
@@ -44,7 +44,16 @@
 }
 
 /* innskrá button in navbar on desktop */
-
+@media (min-width: 860px) {
+  .nav_link:last-child {
+     background-color: rgba(196, 196, 196, 0.147);
+     border: 1px solid white;
+     border-radius: 4px;
+     padding: 12px 20px 12px 20px;
+    }}
+    .nav_link:last-child:hover {
+      background-color:rgba(196, 196, 196, 0.256);
+    }
 /* ----- navbar on mobile ----- */
 
 /* burger navbar on mobile */

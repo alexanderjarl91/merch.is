@@ -1,0 +1,84 @@
+@media (min-width: 1024px) {
+.sideMenu {
+   display: flex;
+   flex-direction: column;
+   margin-left: 5rem;
+   margin-top: 100px;
+}}
+.sideMenu_buttons {
+    color: #252525;
+    background-color: #fff;
+    width: 200px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 20px;
+    list-style: none ;
+}
+.sideMenu_buttons:hover {
+  box-shadow: none;
+  box-shadow: 1px 1px 10px 0px rgba(143, 143, 143, 0.25);
+}
+.sideMenu_buttons:active {
+    background-color: #252525;
+    color: #fff;
+}
+.sideMenu_icon {
+    align-items: center;
+    justify-items: center;
+    padding-top: 5px;
+}
+.sideMenu_extra_links_container {
+    margin-top: 3rem;
+}
+.sideMenu_extra_links {
+    list-style: none;
+    color: #C2C2C2;
+    margin-top: 10px;
+}
+@media (min-width: 1024px) {
+.sideMenu_extra_links {
+    margin-left: 0px;
+}}
+
+/* burger navbar on mobile */
+@media (max-width: 1025px) {
+    .sideMenu_buttons {
+      margin: 0 auto;
+      margin-bottom: 10px;
+      display: block;
+      padding: 10px 40px;
+      text-decoration: none;
+      color: #1e1e1e;
+      font-weight: 500;
+      font-size: 18px;
+      width: 80%;
+  }}
+.burger_button {
+    padding-top: 20px;
+    position: sticky;
+    right: 0;
+    top: 50px;
+    z-index: 10;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    float: right;
+}
+/* dont show burger button on desktop */
+@media (min-width: 1025px) {
+    .burger_button{
+     display: none;
+    }
+  }
+  .burger_icon_close {
+    color: #252525;
+    width: 40px;
+    height: 40px;
+}
+.burger_icon {
+    color:  #252525;
+    width: 40px;
+    height: 40px;
+}
