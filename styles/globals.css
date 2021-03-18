@@ -63,6 +63,19 @@ button {
     transition:  0.3s;
   }
 }
+
+@media (max-width: 860px) {
+  .burgerNav.showMenu {
+    width: 100%;
+  }
+}
+@media (max-width: 860px) {
+  .burgerNav li:first-child {
+    margin-top: 12rem;
+  }
+}
+
+/* Dashboard burger navbar  */
 @media (max-width: 1024px) {
   .burgerNavDash {
     overflow-y: scroll;
@@ -80,17 +93,17 @@ button {
     transition:  0.3s;
   }
 }
-@media (max-width: 860px) {
+
+@media (max-width: 1024px) {
   .burgerNavDash.showMenu {
     width: 100%;
   }
 }
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .burgerNavDash li:first-child {
     margin-top: 12rem;
   }
 }
-
 
 
 

@@ -12,9 +12,15 @@
     list-style: none;
   }
   @media (max-width: 1025px) {
-    .dashboardHeader {
+    .userName {
        display: none;
-      }}
+      }
+    .logo {display: none;
+    }
+    .dashboardHeader {
+      height: 0px;
+      background-color: rgb(167, 18, 18);
+    }}
 
   .userName{
       margin-right: 30px;

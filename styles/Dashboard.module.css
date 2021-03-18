@@ -12,7 +12,7 @@
 
 @media (min-width: 1024px) {
     .component_container {
-        background-color: #fff;
+        background-color: rgb(227, 31, 31);
         width: 80%;
         min-width: 600px;
         height: 40rem;
@@ -24,12 +24,22 @@
         margin-left: 20px;
     }
   }
+
+
+@media (max-width: 1024px) {
+    .component_container {
+        background-color: rgb(174, 174, 174);
+        height: 100vh;
+        margin-top: 40px;
+        text-align: center;
+    }
+  }
   @media (min-width: 1024px) {
 .sidemenu_container {
     /* grid-column: 1 / span 1;
     grid-row: 1; */
 }}
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 .dashboard_grid {
     display: grid;
 }}

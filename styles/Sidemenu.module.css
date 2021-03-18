@@ -42,7 +42,7 @@
 }}
 
 /* burger navbar on mobile */
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
     .sideMenu_buttons {
       margin: 0 auto;
       margin-bottom: 10px;
