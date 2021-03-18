@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../styles/Signup.module.css";
+import Link from "next/Link";
 
 //components
 import { auth, db } from "./fire";
@@ -41,7 +42,9 @@ export default function Landing() {
         </Head>
 
         {auth.currentUser ? (
-          <p>loading..</p>
+          //REDIRECT TO DASHBOARD
+          // router.push("/store/dashboard")
+          <p>needs to redirect to dashboard</p>
         ) : (
           <>
             <div className={styles.mobile_bg_img}>
@@ -82,15 +85,8 @@ export default function Landing() {
                     Skrá inn
                   </button>
                   <p>
-                    eða{" "}
-                    <button
-                      onClick={() => {
-                        toggleLogIn();
-                      }}
-                    >
-                      nýskráðu þig
-                    </button>{" "}
-                    ef þú átt ekki reikning
+                    eða <Link href="/signup">nýskráðu þig</Link> ef þú átt ekki
+                    reikning
                   </p>
                 </form>
               </div>

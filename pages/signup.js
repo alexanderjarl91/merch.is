@@ -1,10 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
+
 import { useRouter } from "next/router";
+import Link from "next/Link";
+
 import Head from "next/head";
 import styles from "../styles/Signup.module.css";
 
 //components
-import { auth, db } from "./fire";
+import { auth } from "./fire";
 import { UsersContext } from "./context";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -21,8 +24,6 @@ export default function Landing() {
     setEmail,
     setPassword,
     handleSignup,
-    handleLogin,
-    handleLogout,
   } = useContext(UsersContext);
 
   useEffect(() => {
@@ -51,7 +52,7 @@ export default function Landing() {
               </div>
               <form>
                 <div>
-                  <label className={styles.label}>Nafn</label>
+                  <label className={styles.label}>Nafn </label>
                   <input
                     className={styles.input}
                     type="text"
@@ -93,11 +94,12 @@ export default function Landing() {
                     Nýskrá
                   </a>
                   <p className={styles.login_paragraph}>
-                    eða{" "}
-                    <a onClick={() => {}}>
-                      {" "}
-                      <strong>skráðu þig inn </strong>
-                    </a>{" "}
+                    eða
+                    <a>
+                      <Link href="/login">
+                        <strong>skráðu þig inn </strong>
+                      </Link>
+                    </a>
                     ef þú átt reikning
                   </p>
                 </div>

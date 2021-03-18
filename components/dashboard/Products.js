@@ -7,9 +7,11 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 export default function Products() {
   const { userData, refreshUserData } = useContext(UsersContext);
 
+  //refresh data when component mounts
   useEffect(() => {
     refreshUserData();
   }, []);
+
   useEffect(() => {
     console.log("userData changed, dom rerendered");
   }, [userData]);

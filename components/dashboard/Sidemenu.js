@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Link from "next/link";
 import styles from "../../styles/Sidemenu.module.css";
 import {
@@ -9,8 +9,14 @@ import {
 } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import { CgMenuRight } from "react-icons/cg";
+import { UsersContext } from "../../pages/context";
 
 export default function Sidemenu({ componentShowing, setComponentShowing }) {
+  const { userData, getUserData } = useContext(UsersContext);
+
+  useEffect(() => {
+    getUserData();
+  }, []);
   // state for the hamburger menu on mobile view
   const [navbarOpen, setNavbarOpen] = useState(false);
 
@@ -53,6 +59,17 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
             <li className={styles.sideMenu_buttons}>
               <a
                 onClick={() => {
+                  setComponentShowing("store");
+                  closeMenu();
+                  console.log(componentShowing);
+                }}
+              >
+                <MdShoppingCart className={styles.sideMenu_icon} /> Búðin mín
+              </a>
+            </li>
+            <li className={styles.sideMenu_buttons}>
+              <a
+                onClick={() => {
                   setComponentShowing("products");
                   closeMenu();
                   console.log(componentShowing);
@@ -84,9 +101,10 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                 <MdShoppingCart className={styles.sideMenu_icon} /> Pantanir{" "}
               </a>
             </li>
+
             <div className={styles.sideMenu_extra_links_container}>
               <li className={styles.sideMenu_extra_links}>
-                <Link href="/">
+                <Link href={`/${"jarlsbud"}`}>
                   <p> Búðin mín </p>
                 </Link>
               </li>
@@ -100,6 +118,9 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                   <p> Um okkur </p>
                 </Link>
               </li>
+              <button onClick={()=>{
+                console.log(userData)
+              }}></button>
             </div>
           </ul>
         </div>

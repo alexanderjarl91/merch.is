@@ -8,6 +8,7 @@ import Orders from "../../components/dashboard/Orders";
 import Add from "../../components/dashboard/Add";
 import Yfirlit from "../../components/dashboard/Yfirlit";
 import Sidemenu from "../../components/dashboard/sidemenu";
+import Store from "../../components/dashboard/Store";
 import styles from "../../styles/Dashboard.module.css";
 
 export default function dashboard() {
@@ -21,6 +22,10 @@ export default function dashboard() {
     getUserData,
     setCurrentUser,
   } = useContext(UsersContext);
+
+  useEffect(() => {
+    getUserData();
+  }, []);
 
   //set currentUser when auth.currentUser changes
   useEffect(() => {
@@ -51,9 +56,13 @@ export default function dashboard() {
         {/* <div className={styles.component_container}>
           <h1> Yfirlit</h1>
         </div> */}
+
         {componentShowing == "dashboard" ? <Yfirlit /> : null}
+        {componentShowing == "store" ? <Store /> : null}
         {componentShowing == "products" ? <Products /> : null}
-        {componentShowing == "add" ? <Add /> : null}
+        {componentShowing == "add" ? (
+          <Add setComponentShowing={setComponentShowing} />
+        ) : null}
         {componentShowing == "orders" ? <Orders /> : null}
       </div>
     </div>
