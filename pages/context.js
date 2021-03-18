@@ -17,7 +17,6 @@ export const UsersProvider = ({ children }) => {
   const [email, setEmail] = useState("alexanderjarl91@gmail.com");
   const [password, setPassword] = useState("allicool1");
 
-  console.log("currentUser from context:", currentUser);
   const handleSignup = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -100,7 +99,6 @@ export const UsersProvider = ({ children }) => {
       tempUsers = [...tempUsers, doc.data()];
     });
     setUsers(tempUsers);
-    console.log(users);
   };
 
   useEffect(() => {
@@ -112,9 +110,21 @@ export const UsersProvider = ({ children }) => {
     if (currentUser) {
       const foundUser = users.find((x) => x.email === currentUser.email);
       setUserData(foundUser);
-      console.log("USER FOUND:", foundUser);
+      // console.log("USER FOUND:", foundUser);
     } else {
       console.log("no currentUser");
+    }
+  };
+
+  const refreshUserData = async () => {
+    const userSnapshot = await db.collection("users").doc(userData.email).get();
+    const tempUserData = await userSnapshot.data();
+    console.log(tempUserData);
+    if (tempUserData) {
+      console.log("running refresh function");
+      setUserData(tempUserData);
+    } else {
+      console.log("refreshing error");
     }
   };
 
@@ -136,6 +146,7 @@ export const UsersProvider = ({ children }) => {
         handleSignup,
         handleLogin,
         handleLogout,
+        refreshUserData,
       }}
     >
       {children}

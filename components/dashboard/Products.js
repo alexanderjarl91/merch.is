@@ -1,29 +1,45 @@
 import styles from "../../styles/Dashboard/Products.module.css";
-import { auth, db } from "../../pages/fire";
+import { db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
-import React, { useContext } from "react";
-import Image from "next/image";
+import React, { useContext, useEffect } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 export default function Products() {
-  const { userData, users, currentUser } = useContext(UsersContext);
+  const { userData, refreshUserData } = useContext(UsersContext);
 
-  // const handleDelete = async() => {
-  //   console.log(db);
+  useEffect(() => {
+    refreshUserData();
+  }, []);
+  useEffect(() => {
+    console.log("userData changed, dom rerendered");
+  }, [userData]);
 
-  //   const userSnapshot =
-  // };
+  const handleDelete = async (productId) => {
+    //filter out the clicked item
+    const firestoreUser = await db.collection("users").doc(userData.email);
+    const userSnapshot = await db.collection("users").doc(userData.email).get();
+    const productsCopy = userSnapshot.data().products;
+    const filteredProducts = productsCopy.filter(
+      (product) => product.productId !== productId
+    );
+    //update firestore with new products array
+    await firestoreUser
+      .update({
+        products: filteredProducts,
+      })
+      .then(refreshUserData);
+  };
 
   return (
     <div className={styles.component_container}>
-      <h1> Mínar vörur </h1>
+      <h1 className={styles.title}> Mínar vörur </h1>
 
       {userData.products.map((product) => {
         return (
-          <div className={styles.product}>
+          <div key={product.productId} className={styles.product}>
             <img className={styles.product_img} src={product.productImg} />
             <div className={styles.product_info}>
-              <h2> {product.productDescription}</h2>
+              <h2> {product.productName}</h2>
               <p> {product.productPrice} KR</p>
               <p> ID: {product.productId}</p>
             </div>
@@ -31,7 +47,15 @@ export default function Products() {
 
             <a
               onClick={() => {
-                handleDelete();
+                const productId = product.productId;
+                const r = confirm(
+                  "Ertu viss um að þú viljir eyða þessari vöru?"
+                );
+                if (r == true) {
+                  handleDelete(productId);
+                } else {
+                  return;
+                }
               }}
             >
               {" "}

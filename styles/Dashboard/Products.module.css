@@ -7,50 +7,53 @@
   margin-bottom: 3rem;
 }
 .product_img {
-    max-width: 180px;
+  max-width: 180px;
 }
 .product_info {
-    display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: left;
 }
 .product_button {
-margin-top: 140px;
-color: #252525;
-border: 1px solid #252525;
+  margin-top: 140px;
+  color: #252525;
+  border: 1px solid #252525;
 }
 
 .line {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.title {
+  padding: 40px;
 }
 
 /* style on the div that surounds each component */
 
 @media (min-width: 1024px) {
-    .component_container {
-        background-color: #fff;
-        width: 80%;
-        min-width: 600px;
-        height: 60rem;
-        border-radius: 8px;
-        z-index: 3;
-        grid-column: 2 / span 10;
-        grid-row: 1;
-        margin-top: 6rem;
-        margin-left: 20px;
-        overflow: hidden;
-        overflow: scroll;
-    }
+  .component_container {
+    background-color: #fff;
+    width: 80%;
+    min-width: 600px;
+    height: 60rem;
+    border-radius: 8px;
+    z-index: 3;
+    grid-column: 2 / span 10;
+    grid-row: 1;
+    margin-top: 6rem;
+    margin-left: 20px;
+    overflow: hidden;
+    overflow: scroll;
   }
-
+}
 
 @media (max-width: 1024px) {
-    .component_container {
-        height: 100vh;
-        margin-top: 40px;
-        text-align: center;
-    }
+  .component_container {
+    height: 100vh;
+    margin-top: 40px;
+    text-align: center;
   }
+}
