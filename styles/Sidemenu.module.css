@@ -1,5 +1,5 @@
 /* desktop */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .sideMenu {
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@
 
 
 /* burger navbar on mobile */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .sideMenu_buttons {
     margin: 0 auto;
     margin-bottom: 10px;

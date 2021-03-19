@@ -151,7 +151,7 @@
 
 /* the conpoment container that the products are insidet */
 /* desktop */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .component_container {
     background-color: #fff;
     width: 80%;
