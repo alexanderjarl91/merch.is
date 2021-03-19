@@ -18,6 +18,7 @@ export default function Landing() {
     name,
     email,
     password,
+    loginError,
     setName,
     setEmail,
     setPassword,
@@ -72,11 +73,14 @@ export default function Landing() {
                   onClick={(e) => {
                     e.preventDefault();
                     handleLogin(email, password);
-                    router.push("/store/dashboard");
                   }}
                 >
                   Skrá inn
                 </button>
+                {loginError ? (
+                  <p style={{ color: "red" }}>{loginError}</p>
+                ) : null}
+
                 <p>
                   eða <Link href="/signup">nýskráðu þig</Link> ef þú átt ekki
                   reikning

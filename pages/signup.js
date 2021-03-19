@@ -21,6 +21,8 @@ export default function Landing() {
     storeName,
     url,
     social,
+    signUpError,
+    setSignUpError,
     setName,
     setEmail,
     setPassword,
@@ -28,6 +30,7 @@ export default function Landing() {
     setSocial,
     setUrl,
     handleSignup,
+    checkUrlAvailability,
   } = useContext(UsersContext);
 
   useEffect(() => {
@@ -54,13 +57,14 @@ export default function Landing() {
               <div className={styles.login__header}>
                 <h2>Nýskráning</h2>
               </div>
-            <p>Notenda upplýsingar</p>
+              <p>Notenda upplýsingar</p>
               <form>
                 <div>
                   <label className={styles.label}>Nafn </label>
                   <input
                     className={styles.input}
                     type="text"
+                    required
                     onChange={(e) => {
                       setName(e.target.value);
                     }}
@@ -87,50 +91,51 @@ export default function Landing() {
                   />
                 </div>
                 <div>
-
-
-                <p>Búðin þín</p>
-                <div>
+                  <p>Búðin þín</p>
                   <div>
-                    <label className={styles.label}>Heiti</label>
-                    <input
-                      className={styles.input}
-                      type="text"
-                      onChange={(e) => {
-                      setStoreName(e.target.value)
-                      console.log(storeName)
-                    }}
-                    />
-                  </div>
-                  <div>
-                    <label className={styles.label}>Social</label>
-                    <input
-                      className={styles.input}
-                      type="text"
-                      onChange={(e) => {
-                      setSocial(e.target.value);
-                      console.log(social)
-                    }}
-                    />
-                  </div>
-                  <div>
-                    <label className={styles.label}>Þinn hlekkur:</label>
-                    <div className={styles.url_container}>
-                    <label>www.merch.is/</label>
-                    <input
-                      className={styles.input}
-                      type="text"
-                      onChange={(e) => {
-                        setUrl(e.target.value);
-                      }}
+                    <div>
+                      <label className={styles.label}>Heiti</label>
+                      <input
+                        className={styles.input}
+                        type="text"
+                        onChange={(e) => {
+                          setStoreName(e.target.value);
+                          console.log(storeName);
+                        }}
                       />
+                    </div>
+                    <div>
+                      <label className={styles.label}>Social</label>
+                      <input
+                        className={styles.input}
+                        type="text"
+                        onChange={(e) => {
+                          setSocial(e.target.value);
+                          console.log(social);
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <label className={styles.label}>Þinn hlekkur:</label>
+                      <div className={styles.url_container}>
+                        <label>www.merch.is/</label>
+                        <input
+                          className={styles.input}
+                          type="text"
+                          onChange={(e) => {
+                            setUrl(e.target.value);
+                            checkUrlAvailability();
+                          }}
+                        />
                       </div>
+                    </div>
                   </div>
                 </div>
 
-                </div>
+                {signUpError ? (
+                  <p style={{ color: "red" }}>{signUpError}</p>
+                ) : null}
 
-                <p>ERROR</p>
                 <div className={styles.login__btn}>
                   <a
                     onClick={(e) => {
@@ -141,7 +146,7 @@ export default function Landing() {
                     Nýskrá
                   </a>
                   <p className={styles.login_paragraph}>
-                    eða
+                    eða{" "}
                     <a>
                       <Link href="/login">
                         <strong>skráðu þig inn </strong>
