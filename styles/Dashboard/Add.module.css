@@ -12,6 +12,7 @@
   padding: 10px;
   display: grid;
   margin: 0 auto;
+  text-align: left;
 }
 .add_label {
   color: #5F5F5F;
