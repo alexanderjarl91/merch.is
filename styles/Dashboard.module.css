@@ -10,7 +10,7 @@
 }
 
 /* style on the div that surounds each component */
-
+/* 
 @media (min-width: 1024px) {
   .component_container {
     background-color: rgb(227, 31, 31);
@@ -33,7 +33,7 @@
     margin-top: 40px;
     text-align: center;
   }
-}
+} */
 @media (min-width: 1024px) {
   .sidemenu_container {
     /* grid-column: 1 / span 1;

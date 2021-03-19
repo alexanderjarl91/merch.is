@@ -19,18 +19,18 @@ a {
   cursor: pointer;
 }
 
-button {
+/* button {
   height: 54px;
   width: 160px;
   border-radius: 6px;
   background: none;
   border: 1px solid white;
-  /* color: white; */
+   color: white; 
   font-weight: 500;
   font-size: 22px;
   cursor: pointer;
   outline: none;
-}
+} */
 
 /* layout.js */
 .content {

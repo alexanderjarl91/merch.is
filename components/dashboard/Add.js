@@ -1,4 +1,4 @@
-import styles from "../../styles/Dashboard.module.css";
+import styles from "../../styles/Dashboard/Add.module.css";
 import { db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useState, useContext } from "react";
@@ -44,11 +44,13 @@ export default function Add({ setComponentShowing }) {
 
   return (
     <div className={styles.component_container}>
-      <h1> Bæta við vöru</h1>
-      <div>
+      <p className={styles.title}> Bæta við vöru</p>
+
+      <div className={styles.add_grid}>
         <div>
           <label>Vöruheiti</label>
           <input
+            className={styles.input}
             type="text"
             onChange={(e) => {
               setProductName(e.target.value);
@@ -102,6 +104,7 @@ export default function Add({ setComponentShowing }) {
         </div>
         <input type="file" id="myFile" name="filename" />
       </div>
+
       <p>ATH: Vara er sýnileg á sölusíðunni þinni um leið og þú birtir </p>
       <a
         onClick={() => {

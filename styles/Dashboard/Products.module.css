@@ -1,44 +1,83 @@
-.product {
+
+.title {
   display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+}
+/* the box with the value names */
+.header_box {
+  grid-template-columns: 1fr  1.5fr  1fr  1fr  1fr   0.5fr ;
+  background-color: #F4F5F5;
+  grid-column-gap: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  width: 90%;
+  display: grid;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* the product box */
+.product {
+  border-bottom: 1px solid #C2C2C2;
   width: 90%;
   margin: 0 auto;
-  justify-content: space-around;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-.product_img {
-  max-width: 180px;
-}
-.product_info {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  text-align: left;
-}
-.product_button {
-  margin-top: 140px;
-  color: #252525;
-  border: 1px solid #252525;
-}
 
-.line {
-  width: 90%;
+/* each product inside the product box */
+.each_product {
+  grid-template-columns: 1fr  1.5fr  1fr  1fr  1fr   0.5fr ;
+  grid-column-gap: 20px;
+  padding: 10px;
+  display: grid;
   margin: 0 auto;
 }
-
-.title {
-  padding: 40px;
+/* each "string" inside 1 product */
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.product_img {
+  width: 140px;
+  height: 120px;
+}
+.product_button_edit {
+  background: #252525;
+  width: 100%;
+  font-size: 18px;
+  padding: 2px 16px;
+  border-radius: 10px;
+  color: #fff;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.product_button_edit:hover {
+  background: #3e3e3e;
+}
+.product_button_delete {
+width: 30px;
+height: 30px;
+float: right;
+}
+.product_button_delete:hover {
+  color: rgb(225, 29, 29);
 }
 
-/* style on the div that surounds each component */
 
+/* the conpoment container that the products are insidet */
 @media (min-width: 1024px) {
   .component_container {
     background-color: #fff;
     width: 80%;
-    min-width: 600px;
-    height: 60rem;
+    min-width: 20rem;
+    height: 44rem;
     border-radius: 8px;
     z-index: 3;
     grid-column: 2 / span 10;
@@ -52,6 +91,8 @@
 
 @media (max-width: 1024px) {
   .component_container {
+    overflow: scroll;
+    overflow: hidden;
     height: 100vh;
     margin-top: 40px;
     text-align: center;
