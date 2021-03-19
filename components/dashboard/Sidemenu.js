@@ -119,6 +119,16 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                   <p> Um okkur </p>
                 </Link>
               </li>
+              <li className={styles.sideMenu_utskra}>
+                <a
+                  onClick={() => {
+                    handleLogout();
+                  }}
+                  className={styles.userName}
+                >
+                  Útskrá
+                </a>
+              </li>
             </div>
           </ul>
         </div>

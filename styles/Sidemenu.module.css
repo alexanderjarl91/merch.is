@@ -1,3 +1,4 @@
+/* desktop */
 @media (min-width: 1024px) {
   .sideMenu {
     display: flex;
@@ -5,7 +6,18 @@
     margin-left: 5rem;
     margin-top: 100px;
   }
+  .sideMenu_utskra {
+    display: none;
+  }
+  .sideMenu_extra_links {
+    margin-left: 10px;
+  }
+  .burger_button {
+    display: none;
+  }
 }
+
+
 .sideMenu_buttons {
   color: #252525;
   background-color: #fff;
@@ -38,11 +50,11 @@
   margin-top: 10px;
   cursor: pointer;
 }
-@media (min-width: 1024px) {
-  .sideMenu_extra_links {
-    margin-left: 0px;
-  }
+.sideMenu_utskra {
+  margin-top: 10px;
+  color: #252525;
 }
+
 
 /* burger navbar on mobile */
 @media (max-width: 1024px) {
@@ -59,8 +71,10 @@
   }
 }
 .burger_button {
-  padding-top: 20px;
-  position: sticky;
+  padding-top: 10px;
+  padding-right: 20px;
+  margin-right: 2%;
+  position: relative;
   right: 0;
   top: 50px;
   z-index: 10;
@@ -70,12 +84,7 @@
   background: transparent;
   float: right;
 }
-/* dont show burger button on desktop */
-@media (min-width: 1025px) {
-  .burger_button {
-    display: none;
-  }
-}
+
 .burger_icon_close {
   color: #252525;
   width: 40px;
