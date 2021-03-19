@@ -16,19 +16,22 @@ export default function Product() {
   const product = storeOwner
     ? storeOwner.products.find((x) => x.productId == productId)
     : null;
-  console.log(product);
+  
+  const back = () => {
+      router.push(`/${router.query.store}`)
+  }
 
   return (
     <div className={styles.product_page}>
       <h1 className={styles.logo}>merch.</h1>
-      <p>back btn</p>
+      <button onClick={()=>{
+          back()
+      }}></button>
       {storeOwner ? (
         <div className={styles.container}>
             <div className="productPage_header">
                 <img className={styles.store_logo}src={storeOwner.store.logo}/>
-
                 <p className={styles.store_social}>{storeOwner.store.social}</p>
-
             </div>
             <div className={styles.product}>
                 <div className={styles.product_images}>
