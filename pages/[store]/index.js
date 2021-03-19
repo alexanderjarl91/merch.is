@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { UsersContext } from "./context";
+import { UsersContext } from "../context";
 import Link from "next/link";
-import styles from "../styles/Store.module.css";
-import Footer from "../components/Footer";
+import styles from "../../styles/Store.module.css";
+import Footer from "../../components/Footer";
 
 const Store = () => {
   const router = useRouter();
   const { users } = useContext(UsersContext);
-  const storeNameQuery = router.query ? router.query.username : null;
+  const storeNameQuery = router.query ? router.query.store : null;
+  console.log(storeNameQuery);
   const storeOwner = users.find((x) => x.store.url == storeNameQuery);
   const store = storeOwner ? storeOwner.store : null;
   useEffect(() => {
@@ -38,7 +39,7 @@ const Store = () => {
               console.log("product");
               return (
                 <Link
-                  href={`/${storeNameQuery}/${product.productName}`}
+                  href={`/${storeNameQuery}/${product.productId}`}
                   key={product.productImg}
                 >
                   <div className={styles.product}>

@@ -103,7 +103,7 @@ export default function Store() {
         </>
       ) : (
         <>
-          <img src={userData.store.logo} />
+          <img className={styles.user_logo} src={userData.store.logo} />
           <h1>{userData.store.name}</h1>
           <p>{userData.store.url}</p>
           <p>{userData.store.bio}</p>

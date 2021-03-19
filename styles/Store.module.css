@@ -17,12 +17,24 @@
   color: #252525;
 }
 .store_social {
-  font-style: italic;
-  font-weight: 10;
   color: #252525;
+
+  margin-bottom: 1rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 19px;
 }
 .store_bio {
   color: #252525;
+  margin-bottom: 1rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  max-width: 200px;
 }
 /* products */
 .product_img {
