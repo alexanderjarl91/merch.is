@@ -80,14 +80,15 @@ export default function Add({ setComponentShowing }) {
     }
   };
 
-
   return (
     <div className={styles.component_container}>
-      <h1> Bæta við vöru</h1>
-      <div>
+      <p className={styles.title}> Bæta við vöru</p>
+
+      <div className={styles.add_grid}>
         <div>
           <label>Vöruheiti</label>
           <input
+            className={styles.input}
             type="text"
             onChange={(e) => {
               setProductName(e.target.value);

@@ -6,6 +6,7 @@ import {
   MdAddBox,
   MdShoppingCart,
   MdFormatLineSpacing,
+  MdHome,
 } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import { CgMenuRight } from "react-icons/cg";
@@ -64,7 +65,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                   console.log(componentShowing);
                 }}
               >
-                <MdShoppingCart className={styles.sideMenu_icon} /> Búðin mín
+                <MdHome className={styles.sideMenu_icon} /> Búðin mín
               </a>
             </li>
             <li className={styles.sideMenu_buttons}>

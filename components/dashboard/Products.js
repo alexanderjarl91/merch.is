@@ -2,7 +2,8 @@ import styles from "../../styles/Dashboard/Products.module.css";
 import { db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useContext, useEffect } from "react";
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { AiTwotoneDelete } from "react-icons/ai";
+import Link from "next/link";
 
 export default function Products() {
   const { userData, refreshUserData } = useContext(UsersContext);
@@ -34,37 +35,55 @@ export default function Products() {
 
   return (
     <div className={styles.component_container}>
-      <h1 className={styles.title}> Mínar vörur </h1>
+      <p className={styles.title}> Mínar vörur </p>
+
+      <div className={styles.header_box}>
+        <p>Mynd</p>
+
+        <p>Vöruheiti</p>
+        <p>Verð</p>
+        <p>Vörunúmer</p>
+      </div>
 
       {userData.products.map((product) => {
         return (
           <div key={product.productId} className={styles.product}>
-            <img className={styles.product_img} src={product.productImg} />
-            <div className={styles.product_info}>
-              <h2> {product.productName}</h2>
-              <p> {product.productPrice} KR</p>
-              <p> ID: {product.productId}</p>
+            <div className={styles.each_product}>
+              <div className={styles.grid_item}>
+                <img className={styles.product_img} src={product.productImg} />
+              </div>
+
+              <div className={styles.product_name}>
+                <p> {product.productName}</p>
+              </div>
+
+              <div className={styles.product_price}>
+                <p> {product.productPrice} KR</p>
+              </div>
+
+              <div className={styles.product_id}>
+                <p> ID: {product.productId}</p>
+              </div>
+
+              <button className={styles.product_button_edit}>Breyta</button>
+
+              <a
+                onClick={() => {
+                  const productId = product.productId;
+                  const r = confirm(
+                    "Ertu viss um að þú viljir eyða þessari vöru?"
+                  );
+                  if (r == true) {
+                    handleDelete(productId);
+                  } else {
+                    return;
+                  }
+                }}
+              >
+                {" "}
+                <AiTwotoneDelete className={styles.product_button_delete} />
+              </a>
             </div>
-            <button className={styles.product_button}>Breyta</button>
-
-            <a
-              onClick={() => {
-                const productId = product.productId;
-                const r = confirm(
-                  "Ertu viss um að þú viljir eyða þessari vöru?"
-                );
-                if (r == true) {
-                  handleDelete(productId);
-                } else {
-                  return;
-                }
-              }}
-            >
-              {" "}
-              <RiDeleteBin6Line /> Eyða
-            </a>
-
-            <hr />
           </div>
         );
       })}
