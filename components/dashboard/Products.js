@@ -53,14 +53,15 @@ export default function Products() {
                 <img className={styles.product_img} src={product.productImg} />
               </div>
 
-              <div className={styles.grid_item}>
+              <div className={styles.product_name}>
                 <p> {product.productName}</p>
               </div>
 
-              <div className={styles.grid_item}>
+              <div className={styles.product_price}>
                 <p> {product.productPrice} KR</p>
               </div>
-              <div className={styles.grid_item}>
+
+              <div className={styles.product_id}>
                 <p> ID: {product.productId}</p>
               </div>
 
