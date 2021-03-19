@@ -1,4 +1,4 @@
-import styles from "../../styles/Dashboard.module.css";
+import styles from "../../styles/Dashboard/Add.module.css";
 import { db, storage } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useState, useContext } from "react";
@@ -15,36 +15,33 @@ export default function Add({ setComponentShowing }) {
   const [productStock, setProductStock] = useState();
 
   const addProduct = async () => {
-
     //get the image and upload it to storage/useremail/productname/img.pn
-      const uploadTask = storage
+    const uploadTask = storage
       .ref(`${userData.email}/${productName}/${image.name}`)
-      .put(image)
-      
-      //get the URL for the uploaded img and set the productImage as that URL
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {},
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          storage
-            .ref(userData.email)
-            .child(productName)
-            .child(image.name)
-            .getDownloadURL()
-            .then((url) => {
-               console.log('url:', url)
+      .put(image);
 
-              addProductToFirestore(url)
-            });
-        }
-      );
-    
+    //get the URL for the uploaded img and set the productImage as that URL
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref(userData.email)
+          .child(productName)
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+            console.log("url:", url);
 
-    
-    const addProductToFirestore = async(url) => {    
+            addProductToFirestore(url);
+          });
+      }
+    );
+
+    const addProductToFirestore = async (url) => {
       //defining product
       const product = {
         productName: productName,
@@ -69,8 +66,7 @@ export default function Add({ setComponentShowing }) {
           .update({ products: newProducts });
         setComponentShowing("products");
       }
-    }
-
+    };
   };
 
   const [image, setImage] = useState(null);
@@ -86,9 +82,9 @@ export default function Add({ setComponentShowing }) {
 
       <div className={styles.add_grid}>
         <div>
-          <label>Vöruheiti</label>
+          <label className={styles.add_label}>Vöruheiti</label>
           <input
-            className={styles.input}
+            className={styles.add_input}
             type="text"
             onChange={(e) => {
               setProductName(e.target.value);
@@ -96,8 +92,9 @@ export default function Add({ setComponentShowing }) {
           />
         </div>
         <div>
-          <label>Verð</label>
+          <label className={styles.add_label}>Verð</label>
           <input
+            className={styles.add_input}
             type="number"
             onChange={(e) => {
               setProductPrice(e.target.value);
@@ -105,8 +102,9 @@ export default function Add({ setComponentShowing }) {
           />
         </div>
         <div>
-          <label>Vörunúmer (ID)</label>
+          <label className={styles.add_label}>Vörunúmer (ID)</label>
           <input
+            className={styles.add_input}
             type="text"
             onChange={(e) => {
               setProductId(e.target.value);
@@ -114,17 +112,9 @@ export default function Add({ setComponentShowing }) {
           />
         </div>
         <div>
-          <label>Vörulýsing</label>
-          <textarea
-            type="text"
-            onChange={(e) => {
-              setProductDescription(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <label>Magn á lager</label>
+          <label className={styles.add_label}>Magn á lager</label>
           <input
+            className={styles.add_input}
             type="number"
             onChange={(e) => {
               setProductStock(e.target.value);
@@ -132,20 +122,37 @@ export default function Add({ setComponentShowing }) {
           />
         </div>
         <div>
-        <label>Logo: </label>
-          <input type="file" onChange={handleChange}/>
+          <label className={styles.add_label}>Vörulýsing</label>
+          <textarea
+            className={styles.add_input}
+            rows="5"
+            type="text"
+            onChange={(e) => {
+              setProductDescription(e.target.value);
+            }}
+          />
         </div>
 
+        <div className={styles.seccond_grid}>
+          <label className={styles.add_label}>Bæta við mynd af vörunni </label>
+          <input
+            className={styles.add_file}
+            type="file"
+            onChange={handleChange}
+          />
+
+          <p style={{ color: "red" }}>ERROR</p>
+          <p>ATH: Vara er sýnileg á sölusíðunni þinni um leið og þú birtir </p>
+          <button
+            className={styles.add_button}
+            onClick={() => {
+              addProduct();
+            }}
+          >
+            Bæta við vöru
+          </button>
+        </div>
       </div>
-      <p style={{color:'red'}}>ERROR</p>
-      <p>ATH: Vara er sýnileg á sölusíðunni þinni um leið og þú birtir </p>
-      <a
-        onClick={() => {
-          addProduct();
-        }}
-      >
-        Bæta við vöru
-      </a>
     </div>
-  )
+  );
 }
