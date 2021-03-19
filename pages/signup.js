@@ -30,6 +30,7 @@ export default function Landing() {
     setSocial,
     setUrl,
     handleSignup,
+    checkUrlAvailability,
   } = useContext(UsersContext);
 
   useEffect(() => {
@@ -123,6 +124,7 @@ export default function Landing() {
                           type="text"
                           onChange={(e) => {
                             setUrl(e.target.value);
+                            checkUrlAvailability();
                           }}
                         />
                       </div>
@@ -144,7 +146,7 @@ export default function Landing() {
                     Nýskrá
                   </a>
                   <p className={styles.login_paragraph}>
-                    eða
+                    eða{" "}
                     <a>
                       <Link href="/login">
                         <strong>skráðu þig inn </strong>

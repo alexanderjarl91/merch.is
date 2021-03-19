@@ -21,26 +21,43 @@ export const UsersProvider = ({ children }) => {
   const [social, setSocial] = useState("");
   const [loginError, setLoginError] = useState(null);
   const [signUpError, setSignUpError] = useState(null);
+  const [urlAvailable, setUrlAvailable] = useState();
 
+  const clearErrors = () => {
+    setSignUpError();
+    setLoginError();
+  };
+  useEffect(() => {
+    clearErrors();
+  }, []);
+
+  //check if url already exists and set state accordingly
   const checkUrlAvailability = () => {
     let allStores = [];
     users.forEach((user) => {
-      allStores = [...allStores, user.store.name];
+      allStores = [...allStores, user.store.url];
     });
-
+    console.log("all stores:", allStores);
+    console.log(url);
     const match = allStores.find((store) => store == url);
     if (match) {
       console.log(match, "is already taken");
-      return false;
+      setUrlAvailable(false);
+      console.log("url should be false");
+      console.log(urlAvailable);
     } else {
-      console.log("available");
-      return true;
+      setUrlAvailable(true);
+      console.log(urlAvailable);
     }
   };
 
   const handleSignup = () => {
-    //error handling
-    checkUrlAvailability();
+    clearErrors();
+
+    if (urlAvailable == false) {
+      setSignUpError("Þessi hlekkur er frátekinn");
+      return;
+    }
 
     if (name.length == 0) {
       setSignUpError("Þú gleymdir að skrá nafnið þitt");
@@ -223,6 +240,7 @@ export const UsersProvider = ({ children }) => {
         handleLogin,
         handleLogout,
         refreshUserData,
+        checkUrlAvailability,
       }}
     >
       {children}
