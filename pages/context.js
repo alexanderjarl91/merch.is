@@ -14,8 +14,11 @@ export const UsersProvider = ({ children }) => {
   const [userData, setUserData] = useState({});
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("alexanderjarl91@gmail.com");
-  const [password, setPassword] = useState("allicool1");
+  const [storeName, setStoreName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [url, setUrl] = useState("");
+  const [social, setSocial] = useState("");
 
   const handleSignup = () => {
     auth
@@ -31,24 +34,26 @@ export const UsersProvider = ({ children }) => {
         //creating users data in firebase
         const userUid = auth.currentUser.uid;
         const email = auth.currentUser.email;
-        const name = auth.currentUser.displayName;
 
         const account = {
           email: email,
           name: name,
           userid: userUid,
           store: {
-            name: "yourstore",
-            logo: "https://www.dafont.com/forum/attach/orig/8/3/830759.png",
-            url: "www.yourwebsite.com",
+            name: storeName,
+            logo:
+              "https://store.sabaton.net/wp-content/uploads/2020/12/poison-gas-tshirt-back-sabaton-T19168.png",
+            url: url,
+            social: social,
             bio: "a description of your page",
           },
           products: [
             {
               productName: "Demo T-Shirt",
               productPrice: 8990,
-              productImg: "img.png",
-              productId: 123,
+              productImg:
+                "https://store.sabaton.net/wp-content/uploads/2020/12/poison-gas-tshirt-back-sabaton-T19168.png",
+              productId: "TS662",
               productDescription: "A very cool t-shirt",
               productStock: 5,
             },
@@ -137,6 +142,12 @@ export const UsersProvider = ({ children }) => {
         name,
         email,
         password,
+        social,
+        url,
+        storeName,
+        setStoreName,
+        setSocial,
+        setUrl,
         getUserData,
         getUsers,
         setCurrentUser,
