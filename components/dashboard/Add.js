@@ -13,17 +13,15 @@ export default function Add({ setComponentShowing }) {
   const [productId, setProductId] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productStock, setProductStock] = useState();
-  const [productImage, setProductImage] = useState("");
 
   const addProduct = async () => {
 
-    //get the image and upload it to storage/useremail/productname/img.png
-    const handleUpload = () => {
+    //get the image and upload it to storage/useremail/productname/img.pn
       const uploadTask = storage
       .ref(`${userData.email}/${productName}/${image.name}`)
       .put(image)
       
-      //get the URL for the uploaded imgand set the productImage as that URL
+      //get the URL for the uploaded img and set the productImage as that URL
       uploadTask.on(
         "state_changed",
         (snapshot) => {},
@@ -37,40 +35,42 @@ export default function Add({ setComponentShowing }) {
             .child(image.name)
             .getDownloadURL()
             .then((url) => {
-               setProductImage(url)
-               console.log(url)
-              console.log(productImage)
+               console.log('url:', url)
+
+              addProductToFirestore(url)
             });
         }
       );
-    }
-
-    await handleUpload()
     
-    //defining product
-    const product = {
-      productName: productName,
-      productPrice: productPrice,
-      productId: productId,
-      productDescription: productDescription,
-      productStock: productStock,
-      productImage: productImage,
-    };
 
-    //creating copy of array and adding new item to it
-    const user = await db.collection("users").doc(userData.email).get();
-    const productsCopy = user.data().products;
-    const newProducts = [...productsCopy, product];
+    
+    const addProductToFirestore = async(url) => {    
+      //defining product
+      const product = {
+        productName: productName,
+        productPrice: productPrice,
+        productId: productId,
+        productDescription: productDescription,
+        productStock: productStock,
+        productImg: url,
+      };
 
-    //if user has to many products then return, else push to database & go to products component
-    if (productsCopy.length > 3) {
-      alert("too many products");
-    } else {
-      db.collection("users")
-        .doc(userData.email)
-        .update({ products: newProducts });
-      setComponentShowing("products");
+      //creating copy of array and adding new item to it
+      const user = await db.collection("users").doc(userData.email).get();
+      const productsCopy = user.data().products;
+      const newProducts = [...productsCopy, product];
+
+      //if user has to many products then return, else push to database & go to products component
+      if (productsCopy.length > 3) {
+        alert("too many products");
+      } else {
+        db.collection("users")
+          .doc(userData.email)
+          .update({ products: newProducts });
+        setComponentShowing("products");
+      }
     }
+
   };
 
   const [image, setImage] = useState(null);
@@ -133,7 +133,7 @@ export default function Add({ setComponentShowing }) {
             }}
           />
         </div>
-        <div>
+        {/* <div>
           <label>Hlekkur á mynd</label>
           <input
             type="text"
@@ -141,7 +141,7 @@ export default function Add({ setComponentShowing }) {
               setProductImage(e.target.value);
             }}
           />
-        </div>
+        </div> */}
         <input type="file" id="myFile" name="filename" />
       </div>
       <p>ATH: Vara er sýnileg á sölusíðunni þinni um leið og þú birtir </p>
