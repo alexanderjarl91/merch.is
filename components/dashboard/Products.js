@@ -67,7 +67,8 @@ export default function Products() {
 
               <button className={styles.product_button_edit}>Breyta</button>
 
-              <a
+              <button
+                className={styles.product_button_delete}
                 onClick={() => {
                   const productId = product.productId;
                   const r = confirm(
@@ -82,7 +83,7 @@ export default function Products() {
               >
                 {" "}
                 <AiTwotoneDelete className={styles.product_button_delete} />
-              </a>
+              </button>
             </div>
           </div>
         );

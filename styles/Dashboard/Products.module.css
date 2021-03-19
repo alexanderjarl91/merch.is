@@ -67,6 +67,8 @@
   width: 30px;
   height: 30px;
   float: right;
+  background-color: transparent;
+  border: none;
   }
   .product_button_delete:hover {
     color: rgb(225, 29, 29);
@@ -130,19 +132,22 @@
   grid-column: 3;
   grid-row:3 / 3;
   background: #252525;
-  font-size: 16px;
-  padding: 2px 16px;
+  font-size: 14px;
+  padding:  2px 16px;
   border-radius: 10px;
   color: #fff;
   height: 40px;
   cursor: pointer;
+  width: 80%;
+  text-align: center;
 }
 .product_button_delete {
-  background-color: rgb(255, 0, 179);
-  grid-column: 3;
-  grid-row: 2 / 3;
+  grid-column: 4;
+  grid-row: 3 / 3;
   width: 30px;
   height: 30px;
+  background-color: transparent;
+  border: none;
   }}
  
 
