@@ -1,5 +1,5 @@
 import styles from "../../styles/Dashboard.module.css";
-import { db } from "../../pages/fire";
+import { db, storage } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useState, useContext } from "react";
 
@@ -16,6 +16,37 @@ export default function Add({ setComponentShowing }) {
   const [productImage, setProductImage] = useState("");
 
   const addProduct = async () => {
+
+    //get the image and upload it to storage/useremail/productname/img.png
+    const handleUpload = () => {
+      const uploadTask = storage
+      .ref(`${userData.email}/${productName}/${image.name}`)
+      .put(image)
+      
+      //get the URL for the uploaded imgand set the productImage as that URL
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          storage
+            .ref(userData.email)
+            .child(productName)
+            .child(image.name)
+            .getDownloadURL()
+            .then((url) => {
+               setProductImage(url)
+               console.log(url)
+              console.log(productImage)
+            });
+        }
+      );
+    }
+
+    await handleUpload()
+    
     //defining product
     const product = {
       productName: productName,
@@ -42,10 +73,21 @@ export default function Add({ setComponentShowing }) {
     }
   };
 
+  const [image, setImage] = useState(null);
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+
   return (
     <div className={styles.component_container}>
       <h1> Bæta við vöru</h1>
       <div>
+        <div>
+          <input type="file" onChange={handleChange}/>
+        </div>
         <div>
           <label>Vöruheiti</label>
           <input
