@@ -4,6 +4,7 @@ import { UsersContext } from "../context";
 import Link from "next/link";
 import styles from "../../styles/Store.module.css";
 import Footer from "../../components/Footer";
+import { storage } from "../fire";
 
 const Store = () => {
   const router = useRouter();
@@ -17,6 +18,13 @@ const Store = () => {
       router.push("/404");
     }
   }, [users]);
+
+  // const getStorage = () => {
+  //   const storageRef = storage.ref("alexanderjarl91@gmail.com");
+
+  //   console.log(storageRef.getDownloadURL());
+  // };
+
   return (
     <div className={styles.container}>
       <Link href="/">
