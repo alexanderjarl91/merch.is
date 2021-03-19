@@ -19,8 +19,52 @@ export const UsersProvider = ({ children }) => {
   const [password, setPassword] = useState("");
   const [url, setUrl] = useState("");
   const [social, setSocial] = useState("");
+  const [loginError, setLoginError] = useState(null);
+  const [signUpError, setSignUpError] = useState(null);
+
+  const checkUrlAvailability = () => {
+    let allStores = [];
+    users.forEach((user) => {
+      allStores = [...allStores, user.store.name];
+    });
+
+    const match = allStores.find((store) => store == url);
+    if (match) {
+      console.log(match, "is already taken");
+      return false;
+    } else {
+      console.log("available");
+      return true;
+    }
+  };
 
   const handleSignup = () => {
+    //error handling
+    checkUrlAvailability();
+
+    if (name.length == 0) {
+      setSignUpError("Þú gleymdir að skrá nafnið þitt");
+      return;
+    }
+
+    if (storeName.length == 0) {
+      setSignUpError("Þú gleymdir að velja heiti á verslunina þína");
+      return;
+    }
+
+    if (url.length == 0) {
+      setSignUpError(
+        "Þú verður að velja hlekk svo fólk geti skoðað verslunina þína"
+      );
+      return;
+    }
+
+    if (url.length > 0 && url.length < 4) {
+      setSignUpError("Hlekkurinn verður að vera minnst 4 bók- eða tölustafir");
+      return;
+    }
+
+    //creating firebase auth user
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
@@ -65,10 +109,17 @@ export const UsersProvider = ({ children }) => {
         setCurrentUser(auth.currentUser);
         getUserData();
       })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+      .catch((err) => {
+        //FIRESTORE ERROR HANDLING
+        console.log(err);
+        switch (err.code) {
+          case "auth/invalid-email":
+            setSignUpError("Innsláttarvilla í netfangi");
+            break;
+          case "auth/weak-password":
+            setSignUpError("Lykilorð verður að vera minnst 6 stafir");
+            break;
+        }
       });
   };
 
@@ -81,7 +132,18 @@ export const UsersProvider = ({ children }) => {
         getUserData();
       })
       .catch((err) => {
-        console.log(err);
+        switch (err.code) {
+          case "auth/invalid-email":
+            setLoginError("Innsláttarvilla í netfangi");
+            break;
+          case "auth/user-not-found":
+            setLoginError("Notandi fannst ekki. Slóstu netfangið rétt inn?");
+            break;
+          case "auth/wrong-password":
+            setLoginError("Lykilorð vitlaust slegið inn");
+            break;
+        }
+        return;
       });
   };
 
@@ -145,6 +207,9 @@ export const UsersProvider = ({ children }) => {
         social,
         url,
         storeName,
+        loginError,
+        signUpError,
+        setSignUpError,
         setStoreName,
         setSocial,
         setUrl,
