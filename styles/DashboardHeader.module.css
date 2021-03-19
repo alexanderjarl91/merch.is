@@ -15,11 +15,12 @@
     .userName {
        display: none;
       }
-    .logo {display: none;
+    .logo {
+      font-size: 18px;
+      margin-left: 3%;
     }
     .dashboardHeader {
-      height: 0px;
-      background-color: rgb(167, 18, 18);
+      height: 100px;
     }}
 
   .userName{
