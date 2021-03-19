@@ -1,8 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
-
 import { useRouter } from "next/router";
 import Link from "next/Link";
-
 import Head from "next/head";
 import styles from "../styles/Signup.module.css";
 
@@ -20,9 +18,15 @@ export default function Landing() {
     name,
     email,
     password,
+    storeName,
+    url,
+    social,
     setName,
     setEmail,
     setPassword,
+    setStoreName,
+    setSocial,
+    setUrl,
     handleSignup,
   } = useContext(UsersContext);
 
@@ -48,8 +52,9 @@ export default function Landing() {
             {/* SIGN UP FORM */}
             <div className={styles.login__container}>
               <div className={styles.login__header}>
-                <h1>Nýskráning</h1>
+                <h2>Nýskráning</h2>
               </div>
+            <p>Notenda upplýsingar</p>
               <form>
                 <div>
                   <label className={styles.label}>Nafn </label>
@@ -58,7 +63,6 @@ export default function Landing() {
                     type="text"
                     onChange={(e) => {
                       setName(e.target.value);
-                      console.log(name);
                     }}
                   />
                 </div>
@@ -69,7 +73,6 @@ export default function Landing() {
                     type="email"
                     onChange={(e) => {
                       setEmail(e.target.value);
-                      console.log(email);
                     }}
                   />
                 </div>
@@ -80,10 +83,54 @@ export default function Landing() {
                     type="password"
                     onChange={(e) => {
                       setPassword(e.target.value);
-                      console.log(password);
                     }}
                   />
                 </div>
+                <div>
+
+
+                <p>Búðin þín</p>
+                <div>
+                  <div>
+                    <label className={styles.label}>Heiti</label>
+                    <input
+                      className={styles.input}
+                      type="text"
+                      onChange={(e) => {
+                      setStoreName(e.target.value)
+                      console.log(storeName)
+                    }}
+                    />
+                  </div>
+                  <div>
+                    <label className={styles.label}>Social</label>
+                    <input
+                      className={styles.input}
+                      type="text"
+                      onChange={(e) => {
+                      setSocial(e.target.value);
+                      console.log(social)
+                    }}
+                    />
+                  </div>
+                  <div>
+                    <label className={styles.label}>Þinn hlekkur:</label>
+                    <div className={styles.url_container}>
+                    <label>www.merch.is/</label>
+                    <input
+                      className={styles.input}
+                      type="text"
+                      onChange={(e) => {
+                        setUrl(e.target.value);
+                      }}
+                      />
+                      </div>
+                  </div>
+                </div>
+
+                </div>
+
+                <p>ERROR</p>
                 <div className={styles.login__btn}>
                   <a
                     onClick={(e) => {
@@ -108,7 +155,7 @@ export default function Landing() {
           </div>
         </>
       )}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

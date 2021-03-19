@@ -105,9 +105,9 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
 
             <div className={styles.sideMenu_extra_links_container}>
               <li className={styles.sideMenu_extra_links}>
-                <Link href={`/${"jarlsbud"}`}>
+                {/* <Link href={`/${userData.store.url}`}>
                   <p> Búðin mín </p>
-                </Link>
+                </Link> */}
               </li>
               <li className={styles.sideMenu_extra_links}>
                 <Link href="/hafa_samband">
@@ -119,11 +119,6 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                   <p> Um okkur </p>
                 </Link>
               </li>
-              <button
-                onClick={() => {
-                  console.log(userData);
-                }}
-              ></button>
             </div>
           </ul>
         </div>
