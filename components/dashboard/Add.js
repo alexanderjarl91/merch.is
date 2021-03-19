@@ -86,9 +86,6 @@ export default function Add({ setComponentShowing }) {
       <h1> Bæta við vöru</h1>
       <div>
         <div>
-          <input type="file" onChange={handleChange}/>
-        </div>
-        <div>
           <label>Vöruheiti</label>
           <input
             type="text"
@@ -133,17 +130,13 @@ export default function Add({ setComponentShowing }) {
             }}
           />
         </div>
-        {/* <div>
-          <label>Hlekkur á mynd</label>
-          <input
-            type="text"
-            onChange={(e) => {
-              setProductImage(e.target.value);
-            }}
-          />
-        </div> */}
-        <input type="file" id="myFile" name="filename" />
+        <div>
+        <label>Logo: </label>
+          <input type="file" onChange={handleChange}/>
+        </div>
+
       </div>
+      <p style={{color:'red'}}>ERROR</p>
       <p>ATH: Vara er sýnileg á sölusíðunni þinni um leið og þú birtir </p>
       <a
         onClick={() => {
@@ -153,6 +146,5 @@ export default function Add({ setComponentShowing }) {
         Bæta við vöru
       </a>
     </div>
-  );
-  // return <p> {userData.products[0].productDescription} </p>;
+  )
 }
