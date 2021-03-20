@@ -9,8 +9,8 @@
 }
 /* the box with the value names */
 .header_box {
-  grid-template-columns: 1fr  1.5fr  1fr  1fr  1fr   0.5fr ;
-  background-color: #F4F5F5;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+  background-color: #f4f5f5;
   grid-column-gap: 20px;
   padding: 18px;
   border-radius: 10px;
@@ -23,7 +23,7 @@
 }
 /* the product box */
 .product {
-  border-bottom: 1px solid #C2C2C2;
+  border-bottom: 1px solid #c2c2c2;
   width: 90%;
   margin: 0 auto;
   margin-top: 3rem;
@@ -33,7 +33,7 @@
 /* desktop */
 @media (min-width: 1024px) {
   .each_product {
-    grid-template-columns: 1fr  1.5fr  1fr  1fr  1fr   0.5fr ;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
     grid-column-gap: 20px;
     padding: 10px;
     display: grid;
@@ -64,16 +64,16 @@
     background: #3e3e3e;
   }
   .product_button_delete {
-  width: 30px;
-  height: 30px;
-  float: right;
-  background-color: transparent;
-  border: none;
+    width: 30px;
+    height: 30px;
+    float: right;
+    background-color: transparent;
+    border: none;
   }
   .product_button_delete:hover {
     color: rgb(225, 29, 29);
-  }}
-  
+  }
+}
 
 /* mobile */
 @media (max-width: 1024px) {
@@ -89,71 +89,68 @@
     border-radius: 8px;
     margin-top: 30px;
     font-size: 20px;
-    background-color: #F4F5F5;
+    background-color: #f4f5f5;
   }
-.product_img {
-  width: 100px;
-  height: 120px;
-  grid-column: 1;
-  margin-right: 10px;
-  /* grid-row: 3 /3; */
+  .product_img {
+    width: 100px;
+    height: 120px;
+    grid-column: 1;
+    margin-right: 10px;
+    /* grid-row: 3 /3; */
+  }
+  .each_product {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 40px 30px 40px;
+    grid-auto-flow: column;
+    grid-column-gap: 5px;
+    padding: 5px;
+    display: grid;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 16px;
+  }
+  .product_name {
+    grid-column: 2;
+    grid-row: 1/ 3;
+    text-align: left;
+  }
+  .product_price {
+    grid-column: 2;
+    grid-row: 2/ 3;
+    margin-top: auto;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .product_id {
+    grid-column: 2;
+    grid-row: 3 / 3;
+    margin-top: auto;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .product_button_edit {
+    grid-column: 3;
+    grid-row: 3 / 3;
+    background: #252525;
+    font-size: 14px;
+    padding: 2px 16px;
+    border-radius: 10px;
+    color: #fff;
+    height: 40px;
+    cursor: pointer;
+    max-width: 10rem;
+    text-align: center;
+  }
+  .product_button_delete {
+    grid-column: 4;
+    grid-row: 3 / 3;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+  }
 }
-.each_product {
-  grid-template-columns:  1fr 1fr 1fr ;
-  grid-template-rows: 40px 30px 40px;
-  grid-auto-flow: column;
-  grid-column-gap: 5px;
-  padding: 5px;
-  display: grid;
-  margin: 0 auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 16px;
-}
-.product_name {
-  grid-column: 2;
-  grid-row:1/ 3;
-  text-align: left;
-}
-.product_price {
-  grid-column: 2;
-  grid-row:2/ 3;
-  margin-top: auto;
-  margin-bottom: 0;
-  text-align: left;
-}
-.product_id {
-  grid-column: 2;
-  grid-row:3 / 3;
-  margin-top: auto;
-  margin-bottom: 0;
-  text-align: left;
-}
-.product_button_edit {
-  grid-column: 3;
-  grid-row:3 / 3;
-  background: #252525;
-  font-size: 14px;
-  padding:  2px 16px;
-  border-radius: 10px;
-  color: #fff;
-  height: 40px;
-  cursor: pointer;
-  max-width: 10rem;
-  text-align: center;
-}
-.product_button_delete {
-  grid-column: 4;
-  grid-row: 3 / 3;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  }}
- 
-
-
-
 
 /* the conpoment container that the products are insidet */
 /* desktop */
@@ -162,7 +159,7 @@
     background-color: #fff;
     width: 80%;
     min-width: 20rem;
-    height: 34rem;
+    height: 40rem;
     border-radius: 8px;
     z-index: 3;
     grid-column: 2 / span 10;
@@ -171,6 +168,10 @@
     margin-left: 20px;
     overflow: hidden;
     overflow: scroll;
+  }
+  /* hide scrollbars */
+  .component_container::-webkit-scrollbar {
+    display: none;
   }
 }
 /* mobile */

@@ -6,6 +6,9 @@ import styles from "../../styles/Store.module.css";
 import Footer from "../../components/Footer";
 import { storage } from "../fire";
 
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
+
 const Store = () => {
   const router = useRouter();
   const { users } = useContext(UsersContext);
@@ -19,11 +22,10 @@ const Store = () => {
     }
   }, [users]);
 
-  // const getStorage = () => {
-  //   const storageRef = storage.ref("alexanderjarl91@gmail.com");
-
-  //   console.log(storageRef.getDownloadURL());
-  // };
+  const [showShare, setShowShare] = useState(false)
+  const toggleShare = () => {
+    setShowShare(!showShare)
+  }
 
   return (
     <div className={styles.container}>
@@ -42,6 +44,22 @@ const Store = () => {
           <h2 className={styles.store_title}>{storeOwner.store.name}</h2>
           <p className={styles.store_social}>{store.social}</p>
           <p className={styles.store_bio}>{store.bio}</p>
+          <a onClick={toggleShare}style={{color: "#252525"}}>DEILA</a>
+          {showShare? <div className={styles.share_buttons}>
+
+            <FacebookShareButton quote="TESTING" hashtag="#merch.is" url={`ourlink.com/${storeNameQuery}`}>
+              <FacebookIcon logoFillColor="white" round={true} width="35px"/>
+            </FacebookShareButton>
+            <TwitterShareButton title={`Kíkið á vöruúrvalið hjá ${storeOwner.store.name}!`} via="merch_is" url="www.mbl.is">
+              <TwitterIcon logoFillColor="white" round={true} width="35px"/>
+            </TwitterShareButton>
+            <WhatsappShareButton quote="TESTING" hashtag="#merch.is" url={`ourlink.com/${storeNameQuery}`}>
+              <WhatsappIcon logoFillColor="white" round={true} width="35px"/>
+            </WhatsappShareButton>
+
+          </div> : null}
+          
+
           <div className={styles.grid}>
             {storeOwner.products.map((product) => {
               console.log("product");
