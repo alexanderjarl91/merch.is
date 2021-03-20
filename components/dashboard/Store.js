@@ -37,6 +37,7 @@ export default function Store() {
 
   return (
     <div className={styles.component_container}>
+      <p className={styles.title}> Búðin mín </p>
       {edit ? (
         <>
           <div>
@@ -86,6 +87,7 @@ export default function Store() {
           </div>
           <div>
             <button
+              className={styles.store_button_cancel}
               onClick={() => {
                 setEdit(false);
               }}
@@ -93,6 +95,7 @@ export default function Store() {
               hætta við
             </button>
             <button
+              className={styles.store_button_confirm}
               onClick={() => {
                 updateStore();
               }}
@@ -108,13 +111,14 @@ export default function Store() {
           <p>{userData.store.url}</p>
           <p>{userData.store.bio}</p>
 
-          <a
+          <button
+            className={styles.store_button_change}
             onClick={() => {
               setEdit(true);
             }}
           >
-            Breyta
-          </a>
+            Breyta upplýsingum
+          </button>
         </>
       )}
 

@@ -1,4 +1,4 @@
-import styles from "../../styles/Dashboard.module.css";
+import styles from "../../styles/Dashboard/Yfirlit.module.css";
 import { auth } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useEffect, useContext } from "react";
@@ -17,10 +17,17 @@ export default function Yfirlit() {
   }, []);
   return (
     <div className={styles.component_container}>
-      <h1> Yfirlit</h1>
-      <a style={{ color: "black" }} onClick={() => {}}>
-        asd
-      </a>
+      <p className={styles.title}> Yfirlit</p>
+
+      <div className={styles.yfirlit_grid}>
+        <div className={styles.yfirlit_grid_box1}>Box 1</div>
+        <div className={styles.yfirlit_grid_box2}>Box 2</div>
+        <div className={styles.yfirlit_grid_box3}>Box 3</div>
+        <div className={styles.yfirlit_grid_box4}>Box 4</div>
+      </div>
+      <button style={{ color: "black" }} onClick={() => {}}>
+        Takki sem gerir ekkert
+      </button>
     </div>
   );
   // return <p> {userData.products[0].productDescription} </p>;
