@@ -1,7 +1,7 @@
 import styles from "../../styles/Dashboard/Yfirlit.module.css";
 import { auth } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
-import React, { useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 export default function Yfirlit() {
   const {
@@ -11,19 +11,68 @@ export default function Yfirlit() {
     refreshUserData,
     getUserData,
   } = useContext(UsersContext);
+  const [totalSum, setTotalSum] = useState(0)
+const [fulfilledOrders, setFulfilledOrders] = useState(0)
 
-  useEffect(() => {
-    getUserData();
-  }, []);
+useEffect(async() => {
+  //get total sales
+  let orderPriceArray = [0]
+  if (userData && userData.orders) {
+    userData.orders.forEach((order) => {
+      orderPriceArray = [...orderPriceArray, order.price]
+    })
+  }
+  const total = await orderPriceArray.reduce((a, b) => {
+    return (+a)+(+b);
+  })
+  setTotalSum(total)
+
+  //get total fulfilled orders
+  if (userData && userData.orders) {
+    userData.orders.forEach((order) => {
+      if (order.fulfilled) {
+        setFulfilledOrders(fulfilledOrders + 1)
+      }
+    })
+  }
+}, [users, userData])
+
+
+
+
+  console.log(totalSum)
   return (
     <div className={styles.component_container}>
       <p className={styles.title}> Yfirlit</p>
 
       <div className={styles.yfirlit_grid}>
-        <div className={styles.yfirlit_grid_box1}>Box 1</div>
-        <div className={styles.yfirlit_grid_box2}>Box 2</div>
-        <div className={styles.yfirlit_grid_box3}>Box 3</div>
-        <div className={styles.yfirlit_grid_box4}>Box 4</div>
+        
+        <div className={styles.yfirlit_grid_box1}>
+          {userData && userData.orders? <div>
+            <p>Sala samtals</p>
+            <p>{totalSum} ISK</p>
+          </div> : null}
+        </div>
+        <div className={styles.yfirlit_grid_box1}>
+          {userData && userData.products? <div>
+            <p>products</p>
+            <p>{userData.products.length}</p>
+
+          </div> : null}
+        </div>
+        <div className={styles.yfirlit_grid_box1}>
+          {userData && userData.orders? <div>
+            <p>total orders</p>
+            <p>{userData.orders.length}</p>
+          </div> : null}
+        </div>
+        <div className={styles.yfirlit_grid_box1}>
+          {userData && userData.orders? <div>
+            <p>completed orders</p>
+            <p>{fulfilledOrders}</p>
+
+          </div> : null}
+        </div>
       </div>
       <button style={{ color: "black" }} onClick={() => {}}>
         Takki sem gerir ekkert
