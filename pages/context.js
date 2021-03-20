@@ -100,6 +100,7 @@ export const UsersProvider = ({ children }) => {
           email: email,
           name: name,
           userid: userUid,
+          orders: [],
           store: {
             name: storeName,
             logo:

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../../pages/context";
 import Footer from "../../components/Footer";
@@ -9,12 +9,16 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
+import { db } from "../fire";
 
 export default function Product() {
   const router = useRouter();
-  const { users } = useContext(UsersContext);
-  const storeOwner = users.find((x) => x.store.url == router.query.store);
+  const { users, getUsers } = useContext(UsersContext);
+  // const storeOwner = users.find((x) => x.store.url == router.query.store);
   const productId = router.query.product;
+  const [storeOwner, setStoreOwner] = useState();
+
+  const [orderSuccessful, setOrderSuccessful] = useState(false);
 
   const product = storeOwner
     ? storeOwner.products.find((x) => x.productId == productId)
@@ -27,6 +31,46 @@ export default function Product() {
   const [showShare, setShowShare] = useState(false);
   const toggleShare = () => {
     setShowShare(!showShare);
+  };
+
+  //setting new store owner data every time users changes
+  useEffect(() => {
+    const findOwner = users.find((x) => x.store.url == router.query.store);
+    setStoreOwner(findOwner);
+  }, [users]);
+  console.log(storeOwner);
+
+  const purchaseItem = async () => {
+    //renewing users data every time
+    await getUsers();
+
+    //getting time of order
+    var currentdate = new Date();
+    var dateTime =
+      currentdate.getDate() +
+      "/" +
+      (currentdate.getMonth() + 1) +
+      "/" +
+      currentdate.getFullYear();
+
+    const order = {
+      product: product.productName,
+      productId: product.productId,
+      price: product.productPrice,
+      orderNumber: "ORD" + Math.floor(Math.random() * (1000 - 0) + 0),
+      fulfilled: false,
+      orderDate: dateTime,
+    };
+
+    const ordersCopy = storeOwner.orders;
+    const updatedOrders = [...ordersCopy, order];
+
+    db.collection("users")
+      .doc(storeOwner.email)
+      .update({ orders: updatedOrders })
+      .then(() => {
+        setOrderSuccessful(true);
+      });
   };
 
   return (
@@ -75,12 +119,20 @@ export default function Product() {
               <p className={styles.product_description}>
                 {product.productDescription}
               </p>
-              <div className={styles.product_footer}>
-                <h1 className={styles.product_price}>
-                  {product.productPrice} ISK
-                </h1>
-                <button>Kaupa</button>
-              </div>
+
+              {orderSuccessful ? (
+                <h2 style={{ color: "black" }}>
+                  PÖNTUN MÓTTEKIN, TAKK FYRIR AÐ VERSLA!
+                </h2>
+              ) : (
+                <div className={styles.product_footer}>
+                  <h1 className={styles.product_price}>
+                    {product.productPrice} ISK
+                  </h1>
+                  <button onClick={purchaseItem}>Kaupa</button>
+                </div>
+              )}
+
               <a onClick={toggleShare} style={{ color: "#252525" }}>
                 DEILA
               </a>
