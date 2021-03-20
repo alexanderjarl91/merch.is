@@ -1,61 +1,63 @@
+/* mobile */
 @media (max-width: 900px) {
-    .container{
-      margin-left: 3%;
-      margin-right: 3%;
-      margin-top: 10%;
-    }}
-
-@media (min-width: 900px) {
-.container {
-  display: grid;
-  grid-template-columns:  auto auto auto;
-  margin-top: 10%;
+.container{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 10%;
 }}
-.umOkkur {
+
+/* mobile first css */
+.um_okkur_headline {
     font-weight: 700;
     font-style: italic;
     font-size: 50px;
     margin-right: 20px;
-}
-@media (min-width: 900px) {
-.umOkkur {
     font-weight: 700;
     font-style: italic;
-    font-size: 70px;
-    grid-row-end: 1;
-    max-width: 500px;
-}}
+    color: rgb(247, 212, 250);
+}
 .aukaP {
     margin-left: 30px;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
-    max-width: 300px;
     margin-bottom: 50px;
+    color: #F4F5F5;
 }
+.um_okkur_body_text {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 2rem;
+    height: 90px;
+    font-weight: 200;
+    color: #F4F5F5;
+}
+
+/* desktop */
 @media (min-width: 900px) {
+.container {
+  display: grid;
+  grid-template-columns:  auto auto auto;
+  margin-top: 10%;
+}
+.um_okkur_headline {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 70px;
+    grid-row-end: 1;
+    max-width: 500px;
+}
 .aukaP {
+    margin-left: 30px;
+    font-size: 20px;
+    max-width: 300px;
     grid-row-end: 2;
-    font-weight: 400;
-    font-style: normal;
     font-size: 24px;
-}}
-.umOkkurTexti {
-    font-weight: 500;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    padding-bottom: 10px;
 }
-@media (min-width: 900px) {
-    .umOkkurTexti {
-        margin-top: 20px;
-        grid-row-end: 1;
-        height: 90px;
-        font-weight: 200;
-        font-style: normal;
-        font-size: 20px;
-        line-height: 36px;
-    }
-  }
+.um_okkur_body_text {
+    margin-top: 20px;
+    grid-row-end: 1;
+    font-size: 20px;
+    line-height: 34px;
+}}
 

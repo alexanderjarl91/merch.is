@@ -6,33 +6,28 @@ import Link from "next/link";
 export default function Carousel() {
   return (
     <div>
-      <div className={styles.frontpageGrid}>
-        <div className={styles.content}>
-          <div className={styles.headlineGrid}>
-            <p className={styles.front_headline}>SELDU ÞÍNAR VÖRUR</p>
-          </div>
+      <div className={styles.content}>
+        <div className={styles.frontpageGrid}>
+          <p className={styles.front_headline}>SELDU</p>
+          <p className={styles.front_headline_nr2}> ÞÍNAR VÖRUR </p>
+          <p className={styles.front_description}>
+            Byrjaðu að selja vörurnar þínar strax í dag!
+          </p>
 
-          <div className={styles.descriptionGrid}>
-            <p className={styles.front_description}>
-              Byrjaðu að selja vörurnar þínar strax í dag!
-            </p>
-          </div>
+          <Link href="/signup">
+            <button className={styles.nyskraBtn}>Nýskrá</button>
+          </Link>
 
-          <div className={styles.nyskraGrid}>
-            <Link href="/signup">
-              <button className={styles.nyskraBtn}>Nýskrá</button>
-            </Link>
-            <p className="login_paragraph">
-              eða{" "}
-              <strong>
-                <Link href="/">
-                  <a>skráðu þig</a>
-                </Link>
-              </strong>{" "}
-              {""}
-              inn með þínum aðgangi
-            </p>
-          </div>
+          <p className={styles.login_p}>
+            eða{" "}
+            <strong>
+              <Link href="/">
+                <a>skráðu þig</a>
+              </Link>
+            </strong>{" "}
+            {""}
+            inn með þínum aðgangi
+          </p>
         </div>
       </div>
     </div>

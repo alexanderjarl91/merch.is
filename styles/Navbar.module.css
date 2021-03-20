@@ -1,106 +1,26 @@
-/* ----- navbar on desktop ----- */
-@media (min-width: 860px) {
-  .deskNav {
-   /* background-color: #25252571;
-    backdrop-filter: blur(15px); */
-     /* mask-image: linear-gradient(to top, transparent 10%, black); */
-    width: 100%;
-  }
-}
-/* navbar on desktop */
+/* mobile first css */
 .nav {
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
-  text-align: center;
-  text-decoration: none;
-  list-style: none;
+  align-items: center;
 }
-@media (max-width: 860px) {
-  .nav {
-    padding-top: 0rem;
-    margin-bottom: 1rem;
-  }
-}
-
 .logo {
   margin-right: auto;
-  color: #fff;
+  color: #f4f5f5;
   font-size: 34px;
   line-height: 30px;
   font-weight: 500;
-  margin-left: 40px;
-}
-
-/* navbar style for desktop */
-.nav_link {
-  list-style: none;
-  display: inline;
-  margin-left: 30px;
-  font-size: 18px;
-  font-weight: 300;
-}
-
-/* innskrá button in navbar on desktop */
-@media (min-width: 860px) {
-  .nav_link:last-child {
-     background-color: rgba(196, 196, 196, 0.147);
-     border: 1px solid white;
-     border-radius: 4px;
-     padding: 12px 20px 12px 20px;
-    }}
-    .nav_link:last-child:hover {
-      background-color:rgba(196, 196, 196, 0.256);
-    }
-/* ----- navbar on mobile ----- */
-
-/* burger navbar on mobile */
-@media (max-width: 860px) {
-  .nav_link {
-    margin-left: 12px;
-    display: block;
-    padding: 10px 40px;
-    text-decoration: none;
-    color: #1e1e1e;
-    font-weight: 500;
-    font-size: 18px;
-  }
-}
-/* innskrá button on navbar when burger is oopen on mobile */
-@media (max-width: 860px) {
-  .nav_link:last-child {
-    background-color: #252525;
-    color: white;
-    border-radius: 4px;
-    margin-top: 40px;
-    margin-right: 20%;
-    margin-left: 20%;
-    letter-spacing: 3px;
-  }
-}
-@media (max-width: 860px) {
-  .logo {
-    padding-top: 0px;
-  }
+  margin-left: 3%;
 }
 .burger_button {
+  margin-right: 20px;
   padding-top: 20px;
   position: sticky;
-  right: 0;
-  top: 50px;
   z-index: 10;
-  cursor: pointer;
   border: none;
-  outline: none;
-  background: transparent;
-}
-/* dont show burger button on desktop */
-@media (min-width: 861px) {
-  .burger_button {
-    display: none;
-  }
+  background: transparent; 
 }
 .burger_icon_close {
   color: #252525;
@@ -112,3 +32,66 @@
   width: 40px;
   height: 40px;
 }
+
+/* BURGER navbar on mobile - styles for when the burger is open is in global.css */
+@media (max-width: 860px) {
+  .nav_link {
+    margin-left: 12px;
+    display: block;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: #1e1e1e;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .nav_link:last-child {
+    background: rgba(159, 113, 179, 0.907);
+    border: 1px solid rgb(247, 212, 250);
+    font-size: 22px;
+    color: #f4f5f5;
+    border-radius: 8px;
+    padding: 12px 20px 12px 20px;
+    margin-top: 40px;
+    margin-right: 20%;
+    margin-left: 20%;
+    letter-spacing: 3px;
+  }}
+
+
+/* desktop */
+@media (min-width: 860px) {
+.burger_button {
+  display: none;
+}
+.deskNav {
+  width: 100%;
+}
+/* innskrá button in navbar on desktop */
+.nav_link:last-child {
+  background-color: rgba(196, 196, 196, 0.147);
+  border: 1px solid #f4f5f5;
+  border-radius: 4px;
+  padding: 12px 20px 12px 20px;
+}
+.nav_link:last-child:hover {
+  background-color:rgba(196, 196, 196, 0.256);
+}
+.nav {
+  padding-bottom: 3rem;
+  align-items: flex-end;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+}
+.nav_link {
+  list-style: none;
+  display: inline;
+  margin-left: 30px;
+  font-size: 18px;
+  font-weight: 300;
+}}
+
+
+
+
+

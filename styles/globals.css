@@ -10,7 +10,7 @@ html,
 body {
   color: #f4f5f5;
   font-family: "Poppins", sans-serif;
-  background-color: #252525;
+  background-color: #070707;
 }
 a {
   outline: none;
@@ -19,18 +19,10 @@ a {
   cursor: pointer;
 }
 
-/* button {
-  height: 54px;
-  width: 160px;
-  border-radius: 6px;
-  background: none;
-  border: 1px solid white;
-   color: white; 
-  font-weight: 500;
-  font-size: 22px;
+ button {
   cursor: pointer;
   outline: none;
-} */
+} 
 
 /* layout.js */
 .content {
