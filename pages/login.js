@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import styles from "../styles/Signup.module.css";
+import styles from "../styles/Login.module.css";
 import Link from "next/Link";
 
 //components
@@ -46,12 +46,14 @@ export default function Landing() {
             {/* LOGIN FORM */}
             <div className={styles.login__container}>
               <div className={styles.login__header}>
-                <h1>Skráðu þig inn</h1>
+                <h1 className={styles.login__header}>Skráðu þig inn</h1>
+                <p className={styles.login_subtitle}>Skráðu þig inn á þína verslun með netfangi og lykilorði</p>
               </div>
               <form>
                 <div>
-                  <label>Netfang</label>
+                  <label className={styles.label}>Netfang</label>
                   <input
+                    className={styles.input}
                     type="email"
                     onChange={(e) => {
                       setEmail(e.target.value);
@@ -60,8 +62,9 @@ export default function Landing() {
                   />
                 </div>
                 <div>
-                  <label>Lykilorð</label>
+                  <label className={styles.label}>Lykilorð</label>
                   <input
+                    className={styles.input}
                     type="password"
                     onChange={(e) => {
                       setPassword(e.target.value);
@@ -69,22 +72,29 @@ export default function Landing() {
                     }}
                   />
                 </div>
+                <div className={styles.login_footer}>
+
                 <button
+                  className={styles.login__btn}
                   onClick={(e) => {
                     e.preventDefault();
                     handleLogin(email, password);
                   }}
-                >
+                  >
                   Skrá inn
                 </button>
                 {loginError ? (
                   <p style={{ color: "red" }}>{loginError}</p>
-                ) : null}
+                  ) : null}
 
-                <p>
-                  eða <Link href="/signup">nýskráðu þig</Link> ef þú átt ekki
-                  reikning
+                <p className={styles.login_paragraph}>
+                  eða{" "}
+                  <Link href="/signup">
+                    <b>nýskráðu þig</b>
+                  </Link>{" "}
+                  ef þú átt ekki reikning
                 </p>
+                  </div>
               </form>
             </div>
           </div>

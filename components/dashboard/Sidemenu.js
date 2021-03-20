@@ -13,7 +13,7 @@ import { CgMenuRight } from "react-icons/cg";
 import { UsersContext } from "../../pages/context";
 
 export default function Sidemenu({ componentShowing, setComponentShowing }) {
-  const { userData, getUserData } = useContext(UsersContext);
+  const { userData, getUserData, handleLogout } = useContext(UsersContext);
 
   useEffect(() => {
     getUserData();

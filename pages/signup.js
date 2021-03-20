@@ -56,9 +56,14 @@ export default function Landing() {
             <div className={styles.login__container}>
               <div className={styles.login__header}>
                 <h2>Nýskráning</h2>
+                <p>Stofnaðu þinn aðgang og komdu vörunum þínum á markaðinn á núll einni.</p>
               </div>
+              
+
+              
+              <form className={styles.form}>
+                <div className={styles.left_side}>
               <p>Notenda upplýsingar</p>
-              <form>
                 <div>
                   <label className={styles.label}>Nafn </label>
                   <input
@@ -88,9 +93,10 @@ export default function Landing() {
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}
-                  />
-                </div>
-                <div>
+                    />
+                    </div>
+                  </div>
+                <div className={styles.right_side}>
                   <p>Búðin þín</p>
                   <div>
                     <div>
@@ -131,7 +137,7 @@ export default function Landing() {
                     </div>
                   </div>
                 </div>
-
+                </form>
                 {signUpError ? (
                   <p style={{ color: "red" }}>{signUpError}</p>
                 ) : null}
@@ -155,7 +161,6 @@ export default function Landing() {
                     ef þú átt reikning
                   </p>
                 </div>
-              </form>
             </div>
           </div>
         </>
