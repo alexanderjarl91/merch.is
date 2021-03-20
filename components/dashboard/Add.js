@@ -12,9 +12,37 @@ export default function Add({ setComponentShowing }) {
   const [productPrice, setProductPrice] = useState();
   const [productId, setProductId] = useState("");
   const [productDescription, setProductDescription] = useState("");
-  const [productStock, setProductStock] = useState();
+  const [productStock, setProductStock] = useState("");
+  const [errorMessage, setErrorMessage] = useState();
 
   const addProduct = async () => {
+    //form validation
+    if (productName.length == 0) {
+      setErrorMessage("Vara verður að hafa vöruheiti");
+      return;
+    }
+    if (!productPrice || productPrice == 0) {
+      setErrorMessage("Verð verður að vera hærra en 0");
+      return;
+    }
+    if (productId.length == 0) {
+      setErrorMessage("Allar vörur verða að hafa vörunúmer");
+      return;
+    }
+    if (document.getElementById("img").files.length == 0) {
+      setErrorMessage("Það verður að fylgja mynd af vörunni");
+      return;
+    }
+
+    //this is also stopped serverside
+    if (userData.products.length > 3) {
+      setErrorMessage("Þú ert núþegar með 4 vörur en það er hámarkið.");
+      return;
+    }
+
+    // validation passed, clear errors
+    setErrorMessage();
+
     //get the image and upload it to storage/useremail/productname/img.pn
     const uploadTask = storage
       .ref(`${userData.email}/${productName}/${image.name}`)
@@ -82,7 +110,7 @@ export default function Add({ setComponentShowing }) {
 
       <div className={styles.add_grid}>
         <div>
-          <label className={styles.add_label}>Vöruheiti</label>
+          <label className={styles.add_label}>Vöruheiti*</label>
           <input
             className={styles.add_input}
             type="text"
@@ -92,7 +120,7 @@ export default function Add({ setComponentShowing }) {
           />
         </div>
         <div>
-          <label className={styles.add_label}>Verð</label>
+          <label className={styles.add_label}>Verð*</label>
           <input
             className={styles.add_input}
             type="number"
@@ -102,7 +130,7 @@ export default function Add({ setComponentShowing }) {
           />
         </div>
         <div>
-          <label className={styles.add_label}>Vörunúmer (ID)</label>
+          <label className={styles.add_label}>Vörunúmer (ID)*</label>
           <input
             className={styles.add_input}
             type="text"
@@ -134,15 +162,19 @@ export default function Add({ setComponentShowing }) {
         </div>
 
         <div className={styles.seccond_grid}>
-          <label className={styles.add_label}>Bæta við mynd af vörunni </label>
+          <label className={styles.add_label}>Bæta við mynd af vörunni*</label>
           <input
+            id="img"
             className={styles.add_file}
             type="file"
+            accept="image/*"
             onChange={handleChange}
           />
 
-          <p style={{ color: "red" }}>ERROR</p>
           <p>ATH: Vara er sýnileg á sölusíðunni þinni um leið og þú birtir </p>
+
+          {errorMessage ? <p style={{ color: "red" }}>{errorMessage}</p> : null}
+
           <button
             className={styles.add_button}
             onClick={() => {
