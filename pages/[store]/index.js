@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../context";
 import Link from "next/link";
-import styles from "../../styles/Store.module.css";
+import styles from "../../styles/Store/Store.module.css";
 import Footer from "../../components/Footer";
 
 import {

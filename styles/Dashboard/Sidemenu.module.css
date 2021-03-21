@@ -1,0 +1,121 @@
+/* mobile first */
+.burger_button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  position: sticky;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  float: right;
+}
+.burger_icon_close {
+  color: #252525;
+  width: 40px;
+  height: 40px;
+}
+.burger_icon {
+  color: #252525;
+  width: 40px;
+  height: 40px;
+}
+.sideMenu_icon {
+  width: 30px;
+  height: 26px;
+  margin-top: auto;
+  position: relative;
+  padding-right: 5px;
+  top: 5px;
+  left: 5px;
+}
+.sideMenu_buttons {
+  margin-bottom: 15px;
+  padding: 10px 40px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  width: 80%;
+  border: none;
+  color: #252525;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+.logo {
+  margin-right: auto;
+  font-size: 34px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-left: 3%;
+}
+.sideMenu_utskra {
+  margin-top: 10px;
+  color: #252525;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+}
+/* only relavent for mobile  */
+@media (max-width: 1025px) {
+  .nav {
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+.logo {
+  display: none;
+}
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  margin-top: 100px;
+}
+.sideMenu_utskra {
+  display: none;
+}
+.sideMenu_extra_links {
+  margin-left: 3rem;
+}
+.burger_button {
+  display: none;
+}
+.sideMenu_buttons {
+  width: 200px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: left;
+}
+.sideMenu_buttons:hover {
+  box-shadow: 1px 1px 10px 0px rgba(143, 143, 143, 0.25);
+}
+.sideMenu_buttons:focus {
+  background-color: #252525;
+  color: #fff;
+}
+.sideMenu_extra_links_container {
+  margin-top: 3rem;
+}
+.sideMenu_extra_links {
+  list-style: none;
+  color: #c2c2c2;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.sideMenu_utskra {
+  display: none;
+}}
+
+
+
+

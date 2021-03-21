@@ -1,98 +1,103 @@
-
-@media (max-width: 860px) {
-  .content {
-    max-width: 960px;
-    margin: 0 auto;
-    padding-top: 6rem;
-    padding-right: 10px;
-    padding-left: 10px; 
-  }
-}
-@media (min-width: 860px) {
+/* mobile first css */
 .content {
-    max-width: 960px;
-    margin: 0 auto;
-    padding-top: 3rem;
-    padding-right: 10px;
-    padding-left: 10px; 
-}}
-/* grid for the landing frontpage on mobile */
-.fronpageGrid {
-  justify-content: center;
-  display: grid;
-  position: relative;
-  grid-template-columns: auto auto auto auto auto auto;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px; 
 }
-
-
-/* ------ frontapage content ------ */
-
+.frontpageGrid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
 .front_headline {
-  max-width: 750px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 190px;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 60px;
+  background-color:  rgba(159, 113, 179, 0.521);
+}
+.front_headline_nr2 {
+  margin: 0 auto;
+  width: 350px;
   font-weight: 600;
   font-style: italic;
   font-size: 50px;
-  margin-left: 10px;
-  margin-top: 3rem;
-  background-color:  rgba(159, 113, 179, 0.521);
-}
-/* desktop */
-@media (min-width: 860px) {
-  .front_headline {
-    font-size: 70px;
-    text-align: left;
-    margin-top: 4rem;
-    background-color: rgba(159, 113, 179, 0.521);
-  }
-}
-
-
-.descriptionGrid {
-  margin-left: 30px;
-  max-width: 460px;
   background-color:  rgba(159, 113, 179, 0.521);
 }
 .front_description {
+  margin: 0 auto;
+  margin-top: 1rem;
   font-style: italic;
-  font-size: 20px;
-  margin-left: 20px;
-  margin-top: 10px;
+  font-size: 16px;
+  background-color:  rgba(159, 113, 179, 0.521);
 }
-/* desktop */
-@media (min-width: 860px) {
-  .front_description {
-    font-size: 24px;
-    margin-left: 60px;
-    text-align: left;
-    margin-top: 10px;
-   
-  }
+.nyskraGrid {
+ color: rgb(159, 113, 179);
+ margin: 0 auto;
 }
-
-/* the nyskra button & text on mobile */
-@media (max-width: 860px) {
-  .nyskraGrid {
-    margin-left: 50px;
-    margin-top: 1rem;
-  }}
 .nyskraBtn {
-  margin-bottom: 5px;
-  margin-top: 20%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
+  padding: 16px;
+  width: 50%;
+  border-radius: 8px;
+  border: 1px solid rgb(247, 212, 250);
+  font-size: 22px;
+  color: #fff;
   background:  rgba(159, 113, 179, 0.907);
 }
 .nyskraBtn:hover {
   background: rgba(189, 134, 212, 0.907);
 }
-/* desktop */
-@media (min-width: 860px) {
-  .nyskraBtn {
-    height: 66px;
-    width: 20%;
-    font-size: 26px;
-    margin-bottom: 15px;
-    margin-top: 60px;
-  }
+.login_p {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0 auto;
+  color:  rgba(232, 213, 240, 0.726);
 }
+
+
+/* desktop  */
+@media (min-width: 860px) {
+.frontpageGrid {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.front_headline {
+  margin-left: 180px;
+  margin-bottom: 2rem;
+  text-align: left;
+  width: 280px;
+  font-size: 90px;
+}
+.front_headline_nr2 {
+  margin-left: 90px;
+  width: 630px;
+  font-size: 90px;
+}
+.front_description {
+  width: 610px;
+  font-size: 28px;
+  margin-left: 280px;
+}
+.nyskraBtn {
+  margin-top: 3rem;
+  padding: 16px;
+  width: 30%;
+  font-size: 22px;
+}
+.login_p {
+  font-size: 18px;
+  color:  rgba(43, 38, 45, 0.726);
+}
+}
+
 
 
 

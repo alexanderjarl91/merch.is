@@ -1,32 +1,32 @@
+/* mobile first css */
 .footer {
   position: absolute;
   bottom: 0;
   margin: 0 auto;
-  display: block;
   text-align: center;
   padding: 30px 0;
-  justify-content: center;
-  color: rgba(189, 189, 189, 0.699);
+  color: rgba(189, 189, 189, 0.815);
   width: 100%;
-  padding-right: 10px;
-  padding-left: 10px; 
+  z-index: 10; 
+}
+.social {
+  width: 26px;
+  height: 26px;
+  background: transparent;
 }
 
+/* desktop */
 @media (min-width: 860px) {
-  .footer {
-    background-color: #000000d0;
-    width: 100%;
-  }}
-
-  @media (min-width: 860px) {
+.footer {
+  background-color: #000000d0;
+}
 .skilmalar {
   float: left;
+}
+.social {
+  width: 30px;
+  height: 30px;
+  padding-left: 5px;
+  float: right;
 }}
-@media (min-width: 860px) {
-  .social {
-    width: 30px;
-    height: 30px;
-    padding-left: 5px;
-    float: right;
-  }}
 

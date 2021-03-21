@@ -1,7 +1,8 @@
 .mobile_bg_img {
-  background-image: url(/hangers.jpeg);
+  background-image: url(/original-super-large.jpg) ;
   background-size: cover;
+  min-height: 100vh;
   filter: grayscale(var(--value, 10%)); 
   /* mask-image: linear-gradient(to bottom, transparent 10%, black); */
-  height: 100vh;
+position: relative;
 }

@@ -9,9 +9,9 @@ function um_okkur() {
       <div className="content">
         <Navbar />
         <div className={styles.container}>
-          <p className={styles.umOkkur}>UM OKKUR</p>
+          <p className={styles.um_okkur_headline}>UM OKKUR</p>
           <p className={styles.aukaP}>Hér getur komið stutt setning um okkur</p>
-          <div className={styles.umOkkurTexti}>
+          <div className={styles.um_okkur_body_text}>
             <p>
               {" "}
               Og hér getur verið lengri texti um okkur.. adipiscing elit. Id sit
@@ -24,7 +24,12 @@ function um_okkur() {
             <p>
               tristique fermentum. Lacus tristique fermentum in imperdiet
               convallis nibh eget. Diam felis, felis mi ligula ante eget.
-              Bibendum non venenatis amet adipiscing auctor
+              Bibendum non venenatis amet adipiscing auctor tristique fermentum.
+              Lacus tristique fermentum in imperdiet convallis nibh eget. Diam
+              felis, felis mi ligula ante eget. Bibendum non venenatis amet
+              adipiscing auctor tristique fermentum. Lacus tristique fermentum
+              in imperdiet convallis nibh eget. Diam felis, felis mi ligula ante
+              eget. Bibendum non venenatis amet adipiscing auctor
             </p>
           </div>
         </div>

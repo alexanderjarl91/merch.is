@@ -55,47 +55,54 @@ export default function Landing() {
             {/* SIGN UP FORM */}
             <div className={styles.login__container}>
               <div className={styles.login__header}>
+                <button
+                  onClick={() => router.back()}
+                  className={styles.go_back_button}
+                >
+                  X
+                </button>
                 <h2>Nýskráning</h2>
-                <p>Stofnaðu þinn aðgang og komdu vörunum þínum á markaðinn á núll einni.</p>
+                <p>
+                  Stofnaðu þinn aðgang og komdu vörunum þínum á markaðinn á núll
+                  einni.
+                </p>
               </div>
-              
 
-              
               <form className={styles.form}>
                 <div className={styles.left_side}>
-              <p>Notenda upplýsingar</p>
-                <div>
-                  <label className={styles.label}>Nafn </label>
-                  <input
-                    className={styles.input}
-                    type="text"
-                    required
-                    onChange={(e) => {
-                      setName(e.target.value);
-                    }}
-                  />
-                </div>
-                <div>
-                  <label className={styles.label}>Netfang</label>
-                  <input
-                    className={styles.input}
-                    type="email"
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                  />
-                </div>
-                <div>
-                  <label className={styles.label}>Lykilorð</label>
-                  <input
-                    className={styles.input}
-                    type="password"
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
+                  <p>Notenda upplýsingar</p>
+                  <div>
+                    <label className={styles.label}>Nafn </label>
+                    <input
+                      className={styles.input}
+                      type="text"
+                      required
+                      onChange={(e) => {
+                        setName(e.target.value);
+                      }}
                     />
-                    </div>
                   </div>
+                  <div>
+                    <label className={styles.label}>Netfang</label>
+                    <input
+                      className={styles.input}
+                      type="email"
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label className={styles.label}>Lykilorð</label>
+                    <input
+                      className={styles.input}
+                      type="password"
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
                 <div className={styles.right_side}>
                   <p>Búðin þín</p>
                   <div>
@@ -137,30 +144,31 @@ export default function Landing() {
                     </div>
                   </div>
                 </div>
-                </form>
-                {signUpError ? (
-                  <p style={{ color: "red" }}>{signUpError}</p>
-                ) : null}
+              </form>
+              {signUpError ? (
+                <p style={{ color: "red" }}>{signUpError}</p>
+              ) : null}
 
-                <div className={styles.login__btn}>
-                  <a
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSignup();
-                    }}
-                  >
-                    Nýskrá
+              <div>
+                <button
+                  className={styles.login__btn}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSignup();
+                  }}
+                >
+                  Nýskrá
+                </button>
+                <p className={styles.login_paragraph}>
+                  eða{" "}
+                  <a>
+                    <Link href="/login">
+                      <strong>skráðu þig inn </strong>
+                    </Link>
                   </a>
-                  <p className={styles.login_paragraph}>
-                    eða{" "}
-                    <a>
-                      <Link href="/login">
-                        <strong>skráðu þig inn </strong>
-                      </Link>
-                    </a>
-                    ef þú átt reikning
-                  </p>
-                </div>
+                  ef þú átt reikning
+                </p>
+              </div>
             </div>
           </div>
         </>

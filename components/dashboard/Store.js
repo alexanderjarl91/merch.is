@@ -40,90 +40,109 @@ export default function Store() {
       <p className={styles.title}> Búðin mín </p>
       {edit ? (
         <>
-          <div>
-            <label>Búðarnafn</label>
-            <input
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-              className={styles.input}
-              type="text"
-              placeholder={userData.store.name}
-            ></input>
-          </div>
-          <div>
-            <label>Hlekkur á mynd</label>
-            <input
-              onChange={(e) => {
-                setLogo(e.target.value);
-              }}
-              className={styles.input}
-              type="text"
-              placeholder={userData.store.logo}
-            ></input>
-          </div>
-          <div>
-            <label>Instagram</label>
-            <input
-              onChange={(e) => {
-                setUrl(e.target.value);
-              }}
-              className={styles.input}
-              type="text"
-              placeholder={userData.store.logo}
-            ></input>
-          </div>
-          <div>
-            <label>Um búðina</label>
-            <textarea
-              onChange={(e) => {
-                setBio(e.target.value);
-              }}
-              rows="5"
-              className={styles.input}
-              type="text"
-              placeholder={userData.store.bio}
-            ></textarea>
-          </div>
-          <div>
-            <button
-              className={styles.store_button_cancel}
-              onClick={() => {
-                setEdit(false);
-              }}
-            >
-              hætta við
-            </button>
-            <button
-              className={styles.store_button_confirm}
-              onClick={() => {
-                updateStore();
-              }}
-            >
-              vista
-            </button>
+          <div className={styles.store_grid_edit}>
+            <div>
+              <label className={styles.edit_label}>Búðarnafn</label>
+              <input
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                className={styles.input}
+                type="text"
+                placeholder={userData.store.name}
+              ></input>
+            </div>
+            <div>
+              <label className={styles.edit_label}>Hlekkur á mynd</label>
+              <input
+                onChange={(e) => {
+                  setLogo(e.target.value);
+                }}
+                className={styles.input}
+                type="text"
+                placeholder={userData.store.logo}
+              ></input>
+            </div>
+            <div>
+              <label className={styles.edit_label}>Instagram</label>
+              <input
+                onChange={(e) => {
+                  setUrl(e.target.value);
+                }}
+                className={styles.input}
+                type="text"
+                placeholder={userData.store.logo}
+              ></input>
+            </div>
+            <div>
+              <label className={styles.edit_label}>Um búðina</label>
+              <textarea
+                onChange={(e) => {
+                  setBio(e.target.value);
+                }}
+                rows="3"
+                className={styles.input}
+                type="text"
+                placeholder={userData.store.bio}
+              ></textarea>
+            </div>
+            <div>
+              <button
+                className={styles.store_button_cancel}
+                onClick={() => {
+                  setEdit(false);
+                }}
+              >
+                hætta við
+              </button>
+              <button
+                className={styles.store_button_confirm}
+                onClick={() => {
+                  updateStore();
+                }}
+              >
+                vista
+              </button>
+            </div>
           </div>
         </>
       ) : (
         <>
-          <img className={styles.user_logo} src={userData.store.logo} />
-          <h1>{userData.store.name}</h1>
-          <p>{userData.store.url}</p>
-          <p>{userData.store.bio}</p>
+          <div className={styles.store_grid}>
+            <img className={styles.user_logo} src={userData.store.logo} />
+            <p className={styles.user_name}>
+              {" "}
+              <strong> Nafn: </strong>
+              {userData.store.name}
+            </p>
+            <p className={styles.user_url}>
+              {" "}
+              <strong>Linkurinn á netverlusninni þinni: </strong>
+              {userData.store.url}
+            </p>
+            <p className={styles.user_bio}>
+              <strong>Um merkið þitt: </strong>
+              {userData.store.bio}
+            </p>
 
-          <button
-            className={styles.store_button_change}
-            onClick={() => {
-              setEdit(true);
-            }}
-          >
-            Breyta upplýsingum
-          </button>
+            <button
+              className={styles.store_button_change}
+              onClick={() => {
+                setEdit(true);
+              }}
+            >
+              Breyta upplýsingum
+            </button>
+            <p className={styles.user_hlekkur}>
+              {" "}
+              <strong>Linkurinn þinn: </strong>
+            </p>
+            <p className={styles.user_merch_linkur}>
+              www.merch.is/{userData.store.url}
+            </p>
+          </div>
         </>
       )}
-
-      <h4>Þinn hlekkur:</h4>
-      <p>www.merch.is/{userData.store.url}</p>
     </div>
   );
   // return <p> {userData.products[0].productDescription} </p>;
