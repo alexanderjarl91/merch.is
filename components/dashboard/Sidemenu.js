@@ -33,106 +33,116 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
   };
   return (
     <>
-      <div className={styles.burger}>
-        {/* hamburger menu */}
+      <nav className={styles.nav}>
+        <div className={styles.logo}>
+          <Link href="/">merch.</Link>
+        </div>
+        <div className={styles.burger}>
+          {/* hamburger menu */}
 
-        <button className={styles.burger_button} onClick={handleToggle}>
-          {/* If the navbar is open then show the closing icon, else show the burger icon */}
-          {navbarOpen ? (
-            <MdClose className={styles.burger_icon_close} />
-          ) : (
-            <CgMenuRight className={styles.burger_icon} />
-          )}
-        </button>
-        <div className={styles.sideMenu}>
-          <ul className={`burgerNavDash ${navbarOpen ? " showMenu" : ""}`}>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("dashboard");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
-                <MdDashboard className={styles.sideMenu_icon} /> Yfirlit{" "}
-              </a>
-            </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("store");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
-                <MdHome className={styles.sideMenu_icon} /> Búðin mín
-              </a>
-            </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("products");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
-                <MdFormatLineSpacing className={styles.sideMenu_icon} /> Mínar
-                vörur{" "}
-              </a>
-            </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("add");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
-                <MdAddBox className={styles.sideMenu_icon} /> Bæta við vöru{" "}
-              </a>
-            </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("orders");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
-                <MdShoppingCart className={styles.sideMenu_icon} /> Pantanir{" "}
-              </a>
-            </li>
+          <button className={styles.burger_button} onClick={handleToggle}>
+            {/* If the navbar is open then show the closing icon, else show the burger icon */}
+            {navbarOpen ? (
+              <MdClose className={styles.burger_icon_close} />
+            ) : (
+              <CgMenuRight className={styles.burger_icon} />
+            )}
+          </button>
+          <div className={styles.sideMenu}>
+            <ul className={`burgerNavDash ${navbarOpen ? " showMenu" : ""}`}>
+              <li>
+                <button
+                  className={styles.sideMenu_buttons}
+                  onClick={() => {
+                    setComponentShowing("dashboard");
+                    closeMenu();
+                    console.log(componentShowing);
+                  }}
+                >
+                  <MdDashboard className={styles.sideMenu_icon} /> Yfirlit{" "}
+                </button>
+              </li>
+              <li>
+                <button
+                  className={styles.sideMenu_buttons}
+                  onClick={() => {
+                    setComponentShowing("store");
+                    closeMenu();
+                    console.log(componentShowing);
+                  }}
+                >
+                  <MdHome className={styles.sideMenu_icon} /> Búðin mín
+                </button>
+              </li>
+              <li>
+                <button
+                  className={styles.sideMenu_buttons}
+                  onClick={() => {
+                    setComponentShowing("products");
+                    closeMenu();
+                    console.log(componentShowing);
+                  }}
+                >
+                  <MdFormatLineSpacing className={styles.sideMenu_icon} /> Mínar
+                  vörur{" "}
+                </button>
+              </li>
+              <li>
+                <button
+                  className={styles.sideMenu_buttons}
+                  onClick={() => {
+                    setComponentShowing("add");
+                    closeMenu();
+                    console.log(componentShowing);
+                  }}
+                >
+                  <MdAddBox className={styles.sideMenu_icon} /> Bæta við vöru{" "}
+                </button>
+              </li>
+              <li>
+                <button
+                  className={styles.sideMenu_buttons}
+                  onClick={() => {
+                    setComponentShowing("orders");
+                    closeMenu();
+                    console.log(componentShowing);
+                  }}
+                >
+                  <MdShoppingCart className={styles.sideMenu_icon} /> Pantanir{" "}
+                </button>
+              </li>
 
-            <div className={styles.sideMenu_extra_links_container}>
-              <li className={styles.sideMenu_extra_links}>
-                {/* <Link href={`/${userData.store.url}`}>
+              <div className={styles.sideMenu_extra_links_container}>
+                <li className={styles.sideMenu_extra_links}>
+                  {/* <Link href={`/${userData.store.url}`}>
                   <p> Búðin mín </p>
                 </Link> */}
-              </li>
-              <li className={styles.sideMenu_extra_links}>
-                <Link href="/hafa_samband">
-                  <p> Hafa samband </p>
-                </Link>
-              </li>
-              <li className={styles.sideMenu_extra_links}>
-                <Link href="/um_okkur">
-                  <p> Um okkur </p>
-                </Link>
-              </li>
-              <li className={styles.sideMenu_utskra}>
-                <a
-                  onClick={() => {
-                    handleLogout();
-                  }}
-                  className={styles.userName}
-                >
-                  Útskrá
-                </a>
-              </li>
-            </div>
-          </ul>
+                </li>
+                <li className={styles.sideMenu_extra_links}>
+                  <Link href="/hafa_samband">
+                    <p> Hafa samband </p>
+                  </Link>
+                </li>
+                <li className={styles.sideMenu_extra_links}>
+                  <Link href="/um_okkur">
+                    <p> Um okkur </p>
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    className={styles.sideMenu_utskra}
+                    onClick={() => {
+                      handleLogout();
+                    }}
+                  >
+                    Útskrá
+                  </button>
+                </li>
+              </div>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
     </>
   );
 }

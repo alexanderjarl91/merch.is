@@ -1,81 +1,10 @@
-/* desktop */
-@media (min-width: 1025px) {
-  .sideMenu {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5rem;
-    margin-top: 100px;
-  }
-  .sideMenu_utskra {
-    display: none;
-  }
-  .sideMenu_extra_links {
-    margin-left: 10px;
-  }
-  .burger_button {
-    display: none;
-  }
-}
-
-
-.sideMenu_buttons {
-  color: #252525;
-  background-color: #fff;
-  width: 200px;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 20px;
-  list-style: none;
-}
-.sideMenu_buttons:hover {
-  box-shadow: none;
-  box-shadow: 1px 1px 10px 0px rgba(143, 143, 143, 0.25);
-}
-.sideMenu_buttons:active {
-  background-color: #252525;
-  color: #fff;
-}
-.sideMenu_icon {
-  align-items: center;
-  justify-items: center;
-  padding-top: 5px;
-}
-.sideMenu_extra_links_container {
-  margin-top: 3rem;
-}
-.sideMenu_extra_links {
-  list-style: none;
-  color: #c2c2c2;
-  margin-top: 10px;
-  cursor: pointer;
-}
-.sideMenu_utskra {
-  margin-top: 10px;
-  color: #252525;
-}
-
-
-/* burger navbar on mobile */
-@media (max-width: 1025px) {
-  .sideMenu_buttons {
-    margin: 0 auto;
-    margin-bottom: 10px;
-    display: block;
-    padding: 10px 40px;
-    text-decoration: none;
-    color: #1e1e1e;
-    font-weight: 500;
-    font-size: 18px;
-    width: 80%;
-  }}
+/* mobile first */
 .burger_button {
-  padding-top: 10px;
-  padding-right: 20px;
-  margin-right: 2%;
-  position: fixed;
-  right: 0;
-  top: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  position: sticky;
   z-index: 10;
   cursor: pointer;
   border: none;
@@ -93,3 +22,101 @@
   width: 40px;
   height: 40px;
 }
+.sideMenu_icon {
+  width: 30px;
+  height: 26px;
+  margin-top: auto;
+  position: relative;
+  padding-right: 5px;
+  top: 5px;
+  left: 5px;
+}
+.sideMenu_buttons {
+  margin-bottom: 15px;
+  padding: 10px 40px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  width: 80%;
+  border: none;
+  color: #252525;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  
+}
+.logo {
+  margin-right: auto;
+  font-size: 34px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-left: 3%;
+}
+.sideMenu_utskra {
+  margin-top: 10px;
+  color: #252525;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+}
+/* only relavent for mobile  */
+@media (max-width: 1025px) {
+  .nav {
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+.logo {
+  display: none;
+}
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  margin-top: 100px;
+}
+.sideMenu_utskra {
+  display: none;
+}
+.sideMenu_extra_links {
+  margin-left: 3rem;
+}
+.burger_button {
+  display: none;
+}
+.sideMenu_buttons {
+  width: 200px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: left;
+}
+.sideMenu_buttons:hover {
+  box-shadow: 1px 1px 10px 0px rgba(143, 143, 143, 0.25);
+}
+.sideMenu_buttons:focus {
+  background-color: #252525;
+  color: #fff;
+}
+.sideMenu_extra_links_container {
+  margin-top: 3rem;
+}
+.sideMenu_extra_links {
+  list-style: none;
+  color: #c2c2c2;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.sideMenu_utskra {
+  display: none;
+}}
+
+
+
+

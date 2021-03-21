@@ -1,24 +1,4 @@
-.title {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  font-size: 20px;
-}
-.store_button_change {
-  background-color: #252525;
-  border: none;
-  color: #fff;
-  padding: 8px;
-  width: 300px;
-  border-radius: 8px;
-  font-size: 20px;
-  margin-top: auto;
-  margin-bottom: 0;
-}
-
-
-/* the conpoment container that the products are insidet */
-/* mobile */
+/* mobile first */
 .component_container {
   margin: 0 auto;
   height: 100vh;
@@ -26,28 +6,6 @@
   text-align: center;
   background-color: #fff;
 }
-/* desktop */
-@media (min-width: 1025px) {
-  .component_container {
-    max-width: 1400px;
-    width: 80%;
-    min-width: 20rem;
-    height: 34rem;
-    border-radius: 8px;
-    z-index: 3;
-    grid-column: 2 / span 10;
-    grid-row: 1;
-    margin-top: 6rem;
-    overflow: hidden;
-    overflow: scroll;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-left: 20px;
-  }
-}
-
- /* mobile */
-@media (max-width: 1024px) {
 .title {
   display: flex;
   justify-content: center;
@@ -57,15 +15,161 @@
   border-radius: 8px;
   margin-top: 30px;
   font-size: 20px;
-  background-color: #F4F5F5;
   margin-bottom: 3rem;
 }
-
+.user_logo {
+  max-width: 160px;
+  justify-self: center;
+  margin-bottom: 1rem;
 }
+.store_grid {
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  grid-auto-flow: row;
+  padding: 10px;
+  display: grid;
+  text-align: center;
+}
+.store_button_change {
+  background-color: #252525;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  width: 300px;
+  border-radius: 8px;
+  font-size: 16px;
+  justify-self: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* only relevant to mobile */
+@media (max-width: 1025px) {
+  .title {
+    background-color: #F4F5F5;
+  }
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+.component_container {
+  max-width: 1400px;
+  width: 80%;
+  min-width: 20rem;
+  height: 40rem;
+  border-radius: 8px;
+  z-index: 3;
+  grid-column: 2 / span 10;
+  grid-row: 1;
+  margin-top: 6rem;
+  overflow: hidden;
+  overflow: scroll;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-left: 20px;
+}
+.title {
+  padding: 20px;
+}
+.store_grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  text-align: left;
+  font-size: 18px;
+}
+.user_logo {
+  grid-area: 1 / col1-start / last-line / 1;
+  max-width: 300px;
+  margin-right: 20px;
+}
+ .user_name {
+  grid-column: 3;
+  grid-row: 1;
+}
+.user_bio {
+  grid-column: 3;
+  grid-row: 2;
+}
+.user_url {
+  grid-column: 3;
+  grid-row: 3;
+} 
+.user_hlekkur {
+  grid-column: 3;
+  grid-row: 4;
+  align-self: end;
+}
+.user_merch_linkur {
+  grid-column: 3;
+  grid-row: 5;
+}
+.store_button_change {
+  grid-column: 3;
+  grid-row: 6;
+  background-color: #252525;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  width: 300px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-top: auto;
+  margin-bottom: 0;
+  justify-self: left;
+}}
+
+
+/* ---- edit ---- */
 .input {
   width: 100%;
+  border: none;
+  border-bottom: 1px solid #9f9f9f;;
+  line-height: 36px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: #5f5f5f;
+  outline: none;
+  padding-left: 10px;
+  resize: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
-
-.user_logo {
-  width: 200px;
+.store_grid_edit {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  grid-column-gap: 30px;
+  text-align: left;
+  justify-self: center;
+}
+.edit_label {
+  color: #939393;
+  font-size: 18px;
+  padding-bottom: 1rem;
+}
+.store_button_cancel {
+  background-color: #808080;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  width: 300px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-top: auto;
+  margin-bottom: 3rem;
+  justify-self: left;
+}
+.store_button_confirm {
+  background-color: #252525;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  width: 300px;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-top: auto;
+  margin-bottom: 3rem;
 }

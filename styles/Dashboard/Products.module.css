@@ -1,3 +1,4 @@
+/* styles that are both relavent for mobile and desktop */
 .title {
   display: flex;
   justify-content: center;
@@ -7,21 +8,6 @@
   text-align: left;
   font-size: 20px;
 }
-/* the box with the value names */
-.header_box {
-  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
-  background-color: #f4f5f5;
-  grid-column-gap: 20px;
-  padding: 18px;
-  border-radius: 10px;
-  width: 90%;
-  display: grid;
-  margin: 0 auto;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: left;
-}
-/* the product box */
 .product {
   border-bottom: 1px solid #c2c2c2;
   width: 90%;
@@ -29,15 +15,50 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-/* each product inside the product box */
+
+
+
 /* desktop */
 @media (min-width: 1024px) {
+  .component_container {
+    background-color: #fff;
+    width: 80%;
+    min-width: 20rem;
+    height: 40rem;
+    border-radius: 8px;
+    z-index: 3;
+    grid-column: 2 / span 10;
+    grid-row: 1;
+    margin-top: 6rem;
+    margin-left: 20px;
+    overflow: hidden;
+    overflow: scroll;
+  }
+  /* hide scrollbars */
+  .component_container::-webkit-scrollbar {
+    display: none;
+  }
+  .header_box {
+    grid-template-columns: 140px 1.5fr 1fr 1fr 1fr 0.5fr;
+    background-color: #f4f5f5;
+    grid-column-gap: 20px;
+    padding: 18px;
+    border-radius: 10px;
+    width: 90%;
+    display: grid;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+  }
   .each_product {
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
     grid-column-gap: 20px;
     padding: 10px;
     display: grid;
     margin: 0 auto;
+    align-items: center;
+    justify-items: center;
   }
   /* each "string" inside 1 product */
   .grid-item {
@@ -75,8 +96,14 @@
   }
 }
 
+
 /* mobile */
 @media (max-width: 1024px) {
+  .component_container {
+    height: auto;
+    text-align: center;
+    background-color: #fff;
+  }
   .header_box {
     display: none;
   }
@@ -152,33 +179,5 @@
   }
 }
 
-/* the conpoment container that the products are insidet */
-/* desktop */
-@media (min-width: 1025px) {
-  .component_container {
-    background-color: #fff;
-    width: 80%;
-    min-width: 20rem;
-    height: 40rem;
-    border-radius: 8px;
-    z-index: 3;
-    grid-column: 2 / span 10;
-    grid-row: 1;
-    margin-top: 6rem;
-    margin-left: 20px;
-    overflow: hidden;
-    overflow: scroll;
-  }
-  /* hide scrollbars */
-  .component_container::-webkit-scrollbar {
-    display: none;
-  }
-}
-/* mobile */
-@media (max-width: 1024px) {
-  .component_container {
-    height: auto;
-    text-align: center;
-    background-color: #fff;
-  }
-}
+
+

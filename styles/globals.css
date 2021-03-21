@@ -32,7 +32,7 @@ a {
   padding-left: 10px;
 }
 
-/* ------ navbar.js - burger when open on mobile ------ */
+/* ------ navbar.js - burger when open on mobile FRONTEND pages------ */
 @media (max-width: 860px) {
   .burgerNav {
     overflow-y: scroll;
@@ -49,14 +49,9 @@ a {
     z-index: 9;
     transition: 0.3s;
   }
-}
-
-@media (max-width: 860px) {
   .burgerNav.showMenu {
     width: 100%;
   }
-}
-@media (max-width: 860px) {
   .burgerNav li:first-child {
     margin-top: 12rem;
   }
@@ -79,15 +74,13 @@ a {
     z-index: 9;
     transition: 0.3s;
   }
-}
-
-@media (max-width: 1024px) {
   .burgerNavDash.showMenu {
     width: 100%;
   }
-}
-@media (max-width: 1024px) {
   .burgerNavDash li:first-child {
     margin-top: 12rem;
   }
+}
+.burgerNavDash  {
+  list-style: none;
 }
