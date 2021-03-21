@@ -9,7 +9,7 @@ import Add from "../../components/dashboard/Add";
 import Yfirlit from "../../components/dashboard/Yfirlit";
 import Sidemenu from "../../components/dashboard/sidemenu";
 import Store from "../../components/dashboard/Store";
-import styles from "../../styles/Dashboard.module.css";
+import styles from "../../styles/Dashboard/Dashboard.module.css";
 
 export default function dashboard() {
   const router = useRouter();

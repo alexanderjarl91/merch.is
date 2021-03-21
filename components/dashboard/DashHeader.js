@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../styles/DashboardHeader.module.css";
+import styles from "../../styles/Dashboard/DashboardHeader.module.css";
 import { auth, db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useContext } from "react";

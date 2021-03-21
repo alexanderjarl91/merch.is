@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import Link from "next/link";
-import styles from "../../styles/Sidemenu.module.css";
+import styles from "../../styles/Dashboard/Sidemenu.module.css";
 import {
   MdDashboard,
   MdAddBox,

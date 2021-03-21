@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../../pages/context";
 import Footer from "../../components/Footer";
-import styles from "../../styles/Product.module.css";
+import styles from "../../styles/Store/Product.module.css";
 import {
   FacebookShareButton,
   TwitterShareButton,

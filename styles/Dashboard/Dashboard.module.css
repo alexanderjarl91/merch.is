@@ -1,0 +1,15 @@
+.dashboard_bg {
+  background-color: #f4f5f5;
+  height: 100vh;
+  color: #252525;
+}
+@media (max-width: 1024px) {
+  .dashboard_bg {
+    background-color: #fff;
+  }
+}
+@media (min-width: 1025px) {
+  .dashboard_grid {
+    display: grid;
+  }
+}
