@@ -46,8 +46,16 @@ export default function Landing() {
             {/* LOGIN FORM */}
             <div className={styles.login__container}>
               <div className={styles.login__header}>
+                <button
+                  onClick={() => router.back()}
+                  className={styles.go_back_button}
+                >
+                  X
+                </button>
                 <h1 className={styles.login__header}>Skráðu þig inn</h1>
-                <p className={styles.login_subtitle}>Skráðu þig inn á þína verslun með netfangi og lykilorði</p>
+                <p className={styles.login_subtitle}>
+                  Skráðu þig inn á þína verslun með netfangi og lykilorði
+                </p>
               </div>
               <form>
                 <div>
@@ -73,28 +81,27 @@ export default function Landing() {
                   />
                 </div>
                 <div className={styles.login_footer}>
-
-                <button
-                  className={styles.login__btn}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleLogin(email, password);
-                  }}
+                  <button
+                    className={styles.login__btn}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLogin(email, password);
+                    }}
                   >
-                  Skrá inn
-                </button>
-                {loginError ? (
-                  <p style={{ color: "red" }}>{loginError}</p>
+                    Skrá inn
+                  </button>
+                  {loginError ? (
+                    <p style={{ color: "red" }}>{loginError}</p>
                   ) : null}
 
-                <p className={styles.login_paragraph}>
-                  eða{" "}
-                  <Link href="/signup">
-                    <b>nýskráðu þig</b>
-                  </Link>{" "}
-                  ef þú átt ekki reikning
-                </p>
-                  </div>
+                  <p className={styles.login_paragraph}>
+                    eða{" "}
+                    <Link href="/signup">
+                      <b>nýskráðu þig</b>
+                    </Link>{" "}
+                    ef þú átt ekki reikning
+                  </p>
+                </div>
               </form>
             </div>
           </div>

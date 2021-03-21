@@ -3,25 +3,10 @@
   background-size: cover;
   height: 100vh;
 }
-
 .left_side {
   margin-right: 2rem;
   margin-bottom: 2rem;
 }
-
-@media (min-width: 860px) {
-  .form {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
-.login {
-  background-color: #ff9090;
-  height: 100vh;
-  justify-content: center;
-}
-
 .login__container {
   font-family: "Poppins", sans-serif;
   max-width: 90%;
@@ -32,27 +17,6 @@
   background-color: #35353554;
   backdrop-filter: blur(5px);
 }
-
-@media (min-width: 860px) {
-  .login {
-    align-items: center;
-    vertical-align: center;
-  }
-
-  .login__container {
-    width: 900px;
-    height: 50vh;
-    background-color: #353535cb;
-    backdrop-filter: blur(5px);
-    height: auto;
-    margin-top: 40px;
-  }
-  .login_paragraph {
-    font-size: 16px;
-    margin-top: 30px;
-  }
-}
-
 .login__header {
   display: flex;
   flex-direction: column;
@@ -61,59 +25,14 @@
   font-size: 26px;
   margin-bottom: 50px;
 }
-
-.login__label {
-  font-weight: 500;
-  font-size: 18px;
-  float: left;
-}
-
-.login__input {
-  width: 100%;
-  height: 38px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  margin-top: 3px;
+.go_back_button {
+  background: transparent;
   border: none;
+  color: #f4f5f5;
+  font-size: 30px;
+  text-align: right;
+  margin-bottom: 2rem;
 }
-
-.login__btn {
-  cursor: pointer;
-  background: none;
-  border: 1px white solid;
-  color: white;
-  width: 100%;
-  height: 45px;
-  border-radius: 4px;
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  margin-top: 40px;
-  text-align: center;
-}
-/* the small paragraph under the innskrá or nýskrá buttons on frontend index.ja and the modals */
-.login_paragraph {
-  font-size: 14px;
-  font-weight: 300;
-  margin-top: 20px;
-}
-/* desktop */
-@media (min-width: 860px) {
-  .login_paragraph {
-    font-size: 16px;
-    margin-top: 30px;
-  }
-}
-
-.login__close_btn {
-  float: right;
-  cursor: pointer;
-  background: none;
-  color: white;
-  border: none;
-  font-size: 26px;
-}
-
 .input {
   outline: none;
   font-size: 24px;
@@ -130,13 +49,48 @@
 .label {
   font-size: 20px;
   font-weight: 500;
-  color: rgba(196, 196, 196, 0.48);
+  color: #fff
 }
-
 .url_container {
   display: flex;
 }
+.login__btn {
+  border: 1px solid rgb(247, 212, 250);
+  color: #fff;
+  background: rgba(159, 113, 179, 0.907);
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  text-align: center;
+}
+.login__btn:hover {
+  background: rgba(189, 134, 212, 0.907);
+}
+/* the small paragraph under the innskrá or nýskrá buttons on frontend index.ja and the modals */
+.login_paragraph {
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 20px;
+  text-align: center;
+}
 
-.login__subtitle  {
-  font-size: 5px;
+
+/* desktop */
+@media (min-width: 860px) {
+  .login__container {
+    width: 900px;
+    margin-top: 40px;
+  }
+  .login_paragraph {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  .form {
+    display: flex;
+    justify-content: space-around;
+  }
 }

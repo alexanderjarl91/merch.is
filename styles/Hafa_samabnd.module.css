@@ -66,6 +66,7 @@
   display: grid;
   grid-template-columns:  auto auto auto;
   margin-top: 10%;
+  height: 100vh;
 }
 .hafa_samaband_h1 {
   color: #F4F5F5;

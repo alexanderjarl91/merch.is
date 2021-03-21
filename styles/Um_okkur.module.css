@@ -4,7 +4,6 @@
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 10%;
-    position: relative;
     height: 100vh;
 }}
 
@@ -30,7 +29,7 @@
     font-size: 20px;
     line-height: 28px;
     margin-top: 2rem;
-    height: 90px;
+   margin-bottom: 3rem;
     font-weight: 200;
     color: #F4F5F5;
 }
@@ -39,28 +38,34 @@
 @media (min-width: 900px) {
 .container {
   display: grid;
-  grid-template-columns:  auto auto auto;
+  grid-template-columns: auto;
+  grid-template-rows: 100px;
+  grid-auto-flow: row;
   margin-top: 10%;
   position: relative;
+ 
 }
 .um_okkur_headline {
     font-weight: 700;
     font-style: italic;
     font-size: 70px;
-    grid-row-end: 1;
+    grid-column: 1;
+    grid-row: 1;
     max-width: 500px;
 }
 .aukaP {
     margin-left: 30px;
     font-size: 20px;
     max-width: 300px;
-    grid-row-end: 2;
+    grid-column: 1;
+    grid-row: 2;
     font-size: 24px;
 }
 .um_okkur_body_text {
     margin-top: 20px;
-    grid-row-end: 1;
+    grid-area: 1 / col1-start / last-line / 3;
     font-size: 20px;
     line-height: 34px;
+    height: 100vh;
 }}
 
