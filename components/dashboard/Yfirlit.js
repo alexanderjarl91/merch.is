@@ -1,5 +1,5 @@
 import styles from "../../styles/Dashboard/Yfirlit.module.css";
-import { auth } from "../../pages/fire";
+import { auth, db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useState, useEffect, useContext } from "react";
 
@@ -14,8 +14,9 @@ export default function Yfirlit() {
   const [totalSum, setTotalSum] = useState(0)
 const [fulfilledOrders, setFulfilledOrders] = useState(0)
 
-useEffect(async() => {
-  //get total sales
+
+//get total $$ sum
+const getTotalSum = async () => {
   let orderPriceArray = [0]
   if (userData && userData.orders) {
     userData.orders.forEach((order) => {
@@ -26,8 +27,10 @@ useEffect(async() => {
     return (+a)+(+b);
   })
   setTotalSum(total)
+}
 
-  //get total fulfilled orders
+//get total fulfilled orders
+const getFulfilledOrders = () =>{
   if (userData && userData.orders) {
     userData.orders.forEach((order) => {
       if (order.fulfilled) {
@@ -35,12 +38,11 @@ useEffect(async() => {
       }
     })
   }
-}, [users, userData])
+}
 
 
 
 
-  console.log(totalSum)
   return (
     <div className={styles.component_container}>
       <p className={styles.title}> Yfirlit</p>

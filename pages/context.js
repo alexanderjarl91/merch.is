@@ -27,6 +27,7 @@ export const UsersProvider = ({ children }) => {
     setSignUpError();
     setLoginError();
   };
+
   useEffect(() => {
     clearErrors();
   }, []);
@@ -175,6 +176,24 @@ export const UsersProvider = ({ children }) => {
   };
 
   //FIRESTORE STUFF
+  //ATTEMPT AT REALTIME DATA
+  const [realTimeData, setRealTimeData] = useState();
+  useEffect(() => {
+    if (auth.currentUser) {
+      const observer = db.collection("users").onSnapshot((snapshot) => {
+        const tempUsers = [];
+        snapshot.forEach((doc) => {
+          tempUsers.push(doc.data());
+        });
+        const foundUser = tempUsers.find(
+          (x) => x.email === auth.currentUser.email
+        );
+        // setRealTimeData(foundUser);
+        console.log(foundUser);
+      });
+    }
+  });
+
   const getUsers = async () => {
     const usersRef = db.collection("users");
     const snapshot = await usersRef.get();
@@ -195,7 +214,6 @@ export const UsersProvider = ({ children }) => {
     if (currentUser) {
       const foundUser = users.find((x) => x.email === currentUser.email);
       setUserData(foundUser);
-      // console.log("USER FOUND:", foundUser);
     } else {
       console.log("no currentUser");
     }
@@ -204,7 +222,7 @@ export const UsersProvider = ({ children }) => {
   const refreshUserData = async () => {
     const userSnapshot = await db.collection("users").doc(userData.email).get();
     const tempUserData = await userSnapshot.data();
-    console.log(tempUserData);
+
     if (tempUserData) {
       console.log("running refresh function");
       setUserData(tempUserData);
@@ -234,6 +252,7 @@ export const UsersProvider = ({ children }) => {
         getUserData,
         getUsers,
         setCurrentUser,
+        setUserData,
         setEmail,
         setName,
         setPassword,

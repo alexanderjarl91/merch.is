@@ -46,59 +46,64 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
         </button>
         <div className={styles.sideMenu}>
           <ul className={`burgerNavDash ${navbarOpen ? " showMenu" : ""}`}>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("dashboard");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
+            <li
+              onClick={() => {
+                setComponentShowing("dashboard");
+                closeMenu();
+                console.log(componentShowing);
+              }}
+              className={styles.sideMenu_buttons}
+            >
+              <a>
                 <MdDashboard className={styles.sideMenu_icon} /> Yfirlit{" "}
               </a>
             </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("store");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
+            <li
+              onClick={() => {
+                setComponentShowing("store");
+                closeMenu();
+                console.log(componentShowing);
+              }}
+              className={styles.sideMenu_buttons}
+            >
+              <a>
                 <MdHome className={styles.sideMenu_icon} /> Búðin mín
               </a>
             </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("products");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
+            <li
+              onClick={() => {
+                setComponentShowing("products");
+                closeMenu();
+                console.log(componentShowing);
+              }}
+              className={styles.sideMenu_buttons}
+            >
+              <a>
                 <MdFormatLineSpacing className={styles.sideMenu_icon} /> Mínar
                 vörur{" "}
               </a>
             </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("add");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
+            <li
+              onClick={() => {
+                setComponentShowing("add");
+                closeMenu();
+                console.log(componentShowing);
+              }}
+              className={styles.sideMenu_buttons}
+            >
+              <a>
                 <MdAddBox className={styles.sideMenu_icon} /> Bæta við vöru{" "}
               </a>
             </li>
-            <li className={styles.sideMenu_buttons}>
-              <a
-                onClick={() => {
-                  setComponentShowing("orders");
-                  closeMenu();
-                  console.log(componentShowing);
-                }}
-              >
+            <li
+              onClick={() => {
+                setComponentShowing("orders");
+                closeMenu();
+                console.log(componentShowing);
+              }}
+              className={styles.sideMenu_buttons}
+            >
+              <a>
                 <MdShoppingCart className={styles.sideMenu_icon} /> Pantanir{" "}
               </a>
             </li>

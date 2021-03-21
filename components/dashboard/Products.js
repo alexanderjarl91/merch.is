@@ -13,9 +13,9 @@ export default function Products() {
     refreshUserData();
   }, []);
 
-  useEffect(() => {
-    console.log("userData changed, dom rerendered");
-  }, [userData]);
+  // useEffect(() => {
+  //   console.log("userData changed, dom rerendered");
+  // }, [userData]);
 
   const handleDelete = async (productId) => {
     //filter out the clicked item
