@@ -4,6 +4,8 @@
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 10%;
+    position: relative;
+    height: 100vh;
 }}
 
 /* mobile first css */
@@ -39,6 +41,7 @@
   display: grid;
   grid-template-columns:  auto auto auto;
   margin-top: 10%;
+  position: relative;
 }
 .um_okkur_headline {
     font-weight: 700;

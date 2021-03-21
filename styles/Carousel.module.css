@@ -2,8 +2,8 @@
 .content {
   max-width: 960px;
   margin: 0 auto;
-  padding-right: 10px;
-  padding-left: 10px; 
+  padding-right: 20px;
+  padding-left: 20px; 
 }
 .frontpageGrid {
   margin-top: 4rem;
@@ -44,7 +44,7 @@
   margin-top: 4rem;
   margin-bottom: 0.5rem;
   padding: 16px;
-  width: 30%;
+  width: 50%;
   border-radius: 8px;
   border: 1px solid rgb(247, 212, 250);
   font-size: 22px;

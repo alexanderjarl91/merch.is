@@ -4,5 +4,5 @@
   min-height: 100vh;
   filter: grayscale(var(--value, 10%)); 
   /* mask-image: linear-gradient(to bottom, transparent 10%, black); */
-  
+position: relative;
 }
