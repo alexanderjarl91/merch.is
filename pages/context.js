@@ -195,7 +195,7 @@ export const UsersProvider = ({ children }) => {
 
   //function to match auth user to firestore user
   const getUserData = async () => {
-    const foundUser = users.find((x) => x.email === currentUser.email);
+    const foundUser = users.find((x) => x.email === auth.currentUser.email);
     setUserData(foundUser);
     console.log("CURRENT USER FOUND:", userData);
   };

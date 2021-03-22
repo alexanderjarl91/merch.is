@@ -97,5 +97,4 @@ export default function Yfirlit({}) {
       </button>
     </div>
   );
-  // return <p> {userData.products[0].productDescription} </p>;
 }

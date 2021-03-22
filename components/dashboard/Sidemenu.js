@@ -106,9 +106,11 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
 
             <div className={styles.sideMenu_extra_links_container}>
               <li className={styles.sideMenu_extra_links}>
-                <Link href={`/${userData.store.url}`}>
-                  <p> Búðin mín </p>
-                </Link>
+                {userData && userData.store ? (
+                  <Link href={`/${userData.store.url}`}>
+                    <p> Búðin mín </p>
+                  </Link>
+                ) : null}
               </li>
               <li className={styles.sideMenu_extra_links}>
                 <Link href="/hafa_samband">
