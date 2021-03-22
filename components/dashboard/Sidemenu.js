@@ -15,9 +15,6 @@ import { UsersContext } from "../../pages/context";
 export default function Sidemenu({ componentShowing, setComponentShowing }) {
   const { userData, getUserData, handleLogout } = useContext(UsersContext);
 
-  useEffect(() => {
-    getUserData();
-  }, []);
   // state for the hamburger menu on mobile view
   const [navbarOpen, setNavbarOpen] = useState(false);
 
@@ -109,9 +106,9 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
 
             <div className={styles.sideMenu_extra_links_container}>
               <li className={styles.sideMenu_extra_links}>
-                {/* <Link href={`/${userData.store.url}`}>
+                <Link href={`/${userData.store.url}`}>
                   <p> Búðin mín </p>
-                </Link> */}
+                </Link>
               </li>
               <li className={styles.sideMenu_extra_links}>
                 <Link href="/hafa_samband">

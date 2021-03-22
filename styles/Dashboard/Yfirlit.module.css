@@ -1,62 +1,61 @@
 .title {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    font-size: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+}
 .yfirlit_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
-    grid-row-gap: 20px;
-    grid-auto-flow: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 20px;
+  grid-auto-flow: row;
 }
 .yfirlit_grid_box1 {
-    border: 1px solid palevioletred;
-    height: 200px;
+  border: 1px solid palevioletred;
+  height: 200px;
 }
 .yfirlit_grid_box2 {
-    border: 1px solid palevioletred;
+  border: 1px solid palevioletred;
 }
 .yfirlit_grid_box3 {
-    border: 1px solid palevioletred;
-    height: 200px;
+  border: 1px solid palevioletred;
+  height: 200px;
 }
 .yfirlit_grid_box4 {
-    border: 1px solid palevioletred;
+  border: 1px solid palevioletred;
 }
 
-
-  /* the conpoment container that the products are insidet */
- /* mobile */
- .component_container {
-    margin: 0 auto;
-    height: 100vh;
-    margin-top: 40px;
-    text-align: center;
-    background-color: #fff;
-  }
-  /* desktop */
+/* the conpoment container that the products are insidet */
+/* mobile */
+.component_container {
+  margin: 0 auto;
+  height: 100vh;
+  margin-top: 40px;
+  text-align: center;
+  background-color: #fff;
+}
+/* desktop */
 @media (min-width: 1025px) {
-    .component_container {
-      max-width: 1400px;
-      width: 80%;
-      min-width: 20rem;
-      height: 34rem;
-      border-radius: 8px;
-      z-index: 3;
-      grid-column: 2 / span 10;
-      grid-row: 1;
-      margin-top: 6rem;
-      overflow: hidden;
-      overflow: scroll;
-      padding-right: 40px;
-      padding-left: 40px;
-      margin-left: 20px;
-    }
+  .component_container {
+    max-width: 1400px;
+    width: 80%;
+    min-width: 20rem;
+    height: 34rem;
+    border-radius: 8px;
+    z-index: 3;
+    grid-column: 2 / span 10;
+    grid-row: 1;
+    margin-top: 6rem;
+    overflow: hidden;
+    overflow: scroll;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-left: 20px;
   }
+}
 
-   /* mobile */
+/* mobile */
 @media (max-width: 1024px) {
   .title {
     display: flex;
@@ -67,8 +66,20 @@
     border-radius: 8px;
     margin-top: 30px;
     font-size: 20px;
-    background-color: #F4F5F5;
+    background-color: #f4f5f5;
     margin-bottom: 3rem;
   }
- 
+}
+
+.totalSum {
+  -webkit-animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
