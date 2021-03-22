@@ -22,6 +22,7 @@ a {
  button {
   cursor: pointer;
   outline: none;
+  border: none;
 } 
 /* layout.js */
 .content {
@@ -30,7 +31,14 @@ a {
   padding-right: 10px;
   padding-left: 10px;
 }
-
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-left: 4px solid;
+  animation: load 1s infinite linear;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
 
 /* ------ navbar.js - burger when open on mobile FRONTEND pages------ */
 @media (max-width: 860px) {
@@ -77,6 +85,7 @@ a {
   }
   .burgerNavDash.showMenu {
     width: 100%;
+    height: 100vh;
     overflow: scroll;
   }
   .burgerNavDash li:first-child {

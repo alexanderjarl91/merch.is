@@ -181,7 +181,7 @@ export default function Add({ setComponentShowing }) {
               addProduct();
             }}
           >
-            Bæta við vöru
+            Bæta við vöru{" "}
           </button>
         </div>
       </div>

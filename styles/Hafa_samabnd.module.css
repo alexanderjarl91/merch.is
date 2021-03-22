@@ -49,14 +49,13 @@
   margin-bottom: 0.5rem;
   padding: 16px;
   width: 100%;
-  border-radius: 8px;
-  border: 1px solid rgb(247, 212, 250);
+  border-radius: 4px;
   font-size: 22px;
   color: #fff;
-  background:  rgba(159, 113, 179, 0.907);
+  background:  rgb(159, 113, 179);
 }
 .contact_btn:hover {
-  background: rgba(189, 134, 212, 0.907);
+  background: rgb(189, 134, 212);
 }
 
 

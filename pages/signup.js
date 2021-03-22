@@ -146,7 +146,15 @@ export default function Landing() {
                 </div>
               </form>
               {signUpError ? (
-                <p style={{ color: "red" }}>{signUpError}</p>
+                <p
+                  style={{
+                    color: "red",
+                    background: "#F4F5F5",
+                    textAlign: "center",
+                  }}
+                >
+                  {signUpError}
+                </p>
               ) : null}
 
               <div>

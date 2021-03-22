@@ -23,6 +23,9 @@
   font-weight: 500;
   margin-left: 3%;
 }
+.log_out:hover {
+font-weight: 900;
+}
 
 /* mobile */
 @media (max-width: 1025px) {

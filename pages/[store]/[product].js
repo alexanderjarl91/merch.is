@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../../pages/context";
-import Footer from "../../components/Footer";
+import FooterStore from "../../components/store/FooterStore";
 import styles from "../../styles/Store/Product.module.css";
 import {
   FacebookShareButton,
@@ -75,14 +75,6 @@ export default function Product() {
 
   return (
     <div className={styles.product_page}>
-      <h1 className={styles.logo}>merch.</h1>
-      <button
-        onClick={() => {
-          back();
-        }}
-      >
-        BACK
-      </button>
       {storeOwner ? (
         <div className={styles.container}>
           <div className="productPage_header">
@@ -92,6 +84,11 @@ export default function Product() {
           <div className={styles.product}>
             <div className={styles.product_images}>
               <div className={styles.product_smallImages}>
+                <img
+                  className={styles.product_smallImg}
+                  src="https://images-na.ssl-images-amazon.com/images/I/81Af8as1z7L._AC_UL1500_.jpg"
+                  alt=""
+                />
                 <img
                   className={styles.product_smallImg}
                   src="https://images-na.ssl-images-amazon.com/images/I/81Af8as1z7L._AC_UL1500_.jpg"
@@ -125,17 +122,22 @@ export default function Product() {
                   PÖNTUN MÓTTEKIN, TAKK FYRIR AÐ VERSLA!
                 </h2>
               ) : (
-                <div className={styles.product_footer}>
+                <>
                   <h1 className={styles.product_price}>
-                    {product.productPrice} ISK
+                    {product.productPrice} KR
                   </h1>
-                  <button onClick={purchaseItem}>Kaupa</button>
-                </div>
+                  <button
+                    className={styles.product_buy_button}
+                    onClick={purchaseItem}
+                  >
+                    KAUPA
+                  </button>
+                </>
               )}
 
-              <a onClick={toggleShare} style={{ color: "#252525" }}>
-                DEILA
-              </a>
+              <button onClick={toggleShare} className={styles.deila_buttona}>
+                DEILA ÞESSARI VÖRU
+              </button>
               {showShare ? (
                 <div className={styles.share_buttons}>
                   <FacebookShareButton
@@ -175,9 +177,17 @@ export default function Product() {
               ) : null}
             </div>
           </div>
+          <button
+            className={styles.back_button}
+            onClick={() => {
+              back();
+            }}
+          >
+            FARA TILBAKA
+          </button>
         </div>
       ) : null}
-      <Footer />
+      <FooterStore />
     </div>
   );
 }

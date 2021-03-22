@@ -21,7 +21,7 @@ export default function Carousel() {
           <p className={styles.login_p}>
             eða{" "}
             <strong>
-              <Link href="/">
+              <Link href="/login">
                 <a>skráðu þig</a>
               </Link>
             </strong>{" "}
