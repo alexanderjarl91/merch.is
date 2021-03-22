@@ -20,7 +20,7 @@ export default function DashHeader() {
         onClick={() => {
           handleLogout();
         }}
-        className={styles.userName}
+        className={styles.log_out}
       >
         Útskrá
       </a>

@@ -91,13 +91,15 @@ export default function Landing() {
                     Skrá inn
                   </button>
                   {loginError ? (
-                    <p style={{ color: "red" }}>{loginError}</p>
+                    <p style={{ color: "red", background: "#F4F5F5" }}>
+                      {loginError}
+                    </p>
                   ) : null}
 
                   <p className={styles.login_paragraph}>
                     eða{" "}
                     <Link href="/signup">
-                      <b>nýskráðu þig</b>
+                      <strong>nýskráðu þig</strong>
                     </Link>{" "}
                     ef þú átt ekki reikning
                   </p>

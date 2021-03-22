@@ -5,8 +5,12 @@ import React, { useContext, useEffect } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
 import Link from "next/link";
 
-export default function Products() {
+export default function Products({ setComponentShowing, componentShowing }) {
   const { userData, refreshUserData } = useContext(UsersContext);
+
+  const openEdit = () => {
+    setComponentShowing("edit");
+  };
 
   //refresh data when component mounts
   useEffect(() => {
@@ -65,7 +69,14 @@ export default function Products() {
                 <p> ID: {product.productId}</p>
               </div>
 
-              <button className={styles.product_button_edit}>Breyta</button>
+              <button
+                onClick={() => {
+                  console.log(componentShowing);
+                }}
+                className={styles.product_button_edit}
+              >
+                Breyta
+              </button>
 
               <button
                 className={styles.product_button_delete}

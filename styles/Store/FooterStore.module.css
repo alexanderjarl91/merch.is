@@ -1,0 +1,20 @@
+/* mobile first css */
+.store_footer {
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+    color: rgb(211, 211, 211);
+    width: 100%;
+    z-index: 10; 
+  }
+  
+  /* desktop */
+  @media (min-width: 860px) {
+  .store_footer {
+    background-color: #000000d0;
+  }
+}
+  
+  

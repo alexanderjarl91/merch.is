@@ -53,9 +53,8 @@
 /* desktop */
 @media (min-width: 1025px) {
 .component_container {
-  max-width: 1400px;
   width: 80%;
-  min-width: 20rem;
+  min-width: 40rem;
   height: 40rem;
   border-radius: 8px;
   z-index: 3;
@@ -81,7 +80,8 @@
 }
 .user_logo {
   grid-area: 1 / col1-start / last-line / 1;
-  max-width: 300px;
+  min-width: 200px;
+  width: auto;
   margin-right: 20px;
 }
  .user_name {

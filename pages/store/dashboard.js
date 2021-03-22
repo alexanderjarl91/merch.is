@@ -7,6 +7,7 @@ import Products from "../../components/dashboard/Products";
 import Orders from "../../components/dashboard/Orders";
 import Add from "../../components/dashboard/Add";
 import Yfirlit from "../../components/dashboard/Yfirlit";
+import Edit from "../../components/dashboard/Edit";
 import Sidemenu from "../../components/dashboard/sidemenu";
 import Store from "../../components/dashboard/Store";
 import styles from "../../styles/Dashboard/Dashboard.module.css";
@@ -53,9 +54,6 @@ export default function dashboard() {
             setComponentShowing={setComponentShowing}
           />
         </div>
-        {/* <div className={styles.component_container}>
-          <h1> Yfirlit</h1>
-        </div> */}
 
         {componentShowing == "dashboard" ? <Yfirlit /> : null}
         {componentShowing == "store" ? <Store /> : null}
@@ -64,6 +62,10 @@ export default function dashboard() {
           <Add setComponentShowing={setComponentShowing} />
         ) : null}
         {componentShowing == "orders" ? <Orders /> : null}
+
+        {componentShowing == "edit" ? (
+          <Edit setComponentShowing={setComponentShowing} />
+        ) : null}
       </div>
     </div>
   );
