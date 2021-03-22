@@ -7,6 +7,7 @@ export default function Custom404() {
   return (
     <>
       <Navbar />
+      <div className={"page404"}></div>
      <div className="content">
       <div className={styles.error404}>404 </div>
       <div className={styles.errorText}>
