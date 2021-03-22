@@ -1,73 +1,197 @@
 
 
-.error404{
-    /*
-    404
-    color: whitesmoke;
-    font-weight: 800;
-    font-size: 40rem;
-    opacity: 0.5;
-    position: absolute;
-    z-index:100;
-    text-align: center; */
-    position: absolute;
-width: 1088px;
-height: 50px;
-z-index:100;
-font-style: italic;
-font-weight: 900;
-font-size: 500px;
-line-height: 788px;
-text-align: center;
-color: rgba(244, 245, 245, 0.6);
-opacity: 0.5;
-
-}
-
-.errorText{
-
-    /*
-
-    text-align: center;
-    color:white;
-    font-size: 10em;
-    margin-top: 15%; */
-   
-    position: absolute;
-    width: 1028px;
-    height: 135px;
-
-    top: 400px;
-    
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   
-    font-style: italic;
-    font-weight: bold;
-    font-size: 90px;
-    line-height: 135px;
-    
-    /* bakgrunnur */
-    
-    color: #F4F5F5;
-}
-.content {
-
-
-
-}
-
-@media (max-width: 768px) {
     .error404 {
-font-size:  300px; 
-position: relative;
-margin-right: 50px;
+        /*404
+       */
+        /* position: absolute; */
+        width: 100%;
+        height: 50px;
+        z-index: 100;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 173px;
+        margin-top:40%;
+        text-align: center;
+        color: rgba(244, 245, 245, 0.6);
+        opacity: 0.5;
+        
 
     }
-  }
 
-  @media (min-width: 1200px) {
-      .error404{
+    .errorText {
+
+        /* position: absolute; */
+        width: 100%;
+        height: 135px;
+        top: 400px;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 70px;
+        text-align: center;
+      
+
+        /* bakgrunnur */
+
+        color: #F4F5F5;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .error404 {
+        /*404
+       */
+        position: absolute; 
+        width: 100%;
+     
+        z-index: 100;
+        font-style: italic;
+        font-weight: 700;
+        font-size:  250px;
+        top: 18%;
+        text-align: center;
+        color: rgba(244, 245, 245, 0.6);
+        opacity: 0.5;
+        
+
+    }
+
+    .errorText {
+
+        position: absolute;
+        width: 100%;
+        /* height: 500px; */
+        top: 30%;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 70px;
+        text-align: center;
+      
+
+        /* bakgrunnur */
+
+        color: #F4F5F5;
+    }
+}
 
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .error404 {
+        /*404
+       */
+        position: absolute; 
+        width: 100%;
+        z-index: 100;
+        font-style: italic;
+        font-weight: 700;
+        font-size:  250px;
+        top: 30%;
+        text-align: center;
+        color: rgba(244, 245, 245, 0.6);
+        opacity: 0.5;
+        
+    }
 
-      }
-  }
+    .errorText {
+
+        position: absolute;
+        width: 100%;
+        /* height: 500px; */
+        top: 35%;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 100px;
+        line-height: 1.6;
+        text-align: center;
+      
+
+        /* bakgrunnur */
+
+        color: #F4F5F5;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+        .content{
+            max-width: none;
+        }
+    .error404 {
+        /*404
+       */
+       position: absolute; 
+       width: 100%;
+    
+       z-index: 100;
+       font-style: italic;
+       font-weight: 700;
+       font-size:  250px;
+       top: 30%;
+       text-align: center;
+       color: rgba(244, 245, 245, 0.6);
+       opacity: 0.5;
+
+    }
+
+    .errorText {
+
+        position: absolute;
+        width: 100%;
+        /* height: 500px; */
+        top: 35%;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 100px;
+        line-height: 1.6;
+        text-align: center;
+      
+
+        /* bakgrunnur */
+
+        color: #F4F5F5;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+    .error404 {
+        /*404
+   */
+        position: absolute;
+        width: 1088px;
+        height: 500px;
+        z-index: 100;
+        font-style: italic;
+        font-weight: 900;
+        font-size: 500px;
+        top: 20%;
+        text-align: center;
+        color: rgba(244, 245, 245, 0.6);
+        opacity: 0.5;
+
+    }
+
+    .errorText {
+
+        position: absolute;
+        width: 1028px;
+        height: 50%;
+        top: 20%;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 170px;
+        line-height: 1.6;
+        margin-top: 5%;
+
+        /* bakgrunnur */
+
+        color: #F4F5F5;
+    }
+}
