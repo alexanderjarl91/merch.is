@@ -13,8 +13,9 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
+import { db } from "../fire";
 
-const Store = () => {
+const Store = ({ products }) => {
   const router = useRouter();
   const { users } = useContext(UsersContext);
   const storeNameQuery = router.query ? router.query.store : null;
@@ -26,6 +27,8 @@ const Store = () => {
       router.push("/404");
     }
   }, [users]);
+
+  console.log(products);
 
   const [showShare, setShowShare] = useState(false);
   const toggleShare = () => {

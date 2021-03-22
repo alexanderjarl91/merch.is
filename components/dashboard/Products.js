@@ -1,12 +1,12 @@
 import styles from "../../styles/Dashboard/Products.module.css";
 import { db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
-import Link from "next/link";
 
 export default function Products({ setComponentShowing, componentShowing }) {
   const { userData, refreshUserData } = useContext(UsersContext);
+  const [isEditing, setIsEditing] = useState(false);
 
   const openEdit = () => {
     setComponentShowing("edit");
@@ -17,10 +17,7 @@ export default function Products({ setComponentShowing, componentShowing }) {
     refreshUserData();
   }, []);
 
-  useEffect(() => {
-    console.log("userData changed, dom rerendered");
-  }, [userData]);
-
+  //HANDLE DELETE
   const handleDelete = async (productId) => {
     //filter out the clicked item
     const firestoreUser = await db.collection("users").doc(userData.email);
@@ -36,6 +33,30 @@ export default function Products({ setComponentShowing, componentShowing }) {
       })
       .then(refreshUserData);
   };
+
+  //SET SPECIFIC PRODUCT TO EDIT MODE
+
+  // const [productToEdit, setProductToEdit] = useState([]);
+  // const toggleEdit = (index) => {
+  //   const productsCopy = [...userData.products];
+  //   console.log("productscopy:", productsCopy);
+  //    setProductToEdit("");
+  //    //set all products edit mode to false
+  //   if (productsCopy[index].editMode !== true) {
+  //      productsCopy.forEach((product) => {
+  //        product.editMode = false;
+  //      });
+  //      //set product to edit as the product found by index
+  //      setProductToEdit(currCollectionCopy[index]);
+  //    }
+  //    //set the product at the [index] as editMode equal to what it wasnt before (true)
+  //    productsCopy[index].editMode = !productsCopy[index].editMode;
+
+  //    //update the iterated array:
+  //   // setCurrCollection(currCollectionCopy);
+  // };
+
+  // toggleEdit();
 
   return (
     <div className={styles.component_container}>

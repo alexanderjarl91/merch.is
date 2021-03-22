@@ -14,7 +14,7 @@ export default function DashHeader() {
         <p className={styles.logo}> merch. </p>
       </Link>
 
-      <p className={styles.userName}> display name</p>
+      <p className={styles.userName}>{userData.name}</p>
       <p className={styles.userName}>|</p>
       <a
         onClick={() => {

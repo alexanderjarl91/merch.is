@@ -13,7 +13,7 @@ import { db } from "../fire";
 
 export default function Product() {
   const router = useRouter();
-  const { users, getUsers } = useContext(UsersContext);
+  const { users, getUsers, refreshUserData } = useContext(UsersContext);
   // const storeOwner = users.find((x) => x.store.url == router.query.store);
   const productId = router.query.product;
   const [storeOwner, setStoreOwner] = useState();

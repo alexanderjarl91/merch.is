@@ -27,6 +27,7 @@ export const UsersProvider = ({ children }) => {
     setSignUpError();
     setLoginError();
   };
+
   useEffect(() => {
     clearErrors();
   }, []);
@@ -76,8 +77,15 @@ export const UsersProvider = ({ children }) => {
       return;
     }
 
-    if (url.length > 0 && url.length < 4) {
+    if (url.length > 0 && url.length < 3) {
       setSignUpError("Hlekkurinn verður að vera minnst 4 bók- eða tölustafir");
+      return;
+    }
+
+    if (url.length < 3 || url.length > 10) {
+      setErrorMessage(
+        "Hlekkurinn þinn verður að vera minnst 3 stafir og mest 10"
+      );
       return;
     }
 
@@ -104,7 +112,7 @@ export const UsersProvider = ({ children }) => {
           store: {
             name: storeName,
             logo:
-              "https://store.sabaton.net/wp-content/uploads/2020/12/poison-gas-tshirt-back-sabaton-T19168.png",
+              "https://www.pngkit.com/png/detail/246-2467534_your-logo-here-png-your-brand-here-png.png",
             url: url,
             social: social,
             bio: "a description of your page",
@@ -174,7 +182,6 @@ export const UsersProvider = ({ children }) => {
     });
   };
 
-  //FIRESTORE STUFF
   const getUsers = async () => {
     const usersRef = db.collection("users");
     const snapshot = await usersRef.get();
@@ -186,32 +193,45 @@ export const UsersProvider = ({ children }) => {
     setUsers(tempUsers);
   };
 
-  useEffect(() => {
-    getUsers();
-  }, [currentUser]);
-
   //function to match auth user to firestore user
-  const getUserData = () => {
-    if (currentUser) {
-      const foundUser = users.find((x) => x.email === currentUser.email);
-      setUserData(foundUser);
-      // console.log("USER FOUND:", foundUser);
-    } else {
-      console.log("no currentUser");
-    }
+  const getUserData = async () => {
+    const foundUser = users.find((x) => x.email === currentUser.email);
+    setUserData(foundUser);
+    console.log("CURRENT USER FOUND:", userData);
   };
 
   const refreshUserData = async () => {
-    const userSnapshot = await db.collection("users").doc(userData.email).get();
+    console.log(`currentUser`, currentUser);
+    const userSnapshot = await db
+      .collection("users")
+      .doc(auth.currentUser.email)
+      .get();
     const tempUserData = await userSnapshot.data();
-    console.log(tempUserData);
+
     if (tempUserData) {
       console.log("running refresh function");
       setUserData(tempUserData);
+      console.log(`tempUserData`, tempUserData);
     } else {
       console.log("refreshing error");
+      console.log("userData.email,", userData.email);
+      console.log("tempUserData;", tempUserData);
     }
   };
+
+  useEffect(async () => {
+    if (!currentUser) return;
+    refreshUserData();
+  }, [currentUser]);
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
+  //set currentUser when auth.currentUser changes
+  useEffect(() => {
+    setCurrentUser(auth.currentUser);
+  }, [auth.currentUser]);
 
   return (
     <UsersContext.Provider
@@ -234,6 +254,7 @@ export const UsersProvider = ({ children }) => {
         getUserData,
         getUsers,
         setCurrentUser,
+        setUserData,
         setEmail,
         setName,
         setPassword,

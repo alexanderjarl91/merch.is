@@ -12,31 +12,15 @@ import Sidemenu from "../../components/dashboard/sidemenu";
 import Store from "../../components/dashboard/Store";
 import styles from "../../styles/Dashboard/Dashboard.module.css";
 
-export default function dashboard() {
+const dashboard = () => {
   const router = useRouter();
-  const {
-    userData,
-    users,
-    currentUser,
-    handleLogout,
-    getUsers,
-    getUserData,
-    setCurrentUser,
-  } = useContext(UsersContext);
-
-  useEffect(() => {
-    getUserData();
-  }, []);
-
-  //set currentUser when auth.currentUser changes
-  useEffect(() => {
-    setCurrentUser(auth.currentUser);
-  }, [auth.currentUser]);
+  const { users, currentUser, getUserData, setCurrentUser } = useContext(
+    UsersContext
+  );
 
   //get user data when users changes
   //push to root if theres no currentUser
   useEffect(() => {
-    getUserData();
     if (!currentUser) {
       router.push("/");
     }
@@ -69,4 +53,27 @@ export default function dashboard() {
       </div>
     </div>
   );
-}
+};
+
+//protected route component
+// put component or page through this function, render it if it passes.
+const protectedRoute = (dashboard) => {
+  const { users, currentUser } = useContext(UsersContext);
+  const [userLogged, setUserLogged] = useState();
+  const router = useRouter();
+
+  useEffect(() => {
+    setUserLogged(!currentUser);
+  }, [users]);
+
+  if (userLogged === true) {
+    return dashboard;
+  } else if (userLogged === false) {
+    router.push("/");
+    return;
+  } else {
+    return null;
+  }
+};
+
+export default dashboard;
