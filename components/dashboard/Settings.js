@@ -18,11 +18,11 @@ export default function Settings() {
   const [logo, setLogo] = useState();
   const [social, setSocial] = useState();
   const [edit, setEdit] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(false);
   const [image, setImage] = useState(null);
+  const [error, setError] = useState()
 
   const clearErrors = () => {
-    setErrorMessage();
+   
   };
 
   //set original states once userData kicks in
@@ -42,13 +42,18 @@ export default function Settings() {
   };
 
   const updateStorage = () => {
-    checkUrlAvailability();
-
-    if (!urlAvailable) {
-      console.log("URL UNAVAILABLE");
-      setErrorMessage("Þessi hlekkur er frátekinn");
+    if (name.length < 3) {
+      setError('name to short')
       return;
     }
+
+    // checkUrlAvailability();
+
+    // if (!urlAvailable) {
+    //   console.log("URL UNAVAILABLE");
+    //   setErrorMessage("Þessi hlekkur er frátekinn");
+    //   return;
+    // }
 
     if (!image) {
       let imgUrl = userData.store.logo;
@@ -164,6 +169,7 @@ export default function Settings() {
                 onChange={handleChange}
               />
             </div>
+
             <div>
               <button
                 className={styles.store_button_cancel}
@@ -198,9 +204,7 @@ export default function Settings() {
                 console.log(urlAvailable)
               </button>
             </div>
-            {errorMessage ? (
-              <p style={{ color: "red" }}>{errorMessage}</p>
-            ) : null}
+            <p style={{color: 'red'}}>{errorMessage}</p>
           </div>
         </>
       ) : (
