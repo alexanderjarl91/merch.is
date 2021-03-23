@@ -46,15 +46,15 @@ export default function Landing() {
               <Navbar />
               {/* LOGIN FORM */}
               <div className={styles.login__container}>
+                <button
+                  onClick={() => router.back()}
+                  className={styles.go_back_button}
+                >
+                  X
+                </button>
                 <div className={styles.login__header}>
-                  <button
-                    onClick={() => router.back()}
-                    className={styles.go_back_button}
-                  >
-                    X
-                  </button>
                   <h1 className={styles.login__header}>Skráðu þig inn</h1>
-                  <p className={styles.login_subtitle}>
+                  <p style={{ fontSize: 20 }}>
                     Skráðu þig inn á þína verslun með netfangi og lykilorði
                   </p>
                 </div>
@@ -100,7 +100,9 @@ export default function Landing() {
                     <p className={styles.login_paragraph}>
                       eða{" "}
                       <Link href="/signup">
-                        <strong>nýskráðu þig</strong>
+                        <span style={{ cursor: "pointer" }}>
+                          <strong>nýskráðu þig</strong>
+                        </span>
                       </Link>{" "}
                       ef þú átt ekki reikning
                     </p>

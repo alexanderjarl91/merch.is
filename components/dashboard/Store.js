@@ -90,25 +90,6 @@ export default function Store() {
 
     //FORM VALIDATION
 
-    // if (/\s/.test(url)) {
-    //   setErrorMessage(
-    //     "Hlekkurinn þinn má ekki innihalda bil eða aðra sérstaka stafi"
-    //   );
-    //   return;
-    // }
-
-    // if (url.length < 3 || url.length > 10) {
-    //   setErrorMessage(
-    //     "Hlekkurinn þinn verður að vera minnst 3 stafir og mest 10"
-    //   );
-    //   return;
-    // }
-
-    // if (name.length < 2) {
-    //   setErrorMessage("Nafn verður að vera lengra en 1 stafur");
-    //   return;
-    // }
-
     db.collection("users").doc(userData.email).update({ store: store });
     refreshUserData();
     setEdit(false);
@@ -118,7 +99,7 @@ export default function Store() {
 
   return (
     <div className={styles.component_container}>
-      <p className={styles.title}> Búðin mín </p>
+      <p className={styles.title}> Stillingar </p>
       {edit ? (
         <>
           <div className={styles.store_grid_edit}>

@@ -52,6 +52,7 @@ export const UsersProvider = ({ children }) => {
   };
 
   const handleSignup = () => {
+    // FORM VALIDATION
     clearErrors();
     if (urlAvailable == false) {
       setSignUpError("Þessi hlekkur er frátekinn");
@@ -80,8 +81,15 @@ export const UsersProvider = ({ children }) => {
     }
 
     if (url.length < 3 || url.length > 10) {
-      setErrorMessage(
+      setSignUpError(
         "Hlekkurinn þinn verður að vera minnst 3 stafir og mest 10"
+      );
+      return;
+    }
+
+    if (/\s/.test(url)) {
+      setSignUpError(
+        "Hlekkurinn þinn má ekki innihald bil eða önnur sérstök tákn"
       );
       return;
     }

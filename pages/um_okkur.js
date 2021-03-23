@@ -26,10 +26,7 @@ function um_okkur() {
               convallis nibh eget. Diam felis, felis mi ligula ante eget.
               Bibendum non venenatis amet adipiscing auctor tristique fermentum.
               Lacus tristique fermentum in imperdiet convallis nibh eget. Diam
-              felis, felis mi ligula ante eget. Bibendum non venenatis amet
-              adipiscing auctor tristique fermentum. Lacus tristique fermentum
-              in imperdiet convallis nibh eget. Diam felis, felis mi ligula ante
-              eget. Bibendum non venenatis amet adipiscing auctor
+              felis, felis mi ligula ante eget.
             </p>
           </div>
         </div>

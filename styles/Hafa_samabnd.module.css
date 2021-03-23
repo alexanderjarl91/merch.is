@@ -1,15 +1,16 @@
 /* mobile */
 @media (max-width: 900px) {
-.container{
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 10%;
-  height: 100vh;
-}}
+  .container {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 20px;
+    height: 100vh;
+  }
+}
 
 /* mobile first css */
 .hafa_samaband_h1 {
-  color: #F4F5F5;
+  color: #f4f5f5;
   margin-top: 2rem;
   font-weight: 700;
   font-style: italic;
@@ -24,7 +25,7 @@
   outline: none;
   font-size: 20px;
   font-weight: normal;
-  color: #F4F5F5;
+  color: #f4f5f5;
   width: 100%;
   margin-bottom: 10px;
   background: none;
@@ -32,16 +33,16 @@
   border-bottom: 1px solid #f4f5f5bd;
   letter-spacing: 2px;
   line-height: 30px;
-  }
+}
 .contact_textarea {
   outline: none;
   font-size: 20px;
-  color: #F4F5F5;
+  color: #f4f5f5;
   width: 100%;
   background: none;
   border: none;
   border-bottom: 1px solid #f4f5f5bd;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .contact_btn {
   margin: 0 auto;
@@ -52,41 +53,38 @@
   border-radius: 4px;
   font-size: 22px;
   color: #fff;
-  background:  rgb(159, 113, 179);
+  background: rgb(159, 113, 179);
 }
 .contact_btn:hover {
   background: rgb(189, 134, 212);
 }
 
-
 /* desktop */
 @media (min-width: 900px) {
-.container {
-  display: grid;
-  grid-template-columns:  auto auto auto;
-  margin-top: 10%;
-  height: 100vh;
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 20px;
+    height: 75vh;
+  }
+  .hafa_samaband_h1 {
+    color: #f4f5f5;
+    margin-top: 30px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-size: 49px;
+    max-width: 340px;
+  }
+  .contact_form {
+    max-width: 520px;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  .contact_label {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(247, 212, 250);
+  }
 }
-.hafa_samaband_h1 {
-  color: #F4F5F5;
-  margin-top: 30px;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 36px;
-  margin-bottom: 20px;
-  font-size: 49px;
-  max-width: 340px;
-}
-.contact_form {
-  max-width: 520px;
-  margin-top: 50px;
-  margin-left: 10px;
-}
-.contact_label{
-  font-size: 20px;
-  font-weight: 500;
-  color: rgb(247, 212, 250);
-}}
-
-
-  

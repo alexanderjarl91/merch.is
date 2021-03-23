@@ -7,7 +7,6 @@ import Products from "../../components/dashboard/Products";
 import Orders from "../../components/dashboard/Orders";
 import Add from "../../components/dashboard/Add";
 import Yfirlit from "../../components/dashboard/Yfirlit";
-import Edit from "../../components/dashboard/Edit";
 import Sidemenu from "../../components/dashboard/sidemenu";
 import Store from "../../components/dashboard/Store";
 import styles from "../../styles/Dashboard/Dashboard.module.css";

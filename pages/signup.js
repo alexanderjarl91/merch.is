@@ -60,13 +60,13 @@ export default function Landing() {
                 <Navbar />
                 {/* SIGN UP FORM */}
                 <div className={styles.login__container}>
+                  <button
+                    onClick={() => router.back()}
+                    className={styles.go_back_button}
+                  >
+                    X
+                  </button>
                   <div className={styles.login__header}>
-                    <button
-                      onClick={() => router.back()}
-                      className={styles.go_back_button}
-                    >
-                      X
-                    </button>
                     <h2>Nýskráning</h2>
                     <p>
                       Stofnaðu þinn aðgang og komdu vörunum þínum á markaðinn á

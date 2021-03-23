@@ -44,6 +44,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
           <ul className={`burgerNavDash ${navbarOpen ? " showMenu" : ""}`}>
             <li>
               <button
+                autoFocus
                 className={styles.sideMenu_buttons}
                 onClick={() => {
                   setComponentShowing("dashboard");
@@ -63,7 +64,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                   console.log(componentShowing);
                 }}
               >
-                <MdHome className={styles.sideMenu_icon} /> Búðin mín
+                <MdHome className={styles.sideMenu_icon} /> Stillingar
               </button>
             </li>
             <li>
@@ -110,14 +111,10 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                 ) : null}
               </li>
               <li className={styles.sideMenu_extra_links}>
-                <Link href="/hafa_samband">
-                  <p> Hafa samband </p>
-                </Link>
+                <Link href="/hafa_samband">Hafa samband</Link>
               </li>
               <li className={styles.sideMenu_extra_links}>
-                <Link href="/um_okkur">
-                  <p> Um okkur </p>
-                </Link>
+                <Link href="/um_okkur">Um okkur</Link>
               </li>
               <li>
                 <button

@@ -3,8 +3,9 @@
   .container {
     margin-left: 3%;
     margin-right: 3%;
-    margin-top: 10%;
+    margin-top: 20px;
     height: 100vh;
+    overflow: hidden;
   }
 }
 
@@ -23,11 +24,11 @@
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   color: #f4f5f5;
 }
 .um_okkur_body_text {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 28px;
   margin-top: 2rem;
   margin-bottom: 3rem;
@@ -42,9 +43,10 @@
     grid-template-columns: auto;
     grid-template-rows: 100px;
     grid-auto-flow: row;
-    margin-top: 10%;
+    margin-top: 20px;
     position: relative;
     overflow: hidden;
+    max-height: 75vh;
   }
   .um_okkur_headline {
     font-weight: 700;

@@ -1,9 +1,7 @@
 /* mobile first css */
 .content {
-  max-width: 960px;
+  max-width: 100vw;
   margin: 0 auto;
-  padding-right: 20px;
-  padding-left: 20px;
 }
 .frontpageGrid {
   margin-top: 4rem;
@@ -17,7 +15,7 @@
   width: 190px;
   font-weight: 600;
   font-style: italic;
-  font-size: 60px;
+  font-size: 54px;
   background-color: rgba(159, 113, 179, 0.521);
 }
 .front_headline_nr2 {

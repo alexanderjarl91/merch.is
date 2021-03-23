@@ -52,6 +52,14 @@ export default function Products({ setComponentShowing, componentShowing }) {
         <p>Vörunúmer</p>
       </div>
 
+      {userData.products.length == 0 ? (
+        <div>
+          <h1>
+            Úps! Engar vörur í búðinni þinni.. smelltu á "Bæta við vöru" til að
+            hefjast handa!
+          </h1>
+        </div>
+      ) : null}
       {userData.products.map((product, index) => {
         return (
           <div key={product.productId} className={styles.product}>
