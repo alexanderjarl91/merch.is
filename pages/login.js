@@ -1,30 +1,24 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../styles/Login.module.css";
 import Link from "next/Link";
+import { auth } from "../fire";
+import { UsersContext } from "../context";
 
 //components
-import { auth, db } from "./fire";
-import { UsersContext } from "./context";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export default function Landing() {
   const router = useRouter();
 
   const {
-    currentUser,
-    name,
     email,
     password,
     loginError,
-    setName,
     setEmail,
     setPassword,
-    handleSignup,
     handleLogin,
-    handleLogout,
   } = useContext(UsersContext);
 
   //if user is logged in push to dashboard

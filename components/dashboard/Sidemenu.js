@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import styles from "../../styles/Dashboard/Sidemenu.module.css";
 import {
@@ -10,10 +10,10 @@ import {
 } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import { CgMenuRight } from "react-icons/cg";
-import { UsersContext } from "../../pages/context";
+import { UsersContext } from "../../context";
 
 export default function Sidemenu({ componentShowing, setComponentShowing }) {
-  const { userData, getUserData, handleLogout } = useContext(UsersContext);
+  const { userData, handleLogout } = useContext(UsersContext);
 
   // state for the hamburger menu on mobile view
   const [navbarOpen, setNavbarOpen] = useState(false);

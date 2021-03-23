@@ -1,14 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { auth } from "../fire";
-import { UsersContext } from "../context";
+import { UsersContext } from "../../context";
 import DashHeader from "../../components/dashboard/DashHeader";
 import Products from "../../components/dashboard/Products";
 import Orders from "../../components/dashboard/Orders";
 import Add from "../../components/dashboard/Add";
 import Yfirlit from "../../components/dashboard/Yfirlit";
 import Sidemenu from "../../components/dashboard/sidemenu";
-import Store from "../../components/dashboard/Store";
+import Settings from "../../components/dashboard/Settings";
 import styles from "../../styles/Dashboard/Dashboard.module.css";
 
 const dashboard = () => {
@@ -39,7 +38,7 @@ const dashboard = () => {
               />
             </div>
             {componentShowing == "dashboard" ? <Yfirlit /> : null}
-            {componentShowing == "store" ? <Store /> : null}
+            {componentShowing == "store" ? <Settings /> : null}
             {componentShowing == "products" ? <Products /> : null}
             {componentShowing == "add" ? (
               <Add setComponentShowing={setComponentShowing} />

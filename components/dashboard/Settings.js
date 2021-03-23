@@ -1,9 +1,9 @@
-import styles from "../../styles/Dashboard/Store.module.css";
-import { UsersContext } from "../../pages/context";
+import styles from "../../styles/Dashboard/Settings.module.css";
+import { UsersContext } from "../../context";
 import React, { useState, useContext, useEffect } from "react";
-import { db, storage } from "../../pages/fire";
+import { db, storage } from "../../fire";
 
-export default function Store() {
+export default function Settings() {
   const {
     userData,
     refreshUserData,

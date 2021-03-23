@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
-import fire, { auth, db } from "./fire";
+import { auth, db } from "./fire";
 
 export const UsersContext = React.createContext();
-
 export const UsersProvider = ({ children }) => {
   //initializing next router
   const router = useRouter();

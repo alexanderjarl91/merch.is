@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { UsersContext } from "../../pages/context";
+import { UsersContext } from "../../context";
 import FooterStore from "../../components/store/FooterStore";
 import styles from "../../styles/Store/Product.module.css";
 import {
@@ -9,7 +9,7 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
-import { db } from "../fire";
+import { db } from "../../fire";
 
 export default function Product() {
   const router = useRouter();

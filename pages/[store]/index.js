@@ -1,11 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { UsersContext } from "../context";
+import { UsersContext } from "../../context";
 import Link from "next/link";
 import styles from "../../styles/Store/Store.module.css";
 import FooterStore from "../../components/store/FooterStore";
-
-import { storage } from "../fire";
 
 import {
   FacebookShareButton,

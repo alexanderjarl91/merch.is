@@ -1,6 +1,6 @@
 import styles from "../../styles/Dashboard/Yfirlit.module.css";
-import { auth, db } from "../../pages/fire";
-import { UsersContext } from "../../pages/context";
+import { auth, db } from "../../fire";
+import { UsersContext } from "../../context";
 import React, { useState, useEffect, useContext } from "react";
 
 export default function Yfirlit({}) {

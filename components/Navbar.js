@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import { MdClose } from "react-icons/md";
 import { CgMenuRight } from "react-icons/cg";
-import { UsersContext } from "../pages/context";
+import { UsersContext } from "../context";
 
 export default function Navbar() {
   const { currentUser } = useContext(UsersContext);

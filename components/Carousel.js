@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/Carousel.module.css";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Carousel() {

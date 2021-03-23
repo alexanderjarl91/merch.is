@@ -1,12 +1,12 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../styles/Index.module.css";
 
 //components
 import Carousel from "../components/Carousel";
-import { auth, db } from "./fire";
-import { UsersContext } from "./context";
+import { auth } from "../fire";
+import { UsersContext } from "../context";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 

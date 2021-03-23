@@ -1,14 +1,13 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/Link";
 import Head from "next/head";
 import styles from "../styles/Signup.module.css";
 
 //components
-import { auth } from "./fire";
-import { UsersContext } from "./context";
+import { auth } from "../fire";
+import { UsersContext } from "../context";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export default function Landing() {
   const router = useRouter();

@@ -1,10 +1,9 @@
 import styles from "../../styles/Dashboard/Orders.module.css";
-import { auth } from "../../pages/fire";
-import { UsersContext } from "../../pages/context";
 import React, { useContext } from "react";
+import { UsersContext } from "../../context";
 
 export default function Orders() {
-  const { userData, users, currentUser } = useContext(UsersContext);
+  const { users, currentUser } = useContext(UsersContext);
   return (
     <div className={styles.component_container}>
       <p className={styles.title}>Pantanir</p>

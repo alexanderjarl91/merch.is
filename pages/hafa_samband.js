@@ -2,7 +2,6 @@ import React from "react";
 import styles from "../styles/Hafa_samabnd.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ProtectedRoute from "../components/ProtectedRoute";
 
 function hafa_samband(props) {
   return (
@@ -45,7 +44,5 @@ function hafa_samband(props) {
     </>
   );
 }
-
-// export default ProtectedRoute(hafa_samband);
 
 export default hafa_samband;

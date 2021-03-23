@@ -1,6 +1,6 @@
 import styles from "../../styles/Dashboard/Add.module.css";
-import { db, storage } from "../../pages/fire";
-import { UsersContext } from "../../pages/context";
+import { db, storage } from "../../fire";
+import { UsersContext } from "../../context";
 import React, { useState, useContext } from "react";
 
 export default function Add({ setComponentShowing }) {

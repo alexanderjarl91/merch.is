@@ -1,14 +1,13 @@
 import styles from "../../styles/Dashboard/Products.module.css";
-import { db } from "../../pages/fire";
-import { UsersContext } from "../../pages/context";
+import { db } from "../../fire";
+import { UsersContext } from "../../context";
 import React, { useContext, useState, useEffect } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
 import ReactModal from "react-modal";
 import EditModal from "./EditModal";
 
-export default function Products({ setComponentShowing, componentShowing }) {
+export default function Products() {
   const { userData, refreshUserData } = useContext(UsersContext);
-  const [productToEdit, setProductToEdit] = useState([]);
 
   //refresh data when component mounts
   useEffect(() => {

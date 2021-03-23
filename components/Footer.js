@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
 import { IoLogoInstagram } from "react-icons/io";
-import { FaFacebook } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Footer() {

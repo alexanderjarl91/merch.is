@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import styles from "../../styles/Dashboard/Add.module.css";
-import { UsersContext } from "../../pages/context";
-import { db, auth, storage } from "../../pages/fire";
+import { UsersContext } from "../../context";
+import { db, auth, storage } from "../../fire";
 
 export default function EditModal({ productIndex, toggleModal }) {
   const { userData } = useContext(UsersContext);
