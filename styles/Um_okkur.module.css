@@ -1,71 +1,72 @@
 /* mobile */
 @media (max-width: 900px) {
-.container{
+  .container {
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 10%;
     height: 100vh;
-}}
+  }
+}
 
 /* mobile first css */
 .um_okkur_headline {
-    font-weight: 700;
-    font-style: italic;
-    font-size: 50px;
-    margin-right: 20px;
-    font-weight: 700;
-    font-style: italic;
-    color: rgb(247, 212, 250);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 50px;
+  margin-right: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(247, 212, 250);
 }
 .aukaP {
-    margin-left: 30px;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    margin-bottom: 50px;
-    color: #F4F5F5;
+  margin-left: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  margin-bottom: 50px;
+  color: #f4f5f5;
 }
 .um_okkur_body_text {
-    font-size: 20px;
-    line-height: 28px;
-    margin-top: 2rem;
-   margin-bottom: 3rem;
-    font-weight: 200;
-    color: #F4F5F5;
+  font-size: 20px;
+  line-height: 28px;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 200;
+  color: #f4f5f5;
 }
 
 /* desktop */
 @media (min-width: 900px) {
-.container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 100px;
-  grid-auto-flow: row;
-  margin-top: 10%;
-  position: relative;
- 
-}
-.um_okkur_headline {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 100px;
+    grid-auto-flow: row;
+    margin-top: 10%;
+    position: relative;
+    overflow: hidden;
+  }
+  .um_okkur_headline {
     font-weight: 700;
     font-style: italic;
     font-size: 70px;
     grid-column: 1;
     grid-row: 1;
     max-width: 500px;
-}
-.aukaP {
+  }
+  .aukaP {
     margin-left: 30px;
     font-size: 20px;
     max-width: 300px;
     grid-column: 1;
     grid-row: 2;
     font-size: 24px;
-}
-.um_okkur_body_text {
+  }
+  .um_okkur_body_text {
     margin-top: 20px;
     grid-area: 1 / col1-start / last-line / 3;
     font-size: 20px;
     line-height: 34px;
     height: 100vh;
-}}
-
+  }
+}
