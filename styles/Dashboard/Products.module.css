@@ -16,8 +16,6 @@
   margin-bottom: 3rem;
 }
 
-
-
 /* desktop */
 @media (min-width: 1024px) {
   .component_container {
@@ -31,7 +29,6 @@
     grid-row: 1;
     margin-top: 6rem;
     margin-left: 20px;
-    overflow: hidden;
     overflow: scroll;
   }
   /* hide scrollbars */
@@ -95,7 +92,6 @@
     color: rgb(225, 29, 29);
   }
 }
-
 
 /* mobile */
 @media (max-width: 1024px) {
@@ -179,6 +175,3 @@
     border: none;
   }
 }
-
-
-

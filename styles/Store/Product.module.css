@@ -42,10 +42,10 @@
     margin-bottom: 2rem;
   }
   .product {
-  display: grid;
-  grid-template-columns: auto ;
-  grid-template-rows: auto auto;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
   }
   .product_info {
     display: grid;
@@ -60,10 +60,9 @@
     align-self: end;
   }
   .product_buy_button {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 }
-
 
 /* mobile size */
 @media (max-width: 668px) {
@@ -75,7 +74,7 @@
     display: grid;
     grid-template-columns: 400px;
     justify-content: center;
-    }
+  }
   .product_info {
     display: grid;
     grid-template-rows: 70px 1fr 70px 1fr 1fr;
@@ -92,7 +91,7 @@
     align-self: end;
   }
   .product_buy_button {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
   /* grid that contains all the product images */
   .product_images {
@@ -186,9 +185,11 @@
   font-weight: 300;
   font-size: 20px;
   line-height: 24px;
+  margin-bottom: 2rem;
 }
 .product_price {
   color: #252525;
+  margin-bottom: 2rem;
 }
 .product_buy_button {
   width: 300px;
@@ -199,7 +200,7 @@
   color: #fff;
 }
 .product_buy_button:hover {
-  background:  #000000;;
+  background: #000000;
   font-weight: 900;
 }
 .deila_buttona {

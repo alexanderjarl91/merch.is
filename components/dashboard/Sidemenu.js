@@ -72,7 +72,6 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                 onClick={() => {
                   setComponentShowing("products");
                   closeMenu();
-                  console.log(componentShowing);
                 }}
               >
                 <MdFormatLineSpacing className={styles.sideMenu_icon} /> Mínar
@@ -91,7 +90,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                 <MdAddBox className={styles.sideMenu_icon} /> Bæta við vöru{" "}
               </button>
             </li>
-            <li>
+            <li className={styles.button}>
               <button
                 className={styles.sideMenu_buttons}
                 onClick={() => {

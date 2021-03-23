@@ -31,9 +31,9 @@
   top: 5px;
   left: 5px;
 }
+
 .sideMenu_buttons {
   margin-bottom: 15px;
-  padding: 10px 40px;
   text-decoration: none;
   font-weight: 500;
   font-size: 18px;
@@ -41,9 +41,10 @@
   border: none;
   color: #252525;
   background-color: #fff;
-  padding: 10px;
   border-radius: 8px;
   border: none;
+  padding: 10px;
+  padding-bottom: 14px;
 }
 .logo {
   margin-right: auto;
@@ -67,55 +68,53 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    overflow: hidden;
   }
 }
 
 /* desktop */
 @media (min-width: 1025px) {
-.logo {
-  display: none;
+  .logo {
+    display: none;
+  }
+  .sideMenu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    margin-top: 100px;
+  }
+  .sideMenu_utskra {
+    display: none;
+  }
+  .sideMenu_extra_links {
+    margin-left: 3rem;
+  }
+  .burger_button {
+    display: none;
+  }
+  .sideMenu_buttons {
+    width: 200px;
+    /* padding: 10px; */
+    font-size: 20px;
+    text-align: left;
+  }
+  .sideMenu_buttons:hover {
+    box-shadow: 1px 1px 10px 0px rgba(143, 143, 143, 0.25);
+  }
+  .sideMenu_buttons:focus {
+    background-color: #252525;
+    color: #fff;
+  }
+  .sideMenu_extra_links_container {
+    margin-top: 3rem;
+  }
+  .sideMenu_extra_links {
+    list-style: none;
+    color: #c2c2c2;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .sideMenu_utskra {
+    display: none;
+  }
 }
-.sideMenu {
-  display: flex;
-  flex-direction: column;
-  margin-left: 5rem;
-  margin-top: 100px;
-}
-.sideMenu_utskra {
-  display: none;
-}
-.sideMenu_extra_links {
-  margin-left: 3rem;
-}
-.burger_button {
-  display: none;
-}
-.sideMenu_buttons {
-  width: 200px;
-  padding: 10px;
-  font-size: 20px;
-  text-align: left;
-}
-.sideMenu_buttons:hover {
-  box-shadow: 1px 1px 10px 0px rgba(143, 143, 143, 0.25);
-}
-.sideMenu_buttons:focus {
-  background-color: #252525;
-  color: #fff;
-}
-.sideMenu_extra_links_container {
-  margin-top: 3rem;
-}
-.sideMenu_extra_links {
-  list-style: none;
-  color: #c2c2c2;
-  margin-top: 10px;
-  cursor: pointer;
-}
-.sideMenu_utskra {
-  display: none;
-}}
-
-
-
-

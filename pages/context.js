@@ -128,9 +128,13 @@ export const UsersProvider = ({ children }) => {
         };
 
         //pushing account to users with the email as document name
-        db.collection("users").doc(email).set(account);
-        setCurrentUser(auth.currentUser);
-        getUserData();
+        db.collection("users")
+          .doc(email)
+          .set(account)
+          .then(() => {
+            setCurrentUser(auth.currentUser);
+            refreshUserData();
+          });
       })
       .catch((err) => {
         //FIRESTORE ERROR HANDLING

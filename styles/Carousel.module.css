@@ -102,8 +102,9 @@
   }
   .login_p {
     font-size: 18px;
-    color: rgba(43, 38, 45, 0.726);
-    color: rgb(189, 134, 212);
+    padding: 3px;
+    background-color: rgba(43, 38, 45, 0.726);
+    color: rgba(189, 134, 212);
   }
   .login_button {
     color: white;

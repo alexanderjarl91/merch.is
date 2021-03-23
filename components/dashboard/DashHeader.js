@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "../../styles/Dashboard/DashboardHeader.module.css";
-import { auth, db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useContext } from "react";
 
@@ -15,8 +14,12 @@ export default function DashHeader() {
       </Link>
 
       {/* <img className={styles.header_avatar} src={userData.store.logo} /> */}
-      <p className={styles.userName}>{userData.name}</p>
-      <p className={styles.userName}>|</p>
+      {userData ? (
+        <>
+          <p className={styles.userName}>{userData.name}</p>
+          <p className={styles.userName}>|</p>
+        </>
+      ) : null}
       <a
         onClick={() => {
           handleLogout();

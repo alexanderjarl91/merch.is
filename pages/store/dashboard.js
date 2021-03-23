@@ -14,11 +14,9 @@ import styles from "../../styles/Dashboard/Dashboard.module.css";
 
 const dashboard = () => {
   const router = useRouter();
-  const {
-    users,
-    currentUser,
-  } = useContext(UsersContext);
+  const { users, currentUser, userData } = useContext(UsersContext);
 
+  console.log("LOG FROM DASHBOARD", currentUser, userData);
   //get user data when users changes
   //push to root if theres no currentUser
   useEffect(() => {
@@ -31,19 +29,16 @@ const dashboard = () => {
 
   return (
     <>
-      {currentUser ? (
+      {userData ? (
         <div className={styles.dashboard_bg}>
           <DashHeader />
           <div className={styles.dashboard_grid}>
-            
-              <div className={styles.sidemenu_container}>
-                <Sidemenu
-                  componentShowing={componentShowing}
-                  setComponentShowing={setComponentShowing}
-                />
-              </div>
-            
-
+            <div className={styles.sidemenu_container}>
+              <Sidemenu
+                componentShowing={componentShowing}
+                setComponentShowing={setComponentShowing}
+              />
+            </div>
             {componentShowing == "dashboard" ? <Yfirlit /> : null}
             {componentShowing == "store" ? <Store /> : null}
             {componentShowing == "products" ? <Products /> : null}
@@ -51,21 +46,18 @@ const dashboard = () => {
               <Add setComponentShowing={setComponentShowing} />
             ) : null}
             {componentShowing == "orders" ? <Orders /> : null}
-
             {componentShowing == "edit" ? (
               <Edit setComponentShowing={setComponentShowing} />
             ) : null}
           </div>
         </div>
       ) : (
-        <div className={styles.dashboard_bg} style={{height: '100vh'}}>
+        <div className={styles.dashboard_bg} style={{ height: "100vh" }}>
           <p>loading</p>
-
         </div>
       )}
     </>
   );
 };
-
 
 export default dashboard;

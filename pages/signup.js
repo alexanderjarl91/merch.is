@@ -14,6 +14,7 @@ export default function Landing() {
   const router = useRouter();
 
   const {
+    userData,
     currentUser,
     name,
     email,
@@ -34,10 +35,11 @@ export default function Landing() {
   } = useContext(UsersContext);
 
   useEffect(() => {
-    if (currentUser) {
+    if (auth.currentUser && userData) {
+      console.log(userData);
       router.push("/store/dashboard");
     }
-  }, [currentUser]);
+  }, [userData]);
 
   return (
     <>

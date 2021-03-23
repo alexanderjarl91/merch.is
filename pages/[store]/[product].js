@@ -83,7 +83,7 @@ export default function Product() {
           </div>
           <div className={styles.product}>
             <div className={styles.product_images}>
-              <div className={styles.product_smallImages}>
+              {/* <div className={styles.product_smallImages}>
                 <img
                   className={styles.product_smallImg}
                   src="https://images-na.ssl-images-amazon.com/images/I/81Af8as1z7L._AC_UL1500_.jpg"
@@ -104,7 +104,7 @@ export default function Product() {
                   src="https://images-na.ssl-images-amazon.com/images/I/81Af8as1z7L._AC_UL1500_.jpg"
                   alt=""
                 />
-              </div>
+              </div> */}
               <img
                 className={styles.product_mainImg}
                 src={product.productImg}

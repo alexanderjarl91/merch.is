@@ -11,47 +11,11 @@ export default function Footer() {
         <a href="www.instagram.com">
           <IoLogoInstagram className={styles.social} />{" "}
         </a>
-        <a href="www.facebook.com">
+        {/* <a href="www.facebook.com">
           <FaFacebook className={styles.social} />
-        </a>
+        </a> */}
         <p className={styles.skilmalar}>Skilmálar</p>
         <Link href="/">copyright merch.is 2021</Link>
-        {/* <button
-          onClick={() => {
-            console.log(currentUser);
-          }}
-        >
-          currentUser
-        </button>
-        <button
-          onClick={() => {
-            console.log(users);
-          }}
-        >
-          users
-        </button>
-        <button
-          onClick={() => {
-            getUsers();
-          }}
-        >
-          getUserData()
-        </button>
-
-        <button
-          onClick={() => {
-            handleLogin();
-          }}
-        >
-          login
-        </button>
-        <button
-          onClick={() => {
-            handleLogout();
-          }}
-        >
-          log out
-        </button> */}
       </div>
     </div>
   );

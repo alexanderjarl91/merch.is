@@ -40,10 +40,6 @@ export default function EditModal({ productIndex, toggleModal }) {
       setErrorMessage("Allar vörur verða að hafa vörunúmer");
       return;
     }
-    if (document.getElementById("img").files.length == 0) {
-      setErrorMessage("Það verður að fylgja mynd af vörunni");
-      return;
-    }
 
     // validation passed, clear errors
     setErrorMessage();
@@ -102,6 +98,7 @@ export default function EditModal({ productIndex, toggleModal }) {
   return (
     <div>
       <div className={styles.add_grid}>
+        <h1>Breyta vöru</h1>
         <div>
           <label className={styles.add_label}>Vöruheiti*</label>
           <input
@@ -149,7 +146,7 @@ export default function EditModal({ productIndex, toggleModal }) {
         <div>
           <label className={styles.add_label}>Vörulýsing</label>
           <textarea
-            placeholder={product.setProductDescription}
+            placeholder={product.productDescription}
             className={styles.add_input}
             rows="5"
             type="text"

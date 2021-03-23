@@ -2,12 +2,13 @@
   background-color: #f4f5f5;
   height: auto;
   color: #252525;
+  overflow: hidden;
 }
 @media (max-width: 1024px) {
   .dashboard_bg {
     background-color: #fff;
-    overflow: scroll;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
   }
 }
 @media (min-width: 1025px) {
