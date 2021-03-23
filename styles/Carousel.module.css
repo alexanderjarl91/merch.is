@@ -3,7 +3,7 @@
   max-width: 960px;
   margin: 0 auto;
   padding-right: 20px;
-  padding-left: 20px; 
+  padding-left: 20px;
 }
 .frontpageGrid {
   margin-top: 4rem;
@@ -18,7 +18,7 @@
   font-weight: 600;
   font-style: italic;
   font-size: 60px;
-  background-color:  rgba(159, 113, 179, 0.521);
+  background-color: rgba(159, 113, 179, 0.521);
 }
 .front_headline_nr2 {
   margin: 0 auto;
@@ -26,18 +26,18 @@
   font-weight: 600;
   font-style: italic;
   font-size: 50px;
-  background-color:  rgba(159, 113, 179, 0.521);
+  background-color: rgba(159, 113, 179, 0.521);
 }
 .front_description {
   margin: 0 auto;
   margin-top: 1rem;
   font-style: italic;
   font-size: 16px;
-  background-color:  rgba(159, 113, 179, 0.521);
+  background-color: rgba(159, 113, 179, 0.521);
 }
 .nyskraGrid {
- color: rgb(159, 113, 179);
- margin: 0 auto;
+  color: rgb(159, 113, 179);
+  margin: 0 auto;
 }
 .nyskraBtn {
   margin: 0 auto;
@@ -48,7 +48,7 @@
   border-radius: 4px;
   font-size: 22px;
   color: #fff;
-  background:  rgb(159, 113, 179);
+  background: rgb(159, 113, 179);
 }
 .nyskraBtn:hover {
   background: rgb(189, 134, 212);
@@ -57,46 +57,57 @@
   font-size: 16px;
   font-style: italic;
   margin: 0 auto;
-  color:  rgba(232, 213, 240, 0.726);
+  color: rgba(232, 213, 240, 0.726);
 }
 
+.login_button {
+  color: white;
+  opacity: 0.9;
+}
+.login_button:hover {
+  color: white;
+  transition: scale(0.1);
+  color: rgb(189, 134, 212);
+}
 
 /* desktop  */
 @media (min-width: 860px) {
-.frontpageGrid {
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: 1fr;
+  .frontpageGrid {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .front_headline {
+    margin-left: 180px;
+    margin-bottom: 2rem;
+    text-align: left;
+    width: 280px;
+    font-size: 90px;
+  }
+  .front_headline_nr2 {
+    margin-left: 90px;
+    width: 630px;
+    font-size: 90px;
+  }
+  .front_description {
+    width: 610px;
+    font-size: 28px;
+    margin-left: 280px;
+  }
+  .nyskraBtn {
+    margin-top: 3rem;
+    padding: 16px;
+    width: 30%;
+    font-size: 22px;
+  }
+  .login_p {
+    font-size: 18px;
+    color: rgba(43, 38, 45, 0.726);
+    color: rgb(189, 134, 212);
+  }
+  .login_button {
+    color: white;
+    opacity: 0.9;
+    transition: scale(0.1);
+  }
 }
-.front_headline {
-  margin-left: 180px;
-  margin-bottom: 2rem;
-  text-align: left;
-  width: 280px;
-  font-size: 90px;
-}
-.front_headline_nr2 {
-  margin-left: 90px;
-  width: 630px;
-  font-size: 90px;
-}
-.front_description {
-  width: 610px;
-  font-size: 28px;
-  margin-left: 280px;
-}
-.nyskraBtn {
-  margin-top: 3rem;
-  padding: 16px;
-  width: 30%;
-  font-size: 22px;
-}
-.login_p {
-  font-size: 18px;
-  color:  rgba(43, 38, 45, 0.726);
-}
-}
-
-
-
-

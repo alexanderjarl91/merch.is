@@ -20,7 +20,7 @@
   position: sticky;
   z-index: 10;
   border: none;
-  background: transparent; 
+  background: transparent;
 }
 .burger_icon_close {
   color: #252525;
@@ -55,44 +55,41 @@
     margin-right: 20%;
     margin-left: 20%;
     letter-spacing: 3px;
-  }}
-
+  }
+}
 
 /* desktop */
 @media (min-width: 860px) {
-.burger_button {
-  display: none;
+  .burger_button {
+    display: none;
+  }
+  .deskNav {
+    width: 100%;
+  }
+  /* innskrá button in navbar on desktop */
+  .nav_link:last-child {
+    background-color: rgba(196, 196, 196, 0.147);
+    border: 1px solid #f4f5f5;
+    border-radius: 4px;
+    padding: 12px 20px 12px 20px;
+  }
+  .nav_link:last-child:hover {
+    background-color: rgba(196, 196, 196, 0.256);
+  }
+  .nav {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    align-items: flex-end;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+  }
+  .nav_link {
+    list-style: none;
+    display: inline;
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+  }
 }
-.deskNav {
-  width: 100%;
-}
-/* innskrá button in navbar on desktop */
-.nav_link:last-child {
-  background-color: rgba(196, 196, 196, 0.147);
-  border: 1px solid #f4f5f5;
-  border-radius: 4px;
-  padding: 12px 20px 12px 20px;
-}
-.nav_link:last-child:hover {
-  background-color:rgba(196, 196, 196, 0.256);
-}
-.nav {
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  align-items: flex-end;
-  text-align: center;
-  text-decoration: none;
-  list-style: none;
-}
-.nav_link {
-  list-style: none;
-  display: inline;
-  margin-left: 30px;
-  font-size: 18px;
-  font-weight: 300;
-}}
-
-
-
-
-

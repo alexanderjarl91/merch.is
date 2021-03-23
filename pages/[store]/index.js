@@ -13,15 +13,18 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
-import { db } from "../fire";
 
 const Store = ({ products }) => {
   const router = useRouter();
-  const { users } = useContext(UsersContext);
+  const { users, getUsers } = useContext(UsersContext);
   const storeNameQuery = router.query ? router.query.store : null;
-  console.log(storeNameQuery);
   const storeOwner = users.find((x) => x.store.url == storeNameQuery);
   const store = storeOwner ? storeOwner.store : null;
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   useEffect(() => {
     if (storeNameQuery && !storeOwner) {
       router.push("/404");

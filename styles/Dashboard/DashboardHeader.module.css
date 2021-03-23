@@ -7,16 +7,21 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  text-align:center;
+  text-align: center;
   text-decoration: none;
   list-style: none;
   padding-top: 3rem;
   margin-bottom: 1rem;
 }
-.userName{
-    margin-right: 30px;
+.userName {
+  margin-right: 30px;
 }
-.logo{
+.header_avatar {
+  max-width: 50px;
+
+  border-radius: 200px;
+}
+.logo {
   margin-right: auto;
   font-size: 34px;
   line-height: 30px;
@@ -24,11 +29,12 @@
   margin-left: 3%;
 }
 .log_out:hover {
-font-weight: 900;
+  font-weight: 900;
 }
 
 /* mobile */
 @media (max-width: 1025px) {
   .dashboardHeader {
     display: none;
-  }}
+  }
+}

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import { MdClose } from "react-icons/md";
 import { CgMenuRight } from "react-icons/cg";
+import { UsersContext } from "../pages/context";
 
 export default function Navbar() {
+  const { currentUser } = useContext(UsersContext);
   // state for the hamburger menu on mobile view
   const [navbarOpen, setNavbarOpen] = useState(false);
 
@@ -87,11 +89,23 @@ export default function Navbar() {
                   </a>
                 </Link>
               </li>
-              <li className={styles.nav_link}>
-                <Link href="/login" activeClassName="active-link" exact>
-                  <a onClick={() => closeMenu()}>Innskrá</a>
+              {currentUser ? (
+                <Link
+                  href="/store/dashboard"
+                  activeClassName="active-link"
+                  exact
+                >
+                  <li className={styles.nav_link}>
+                    <a onClick={() => closeMenu()}>Mitt svæði</a>
+                  </li>
                 </Link>
-              </li>
+              ) : (
+                <Link href="/login" activeClassName="active-link" exact>
+                  <li className={styles.nav_link}>
+                    <a onClick={() => closeMenu()}>Innskrá</a>
+                  </li>
+                </Link>
+              )}
             </ul>
           </div>
         </nav>

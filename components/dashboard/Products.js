@@ -3,14 +3,12 @@ import { db } from "../../pages/fire";
 import { UsersContext } from "../../pages/context";
 import React, { useContext, useState, useEffect } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
+import ReactModal from "react-modal";
+import EditModal from "./EditModal";
 
 export default function Products({ setComponentShowing, componentShowing }) {
   const { userData, refreshUserData } = useContext(UsersContext);
-  const [isEditing, setIsEditing] = useState(false);
-
-  const openEdit = () => {
-    setComponentShowing("edit");
-  };
+  const [productToEdit, setProductToEdit] = useState([]);
 
   //refresh data when component mounts
   useEffect(() => {
@@ -34,29 +32,13 @@ export default function Products({ setComponentShowing, componentShowing }) {
       .then(refreshUserData);
   };
 
-  //SET SPECIFIC PRODUCT TO EDIT MODE
+  const [modalOpen, setModalOpen] = useState(false);
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+    console.log("modal toggled");
+  };
 
-  // const [productToEdit, setProductToEdit] = useState([]);
-  // const toggleEdit = (index) => {
-  //   const productsCopy = [...userData.products];
-  //   console.log("productscopy:", productsCopy);
-  //    setProductToEdit("");
-  //    //set all products edit mode to false
-  //   if (productsCopy[index].editMode !== true) {
-  //      productsCopy.forEach((product) => {
-  //        product.editMode = false;
-  //      });
-  //      //set product to edit as the product found by index
-  //      setProductToEdit(currCollectionCopy[index]);
-  //    }
-  //    //set the product at the [index] as editMode equal to what it wasnt before (true)
-  //    productsCopy[index].editMode = !productsCopy[index].editMode;
-
-  //    //update the iterated array:
-  //   // setCurrCollection(currCollectionCopy);
-  // };
-
-  // toggleEdit();
+  const [productIndex, setProductIndex] = useState();
 
   return (
     <div className={styles.component_container}>
@@ -70,7 +52,7 @@ export default function Products({ setComponentShowing, componentShowing }) {
         <p>Vörunúmer</p>
       </div>
 
-      {userData.products.map((product) => {
+      {userData.products.map((product, index) => {
         return (
           <div key={product.productId} className={styles.product}>
             <div className={styles.each_product}>
@@ -92,7 +74,13 @@ export default function Products({ setComponentShowing, componentShowing }) {
 
               <button
                 onClick={() => {
-                  console.log(componentShowing);
+                  //find products index and set it to a state, then pass state to modal component
+                  const products = userData.products;
+                  const index = products.findIndex(
+                    (item) => item.productId === product.productId
+                  );
+                  setProductIndex(index);
+                  toggleModal();
                 }}
                 className={styles.product_button_edit}
               >
@@ -117,6 +105,40 @@ export default function Products({ setComponentShowing, componentShowing }) {
                 <AiTwotoneDelete className={styles.product_button_delete} />
               </button>
             </div>
+
+            {/*  EDIT PRODUCT MODAL */}
+            <ReactModal
+              style={{
+                position: "absolute",
+                overlay: { zIndex: 1000 },
+                content: {
+                  top: "50%",
+                  left: "50%",
+                  right: "auto",
+                  bottom: "auto",
+                  marginRight: "-50%",
+                  transform: "translate(-50%, -50%)",
+                  minHeight: "500px",
+                  minWidth: "800px",
+                },
+              }}
+              isOpen={modalOpen}
+            >
+              {/* rendering modal component with products index as props */}
+              <EditModal
+                productIndex={productIndex}
+                toggleModal={toggleModal}
+              />
+
+              <button
+                onClick={() => {
+                  toggleModal();
+                }}
+                className={styles.product_button_edit}
+              >
+                Hætta
+              </button>
+            </ReactModal>
           </div>
         );
       })}

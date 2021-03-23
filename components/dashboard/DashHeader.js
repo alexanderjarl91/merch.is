@@ -14,6 +14,7 @@ export default function DashHeader() {
         <p className={styles.logo}> merch. </p>
       </Link>
 
+      {/* <img className={styles.header_avatar} src={userData.store.logo} /> */}
       <p className={styles.userName}>{userData.name}</p>
       <p className={styles.userName}>|</p>
       <a

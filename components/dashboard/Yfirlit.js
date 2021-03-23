@@ -5,16 +5,21 @@ import React, { useState, useEffect, useContext } from "react";
 
 export default function Yfirlit({}) {
   const { userData, refreshUserData } = useContext(UsersContext);
-
   const [realTimeData, setRealTimeData] = useState({});
   const [totalSum, setTotalSum] = useState(0);
   const [fulfilledOrders, setFulfilledOrders] = useState(0);
 
+  //add the total of all orders on mount
   useEffect(() => {
     getTotalSum();
   }, []);
 
-  //get total $$ sum
+  //get new sums everytime userData changes for live numbers
+  useEffect(() => {
+    getTotalSum();
+  }, [userData]);
+
+  //get total sum function
   const getTotalSum = async () => {
     let orderPriceArray = [0];
     if (userData && userData.orders) {
@@ -39,6 +44,7 @@ export default function Yfirlit({}) {
     }
   };
 
+  //on mount, if user is logged in, run an observer that refreshes userData whenever theres a change
   useEffect(() => {
     if (auth.currentUser) {
       //subscribing to changes in users collection
@@ -49,11 +55,6 @@ export default function Yfirlit({}) {
       });
     }
   }, []);
-
-  //get new sums everytime userData changes for live numbers
-  useEffect(() => {
-    getTotalSum();
-  }, [userData]);
 
   return (
     <div className={styles.component_container}>

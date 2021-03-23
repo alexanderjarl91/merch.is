@@ -22,7 +22,7 @@ export default function Carousel() {
             eða{" "}
             <strong>
               <Link href="/login">
-                <a>skráðu þig</a>
+                <a className={styles.login_button}>skráðu þig</a>
               </Link>
             </strong>{" "}
             {""}

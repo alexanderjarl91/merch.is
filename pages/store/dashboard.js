@@ -14,9 +14,10 @@ import styles from "../../styles/Dashboard/Dashboard.module.css";
 
 const dashboard = () => {
   const router = useRouter();
-  const { users, currentUser, getUserData, setCurrentUser } = useContext(
-    UsersContext
-  );
+  const {
+    users,
+    currentUser,
+  } = useContext(UsersContext);
 
   //get user data when users changes
   //push to root if theres no currentUser
@@ -29,51 +30,42 @@ const dashboard = () => {
   const [componentShowing, setComponentShowing] = useState("dashboard");
 
   return (
-    <div className={styles.dashboard_bg}>
-      <DashHeader />
-      <div className={styles.dashboard_grid}>
-        <div className={styles.sidemenu_container}>
-          <Sidemenu
-            componentShowing={componentShowing}
-            setComponentShowing={setComponentShowing}
-          />
+    <>
+      {currentUser ? (
+        <div className={styles.dashboard_bg}>
+          <DashHeader />
+          <div className={styles.dashboard_grid}>
+            
+              <div className={styles.sidemenu_container}>
+                <Sidemenu
+                  componentShowing={componentShowing}
+                  setComponentShowing={setComponentShowing}
+                />
+              </div>
+            
+
+            {componentShowing == "dashboard" ? <Yfirlit /> : null}
+            {componentShowing == "store" ? <Store /> : null}
+            {componentShowing == "products" ? <Products /> : null}
+            {componentShowing == "add" ? (
+              <Add setComponentShowing={setComponentShowing} />
+            ) : null}
+            {componentShowing == "orders" ? <Orders /> : null}
+
+            {componentShowing == "edit" ? (
+              <Edit setComponentShowing={setComponentShowing} />
+            ) : null}
+          </div>
         </div>
+      ) : (
+        <div className={styles.dashboard_bg} style={{height: '100vh'}}>
+          <p>loading</p>
 
-        {componentShowing == "dashboard" ? <Yfirlit /> : null}
-        {componentShowing == "store" ? <Store /> : null}
-        {componentShowing == "products" ? <Products /> : null}
-        {componentShowing == "add" ? (
-          <Add setComponentShowing={setComponentShowing} />
-        ) : null}
-        {componentShowing == "orders" ? <Orders /> : null}
-
-        {componentShowing == "edit" ? (
-          <Edit setComponentShowing={setComponentShowing} />
-        ) : null}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 
-//protected route component
-// put component or page through this function, render it if it passes.
-const protectedRoute = (dashboard) => {
-  const { users, currentUser } = useContext(UsersContext);
-  const [userLogged, setUserLogged] = useState();
-  const router = useRouter();
-
-  useEffect(() => {
-    setUserLogged(!currentUser);
-  }, [users]);
-
-  if (userLogged === true) {
-    return dashboard;
-  } else if (userLogged === false) {
-    router.push("/");
-    return;
-  } else {
-    return null;
-  }
-};
 
 export default dashboard;

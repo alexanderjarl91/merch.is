@@ -33,33 +33,30 @@ export const UsersProvider = ({ children }) => {
   }, []);
 
   //check if url already exists and set state accordingly
-  const checkUrlAvailability = () => {
+  const checkUrlAvailability = (url) => {
     let allStores = [];
     users.forEach((user) => {
       allStores = [...allStores, user.store.url];
     });
-    console.log("all stores:", allStores);
-    console.log(url);
-    const match = allStores.find((store) => store == url);
+    const match = allStores.find((storeUrl) => storeUrl == url);
+    console.log(match);
+
     if (match) {
-      console.log(match, "is already taken");
       setUrlAvailable(false);
-      console.log("url should be false");
-      console.log(urlAvailable);
+      console.log("match found, cancelling");
+      return;
     } else {
+      console.log("no match, url is available");
       setUrlAvailable(true);
-      console.log(urlAvailable);
     }
   };
 
   const handleSignup = () => {
     clearErrors();
-
     if (urlAvailable == false) {
       setSignUpError("Þessi hlekkur er frátekinn");
       return;
     }
-
     if (name.length == 0) {
       setSignUpError("Þú gleymdir að skrá nafnið þitt");
       return;
@@ -197,25 +194,17 @@ export const UsersProvider = ({ children }) => {
   const getUserData = async () => {
     const foundUser = users.find((x) => x.email === auth.currentUser.email);
     setUserData(foundUser);
-    console.log("CURRENT USER FOUND:", userData);
   };
 
   const refreshUserData = async () => {
-    console.log(`currentUser`, currentUser);
     const userSnapshot = await db
       .collection("users")
       .doc(auth.currentUser.email)
       .get();
     const tempUserData = await userSnapshot.data();
-
     if (tempUserData) {
       console.log("running refresh function");
       setUserData(tempUserData);
-      console.log(`tempUserData`, tempUserData);
-    } else {
-      console.log("refreshing error");
-      console.log("userData.email,", userData.email);
-      console.log("tempUserData;", tempUserData);
     }
   };
 
@@ -247,6 +236,7 @@ export const UsersProvider = ({ children }) => {
         storeName,
         loginError,
         signUpError,
+        urlAvailable,
         setSignUpError,
         setStoreName,
         setSocial,
