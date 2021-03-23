@@ -59,33 +59,6 @@
   }
 }
 
-.loader {
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  border-left: 4px solid;
-  animation: load 1s infinite linear;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-}
-
-/* The actual spinner element is a pseudo-element */
-.spin .spinner::before {
-  content: "";
-  width: 1.5em; /* Size of the spinner */
-  height: 1.5em; /* Change as desired */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  border: solid .35em #999; /* Thickness/color of spinner track */
-  border-bottom-color: #555; /* Color of variant spinner piece */
-  animation: .8s linear infinite spinner; /* speed of spinner */
-  transform: translate(-50%, -50%);
-  will-change: transform;
-}
-
-
-
 .seccond_grid {
   display: grid;
   text-align: left;
