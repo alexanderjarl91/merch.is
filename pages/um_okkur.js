@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 function um_okkur() {
+  console.log(process.env.FIREBASE_API_KEY);
   return (
     <>
       <div className="content">
