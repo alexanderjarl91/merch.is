@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../styles/Login.module.css";
-import Link from "next/Link";
+import Link from "next/link";
 import { auth } from "../fire";
 import { UsersContext } from "../context";
 
