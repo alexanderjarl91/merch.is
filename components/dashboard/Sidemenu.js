@@ -106,9 +106,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
             <div className={styles.sideMenu_extra_links_container}>
               <li className={styles.sideMenu_extra_links}>
                 {userData && userData.store ? (
-                  <Link href={`/${userData.store.url}`}>
-                    <p> Búðin mín </p>
-                  </Link>
+                  <a href={`/${userData.store.url}`}>Búðin mín</a>
                 ) : null}
               </li>
               <li className={styles.sideMenu_extra_links}>

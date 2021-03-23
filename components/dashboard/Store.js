@@ -10,7 +10,7 @@ export default function Store() {
     urlAvailable,
     checkUrlAvailability,
     setUrl,
-    url
+    url,
   } = useContext(UsersContext);
 
   const [bio, setBio] = useState();
@@ -22,8 +22,8 @@ export default function Store() {
   const [image, setImage] = useState(null);
 
   const clearErrors = () => {
-    setErrorMessage()
-  }
+    setErrorMessage();
+  };
 
   //set original states once userData kicks in
   useEffect(() => {
@@ -33,8 +33,8 @@ export default function Store() {
     setSocial(userData.store.social);
     setUrl(userData.store.url);
   }, [userData]);
-  
-//set image state as 
+
+  //set image state as
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -42,10 +42,10 @@ export default function Store() {
   };
 
   const updateStorage = () => {
-    checkUrlAvailability()
+    checkUrlAvailability();
 
     if (!urlAvailable) {
-      console.log("URL UNAVAILABLE")
+      console.log("URL UNAVAILABLE");
       setErrorMessage("Þessi hlekkur er frátekinn");
       return;
     }
@@ -60,24 +60,24 @@ export default function Store() {
       .ref(`${userData.email}/${image.name}`)
       .put(image);
 
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {},
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          storage
-            .ref(userData.email)
-            .child(image.name)
-            .getDownloadURL()
-            .then((imgUrl) => {
-               updateStore(imgUrl);
-              return;
-            });
-        }
-      );
-  }
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref(userData.email)
+          .child(image.name)
+          .getDownloadURL()
+          .then((imgUrl) => {
+            updateStore(imgUrl);
+            return;
+          });
+      }
+    );
+  };
 
   const updateStore = async (imgUrl) => {
     const store = {
@@ -108,7 +108,6 @@ export default function Store() {
     //   setErrorMessage("Nafn verður að vera lengra en 1 stafur");
     //   return;
     // }
-
 
     db.collection("users").doc(userData.email).update({ store: store });
     refreshUserData();
@@ -148,7 +147,7 @@ export default function Store() {
 
             <div>
               <label className={styles.edit_label}>Þinn hlekkur</label>
-              <div style={{display: 'flex'}}>
+              <div style={{ display: "flex" }}>
                 <p>merch.is</p>
                 <input
                   onChange={(e) => {
@@ -157,8 +156,8 @@ export default function Store() {
                   className={styles.input}
                   type="text"
                   placeholder={userData.store.url}
-                  ></input>
-                </div>
+                ></input>
+              </div>
             </div>
 
             <div>
@@ -181,7 +180,7 @@ export default function Store() {
                 className={styles.add_file}
                 type="file"
                 accept="image/*"
-                 onChange={handleChange}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -189,7 +188,7 @@ export default function Store() {
                 className={styles.store_button_cancel}
                 onClick={() => {
                   setEdit(false);
-                  clearErrors()
+                  clearErrors();
                 }}
               >
                 hætta við
@@ -198,19 +197,23 @@ export default function Store() {
                 className={styles.store_button_confirm}
                 onClick={() => {
                   updateStorage();
-                  clearErrors()
+                  clearErrors();
                 }}
               >
                 vista
               </button>
-              <button onClick={() => {
-                checkUrlAvailability()
-              }}>
+              <button
+                onClick={() => {
+                  checkUrlAvailability();
+                }}
+              >
                 checkUrlAvailability()
               </button>
-              <button onClick={() => {
-                console.log(urlAvailable)
-              }}>
+              <button
+                onClick={() => {
+                  console.log(urlAvailable);
+                }}
+              >
                 console.log(urlAvailable)
               </button>
             </div>
@@ -250,9 +253,9 @@ export default function Store() {
               {" "}
               <strong>Linkurinn þinn: </strong>
             </p>
-            <p className={styles.user_merch_linkur}>
+            <a className={styles.user_merch_linkur}>
               www.merch.is/{userData.store.url}
-            </p>
+            </a>
           </div>
         </>
       )}
