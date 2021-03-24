@@ -2,9 +2,11 @@ import styles from "../../styles/Dashboard/Yfirlit.module.css";
 import { auth, db } from "../../fire";
 import { UsersContext } from "../../context";
 import React, { useState, useEffect, useContext } from "react";
-import { FaCheckCircle } from "react-icons/fa";
-import { RiMoneyDollarCircleFill } from "react-icons/ri";
-import { MdShoppingCart } from "react-icons/md";
+import {
+  AiFillDollarCircle,
+  AiFillCheckCircle,
+  AiOutlineAppstoreAdd,
+} from "react-icons/ai";
 import { FaShoppingBag } from "react-icons/fa";
 
 export default function Yfirlit({}) {
@@ -143,7 +145,7 @@ export default function Yfirlit({}) {
         {userData && userData.orders ? (
           <div className={styles.yfirlit_grid_box1}>
             <div className={styles.box_head}>
-              <RiMoneyDollarCircleFill className={styles.icon} />
+              <AiFillDollarCircle className={styles.icon} />
               <p>Sala samtals</p>
               <p className={styles.totalSum}>{totalSum} ISK</p>
             </div>
@@ -153,8 +155,8 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box2}>
           {userData && userData.products ? (
             <div className={styles.box_head}>
-              <MdShoppingCart className={styles.icon} />
-              <p>Vörumagn</p>
+              <AiOutlineAppstoreAdd className={styles.icon} />
+              <p>Vörurmagn</p>
               <p>{userData.products.length}</p>
             </div>
           ) : null}
@@ -173,8 +175,8 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box4}>
           {userData && userData.orders ? (
             <div className={styles.box_head}>
-              <FaCheckCircle className={styles.icon} />
-              <p>Afgreiddar pantanir </p>
+              <AiFillCheckCircle className={styles.icon} />
+              <p>Kláraðar pantanir </p>
               <p>{fulfilledOrders}</p>
             </div>
           ) : null}
@@ -183,6 +185,7 @@ export default function Yfirlit({}) {
 
       {userData && userData.orders ? (
         <>
+        <div className={styles.order_popular_grid}> 
           <div className={styles.table}>
             <p className={styles.table_header}>Pantanir</p>
             <table>
@@ -207,9 +210,10 @@ export default function Yfirlit({}) {
 
           <div>
             <p className={styles.table_header}>Nýjasta varan þín:</p>
-            {userData? 
+            {lastProduct? 
             <img className={styles.popular_product} src={lastProduct.productImg} />
             : null}
+          </div>
           </div>
         </>
       ) : null}
