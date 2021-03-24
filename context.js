@@ -6,7 +6,6 @@ export const UsersContext = React.createContext();
 export const UsersProvider = ({ children }) => {
   //initializing next router
   const router = useRouter();
-
   //signup/login string states
   const [currentUser, setCurrentUser] = useState(auth.currentUser);
   const [userData, setUserData] = useState({});
@@ -36,6 +35,7 @@ export const UsersProvider = ({ children }) => {
     users.forEach((user) => {
       allStores = [...allStores, user.store.url];
     });
+    console.log(allStores);
     const match = allStores.find((storeUrl) => storeUrl == url);
     console.log(match);
 

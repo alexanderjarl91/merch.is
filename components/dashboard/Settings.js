@@ -22,7 +22,7 @@ export default function Settings() {
   const [image, setImage] = useState(null);
   const [error, setError] = useState();
 
-  const clearErrors = () => {};
+  const clearErrors = () => {setError()};
 
   //set original states once userData kicks in
   useEffect(() => {
@@ -41,24 +41,27 @@ export default function Settings() {
   };
 
   const updateStorage = () => {
+    
     if (name.length < 3) {
       setError("name to short");
       return;
     }
 
-    // checkUrlAvailability();
+     checkUrlAvailability();
 
-    // if (!urlAvailable) {
-    //   console.log("URL UNAVAILABLE");
-    //   setErrorMessage("Þessi hlekkur er frátekinn");
-    //   return;
-    // }
+    if (!urlAvailable) {
+      console.log("URL UNAVAILABLE");
+      setError("Þessi hlekkur er frátekinn");
+      return;
+    }
 
     if (!image) {
       let imgUrl = userData.store.logo;
       updateStore(imgUrl);
       return;
     }
+
+    clearErrors()
 
     const uploadTask = storage
       .ref(`${userData.email}/${image.name}`)
@@ -92,8 +95,6 @@ export default function Settings() {
       social: social,
     };
 
-    //FORM VALIDATION
-
     db.collection("users").doc(userData.email).update({ store: store });
     refreshUserData();
     setEdit(false);
@@ -106,7 +107,111 @@ export default function Settings() {
       <p className={styles.title}> Stillingar </p>
       {edit ? (
         <>
-          <SettingsEdit />
+          <div className={styles.store_grid}>
+        <div className={styles.logo_grid}>
+          <label className={styles.add_label}>Velja nýja mynd</label>
+          <input
+            id="img"
+            className={styles.add_file}
+            type="file"
+            accept="image/*"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className={styles.user_info_grid}>
+          <div>
+            <label className={styles.edit_label}>Búðarnafn</label>
+            <input
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              className={styles.input}
+              type="text"
+              placeholder={userData.store.name}
+            ></input>
+          </div>
+
+          <div>
+            <label className={styles.edit_label}>Social</label>
+            <input
+              onChange={(e) => {
+                setSocial(e.target.value);
+              }}
+              className={styles.input}
+              type="text"
+              placeholder={userData.store.social}
+            ></input>
+          </div>
+
+          <div>
+            <label className={styles.edit_label}>Þinn hlekkur</label>
+            <div style={{ display: "flex" }}>
+              <p className={styles.input}>merchis.netlify.com/</p>
+              <input
+                onChange={(e) => {
+                  setUrl(e.target.value);
+                }}
+                className={styles.input}
+                type="text"
+                placeholder={userData.store.url}
+              ></input>
+            </div>
+          </div>
+
+          <div>
+            <label className={styles.edit_label}>Um búðina</label>
+            <textarea
+              onChange={(e) => {
+                setBio(e.target.value);
+              }}
+              rows="3"
+              className={styles.input}
+              type="text"
+              placeholder={userData.store.bio}
+            ></textarea>
+          </div>
+          <button
+            // className={styles.store_button_confirm}
+            onClick={() => {
+              updateStorage();
+              clearErrors();
+            }}
+          >
+            vista
+          </button>
+          <button
+            // className={styles.store_button_cancel}
+            onClick={() => {
+              setEdit(false);
+              clearErrors();
+            }}
+          >
+            hætta við
+          </button>
+
+
+          {/* CHECK URL AVAILABILITY BUTTONS */}
+          <button
+            onClick={() => {
+              checkUrlAvailability(url);
+            }}
+          >
+            checkUrlAvailability()
+          </button>
+          <button
+            onClick={() => {
+              console.log(urlAvailable);
+            }}
+          >
+            console.log(urlAvailable)
+          </button>
+
+
+        </div>
+
+        {error ? <p style={{ color: "red" }}>{error}</p> : null}
+      </div>
         </>
       ) : (
         // This is what is showing when the user first visit the setting page

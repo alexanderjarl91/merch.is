@@ -25,17 +25,18 @@
   font-size: 18px;
   padding-left: 20px;
   padding-right: 20px;
+  overflow: scroll;
 }
 .logo_grid {
   display: grid;
   grid-template-columns: auto;
- justify-content: center;
+  justify-content: center;
 }
 .user_info_grid {
   justify-self: center;
   font-size: 18px;
   display: grid;
-  grid-template-rows: auto; 
+  grid-template-rows: auto;
   row-gap: 6%;
   grid-auto-flow: row;
 }
@@ -71,7 +72,6 @@
   width: 300px;
   border-radius: 8px;
   font-size: 20px;
-  
 }
 
 /* desktop */
