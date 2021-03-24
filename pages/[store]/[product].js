@@ -14,12 +14,11 @@ import { db } from "../../fire";
 export default function Product() {
   const router = useRouter();
   const { users, getUsers, refreshUserData } = useContext(UsersContext);
-  // const storeOwner = users.find((x) => x.store.url == router.query.store);
-  const productId = router.query.product;
   const [storeOwner, setStoreOwner] = useState();
-
   const [orderSuccessful, setOrderSuccessful] = useState(false);
+  const [showShare, setShowShare] = useState(false);
 
+  const productId = router.query.product;
   const product = storeOwner
     ? storeOwner.products.find((x) => x.productId == productId)
     : null;
@@ -28,7 +27,6 @@ export default function Product() {
     router.push(`/${router.query.store}`);
   };
 
-  const [showShare, setShowShare] = useState(false);
   const toggleShare = () => {
     setShowShare(!showShare);
   };
@@ -38,7 +36,6 @@ export default function Product() {
     const findOwner = users.find((x) => x.store.url == router.query.store);
     setStoreOwner(findOwner);
   }, [users]);
-  console.log(storeOwner);
 
   const purchaseItem = async () => {
     //renewing users data every time
@@ -62,15 +59,19 @@ export default function Product() {
       orderDate: dateTime,
     };
 
+    //get orders and create a new array with orders plus the new order.
     const ordersCopy = storeOwner.orders;
     const updatedOrders = [...ordersCopy, order];
 
+    //update orders in database with updatedOrders
     db.collection("users")
       .doc(storeOwner.email)
       .update({ orders: updatedOrders })
       .then(() => {
         setOrderSuccessful(true);
       });
+
+    db.collection("users").doc(storeOwner.email).update();
   };
 
   return (

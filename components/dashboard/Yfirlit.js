@@ -12,6 +12,7 @@ export default function Yfirlit({}) {
   const [totalSum, setTotalSum] = useState(0);
   const [fulfilledOrders, setFulfilledOrders] = useState(0);
   const [unfulfilledOrders, setUnfulfilledOrders] = useState(0);
+  const [lastProduct, setLastProduct] = useState()
 
   //on mount, if user is logged in, run an observer that refreshes userData whenever theres a change
   useEffect(() => {
@@ -27,17 +28,71 @@ export default function Yfirlit({}) {
 
   //add the total of all orders on mount
   useEffect(() => {
-    getTotalSum();
-    getFulfilledOrders();
-    // getUnfulfilledOrders();
+    getDashboardData()
   }, []);
 
   //get new sums everytime userData changes for live numbers
   useEffect(() => {
-    getTotalSum();
-    getFulfilledOrders();
-    // getUnfulfilledOrders();
+  getDashboardData()
   }, [userData]);
+
+  const getDashboardData = () => {
+  
+    //get newest product
+    const getNewestProduct = () => {
+      if (userData && userData.products) {
+        const foundlastProduct = userData.products[userData.products.length - 1]
+        setLastProduct(foundlastProduct)
+        console.log(lastProduct)
+
+      }
+    }
+    //get total sum function
+    const getTotalSum = async () => {
+      let orderPriceArray = [0];
+      if (userData && userData.orders) {
+        userData.orders.forEach((order) => {
+          orderPriceArray = [...orderPriceArray, order.price];
+        });
+      }
+      let total = await orderPriceArray.reduce((a, b) => {
+        return +a + +b;
+      });
+      setTotalSum(total);
+    };
+
+    //get total fulfilled orders
+    const getFulfilledOrders = () => {
+      let totalFulfilled = 0
+      if (userData && userData.orders) {
+        userData.orders.forEach((order) => {
+          if (order.fulfilled === true) {
+            totalFulfilled = totalFulfilled + 1
+          } 
+          setFulfilledOrders(totalFulfilled)
+        });
+      }
+    };
+
+    //get total unfulfilled orders
+    const getUnfulfilledOrders = () => {
+      let totalUnfulfilled = 0
+      if (userData && userData.orders) {
+        userData.orders.forEach((order) => {
+          if (order.fulfilled === false) {
+            totalUnfulfilled = totalUnfulfilled + 1
+          }
+        });
+        setUnfulfilledOrders(totalUnfulfilled)
+      }
+  };
+
+  getTotalSum()
+  getFulfilledOrders()
+  getUnfulfilledOrders()
+  getNewestProduct()
+
+  }
 
   //get total sum function
   const getTotalSum = async () => {
@@ -55,21 +110,27 @@ export default function Yfirlit({}) {
 
   //get total fulfilled orders
   const getFulfilledOrders = () => {
+    let totalFulfilled = 0
     if (userData && userData.orders) {
-      let totalFulfilled = 0
-      let totalUnfulfilled = 0
-
       userData.orders.forEach((order) => {
          if (order.fulfilled === true) {
           totalFulfilled = totalFulfilled + 1
-          console.log('totalFulfilled :>> ', totalFulfilled);
-        } else if (!order.fulfilled) {
-          totalUnfulfilled = totalFulfilled + 1
-          console.log('totalUnfulfilled :>> ', totalUnfulfilled);
-        }
+        } 
         setFulfilledOrders(totalFulfilled)
-        setUnfulfilledOrders(totalUnfulfilled)
       });
+    }
+  };
+
+  //get total unfulfilled orders
+  const getUnfulfilledOrders = () => {
+    let totalUnfulfilled = 0
+    if (userData && userData.orders) {
+      userData.orders.forEach((order) => {
+        if (order.fulfilled === false) {
+          totalUnfulfilled = totalUnfulfilled + 1
+        }
+      });
+      setUnfulfilledOrders(totalUnfulfilled)
     }
   };
 
@@ -145,8 +206,10 @@ export default function Yfirlit({}) {
           </div>
 
           <div>
-            <p className={styles.table_header}>Vinsælasta varan þín:</p>
-            <img className={styles.popular_product} src="" />
+            <p className={styles.table_header}>Nýjasta varan þín:</p>
+            {userData? 
+            <img className={styles.popular_product} src={lastProduct.productImg} />
+            : null}
           </div>
         </>
       ) : null}
