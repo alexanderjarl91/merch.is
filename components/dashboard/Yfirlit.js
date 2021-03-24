@@ -2,9 +2,11 @@ import styles from "../../styles/Dashboard/Yfirlit.module.css";
 import { auth, db } from "../../fire";
 import { UsersContext } from "../../context";
 import React, { useState, useEffect, useContext } from "react";
-import { FaCheckCircle } from "react-icons/fa";
-import { RiMoneyDollarCircleFill } from "react-icons/ri";
-import { MdShoppingCart } from "react-icons/md";
+import {
+  AiFillDollarCircle,
+  AiFillCheckCircle,
+  AiOutlineAppstoreAdd,
+} from "react-icons/ai";
 import { FaShoppingBag } from "react-icons/fa";
 
 export default function Yfirlit({}) {
@@ -74,7 +76,7 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box1}>
           {userData && userData.orders ? (
             <div className={styles.box_head}>
-              <RiMoneyDollarCircleFill className={styles.icon} />
+              <AiFillDollarCircle className={styles.icon} />
               <p>Sala samtals</p>
               <p className={styles.totalSum}>{totalSum} ISK</p>
             </div>
@@ -84,7 +86,7 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box2}>
           {userData && userData.products ? (
             <div className={styles.box_head}>
-              <MdShoppingCart className={styles.icon} />
+              <AiOutlineAppstoreAdd className={styles.icon} />
               <p>Vörurmagn</p>
               <p>{userData.products.length}</p>
             </div>
@@ -104,7 +106,7 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box4}>
           {userData && userData.orders ? (
             <div className={styles.box_head}>
-              <FaCheckCircle className={styles.icon} />
+              <AiFillCheckCircle className={styles.icon} />
               <p>Kláraðar pantanir </p>
               <p>{fulfilledOrders}</p>
             </div>
@@ -112,33 +114,35 @@ export default function Yfirlit({}) {
         </div>
       </div>
 
-      <div className={styles.table}>
-        <p className={styles.table_header}>Pantnair</p>
-        <table>
-          <tr>
-            <th>Pantanir alls:</th>
-            <td> 19</td>
-          </tr>
-          <tr>
-            <th>Ókláraðar pantanir:</th>
+      <div className={styles.order_popular_grid}>
+        <div className={styles.table}>
+          <p className={styles.title}>Pantnair</p>
+          <table>
+            <tr>
+              <th>Pantanir alls:</th>
+              <td> 19</td>
+            </tr>
+            <tr>
+              <th>Ókláraðar pantanir:</th>
 
-            <td>2</td>
-          </tr>
-          <tr>
-            <th>Cancel pantanir: </th>
-            <td>1</td>
-          </tr>
-          <tr>
-            <th>Sendar pantanir:</th>
+              <td>2</td>
+            </tr>
+            <tr>
+              <th>Cancel pantanir: </th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>Sendar pantanir:</th>
 
-            <td>12</td>
-          </tr>
-        </table>
-      </div>
+              <td>12</td>
+            </tr>
+          </table>
+        </div>
 
-      <div>
-        <p className={styles.table_header}>Vinsælasta varan þín:</p>
-        <img className={styles.popular_product} src="" />
+        <div>
+          <p className={styles.title}>Vinsælasta varan þín:</p>
+          <img className={styles.popular_product} src="" />
+        </div>
       </div>
     </div>
   );

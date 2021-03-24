@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../../context";
-import DashHeader from "../../components/dashboard/DashHeader";
 import Products from "../../components/dashboard/Products";
 import Orders from "../../components/dashboard/Orders";
 import Add from "../../components/dashboard/Add";
@@ -13,6 +12,7 @@ import Link from "next/link";
 
 const dashboard = () => {
   const router = useRouter();
+  const { handleLogout } = useContext(UsersContext);
   const { users, currentUser, userData } = useContext(UsersContext);
   //get user data when users changes
   //push to root if theres no currentUser

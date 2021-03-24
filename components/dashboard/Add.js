@@ -2,6 +2,8 @@ import styles from "../../styles/Dashboard/Add.module.css";
 import { db, storage } from "../../fire";
 import { UsersContext } from "../../context";
 import React, { useState, useContext } from "react";
+import UseAnimations from "react-useanimations";
+import loading from "react-useanimations/lib/loading";
 
 export default function Add({ setComponentShowing }) {
   //data from context
@@ -179,6 +181,12 @@ export default function Add({ setComponentShowing }) {
             className={styles.add_button}
             onClick={() => {
               addProduct();
+              <UseAnimations
+                animation={loading}
+                size={56}
+                wrapperStyle={{ padding: 100 }}
+                style={{ color: "#fff" }}
+              />;
             }}
           >
             Bæta við vöru{" "}
