@@ -77,9 +77,8 @@ const Store = ({ products }) => {
             {showShare ? (
               <div className={styles.share_buttons}>
                 <FacebookShareButton
-                  quote="TESTING"
                   hashtag="#merch.is"
-                  url={`ourlink.com/${storeNameQuery}`}
+                  url={`https://merch-is.vercel.app/${storeNameQuery}`}
                 >
                   <FacebookIcon
                     logoFillColor="white"
@@ -90,7 +89,7 @@ const Store = ({ products }) => {
                 <TwitterShareButton
                   title={`Kíkið á vöruúrvalið hjá ${storeOwner.store.name}!`}
                   via="merch_is"
-                  url="www.mbl.is"
+                  url={`https://merch-is.vercel.app/${storeNameQuery}`}
                 >
                   <TwitterIcon
                     logoFillColor="white"
@@ -99,9 +98,8 @@ const Store = ({ products }) => {
                   />
                 </TwitterShareButton>
                 <WhatsappShareButton
-                  quote="TESTING"
                   hashtag="#merch.is"
-                  url={`ourlink.com/${storeNameQuery}`}
+                  url={`https://merch-is.vercel.app/${storeNameQuery}`}
                 >
                   <WhatsappIcon
                     logoFillColor="white"

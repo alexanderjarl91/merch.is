@@ -144,7 +144,7 @@ export default function Product() {
                     <FacebookShareButton
                       quote="TESTING"
                       hashtag="#merch.is"
-                      url={`ourlink.com/`}
+                      url={`https://merch-is.vercel.app/`}
                     >
                       <FacebookIcon
                         logoFillColor="white"
