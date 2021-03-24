@@ -52,7 +52,7 @@ export default function SettingsEdit() {
 
     if (!image) {
       let imgUrl = userData.store.logo;
-      updateStore(imgUrl);
+      updateFirebase(imgUrl);
       return;
     }
 
@@ -72,14 +72,14 @@ export default function SettingsEdit() {
           .child(image.name)
           .getDownloadURL()
           .then((imgUrl) => {
-            updateStore(imgUrl);
+            updateFirebase(imgUrl);
             return;
           });
       }
     );
   };
 
-  const updateStore = async (imgUrl) => {
+  const updateFirebase = async (imgUrl) => {
     const store = {
       name: name,
       logo: imgUrl,

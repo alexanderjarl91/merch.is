@@ -20,14 +20,21 @@ export const UsersProvider = ({ children }) => {
   const [signUpError, setSignUpError] = useState(null);
   const [urlAvailable, setUrlAvailable] = useState();
 
-  const clearErrors = () => {
-    setSignUpError();
-    setLoginError();
-  };
-
+  //clear errors on mount
   useEffect(() => {
+    const clearErrors = () => {
+      setSignUpError();
+      setLoginError();
+    };
+
     clearErrors();
   }, []);
+
+  //check url availability everytime url changes
+  useEffect(() => {
+    checkUrlAvailability(url);
+    console.log(url);
+  }, [url]);
 
   //check if url already exists and set state accordingly
   const checkUrlAvailability = (url) => {
@@ -63,6 +70,11 @@ export const UsersProvider = ({ children }) => {
 
     if (storeName.length == 0) {
       setSignUpError("Þú gleymdir að velja heiti á verslunina þína");
+      return;
+    }
+
+    if (storeName.length < 3 || storeName.length > 15) {
+      setSignUpError("Búðarnafn má mest vera minnst vera 3 stafir og mest 15");
       return;
     }
 
