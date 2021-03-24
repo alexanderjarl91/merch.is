@@ -19,6 +19,7 @@ const fire = firebase.apps.length
 export const auth = firebase.auth();
 export const db = firebase.firestore();
 export const storage = firebase.storage();
+
 export default fire;
 
 // export async function getServerSideProps() {
