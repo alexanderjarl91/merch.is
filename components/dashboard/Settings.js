@@ -19,12 +19,10 @@ export default function Settings() {
   const [logo, setLogo] = useState();
   const [social, setSocial] = useState();
   const [edit, setEdit] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(false);
   const [image, setImage] = useState(null);
+  const [error, setError] = useState();
 
-  const clearErrors = () => {
-    setErrorMessage();
-  };
+  const clearErrors = () => {};
 
   //set original states once userData kicks in
   useEffect(() => {
@@ -43,13 +41,18 @@ export default function Settings() {
   };
 
   const updateStorage = () => {
-    checkUrlAvailability();
-
-    if (!urlAvailable) {
-      console.log("URL UNAVAILABLE");
-      setErrorMessage("Þessi hlekkur er frátekinn");
+    if (name.length < 3) {
+      setError("name to short");
       return;
     }
+
+    // checkUrlAvailability();
+
+    // if (!urlAvailable) {
+    //   console.log("URL UNAVAILABLE");
+    //   setErrorMessage("Þessi hlekkur er frátekinn");
+    //   return;
+    // }
 
     if (!image) {
       let imgUrl = userData.store.logo;
