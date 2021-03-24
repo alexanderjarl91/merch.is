@@ -53,10 +53,10 @@ export default function Products() {
 
       {userData.products.length == 0 ? (
         <div>
-          <h1>
+          <p className={styles.no_product_text}>
             Úps! Engar vörur í búðinni þinni.. smelltu á "Bæta við vöru" til að
             hefjast handa!
-          </h1>
+          </p>
         </div>
       ) : null}
       {userData.products.map((product, index) => {
@@ -125,8 +125,8 @@ export default function Products() {
                   bottom: "auto",
                   marginRight: "-50%",
                   transform: "translate(-50%, -50%)",
-                  minHeight: "500px",
-                  minWidth: "800px",
+                  maxHeight: "600px",
+                  maxWidth: "800px",
                 },
               }}
               isOpen={modalOpen}
@@ -141,7 +141,7 @@ export default function Products() {
                 onClick={() => {
                   toggleModal();
                 }}
-                className={styles.product_button_edit}
+                className={styles.product_button_cancel}
               >
                 Hætta
               </button>

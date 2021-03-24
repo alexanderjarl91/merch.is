@@ -6,8 +6,8 @@ import {
   MdAddBox,
   MdShoppingCart,
   MdFormatLineSpacing,
-  MdHome,
 } from "react-icons/md";
+import { IoMdSettings } from "react-icons/io";
 import { MdClose } from "react-icons/md";
 import { CgMenuRight } from "react-icons/cg";
 import { UsersContext } from "../../context";
@@ -32,6 +32,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
     <>
       <div className={styles.burger}>
         {/* hamburger menu */}
+
         <button className={styles.burger_button} onClick={handleToggle}>
           {/* If the navbar is open then show the closing icon, else show the burger icon */}
           {navbarOpen ? (
@@ -40,6 +41,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
             <CgMenuRight className={styles.burger_icon} />
           )}
         </button>
+        <p className={styles.logo_mobile}>merch.</p>
         <div className={styles.sideMenu}>
           <ul className={`burgerNavDash ${navbarOpen ? " showMenu" : ""}`}>
             <li>
@@ -64,7 +66,7 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                   console.log(componentShowing);
                 }}
               >
-                <MdHome className={styles.sideMenu_icon} /> Stillingar
+                <IoMdSettings className={styles.sideMenu_icon} /> Stillingar
               </button>
             </li>
             <li>

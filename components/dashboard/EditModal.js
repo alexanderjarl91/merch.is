@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import styles from "../../styles/Dashboard/Add.module.css";
+import styles from "../../styles/Dashboard/EditModal.module.css";
 import { UsersContext } from "../../context";
 import { db, auth, storage } from "../../fire";
 
@@ -96,9 +96,9 @@ export default function EditModal({ productIndex, toggleModal }) {
   };
 
   return (
-    <div>
+    <div className={styles.modal}>
+      <p className={styles.title}>Breyta vöru</p>
       <div className={styles.add_grid}>
-        <h1>Breyta vöru</h1>
         <div>
           <label className={styles.add_label}>Vöruheiti*</label>
           <input

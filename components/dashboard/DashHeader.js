@@ -10,23 +10,24 @@ export default function DashHeader() {
   return (
     <div className={styles.dashboardHeader}>
       <Link href="/">
-        <p className={styles.logo}> merch. </p>
+        <p className={styles.logo}>merch.</p>
       </Link>
-
-      {userData ? (
-        <>
-          <p className={styles.userName}>{userData.name}</p>
-          <p className={styles.userName}>|</p>
-        </>
-      ) : null}
-      <a
-        onClick={() => {
-          handleLogout();
-        }}
-        className={styles.log_out}
-      >
-        Útskrá
-      </a>
+      <div className={styles.dash_info}>
+        {userData ? (
+          <>
+            <p className={styles.userName}>{userData.name}</p>
+            <p className={styles.userName}>|</p>
+          </>
+        ) : null}
+        <a
+          onClick={() => {
+            handleLogout();
+          }}
+          className={styles.log_out}
+        >
+          Útskrá
+        </a>
+      </div>
     </div>
   );
 }

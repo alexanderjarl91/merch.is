@@ -1,14 +1,10 @@
 /* mobile first */
 .burger_button {
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
   margin-right: 20px;
+  padding-top: 20px;
   position: sticky;
   z-index: 10;
-  cursor: pointer;
-  border: none;
-  outline: none;
   background: transparent;
   float: right;
 }
@@ -46,12 +42,14 @@
   padding: 10px;
   padding-bottom: 14px;
 }
-.logo {
+.logo_mobile {
+  margin-top: 20px;
   margin-right: auto;
   font-size: 34px;
   line-height: 30px;
   font-weight: 500;
   margin-left: 3%;
+  padding-top: 20px;
 }
 .sideMenu_utskra {
   margin-top: 10px;
@@ -65,29 +63,32 @@
   .nav {
     padding-top: 3rem;
     margin-bottom: 1rem;
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
-    overflow: hidden;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
   }
 }
 
 /* desktop */
 @media (min-width: 1025px) {
-  .logo {
-    display: none;
+  .logo_mobile {
+   display: none;
   }
   .sideMenu {
     display: flex;
+    justify-content: right;
     flex-direction: column;
-    margin-left: 5rem;
     margin-top: 100px;
   }
   .sideMenu_utskra {
     display: none;
   }
   .sideMenu_extra_links {
-    margin-left: 3rem;
+    
   }
   .burger_button {
     display: none;

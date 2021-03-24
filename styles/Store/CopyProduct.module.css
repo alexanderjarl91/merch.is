@@ -1,0 +1,216 @@
+/* desktop */
+.product_page {
+  background-color: #fff;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 14rem;
+  min-height: 100vh;
+  padding-top: 6rem;
+  width: 100%;
+}
+.store_logo {
+  max-height: 200px;
+  margin-bottom: 3rem;
+}
+.store_social {
+  color: #252525;
+  margin-bottom: 1rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 19px;
+}
+.container {
+  text-align: center;
+  /* background: rgb(235, 225, 233); */
+}
+.product {
+  justify-content: center;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 700px 400px;
+  margin-bottom: 6%;
+  /* background-color: rgb(255, 255, 255); */
+}
+/* ipad size */
+@media (max-width: 1210px) {
+  .store_logo {
+    max-height: 140px;
+    margin-bottom: 2rem;
+  }
+  .product {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+  }
+  .product_info {
+    display: grid;
+    grid-template-rows: 70px 1fr 70px 1fr 1fr;
+    padding-top: 6%;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin: 0 auto;
+    /* background-color: aquamarine; */
+  }
+  .product_price {
+    align-self: end;
+  }
+  .product_buy_button {
+    margin-bottom: 2rem;
+  }
+}
+
+/* mobile size */
+@media (max-width: 668px) {
+  .store_logo {
+    max-height: 140px;
+    margin-bottom: 2rem;
+  }
+  .product {
+    display: grid;
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+  .product_info {
+    display: grid;
+    grid-template-rows: 70px 1fr 70px 1fr 1fr;
+    padding-top: 6%;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin: 0 auto;
+    /* background-color: aquamarine; */
+  }
+  .product_description {
+    max-width: 300px;
+  }
+  .product_price {
+    align-self: end;
+  }
+  .product_buy_button {
+    margin-bottom: 2rem;
+  }
+  /* grid that contains all the product images */
+  .product_images {
+    /* background-color: darkblue; */
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    /* margin: 0 auto; */
+  }
+  .product_mainImg {
+    /* width: 100%;
+    height: 300px; */
+    grid-row: 1;
+    align-self: center;
+    padding-bottom: 1rem;
+  }
+  
+}
+/* grid that contains all the product images */
+.product_images {
+  /* background-color: darkblue; */
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  margin: 0 auto;
+}
+/* only the big main image */
+.product_mainImg {
+  max-width: 400px;
+  padding-left: 3%;
+}
+
+.product_info {
+  display: grid;
+  /* grid-template-rows: 70px auto 70px auto auto;  */
+  grid-template-rows: 70px 1fr 70px 1fr 1fr;
+  text-align: left;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin: 0 auto;
+  /* background-color: aquamarine; */
+}
+.product_name {
+  color: #252525;
+  font-size: 30px;
+  font-weight: 500;
+  align-self: start;
+  padding-bottom: 10px;
+}
+.product_description {
+  align-self: start;
+  color: #252525;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 2rem;
+}
+.product_price {
+  color: #252525;
+  margin-bottom: 2rem;
+}
+.product_buy_button {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 2px;
+  background-color: #252525;
+  color: #fff;
+}
+.product_buy_button:hover {
+  background: #000000;
+  font-weight: 900;
+}
+.deila_buttona {
+  text-align: center;
+  color: #252525;
+  border: 1px solid #252525;
+  padding: 10px;
+  font-size: 18px;
+  width: 300px;
+  height: 50px;
+  background: transparent;
+  align-self: start;
+}
+.deila_buttona:hover {
+  color: #fff;
+  background: #252525;
+}
+.back_button {
+  margin-top: 5rem;
+  text-align: center;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  width: 300px;
+  height: 50px;
+  background: #909090;
+}
+.back_button:hover {
+  background: #b1b1b1;
+}
+.share_buttons > * {
+  margin: 5px;
+}
+.share_buttons {
+  align-self: baseline;
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-50);
+    transform: translateY(-50);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+}
