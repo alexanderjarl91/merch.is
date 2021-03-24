@@ -13,7 +13,9 @@ import Link from "next/link";
 
 const dashboard = () => {
   const router = useRouter();
-  const { users, currentUser, userData } = useContext(UsersContext);
+  const { users, currentUser, userData, handleLogout } = useContext(
+    UsersContext
+  );
   //get user data when users changes
   //push to root if theres no currentUser
   useEffect(() => {
