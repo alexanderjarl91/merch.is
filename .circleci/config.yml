@@ -19,7 +19,6 @@ jobs:
             - ./node_modules
       - run:
           name: Run tests
-<<<<<<< HEAD
           command: npm run test
       - run:
           name: Checkout Release
@@ -30,6 +29,3 @@ jobs:
       - run:
           name: Push to origin
           command: git push origin release
-=======
-          command: npm run test
->>>>>>> f69c7db177dd9abec20f628f16e04552c33bb05f

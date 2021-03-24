@@ -198,10 +198,6 @@ export default function Yfirlit({}) {
                 <td>{unfulfilledOrders}</td>
               </tr>
               <tr>
-                <th>Cancel pantanir: </th>
-                <td>X</td>
-              </tr>
-              <tr>
                 <th>Afgreiddar pantanir:</th>
                 <td>{fulfilledOrders}</td>
               </tr>
