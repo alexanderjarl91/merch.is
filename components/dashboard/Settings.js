@@ -165,12 +165,14 @@ export default function Settings() {
                   Linkurinn á búðina þína
                 </label>
                 <div style={{ display: "flex" }}>
-                  <p className={styles.input}>merch-is.vercel.app/</p>
+                  <p className={styles.input_store_link}>
+                    merch-is.vercel.app/
+                  </p>
                   <input
                     onChange={(e) => {
                       setUrl(e.target.value);
                     }}
-                    className={styles.input}
+                    className={styles.input_store_link_name}
                     type="text"
                     placeholder={userData.store.url}
                   ></input>
@@ -237,7 +239,7 @@ export default function Settings() {
             <div className={styles.user_info_grid}>
               <p className={styles.user_name}>
                 {" "}
-                <strong> Nafnið þitt: </strong>
+                <strong> Búðarnafn: </strong>
                 {userData.store.name}
               </p>
 
@@ -248,7 +250,7 @@ export default function Settings() {
               </p>
 
               <p className={styles.user_bio}>
-                <strong>Um búðina þína: </strong>
+                <strong>Um búðina: </strong>
                 {userData.store.bio}
               </p>
 
