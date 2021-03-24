@@ -1,6 +1,6 @@
 /* mobile first css */
 .nav {
-  padding-top: 1rem;
+  margin-top: 20px;
   margin-bottom: 1rem;
   display: flex;
   justify-content: flex-end;
@@ -19,7 +19,6 @@
   padding-top: 20px;
   position: sticky;
   z-index: 10;
-  border: none;
   background: transparent;
 }
 .burger_icon_close {

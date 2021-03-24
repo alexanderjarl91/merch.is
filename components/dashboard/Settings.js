@@ -2,6 +2,7 @@ import styles from "../../styles/Dashboard/Settings.module.css";
 import { UsersContext } from "../../context";
 import React, { useState, useContext, useEffect } from "react";
 import { db, storage } from "../../fire";
+import SettingsEdit from "../../components/dashboard/SettingsEdit";
 
 export default function Settings() {
   const {
@@ -102,141 +103,50 @@ export default function Settings() {
       <p className={styles.title}> Stillingar </p>
       {edit ? (
         <>
-          <div className={styles.store_grid_edit}>
-            <div>
-              <label className={styles.edit_label}>Búðarnafn</label>
-              <input
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                className={styles.input}
-                type="text"
-                placeholder={userData.store.name}
-              ></input>
-            </div>
-            <div>
-              <label className={styles.edit_label}>Social</label>
-              <input
-                onChange={(e) => {
-                  setSocial(e.target.value);
-                }}
-                className={styles.input}
-                type="text"
-                placeholder={userData.store.social}
-              ></input>
-            </div>
-
-            <div>
-              <label className={styles.edit_label}>Þinn hlekkur</label>
-              <div style={{ display: "flex" }}>
-                <p>merch.is</p>
-                <input
-                  onChange={(e) => {
-                    setUrl(e.target.value);
-                  }}
-                  className={styles.input}
-                  type="text"
-                  placeholder={userData.store.url}
-                ></input>
-              </div>
-            </div>
-
-            <div>
-              <label className={styles.edit_label}>Um búðina</label>
-              <textarea
-                onChange={(e) => {
-                  setBio(e.target.value);
-                }}
-                rows="3"
-                className={styles.input}
-                type="text"
-                placeholder={userData.store.bio}
-              ></textarea>
-            </div>
-
-            <div className={styles.seccond_grid}>
-              <label className={styles.add_label}>Velja nýja mynd</label>
-              <input
-                id="img"
-                className={styles.add_file}
-                type="file"
-                accept="image/*"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <button
-                className={styles.store_button_cancel}
-                onClick={() => {
-                  setEdit(false);
-                  clearErrors();
-                }}
-              >
-                hætta við
-              </button>
-              <button
-                className={styles.store_button_confirm}
-                onClick={() => {
-                  updateStorage();
-                  clearErrors();
-                }}
-              >
-                vista
-              </button>
-              <button
-                onClick={() => {
-                  checkUrlAvailability();
-                }}
-              >
-                checkUrlAvailability()
-              </button>
-              <button
-                onClick={() => {
-                  console.log(urlAvailable);
-                }}
-              >
-                console.log(urlAvailable)
-              </button>
-            </div>
-            {errorMessage ? (
-              <p style={{ color: "red" }}>{errorMessage}</p>
-            ) : null}
-          </div>
+          <SettingsEdit />
         </>
       ) : (
+        // This is what is showing when the user first visit the setting page
         <>
           <div className={styles.store_grid}>
-            <img className={styles.user_logo} src={userData.store.logo} />
-            <p className={styles.user_name}>
-              {" "}
-              <strong> Nafn: </strong>
-              {userData.store.name}
-            </p>
-            <p className={styles.user_url}>
-              {" "}
-              <strong>Hlekkur á social: </strong>
-              {userData.store.social}
-            </p>
-            <p className={styles.user_bio}>
-              <strong>Um merkið þitt: </strong>
-              {userData.store.bio}
-            </p>
+            <div className={styles.logo_grid}>
+              <img className={styles.user_logo_img} src={userData.store.logo} />
+            </div>
+            <div className={styles.user_info_grid}>
+              <p className={styles.user_name}>
+                {" "}
+                <strong> Nafnið þitt: </strong>
+                {userData.store.name}
+              </p>
 
-            <button
-              className={styles.store_button_change}
-              onClick={() => {
-                setEdit(true);
-              }}
-            >
-              Breyta upplýsingum
-            </button>
-            <p className={styles.user_hlekkur}>
-              {" "}
-              <strong>Linkurinn þinn: </strong>
-            </p>
-            <a className={styles.user_merch_linkur}>
-              www.merch.is/{userData.store.url}
-            </a>
+              <p className={styles.user_url}>
+                {" "}
+                <strong>Linkur á samfélagsmiðilinn þinn: </strong>
+                {userData.store.social}
+              </p>
+
+              <p className={styles.user_bio}>
+                <strong>Um búðina þína: </strong>
+                {userData.store.bio}
+              </p>
+
+              <p className={styles.user_hlekkur}>
+                {" "}
+                <strong>Linkurinn á búðina þína: </strong>
+                <button className={styles.user_merch_linkur}>
+                  merchis.netlify.com/{userData.store.url}
+                </button>
+              </p>
+
+              <button
+                className={styles.store_button_change}
+                onClick={() => {
+                  setEdit(true);
+                }}
+              >
+                Breyta upplýsingum
+              </button>
+            </div>
           </div>
         </>
       )}

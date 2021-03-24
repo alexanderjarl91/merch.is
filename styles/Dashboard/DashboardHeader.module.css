@@ -1,32 +1,29 @@
 .dashboardHeader {
-  max-width: 1400px;
-  height: 60px;
   color: 252525;
-  margin: 0 auto;
-  background-color: transparent;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
-  text-align: center;
-  text-decoration: none;
-  list-style: none;
-  padding-top: 3rem;
-  margin-bottom: 1rem;
+  border-radius: 8px;
+  z-index: 3;
+  margin-right: 15%;
+ margin-top: 2rem;
+}
+.dash_info {
+ display: flex;
 }
 .userName {
   margin-right: 30px;
 }
 .header_avatar {
   max-width: 50px;
-
   border-radius: 200px;
 }
 .logo {
+  margin-left: 5rem;
   margin-right: auto;
   font-size: 34px;
   line-height: 30px;
   font-weight: 500;
-  margin-left: 3%;
+ 
 }
 .log_out:hover {
   font-weight: 900;

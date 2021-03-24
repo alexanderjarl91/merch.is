@@ -35,7 +35,7 @@ export default function Landing() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <>
-          <div className={styles.mobile_bg_img}>
+          <div className={styles.bg_img}>
             <div className="content">
               <Navbar />
               {/* LOGIN FORM */}
@@ -46,9 +46,9 @@ export default function Landing() {
                 >
                   X
                 </button>
-                <div className={styles.login__header}>
-                  <h1 className={styles.login__header}>Skráðu þig inn</h1>
-                  <p style={{ fontSize: 20 }}>
+                <div>
+                  <p className={styles.login__header}>Skráðu þig inn</p>
+                  <p className={styles.login__header_2}>
                     Skráðu þig inn á þína verslun með netfangi og lykilorði
                   </p>
                 </div>

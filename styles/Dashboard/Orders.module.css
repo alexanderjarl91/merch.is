@@ -14,10 +14,8 @@
   /* desktop */
   @media (min-width: 1025px) {
     .component_container {
-      max-width: 1400px;
-      width: 80%;
-      min-width: 20rem;
-      height: 34rem;
+      width: 900px;
+      height: 40rem;
       border-radius: 8px;
       z-index: 3;
       grid-column: 2 / span 10;

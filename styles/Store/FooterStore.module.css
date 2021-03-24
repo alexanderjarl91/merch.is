@@ -1,6 +1,6 @@
 /* mobile first css */
 .store_footer {
-    position: absolute;
+    position: sticky;
     bottom: 0;
     margin: 0 auto;
     text-align: center;
@@ -13,7 +13,9 @@
   /* desktop */
   @media (min-width: 860px) {
   .store_footer {
-    background-color: #000000d0;
+    background-color: #121111d0;
+    position: fixed;
+    bottom: 0;
   }
 }
   

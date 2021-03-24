@@ -9,6 +9,7 @@ import Yfirlit from "../../components/dashboard/Yfirlit";
 import Sidemenu from "../../components/dashboard/Sidemenu";
 import Settings from "../../components/dashboard/Settings";
 import styles from "../../styles/Dashboard/Dashboard.module.css";
+import Link from "next/link";
 
 const dashboard = () => {
   const router = useRouter();
@@ -29,7 +30,29 @@ const dashboard = () => {
     <>
       {userData ? (
         <div className={styles.dashboard_bg}>
-          <DashHeader />
+          {/* the header in the dashboard */}
+          <div className={styles.dashboardHeader}>
+            <p className={styles.logo}>
+              <Link href="/"> merch.</Link>
+            </p>
+            <div className={styles.dash_info}>
+              {userData ? (
+                <>
+                  {userData.name} {""} | {""}{" "}
+                </>
+              ) : null}
+              <button
+                onClick={() => {
+                  handleLogout();
+                }}
+                className={styles.log_out}
+              >
+                Útskrá
+              </button>
+            </div>
+          </div>
+
+          {/* dashboard grid that containes the menu and the white conpoment box */}
           <div className={styles.dashboard_grid}>
             <div className={styles.sidemenu_container}>
               <Sidemenu

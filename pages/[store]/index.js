@@ -73,6 +73,7 @@ const Store = ({ products }) => {
             <button onClick={toggleShare} className={styles.share_button}>
               DEILA SÍÐU
             </button>
+
             {showShare ? (
               <div className={styles.share_buttons}>
                 <FacebookShareButton
