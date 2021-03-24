@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
@@ -17,7 +18,15 @@
     "react-dom": "17.0.1",
     "react-icons": "^4.2.0",
     "react-modal": "^3.12.1",
-    "react-share": "^4.4.0",
-    "react-useanimations": "^2.0.6"
+    "react-share": "^4.4.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.12.13",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.5.0",
+    "babel-jest": "^26.6.3",
+    "enzyme": "^3.11.0",
+    "jest": "^26.6.3"
   }
 }

@@ -1,0 +1,31 @@
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run:
+          name: Update NPM
+          command: "sudo npm install -g npm@5"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Run tests
+          command: npm run test
+      - run:
+          name: Checkout Release
+          command: git checkout release
+      - run:
+          name: Merge From main
+          command: git merge main
+      - run:
+          name: Push to origin
+          command: git push origin release
