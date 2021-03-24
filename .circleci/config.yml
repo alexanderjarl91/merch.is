@@ -21,6 +21,9 @@ jobs:
           name: Run tests
           command: npm run test
       - run:
+          name: Stash Changes
+          command: git stash
+      - run:
           name: Checkout Release
           command: git checkout release
       - run:
