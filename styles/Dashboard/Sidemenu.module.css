@@ -57,6 +57,7 @@
   border: none;
   background: transparent;
   font-size: 18px;
+  font-weight: 600;
 }
 /* only relavent for mobile  */
 @media (max-width: 1025px) {
@@ -70,6 +71,13 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    background-color: rgb(153, 38, 153);
+  }
+  .sideMenu_extra_links_container li:first-child {
+  margin-top: 10px;
+  }
+  .sideMenu {
+  background-color: turquoise;
   }
 }
 
@@ -86,9 +94,6 @@
   }
   .sideMenu_utskra {
     display: none;
-  }
-  .sideMenu_extra_links {
-    
   }
   .burger_button {
     display: none;
