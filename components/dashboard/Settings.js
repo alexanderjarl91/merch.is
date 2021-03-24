@@ -42,28 +42,38 @@ export default function Settings() {
     }
   };
 
-  const updateStorage = () => {
-    if (name.length < 3) {
-      setError("name to short");
+  const saveChanges = () => {
+    //BEGIN WITH FORM VALIDATION so that image doesnt get uploaded if theres an error
+
+    //return if name is less than 3 or more than 12 characters
+    if (name.length < 3 || name.length > 15) {
+      setError("Búðarnafn má mest vera minnst vera 3 stafir og mest 25");
       return;
     }
 
-    checkUrlAvailability();
-
-    if (!urlAvailable) {
+    //return if url is not available and url is not the same as it was in database
+    if (!urlAvailable && url !== userData.store.url) {
       console.log("URL UNAVAILABLE");
       setError("Þessi hlekkur er frátekinn");
       return;
     }
 
-    if (!image) {
-      let imgUrl = userData.store.logo;
-      updateStore(imgUrl);
+    // return if url includes a space
+    if (/\s/.test(url)) {
+      setSignUpError(
+        "Hlekkurinn þinn má ekki innihald bil eða önnur sérstök tákn"
+      );
       return;
     }
 
-    clearErrors();
+    //return if there is no image uploaded, set imgUrl to what is was originally (case: user is not changing store logo)
+    if (!image) {
+      let imgUrl = userData.store.logo;
+      updateFirebase(imgUrl);
+      return;
+    }
 
+    //upload image to storage
     const uploadTask = storage
       .ref(`${userData.email}/${image.name}`)
       .put(image);
@@ -75,19 +85,19 @@ export default function Settings() {
         console.log(error);
       },
       () => {
+        //then get the URL for that specific image and call updateFirebase with the url as a parameter
         storage
           .ref(userData.email)
           .child(image.name)
           .getDownloadURL()
           .then((imgUrl) => {
-            updateStore(imgUrl);
+            updateFirebase(imgUrl);
             return;
           });
       }
     );
   };
-
-  const updateStore = async (imgUrl) => {
+  const updateFirebase = async (imgUrl) => {
     const store = {
       name: name,
       logo: imgUrl,
@@ -99,6 +109,7 @@ export default function Settings() {
     db.collection("users").doc(userData.email).update({ store: store });
     refreshUserData();
     setEdit(false);
+    setError();
   };
 
   if (!userData) return null;
@@ -179,6 +190,7 @@ export default function Settings() {
                 />
               </div>
             </div>
+            {error ? <p style={{ color: "red" }}>{error}</p> : null}
             <div className={styles.store_buttons_edit}>
               <button
                 className={styles.store_button_cancel}
@@ -193,8 +205,7 @@ export default function Settings() {
               <button
                 className={styles.store_button_confirm}
                 onClick={() => {
-                  updateStorage();
-                  clearErrors();
+                  saveChanges();
                 }}
               >
                 vista
@@ -216,8 +227,6 @@ export default function Settings() {
               >
                 console.log(urlAvailable)
               </button> */}
-
-            {error ? <p style={{ color: "red" }}>{error}</p> : null}
           </div>
         </>
       ) : (
