@@ -9,14 +9,28 @@ export default function Yfirlit({}) {
   const [totalSum, setTotalSum] = useState(0);
   const [fulfilledOrders, setFulfilledOrders] = useState(0);
 
+  //on mount, if user is logged in, run an observer that refreshes userData whenever theres a change
+  useEffect(() => {
+    if (auth.currentUser) {
+      //subscribing to changes in users collection
+      const doc = db.collection("users").doc(auth.currentUser.email);
+      //refresh userData every time this specific doc changes
+      const observer = doc.onSnapshot((docSnapshot) => {
+        refreshUserData();
+      });
+    }
+  }, []);
+
   //add the total of all orders on mount
   useEffect(() => {
     getTotalSum();
+    getFulfilledOrders();
   }, []);
 
   //get new sums everytime userData changes for live numbers
   useEffect(() => {
     getTotalSum();
+    getFulfilledOrders();
   }, [userData]);
 
   //get total sum function
@@ -43,18 +57,6 @@ export default function Yfirlit({}) {
       });
     }
   };
-
-  //on mount, if user is logged in, run an observer that refreshes userData whenever theres a change
-  useEffect(() => {
-    if (auth.currentUser) {
-      //subscribing to changes in users collection
-      const doc = db.collection("users").doc(auth.currentUser.email);
-      //refresh userData every time this specific doc changes
-      const observer = doc.onSnapshot((docSnapshot) => {
-        refreshUserData();
-      });
-    }
-  }, []);
 
   return (
     <div className={styles.component_container}>
@@ -93,7 +95,7 @@ export default function Yfirlit({}) {
           ) : null}
         </div>
       </div>
-      <button style={{ color: "black" }} onClick={() => {}}>
+      <button onClick={() => {}} style={{ color: "black" }}>
         Takki sem gerir ekkert
       </button>
     </div>
