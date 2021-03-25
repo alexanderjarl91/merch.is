@@ -2,17 +2,11 @@ import styles from "../../styles/Dashboard/Settings.module.css";
 import { UsersContext } from "../../context";
 import React, { useState, useContext, useEffect } from "react";
 import { db, storage } from "../../fire";
-import SettingsEdit from "../../components/dashboard/SettingsEdit";
 
 export default function Settings() {
-  const {
-    userData,
-    refreshUserData,
-    urlAvailable,
-    checkUrlAvailability,
-    setUrl,
-    url,
-  } = useContext(UsersContext);
+  const { userData, refreshUserData, urlAvailable, setUrl, url } = useContext(
+    UsersContext
+  );
 
   const [bio, setBio] = useState();
   const [name, setName] = useState();
@@ -239,15 +233,26 @@ export default function Settings() {
             <div className={styles.user_info_grid}>
               <p className={styles.user_name}>{userData.store.name}</p>
 
-              <p className={styles.user_url}> {userData.store.social}</p>
+              <a
+                target="_blank"
+                href={userData.store.social}
+                className={styles.user_url}
+              >
+                {" "}
+                {userData.store.social}
+              </a>
 
               <p className={styles.user_bio}>{userData.store.bio}</p>
 
               <p className={styles.user_hlekkur}>
                 {" "}
-                <button className={styles.user_merch_linkur}>
-                  merchis.netlify.com/{userData.store.url}
-                </button>
+                <a
+                  href={`merch-is.vercel.com/${userData.store.url}`}
+                  target="_blank"
+                  className={styles.user_merch_linkur}
+                >
+                  merch-is.vercel.com/{userData.store.url}
+                </a>
               </p>
 
               <button
