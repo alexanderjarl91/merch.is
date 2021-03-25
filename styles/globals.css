@@ -67,7 +67,7 @@ th {
     background: #f4f5f5;
     left: 0;
     bottom: 0;
-    height: 100vh;
+    min-height: 100%;
     width: 0;
     overflow: hidden;
     text-align: center;
