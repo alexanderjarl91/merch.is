@@ -136,8 +136,8 @@ export default function Yfirlit({}) {
   };
 
   return (
-    <div className={styles.component_container}>
-      <p className={styles.title}> Yfirlit</p>
+    <div className="component_container">
+      <p className="title"> Yfirlit</p>
 
       <div className={styles.yfirlit_grid}>
         {userData && userData.orders ? (
@@ -185,7 +185,7 @@ export default function Yfirlit({}) {
         <>
           <div className={styles.order_popular_grid}>
             <div className={styles.table}>
-              <p className={styles.table_header}>Pantanir</p>
+              <p className="title">Pantanir</p>
               <table>
                 <tr>
                   <th>Pantanir alls:</th>
@@ -203,7 +203,7 @@ export default function Yfirlit({}) {
             </div>
 
             <div>
-              <p className={styles.table_header}>Nýjasta varan þín:</p>
+              <p className="title">Nýjasta varan þín:</p>
               {lastProduct ? (
                 <img
                   className={styles.popular_product}

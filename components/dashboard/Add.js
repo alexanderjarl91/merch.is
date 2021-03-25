@@ -105,8 +105,8 @@ export default function Add({ setComponentShowing }) {
   };
 
   return (
-    <div className={styles.component_container}>
-      <p className={styles.title}> Bæta við vöru</p>
+    <div className="component_container">
+      <p className="title"> Bæta við vöru</p>
 
       <div className={styles.add_grid}>
         <div>
