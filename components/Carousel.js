@@ -10,7 +10,7 @@ export default function Carousel() {
           <p className={styles.front_headline}>SELDU</p>
           <p className={styles.front_headline_nr2}> ÞÍNAR VÖRUR </p>
           <p className={styles.front_description}>
-            Byrjaðu að selja vörurnar þínar strax í dag!
+            Auðveld uppsetning og aðgengilegri sala
           </p>
 
           <Link href="/signup">

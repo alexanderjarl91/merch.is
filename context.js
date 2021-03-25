@@ -26,7 +26,6 @@ export const UsersProvider = ({ children }) => {
       setSignUpError();
       setLoginError();
     };
-
     clearErrors();
   }, []);
 
@@ -35,6 +34,19 @@ export const UsersProvider = ({ children }) => {
     checkUrlAvailability(url);
     console.log(url);
   }, [url]);
+
+  // refresh userData as
+  const refreshUserData = async () => {
+    const userSnapshot = await db
+      .collection("users")
+      .doc(auth.currentUser.email)
+      .get();
+    const tempUserData = await userSnapshot.data();
+    if (tempUserData) {
+      console.log("running refresh function");
+      setUserData(tempUserData);
+    }
+  };
 
   //check if url already exists and set state accordingly
   const checkUrlAvailability = (url) => {
@@ -216,18 +228,6 @@ export const UsersProvider = ({ children }) => {
   const getUserData = async () => {
     const foundUser = users.find((x) => x.email === auth.currentUser.email);
     setUserData(foundUser);
-  };
-
-  const refreshUserData = async () => {
-    const userSnapshot = await db
-      .collection("users")
-      .doc(auth.currentUser.email)
-      .get();
-    const tempUserData = await userSnapshot.data();
-    if (tempUserData) {
-      console.log("running refresh function");
-      setUserData(tempUserData);
-    }
   };
 
   useEffect(async () => {

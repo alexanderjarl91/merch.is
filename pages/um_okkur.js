@@ -16,15 +16,12 @@ function um_okkur() {
         <Navbar />
         <div className={styles.container}>
           <p className={styles.um_okkur_headline}>UM OKKUR</p>
-          <p className={styles.aukaP}>Hér getur komið stutt setning um okkur</p>
+          <p className={styles.aukaP}>Auðveld uppsetning & aðgengilegri sala</p>
           <div className={styles.um_okkur_body_text}>
             <p>
               {" "}
-              Og hér getur verið lengri texti um okkur.. adipiscing elit. Id sit
-              magna enim lectus sed pellentesque arcu. Mi aliquam dui quis sed
-              leo. Et sed donec dolor, tellus. Tristique sagittis vitae
-              pellentesque in vivamus iaculis feugiat. Justo id nulla sagittis
-              egestas amet commodo, nisl{" "}
+              merch.is er vettvangur fyrir listamenn til að vörur sínar
+              aðgengilegar öllum og rukkað á auðveldan hátt.
             </p>
             <br />
             <p>
