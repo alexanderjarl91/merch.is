@@ -1,14 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../../context";
+import Head from "next/head";
+import styles from "../../styles/Dashboard/Dashboard.module.css";
+import Link from "next/link";
+
+//importing components
 import Products from "../../components/dashboard/Products";
 import Orders from "../../components/dashboard/Orders";
 import Add from "../../components/dashboard/Add";
 import Yfirlit from "../../components/dashboard/Yfirlit";
 import Sidemenu from "../../components/dashboard/Sidemenu";
 import Settings from "../../components/dashboard/Settings";
-import styles from "../../styles/Dashboard/Dashboard.module.css";
-import Link from "next/link";
 
 const dashboard = () => {
   const router = useRouter();
@@ -27,6 +30,10 @@ const dashboard = () => {
 
   return (
     <>
+      <Head>
+        <title>Dashboard | merch.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {userData ? (
         <div className={styles.dashboard_bg}>
           {/* the header in the dashboard */}

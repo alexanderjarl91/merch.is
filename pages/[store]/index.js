@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../../context";
+import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Store/Store.module.css";
 import FooterStore from "../../components/store/FooterStore";
@@ -38,6 +39,11 @@ const Store = ({ products }) => {
 
   return (
     <div>
+      <Head>
+        <title>{`${storeNameQuery}`} | merch.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {store ? (
         <>
           <div className={styles.container}>

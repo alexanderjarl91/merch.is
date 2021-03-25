@@ -28,12 +28,12 @@ export default function Yfirlit({}) {
     }
   }, []);
 
-  //add the total of all orders on mount
+  //get data on mount
   useEffect(() => {
     getDashboardData()
   }, []);
 
-  //get new sums everytime userData changes for live numbers
+  //get new data everytime userData changes for live numbers
   useEffect(() => {
   getDashboardData()
   }, [userData]);
@@ -89,6 +89,7 @@ export default function Yfirlit({}) {
       }
   };
 
+  //run all the get functions
   getTotalSum()
   getFulfilledOrders()
   getUnfulfilledOrders()
@@ -156,7 +157,7 @@ export default function Yfirlit({}) {
           {userData && userData.products ? (
             <div className={styles.box_head}>
               <AiOutlineAppstoreAdd className={styles.icon} />
-              <p>Vörurmagn</p>
+              <p>Vörumagn</p>
               <p>{userData.products.length}</p>
             </div>
           ) : null}

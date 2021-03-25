@@ -42,6 +42,11 @@ export default function Landing() {
 
   return (
     <>
+      <Head>
+        <title>Nýskráning | merch.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {currentUser ? (
         <p>redirecting</p>
       ) : (

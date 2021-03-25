@@ -31,7 +31,7 @@ export default function Landing() {
     <>
       <div>
         <Head>
-          <title>merch.</title>
+          <title>Innskráning | merch.</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <>

@@ -1,11 +1,17 @@
 import React from "react";
 import styles from "../styles/Um_okkur.module.css";
+import Head from "next/head";
+
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 function um_okkur() {
   return (
     <>
+      <Head>
+        <title>Um okkur | merch.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="content">
         <Navbar />
         <div className={styles.container}>
