@@ -87,8 +87,8 @@ export const UsersProvider = ({ children }) => {
       return;
     }
 
-    if (storeName.length < 3 || storeName.length > 15) {
-      setSignUpError("Búðarnafn má mest vera minnst vera 3 stafir og mest 15");
+    if (storeName.length < 3 || storeName.length > 25) {
+      setSignUpError("Búðarnafn má mest vera minnst vera 3 stafir og mest 25");
       return;
     }
 

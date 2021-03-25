@@ -214,13 +214,6 @@ export default function Yfirlit({}) {
           </div>
         </>
       ) : null}
-      <button
-        onClick={() => {
-          getFulfilledOrders();
-        }}
-      >
-        button
-      </button>
     </div>
   );
 }

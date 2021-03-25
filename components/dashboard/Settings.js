@@ -46,7 +46,7 @@ export default function Settings() {
     //BEGIN WITH FORM VALIDATION so that image doesnt get uploaded if theres an error
 
     //return if name is less than 3 or more than 12 characters
-    if (name.length < 3 || name.length > 15) {
+    if (name.length < 3 || name.length > 25) {
       setError("Búðarnafn má mest vera minnst vera 3 stafir og mest 25");
       return;
     }

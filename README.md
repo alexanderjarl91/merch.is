@@ -1,6 +1,6 @@
 # merch.
 
-### Merch.is is a platform for icelandic artists, such as bands, fashion designers or photographers to very easily make their merchandise available all over the world with their own personalized online shop.
+### merch. is a platform for icelandic artists, such as bands, fashion designers or photographers to very easily make their merchandise available all over the world with their own personalized online shop.
 
 ## Key features
 
@@ -19,6 +19,14 @@
 - Sharing capabilities to social media platforms for each store & product
 - Continuous integration with Circle CI
 
-**The database** - **Firebase**
+## Stack
 
-..to be continued
+- React w/ Next.js
+- Jest for unit testing & Circle CI for continuous integration
+- Deployed at Vercel continously via Github integration
+- Firebase for user auth handling and file storage
+- Firestore for data persistence
+- react-share
+- react-modal
+- jest
+- enzyme & enzyme-adapter
