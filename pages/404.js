@@ -6,8 +6,8 @@ import styles from "../styles/page404.module.css";
 export default function Custom404() {
   return (
     <>
-      <Navbar />
       <div className="content">
+        <Navbar />
         <div className={"page404"}></div>
 
         <div className={styles.error404}>404 </div>

@@ -1,13 +1,13 @@
 /* mobile first css */
 .footer {
-  position: absolute;
+  margin-top: auto;
   bottom: 0;
   margin: 0 auto;
   text-align: center;
   padding: 30px 0;
   color: rgba(189, 189, 189, 0.815);
   width: 100%;
-  z-index: 10; 
+  z-index: 10;  
 }
 .social {
   width: 26px;
@@ -19,6 +19,7 @@
 @media (min-width: 860px) {
 .footer {
   background-color: #000000d0;
+  position: fixed;
 }
 .skilmalar {
   float: left;

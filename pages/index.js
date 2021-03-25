@@ -42,10 +42,12 @@ export default function Landing() {
           <div className={styles.mobile_bg_img}>
             <div className="content">
               <Navbar />
-              <Carousel />
+              <div className={styles.container}>
+                <Carousel />
+              </div>
             </div>
-            <Footer />
           </div>
+          <Footer />
         </>
       )}
     </div>

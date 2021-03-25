@@ -22,12 +22,14 @@ export const UsersProvider = ({ children }) => {
 
   //clear errors on mount
   useEffect(() => {
-    const clearErrors = () => {
-      setSignUpError();
-      setLoginError();
-    };
     clearErrors();
   }, []);
+
+  // clear error function
+  const clearErrors = () => {
+    setSignUpError();
+    setLoginError();
+  };
 
   //check url availability everytime url changes
   useEffect(() => {

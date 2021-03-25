@@ -6,12 +6,19 @@
   margin: 0;
   padding: 0;
 }
+html {
+  height: 100%;
+  zoom: 0.9; /* Old IE only */
+}
 html,
 body {
   color: #f4f5f5;
   font-family: "Poppins", sans-serif;
   background-color: #070707;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
 }
 a {
   outline: none;
@@ -60,7 +67,7 @@ th {
     background: #f4f5f5;
     left: 0;
     bottom: 0;
-    height: 100vh;
+    min-height: 100%;
     width: 0;
     overflow: hidden;
     text-align: center;
