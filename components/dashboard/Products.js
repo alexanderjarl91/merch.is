@@ -125,7 +125,7 @@ export default function Products() {
                   bottom: "auto",
                   marginRight: "-50%",
                   transform: "translate(-50%, -50%)",
-                  maxHeight: "600px",
+                  minHeight: "600px",
                   maxWidth: "800px",
                 },
               }}

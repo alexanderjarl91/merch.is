@@ -74,7 +74,7 @@
 .product_img {
   cursor: pointer;
   max-height: 300px;
-  max-width: 240px;
+  /* max-width: 240px; */
   padding-bottom: 10px;
 }
 .product_img:hover {

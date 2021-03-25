@@ -179,12 +179,6 @@ export default function Add({ setComponentShowing }) {
             className={styles.add_button}
             onClick={() => {
               addProduct();
-              <UseAnimations
-                animation={loading}
-                size={56}
-                wrapperStyle={{ padding: 100 }}
-                style={{ color: "#fff" }}
-              />;
             }}
           >
             Bæta við vöru{" "}

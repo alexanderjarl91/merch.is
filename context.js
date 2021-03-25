@@ -77,8 +77,8 @@ export const UsersProvider = ({ children }) => {
       setSignUpError("Þessi hlekkur er frátekinn");
       return;
     }
-    if (name.length == 0) {
-      setSignUpError("Þú gleymdir að skrá nafnið þitt");
+    if (name.length == 0 || name.length < 3 || name.length > 15) {
+      setSignUpError("Nafn verður að vera minnst 3 stafir og mest 15");
       return;
     }
 
@@ -144,16 +144,16 @@ export const UsersProvider = ({ children }) => {
               "https://www.pngkit.com/png/detail/246-2467534_your-logo-here-png-your-brand-here-png.png",
             url: url,
             social: social,
-            bio: "a description of your page",
+            bio: "Hér getur þú skrifað kynningu á búðinni þinni",
           },
           products: [
             {
-              productName: "Demo T-Shirt",
+              productName: "Prufuvara",
               productPrice: 8990,
               productImg:
                 "https://store.sabaton.net/wp-content/uploads/2020/12/poison-gas-tshirt-back-sabaton-T19168.png",
               productId: "TS662",
-              productDescription: "A very cool t-shirt",
+              productDescription: "Svartur bolur",
               productStock: 5,
             },
           ],

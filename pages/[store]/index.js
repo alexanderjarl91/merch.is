@@ -50,7 +50,10 @@ const Store = ({ products }) => {
             <div className={styles.user_info_box}>
               <img className={styles.store_img} src={store.logo} />
               <h2 className={styles.store_title}>{storeOwner.store.name}</h2>
-              <a href="{store.social}" className={styles.store_social}>
+              <a
+                href={`https://${storeOwner.store.social}`}
+                className={styles.store_social}
+              >
                 {store.social}
               </a>
               <p className={styles.store_bio}>{store.bio}</p>
@@ -88,7 +91,7 @@ const Store = ({ products }) => {
               <div className={styles.share_buttons}>
                 <FacebookShareButton
                   hashtag="#merch.is"
-                  url={`https://merch-is.vercel.app/${storeNameQuery}`}
+                  url={`https://merch-is.vercel.app/${storeOwner.store.url}`}
                 >
                   <FacebookIcon
                     logoFillColor="white"

@@ -5,6 +5,7 @@ import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import { auth } from "../fire";
 import { UsersContext } from "../context";
+import Footer from "../components/Footer";
 
 //components
 import Navbar from "../components/Navbar";
@@ -104,6 +105,7 @@ export default function Landing() {
                 </form>
               </div>
             </div>
+            <Footer />
           </div>
         </>
       </div>

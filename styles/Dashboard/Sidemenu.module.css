@@ -76,9 +76,11 @@
   .sideMenu_extra_links_container li:first-child {
   margin-top: 10px;
   }
-  .sideMenu {
-  /* background-color: turquoise; */
+  .sideMenu_extra_links  {
+    padding: 7px;
   }
+ 
+ 
 }
 
 /* desktop */

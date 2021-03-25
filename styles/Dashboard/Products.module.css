@@ -20,7 +20,26 @@
   font-weight: 400;
   color: #3e3e3e;
   text-align: center;
-  margin-top: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+.product_button_cancel {
+  background-color: #bd4a4a;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 50%;
+    border-radius: 8px;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: 0;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s;
+    margin-right: 150px;
+    float: right;
 }
 
 /* desktop */
@@ -36,6 +55,13 @@
     margin-top: 6rem;
     margin-left: 20px;
     overflow: scroll;
+  }
+  .product_button_cancel {
+    background-color: #bd4a4a;
+    /* margin-left: auto; */
+    margin-right: 76px;
+    float: right;
+    width: 30%;
   }
   /* hide scrollbars */
   .component_container::-webkit-scrollbar {
@@ -87,18 +113,6 @@
   }
   .product_button_edit:hover {
     background: #3e3e3e;
-  }
-  .product_button_cancel {
-    background: #828181;
-    width: 50%;
-    float: right;
-    font-size: 18px;
-    padding: 2px 16px;
-    border-radius: 10px;
-    color: #fff;
-    height: 40px;
-    font-size: 18px;
-    cursor: pointer;
   }
   .product_button_delete {
     width: 30px;

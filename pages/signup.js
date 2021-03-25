@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "../styles/Signup.module.css";
-
+import Footer from "../components/Footer";
 //components
 import { auth } from "../fire";
 import { UsersContext } from "../context";
@@ -47,9 +47,7 @@ export default function Landing() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {currentUser ? (
-        <p>redirecting</p>
-      ) : (
+      {currentUser ? null : (
         <div>
           <Head>
             <title>merch.</title>
@@ -83,7 +81,7 @@ export default function Landing() {
                       <div className={styles.left_side}>
                         <p className={styles.user_info}>Notenda upplýsingar</p>
                         <div>
-                          <label className={styles.label}>Nafn </label>
+                          <label className={styles.label}>Nafn*</label>
                           <input
                             className={styles.input}
                             type="text"
@@ -94,7 +92,7 @@ export default function Landing() {
                           />
                         </div>
                         <div>
-                          <label className={styles.label}>Netfang</label>
+                          <label className={styles.label}>Netfang*</label>
                           <input
                             className={styles.input}
                             type="email"
@@ -104,7 +102,7 @@ export default function Landing() {
                           />
                         </div>
                         <div>
-                          <label className={styles.label}>Lykilorð</label>
+                          <label className={styles.label}>Lykilorð*</label>
                           <input
                             className={styles.input}
                             type="password"
@@ -118,7 +116,7 @@ export default function Landing() {
                         <p className={styles.store_info}>Búðin þín</p>
                         <div>
                           <div>
-                            <label className={styles.label}>Heiti</label>
+                            <label className={styles.label}>Heiti*</label>
                             <input
                               className={styles.input}
                               type="text"
@@ -141,7 +139,7 @@ export default function Landing() {
                           </div>
                           <div>
                             <label className={styles.label}>
-                              Þinn hlekkur:
+                              Þinn hlekkur:*
                             </label>
                             <div className={styles.url_container}>
                               <label>www.merch.is/</label>
@@ -192,6 +190,7 @@ export default function Landing() {
                     </div>
                   </div>
                 </div>
+                <Footer />
               </div>
             </>
           )}

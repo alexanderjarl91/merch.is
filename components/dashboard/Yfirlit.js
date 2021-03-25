@@ -143,9 +143,22 @@ export default function Yfirlit({}) {
         {userData && userData.orders ? (
           <div className={styles.yfirlit_grid_box1}>
             <div className={styles.box_head}>
-              <AiFillDollarCircle className={styles.icon} />
-              <p>Sala samtals</p>
-              <p className={styles.totalSum}>{totalSum} ISK</p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  marginTop: "auto",
+                }}
+              >
+                <p className={styles.number}>{totalSum} </p>
+                <p style={{ opacity: 0.7, fontWeight: 500 }}>KR</p>
+              </div>
+              <p>
+                {" "}
+                <AiFillDollarCircle className={styles.icon} />
+                Sala samtals
+              </p>
             </div>
           </div>
         ) : null}
@@ -153,9 +166,20 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box2}>
           {userData && userData.products ? (
             <div className={styles.box_head}>
-              <AiOutlineAppstoreAdd className={styles.icon} />
-              <p>Vörumagn</p>
-              <p>{userData.products.length}</p>
+              <p className={styles.number}>{userData.products.length}</p>
+              {userData.products.length == 1 ? (
+                <p>
+                  {" "}
+                  <AiOutlineAppstoreAdd className={styles.icon} />
+                  Vara
+                </p>
+              ) : (
+                <p>
+                  {" "}
+                  <AiOutlineAppstoreAdd className={styles.icon} />
+                  Vörur
+                </p>
+              )}
             </div>
           ) : null}
         </div>
@@ -163,9 +187,12 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box3}>
           {userData && userData.orders ? (
             <div className={styles.box_head}>
-              <FaShoppingBag className={styles.icon} />
-              <p>Pantanir alls</p>
-              <p>{userData.orders.length}</p>
+              <p className={styles.number}>{userData.orders.length}</p>
+              <p>
+                {" "}
+                <FaShoppingBag className={styles.icon} />
+                Pantanir alls
+              </p>
             </div>
           ) : null}
         </div>
@@ -173,9 +200,12 @@ export default function Yfirlit({}) {
         <div className={styles.yfirlit_grid_box4}>
           {userData && userData.orders ? (
             <div className={styles.box_head}>
-              <AiFillCheckCircle className={styles.icon} />
-              <p>Afgreiddar pantanir </p>
-              <p>{fulfilledOrders}</p>
+              <p className={styles.number}>{fulfilledOrders}</p>
+              <p>
+                {" "}
+                <AiFillCheckCircle className={styles.icon} />
+                Afgreitt{" "}
+              </p>
             </div>
           ) : null}
         </div>
@@ -203,7 +233,7 @@ export default function Yfirlit({}) {
             </div>
 
             <div>
-              <p className="title">Nýjasta varan þín:</p>
+              <p className="title">Nýjasta varan þín</p>
               {lastProduct ? (
                 <img
                   className={styles.popular_product}

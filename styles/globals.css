@@ -101,7 +101,7 @@ th {
   }
   .burgerNavDash.showMenu {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: fixed;
   }
   .burgerNavDash li:first-child {
