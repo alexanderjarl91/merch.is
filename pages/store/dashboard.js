@@ -30,59 +30,63 @@ const dashboard = () => {
 
   return (
     <>
-      <Head>
-        <title>Dashboard | merch.</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {userData ? (
-        <div className={styles.dashboard_bg}>
-          {/* the header in the dashboard */}
-          <div className={styles.dashboardHeader}>
-            <p className={styles.logo}>
-              <Link href="/"> merch.</Link>
-            </p>
-            <div className={styles.dash_info}>
-              {userData ? (
-                <>
-                  {userData.name} {""} | {""}{" "}
-                </>
-              ) : null}
-              <button
-                onClick={() => {
-                  handleLogout();
-                }}
-                className={styles.log_out}
-              >
-                Útskrá
-              </button>
-            </div>
-          </div>
+      {currentUser ? (
+        <>
+          <Head>
+            <title>Dashboard | merch.</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+          {userData ? (
+            <div className={styles.dashboard_bg}>
+              {/* the header in the dashboard */}
+              <div className={styles.dashboardHeader}>
+                <p className={styles.logo}>
+                  <Link href="/"> merch.</Link>
+                </p>
+                <div className={styles.dash_info}>
+                  {userData ? (
+                    <>
+                      {userData.name} {""} | {""}{" "}
+                    </>
+                  ) : null}
+                  <button
+                    onClick={() => {
+                      handleLogout();
+                    }}
+                    className={styles.log_out}
+                  >
+                    Útskrá
+                  </button>
+                </div>
+              </div>
 
-          {/* dashboard grid that containes the menu and the white conpoment box */}
-          <div className={styles.dashboard_grid}>
-            <div className={styles.sidemenu_container}>
-              <Sidemenu
-                componentShowing={componentShowing}
-                setComponentShowing={setComponentShowing}
-              />
+              {/* dashboard grid that containes the menu and the white conpoment box */}
+              <div className={styles.dashboard_grid}>
+                <div className={styles.sidemenu_container}>
+                  <Sidemenu
+                    componentShowing={componentShowing}
+                    setComponentShowing={setComponentShowing}
+                  />
+                </div>
+                {componentShowing == "dashboard" ? <Yfirlit /> : null}
+                {componentShowing == "store" ? <Settings /> : null}
+                {componentShowing == "products" ? <Products /> : null}
+                {componentShowing == "add" ? (
+                  <Add setComponentShowing={setComponentShowing} />
+                ) : null}
+                {componentShowing == "orders" ? <Orders /> : null}
+                {componentShowing == "edit" ? (
+                  <Edit setComponentShowing={setComponentShowing} />
+                ) : null}
+              </div>
             </div>
-            {componentShowing == "dashboard" ? <Yfirlit /> : null}
-            {componentShowing == "store" ? <Settings /> : null}
-            {componentShowing == "products" ? <Products /> : null}
-            {componentShowing == "add" ? (
-              <Add setComponentShowing={setComponentShowing} />
-            ) : null}
-            {componentShowing == "orders" ? <Orders /> : null}
-            {componentShowing == "edit" ? (
-              <Edit setComponentShowing={setComponentShowing} />
-            ) : null}
-          </div>
-        </div>
-      ) : (
-        <div className={styles.dashboard_bg} style={{ height: "100vh" }}>
-          <p>loading</p>
-        </div>
-      )}
+          ) : (
+            <div className={styles.dashboard_bg} style={{ height: "100vh" }}>
+              <p>loading</p>
+            </div>
+          )}
+        </>
+      ) : null}
     </>
   );
 };
