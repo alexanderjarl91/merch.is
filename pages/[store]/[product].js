@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { UsersContext } from "../../context";
+import Head from "next/head";
 import FooterStore from "../../components/store/FooterStore";
 import styles from "../../styles/Store/Product.module.css";
 import {
@@ -13,22 +14,25 @@ import { db } from "../../fire";
 
 export default function Product() {
   const router = useRouter();
-  const { users, getUsers, refreshUserData } = useContext(UsersContext);
-  // const storeOwner = users.find((x) => x.store.url == router.query.store);
-  const productId = router.query.product;
+  const { users, getUsers } = useContext(UsersContext);
   const [storeOwner, setStoreOwner] = useState();
-
   const [orderSuccessful, setOrderSuccessful] = useState(false);
+  const [showShare, setShowShare] = useState(false);
 
+  //defining productId as the query.product
+  const productId = router.query.product;
+
+  //defining product as the item that matches the query
   const product = storeOwner
     ? storeOwner.products.find((x) => x.productId == productId)
     : null;
 
+  //back function that pushes to the product owners store
   const back = () => {
     router.push(`/${router.query.store}`);
   };
 
-  const [showShare, setShowShare] = useState(false);
+  // toggle share buttons
   const toggleShare = () => {
     setShowShare(!showShare);
   };
@@ -38,12 +42,11 @@ export default function Product() {
     const findOwner = users.find((x) => x.store.url == router.query.store);
     setStoreOwner(findOwner);
   }, [users]);
-  console.log(storeOwner);
 
+  //function that sends an order to storeowners database when called
   const purchaseItem = async () => {
-    //renewing users data every time
+    //renewing users data every time func is called
     await getUsers();
-
     //getting time of order
     var currentdate = new Date();
     var dateTime =
@@ -62,9 +65,11 @@ export default function Product() {
       orderDate: dateTime,
     };
 
+    //get orders and create a new array with orders plus the new order.
     const ordersCopy = storeOwner.orders;
     const updatedOrders = [...ordersCopy, order];
 
+    //update orders in database with updatedOrders
     db.collection("users")
       .doc(storeOwner.email)
       .update({ orders: updatedOrders })
@@ -75,6 +80,11 @@ export default function Product() {
 
   return (
     <div className={styles.main}>
+      <Head>
+        <title>{product ? `${product.productName}` : null} | merch.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className={styles.product_page}>
         {storeOwner ? (
           <div className={styles.container}>

@@ -37,9 +37,7 @@ export default function Landing() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {auth.currentUser ? (
-        <p>loading..</p>
-      ) : (
+      {auth.currentUser ? null : (
         <>
           <div className={styles.mobile_bg_img}>
             <div className="content">

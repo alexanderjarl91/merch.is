@@ -1,11 +1,18 @@
 import React from "react";
 import styles from "../styles/Hafa_samabnd.module.css";
+import Head from "next/head";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function hafa_samband(props) {
   return (
     <>
+      <Head>
+        <title>Dashboard | merch.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className="content">
         <Navbar />
         <div className={styles.container}>
