@@ -11,7 +11,7 @@
   border-radius: 8px;
   margin: 0 auto;
   background-color: #35353554;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(16px);
 }
 .signup__header {
   text-align: center;

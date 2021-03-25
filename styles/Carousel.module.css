@@ -13,7 +13,7 @@
   margin: 0 auto;
   margin-bottom: 1rem;
   text-align: center;
-  width: 190px;
+  width: 500px;
   font-weight: 600;
   font-style: italic;
   font-size: 50px;
@@ -47,8 +47,7 @@
   border-radius: 4px;
   font-size: 18px;
   font-weight: 900;
-  font-style: italic;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #fff;
   background: rgb(159, 113, 179);
 }

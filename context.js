@@ -37,6 +37,19 @@ export const UsersProvider = ({ children }) => {
     console.log(url);
   }, [url]);
 
+  // refresh userData as
+  const refreshUserData = async () => {
+    const userSnapshot = await db
+      .collection("users")
+      .doc(auth.currentUser.email)
+      .get();
+    const tempUserData = await userSnapshot.data();
+    if (tempUserData) {
+      console.log("running refresh function");
+      setUserData(tempUserData);
+    }
+  };
+
   //check if url already exists and set state accordingly
   const checkUrlAvailability = (url) => {
     let allStores = [];
@@ -74,8 +87,8 @@ export const UsersProvider = ({ children }) => {
       return;
     }
 
-    if (storeName.length < 3 || storeName.length > 15) {
-      setSignUpError("Búðarnafn má mest vera minnst vera 3 stafir og mest 15");
+    if (storeName.length < 3 || storeName.length > 25) {
+      setSignUpError("Búðarnafn má mest vera minnst vera 3 stafir og mest 25");
       return;
     }
 
@@ -217,18 +230,6 @@ export const UsersProvider = ({ children }) => {
   const getUserData = async () => {
     const foundUser = users.find((x) => x.email === auth.currentUser.email);
     setUserData(foundUser);
-  };
-
-  const refreshUserData = async () => {
-    const userSnapshot = await db
-      .collection("users")
-      .doc(auth.currentUser.email)
-      .get();
-    const tempUserData = await userSnapshot.data();
-    if (tempUserData) {
-      console.log("running refresh function");
-      setUserData(tempUserData);
-    }
   };
 
   useEffect(async () => {

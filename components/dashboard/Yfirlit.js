@@ -174,7 +174,7 @@ export default function Yfirlit({}) {
           {userData && userData.orders ? (
             <div className={styles.box_head}>
               <AiFillCheckCircle className={styles.icon} />
-              <p>Kláraðar pantanir </p>
+              <p>Afgreiddar pantanir </p>
               <p>{fulfilledOrders}</p>
             </div>
           ) : null}
@@ -214,13 +214,6 @@ export default function Yfirlit({}) {
           </div>
         </>
       ) : null}
-      <button
-        onClick={() => {
-          getFulfilledOrders();
-        }}
-      >
-        button
-      </button>
     </div>
   );
 }
