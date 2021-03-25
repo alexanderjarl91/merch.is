@@ -1,8 +1,23 @@
 # merch.
 
-### Project built with Next.js, firebase for the database and deployed through Vercel.
+### Merch.is is a platform for icelandic artists, such as bands, fashion designers or photographers to very easily make their merchandise available all over the world with their own personalized online shop.
 
-We creeated a platform where anyone who has a merch or some products they want to sell online can sign up, write a description about their merch, upload the products. They will get a link for their own store that they can share with other and start selling immideatly.
+## Key features
+
+- Landing, about us & contact pages
+- Mobile & tablet responsiveness
+- Dynamic headers
+- Animated hamburger menu
+- User authentication system
+- Protected routes
+- Login & signup pages with error handling
+- CMS for users to edit their page, add, edit and delete products
+- File storage, all product images and store logos are stored in a database
+- Dashboard with live data updates
+- A personalized store page for every user with a dynamic url that features store info, logo and the users products.
+- A dynamic single product page for each product for every user.
+- Sharing capabilities to social media platforms for each store & product
+- Continuous integration with Circle CI
 
 **The database** - **Firebase**
 
