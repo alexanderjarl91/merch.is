@@ -40,8 +40,8 @@ export default function Products() {
   const [productIndex, setProductIndex] = useState();
 
   return (
-    <div className={styles.component_container}>
-      <p className={styles.title}> Mínar vörur </p>
+    <div className="component_container">
+      <p className="title"> Mínar vörur </p>
 
       <div className={styles.header_box}>
         <p>Mynd</p>

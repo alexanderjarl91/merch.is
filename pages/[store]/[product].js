@@ -90,7 +90,7 @@ export default function Product() {
           <div className={styles.container}>
             <div>
               <img className={styles.store_logo} src={storeOwner.store.logo} />
-              <p className={styles.store_social}>{storeOwner.store.social}</p>
+              {/* <p className={styles.store_social}>{storeOwner.store.social}</p> */}
             </div>
             <div className={styles.product}>
               <div className={styles.product_images}>
@@ -194,12 +194,12 @@ export default function Product() {
                 back();
               }}
             >
-              FARA TILBAKA
+              FARA TIL BAKA
             </button>
           </div>
         ) : null}
-        <FooterStore />
       </div>
+      <FooterStore />
     </div>
   );
 }

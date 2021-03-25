@@ -14,7 +14,7 @@ export default function Yfirlit({}) {
   const [totalSum, setTotalSum] = useState(0);
   const [fulfilledOrders, setFulfilledOrders] = useState(0);
   const [unfulfilledOrders, setUnfulfilledOrders] = useState(0);
-  const [lastProduct, setLastProduct] = useState()
+  const [lastProduct, setLastProduct] = useState();
 
   //on mount, if user is logged in, run an observer that refreshes userData whenever theres a change
   useEffect(() => {
@@ -30,25 +30,24 @@ export default function Yfirlit({}) {
 
   //get data on mount
   useEffect(() => {
-    getDashboardData()
+    getDashboardData();
   }, []);
 
   //get new data everytime userData changes for live numbers
   useEffect(() => {
-  getDashboardData()
+    getDashboardData();
   }, [userData]);
 
   const getDashboardData = () => {
-  
     //get newest product
     const getNewestProduct = () => {
       if (userData && userData.products) {
-        const foundlastProduct = userData.products[userData.products.length - 1]
-        setLastProduct(foundlastProduct)
-        console.log(lastProduct)
-
+        const foundlastProduct =
+          userData.products[userData.products.length - 1];
+        setLastProduct(foundlastProduct);
+        console.log(lastProduct);
       }
-    }
+    };
     //get total sum function
     const getTotalSum = async () => {
       let orderPriceArray = [0];
@@ -65,37 +64,36 @@ export default function Yfirlit({}) {
 
     //get total fulfilled orders
     const getFulfilledOrders = () => {
-      let totalFulfilled = 0
+      let totalFulfilled = 0;
       if (userData && userData.orders) {
         userData.orders.forEach((order) => {
           if (order.fulfilled === true) {
-            totalFulfilled = totalFulfilled + 1
-          } 
-          setFulfilledOrders(totalFulfilled)
+            totalFulfilled = totalFulfilled + 1;
+          }
+          setFulfilledOrders(totalFulfilled);
         });
       }
     };
 
     //get total unfulfilled orders
     const getUnfulfilledOrders = () => {
-      let totalUnfulfilled = 0
+      let totalUnfulfilled = 0;
       if (userData && userData.orders) {
         userData.orders.forEach((order) => {
           if (order.fulfilled === false) {
-            totalUnfulfilled = totalUnfulfilled + 1
+            totalUnfulfilled = totalUnfulfilled + 1;
           }
         });
-        setUnfulfilledOrders(totalUnfulfilled)
+        setUnfulfilledOrders(totalUnfulfilled);
       }
+    };
+
+    //run all the get functions
+    getTotalSum();
+    getFulfilledOrders();
+    getUnfulfilledOrders();
+    getNewestProduct();
   };
-
-  //run all the get functions
-  getTotalSum()
-  getFulfilledOrders()
-  getUnfulfilledOrders()
-  getNewestProduct()
-
-  }
 
   //get total sum function
   const getTotalSum = async () => {
@@ -113,34 +111,33 @@ export default function Yfirlit({}) {
 
   //get total fulfilled orders
   const getFulfilledOrders = () => {
-    let totalFulfilled = 0
+    let totalFulfilled = 0;
     if (userData && userData.orders) {
       userData.orders.forEach((order) => {
-         if (order.fulfilled === true) {
-          totalFulfilled = totalFulfilled + 1
-        } 
-        setFulfilledOrders(totalFulfilled)
+        if (order.fulfilled === true) {
+          totalFulfilled = totalFulfilled + 1;
+        }
+        setFulfilledOrders(totalFulfilled);
       });
     }
   };
 
   //get total unfulfilled orders
   const getUnfulfilledOrders = () => {
-    let totalUnfulfilled = 0
+    let totalUnfulfilled = 0;
     if (userData && userData.orders) {
       userData.orders.forEach((order) => {
         if (order.fulfilled === false) {
-          totalUnfulfilled = totalUnfulfilled + 1
+          totalUnfulfilled = totalUnfulfilled + 1;
         }
       });
-      setUnfulfilledOrders(totalUnfulfilled)
+      setUnfulfilledOrders(totalUnfulfilled);
     }
   };
 
-
   return (
-    <div className={styles.component_container}>
-      <p className={styles.title}> Yfirlit</p>
+    <div className="component_container">
+      <p className="title"> Yfirlit</p>
 
       <div className={styles.yfirlit_grid}>
         {userData && userData.orders ? (
@@ -186,37 +183,44 @@ export default function Yfirlit({}) {
 
       {userData && userData.orders ? (
         <>
-        <div className={styles.order_popular_grid}> 
-          <div className={styles.table}>
-            <p className={styles.table_header}>Pantanir</p>
-            <table>
-              <tr>
-                <th>Pantanir alls:</th>
-                <td>{userData.orders.length}</td>
-              </tr>
-              <tr>
-                <th>Óafgreiddar pantanir:</th>
-                <td>{unfulfilledOrders}</td>
-              </tr>
-              <tr>
-                <th>Afgreiddar pantanir:</th>
-                <td>{fulfilledOrders}</td>
-              </tr>
-            </table>
-          </div>
+          <div className={styles.order_popular_grid}>
+            <div className={styles.table}>
+              <p className="title">Pantanir</p>
+              <table>
+                <tr>
+                  <th>Pantanir alls:</th>
+                  <td>{userData.orders.length}</td>
+                </tr>
+                <tr>
+                  <th>Óafgreiddar pantanir:</th>
+                  <td>{unfulfilledOrders}</td>
+                </tr>
+                <tr>
+                  <th>Afgreiddar pantanir:</th>
+                  <td>{fulfilledOrders}</td>
+                </tr>
+              </table>
+            </div>
 
-          <div>
-            <p className={styles.table_header}>Nýjasta varan þín:</p>
-            {lastProduct? 
-            <img className={styles.popular_product} src={lastProduct.productImg} />
-            : null}
-          </div>
+            <div>
+              <p className="title">Nýjasta varan þín:</p>
+              {lastProduct ? (
+                <img
+                  className={styles.popular_product}
+                  src={lastProduct.productImg}
+                />
+              ) : null}
+            </div>
           </div>
         </>
       ) : null}
-      <button onClick={()=>{
-        getFulfilledOrders()
-      }}>button</button>
+      <button
+        onClick={() => {
+          getFulfilledOrders();
+        }}
+      >
+        button
+      </button>
     </div>
   );
 }

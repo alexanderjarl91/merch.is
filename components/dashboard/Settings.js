@@ -115,8 +115,8 @@ export default function Settings() {
   if (!userData) return null;
 
   return (
-    <div className={styles.component_container}>
-      <p className={styles.title}> Stillingar </p>
+    <div className="component_container">
+      <p className="title"> Stillingar </p>
       {edit ? (
         <>
           <div className={styles.store_edit_grid}>
@@ -237,26 +237,14 @@ export default function Settings() {
               <img className={styles.user_logo_img} src={userData.store.logo} />
             </div>
             <div className={styles.user_info_grid}>
-              <p className={styles.user_name}>
-                {" "}
-                <strong> Búðarnafn: </strong>
-                {userData.store.name}
-              </p>
+              <p className={styles.user_name}>{userData.store.name}</p>
 
-              <p className={styles.user_url}>
-                {" "}
-                <strong>Linkur á samfélagsmiðilinn þinn: </strong>
-                {userData.store.social}
-              </p>
+              <p className={styles.user_url}> {userData.store.social}</p>
 
-              <p className={styles.user_bio}>
-                <strong>Um búðina: </strong>
-                {userData.store.bio}
-              </p>
+              <p className={styles.user_bio}>{userData.store.bio}</p>
 
               <p className={styles.user_hlekkur}>
                 {" "}
-                <strong>Linkurinn á búðina þína: </strong>
                 <button className={styles.user_merch_linkur}>
                   merchis.netlify.com/{userData.store.url}
                 </button>

@@ -5,8 +5,8 @@ import { UsersContext } from "../../context";
 export default function Orders() {
   const { users, currentUser } = useContext(UsersContext);
   return (
-    <div className={styles.component_container}>
-      <p className={styles.title}>Pantanir</p>
+    <div className="component_container">
+      <p className="title">Pantanir</p>
       <p>under construction..</p>
     </div>
   );
