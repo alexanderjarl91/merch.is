@@ -47,10 +47,14 @@ const Store = ({ products }) => {
       {store ? (
         <>
           <div className={styles.container}>
-            <img className={styles.store_img} src={store.logo} />
-            <h2 className={styles.store_title}>{storeOwner.store.name}</h2>
-            <p className={styles.store_social}>{store.social}</p>
-            <p className={styles.store_bio}>{store.bio}</p>
+            <div className={styles.user_info_box}>
+              <img className={styles.store_img} src={store.logo} />
+              <h2 className={styles.store_title}>{storeOwner.store.name}</h2>
+              <a href="{store.social}" className={styles.store_social}>
+                {store.social}
+              </a>
+              <p className={styles.store_bio}>{store.bio}</p>
+            </div>
 
             <div className={styles.grid}>
               {storeOwner.products.map((product) => {
