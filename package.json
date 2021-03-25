@@ -1,12 +1,17 @@
 {
   "name": "merch-nextjs",
+  "jest": {
+    "setupFiles": [
+      "dotenv/config"
+    ]
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest --setupFiles dotenv/config"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
