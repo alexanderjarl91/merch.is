@@ -19,11 +19,11 @@
 }
 .contact_label {
   color: rgb(247, 212, 250);
-  font-size: 22px;
+  font-size: 18px;
 }
 .contact_input {
   outline: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   color: #f4f5f5;
   width: 100%;
@@ -36,7 +36,7 @@
 }
 .contact_textarea {
   outline: none;
-  font-size: 20px;
+  font-size: 18px;
   color: #f4f5f5;
   width: 100%;
   background: none;
@@ -46,12 +46,12 @@
 }
 .contact_btn {
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
   padding: 16px;
   width: 100%;
   border-radius: 4px;
-  font-size: 22px;
+  font-size: 18px;
   color: #fff;
   background: rgb(159, 113, 179);
 }
@@ -74,7 +74,7 @@
     font-style: italic;
     font-size: 36px;
     margin-bottom: 20px;
-    font-size: 49px;
+    font-size: 50px;
     max-width: 340px;
   }
   .contact_form {
@@ -84,7 +84,8 @@
   }
   .contact_label {
     font-size: 20px;
-    font-weight: 500;
     color: rgb(247, 212, 250);
   }
-}
+  .contact_input {
+    font-size: 20px;
+}}

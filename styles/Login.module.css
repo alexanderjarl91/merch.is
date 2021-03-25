@@ -1,5 +1,5 @@
 .bg_img {
-  background-image: url(/hangers.jpeg);
+  background-image: url(/wide.png);
   background-size: cover;
   height: 100vh;
 }
@@ -15,7 +15,7 @@
 }
 .login__header {
   text-align: center;
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
   margin-top: 40px;
 }
@@ -34,7 +34,7 @@
 }
 .input {
   outline: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
   color: #f4f5f5;
   width: 100%;
@@ -47,12 +47,9 @@
   padding-left: 10px;
 }
 .label {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #fff;
-}
-.url_container {
-  display: flex;
 }
 .login__btn {
   color: #fff;
@@ -60,7 +57,7 @@
   width: 100%;
   height: 45px;
   border-radius: 4px;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 900;
   font-style: italic;
   letter-spacing: 3px;
@@ -99,5 +96,17 @@
     font-size: 16px;
     margin-top: 30px;
     width: 600px;
+  }
+  .login__header_2 {
+    font-size: 20px;
+  }
+  .input {
+    font-size: 20px;
+  }
+  .label {
+    font-size: 20px;
+  }
+  .login__btn {
+    font-size: 20px;
   }
 }

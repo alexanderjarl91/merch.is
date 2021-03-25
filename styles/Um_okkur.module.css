@@ -29,7 +29,7 @@
 }
 .um_okkur_body_text {
   font-size: 16px;
-  line-height: 28px;
+  line-height: 24px;
   margin-top: 2rem;
   margin-bottom: 3rem;
   font-weight: 200;
@@ -62,12 +62,12 @@
     max-width: 300px;
     grid-column: 1;
     grid-row: 2;
-    font-size: 24px;
+    font-size: 20px;
   }
   .um_okkur_body_text {
     margin-top: 20px;
     grid-area: 1 / col1-start / last-line / 3;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 34px;
     height: 100vh;
   }

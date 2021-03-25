@@ -1,5 +1,5 @@
 .mobile_bg_img {
-  background-image: url(/original-super-large.jpg) ;
+  background-image: url(/wide.png) ;
   background-size: cover;
   min-height: 100vh;
   filter: grayscale(var(--value, 10%)); 
