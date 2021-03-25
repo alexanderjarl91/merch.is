@@ -30,3 +30,5 @@
 - react-modal
 - jest
 - enzyme & enzyme-adapter
+
+## This is not an open-source project
