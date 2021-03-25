@@ -89,7 +89,17 @@ export default function Product() {
         {storeOwner ? (
           <div className={styles.container}>
             <div>
-              <img className={styles.store_logo} src={storeOwner.store.logo} />
+              {" "}
+              <a
+                onClick={() => {
+                  back();
+                }}
+              >
+                <img
+                  className={styles.store_logo}
+                  src={storeOwner.store.logo}
+                />{" "}
+              </a>
               {/* <p className={styles.store_social}>{storeOwner.store.social}</p> */}
             </div>
             <div className={styles.product}>
