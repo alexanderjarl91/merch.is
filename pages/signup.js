@@ -127,7 +127,9 @@ export default function Landing() {
                             />
                           </div>
                           <div>
-                            <label className={styles.label}>Social</label>
+                            <label className={styles.label}>
+                              Samfélagsmiðillinnn þinn
+                            </label>
                             <input
                               className={styles.input}
                               type="text"
@@ -190,7 +192,6 @@ export default function Landing() {
                     </div>
                   </div>
                 </div>
-                <Footer />
               </div>
             </>
           )}
