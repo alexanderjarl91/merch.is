@@ -4,7 +4,7 @@
 
 ## Key features
 
-..
+live demo is here: https://merch-is.vercel.app
 
 - Landing, about us & contact pages
 - Mobile & tablet responsiveness
