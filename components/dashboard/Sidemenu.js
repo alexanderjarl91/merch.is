@@ -115,6 +115,9 @@ export default function Sidemenu({ componentShowing, setComponentShowing }) {
                 ) : null}
               </li>
               <li className={styles.sideMenu_extra_links}>
+                <Link href="/hvernig">Hvernig virkar þetta?</Link>
+              </li>
+              <li className={styles.sideMenu_extra_links}>
                 <Link href="/hafa_samband">Hafa samband</Link>
               </li>
               <li className={styles.sideMenu_extra_links}>

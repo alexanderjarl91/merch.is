@@ -1,70 +1,72 @@
 .main_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow: scroll;
-    column-gap: 20px;
-    align-self: center;
-    align-self: end;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  align-self: center;
+  align-self: end;
+  padding: 20px;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 .skref1 {
-    align-self: start;
+  align-self: start;
 }
 .skref2 {
-    align-self: start;
+  align-self: start;
 }
 .skref3 {
-    align-self: start;
+  align-self: start;
 }
 .skref4 {
-    align-self: start;
+  align-self: start;
 }
 .skref_img {
-    width: 560px;
-    height: 360px;
+  width: 560px;
+  height: 360px;
 }
 .skref_p {
-    font-size: 18px;
-   max-width: 560px;
-   margin-bottom: 5px;
+  font-size: 18px;
+  max-width: 560px;
+  margin-bottom: 5px;
 }
 .scroll_text {
-    font-size: 20px;
-    text-align: center;
-    margin-top: 3rem;
-    color: #9F71B3;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 3rem;
+  color: #9f71b3;
 }
 .arrow_icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: auto;
-    position: relative;
-    padding-right: 5px;
-    top: 11px;
-    left: 5px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: auto;
+  position: relative;
+  padding-right: 5px;
+  top: 11px;
+  left: 5px;
 }
 @media (max-width: 900px) {
-    .container {
-      margin-left: 3%;
-      margin-right: 3%;
-      margin-top: 20px;
-      min-height: 65vh;
-    }
-.skref_p {
+  .container {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 20px;
+    min-height: 65vh;
+  }
+  .skref_p {
     font-size: 16px;
     max-width: 360px;
     margin-bottom: 5px;
-}
-.skref_img {
+  }
+  .skref_img {
     width: 360px;
     height: 260px;
-}
-.skref_p {
+  }
+  .skref_p {
     font-size: 18px;
-   max-width: 360px;
-}
-.scroll_text {
+    max-width: 360px;
+  }
+  .scroll_text {
     font-size: 18px;
     text-align: center;
-    color: #9F71B3;
-}}
+    color: #9f71b3;
+  }
+}

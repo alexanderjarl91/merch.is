@@ -16,32 +16,41 @@ export default function HowItWorks() {
           <div className={styles.container}>
             <div className={styles.main_grid}>
               <div className={styles.skref1}>
+                <h2>Uppfæra búðarupplýsingar</h2>
                 <img className={styles.skref_img} src="skref1.png"></img>
                 <p className={styles.skref_p}>
-                  Eftir að þú ert búin að skrá þig inn bætir þú við þínum vörum,
-                  að hámarki 4 vörur
+                  Eftir að þú ert búin/nn að skrá þig inn getur þú farið í
+                  stillingar og hlaðið upp logo-inu þínu (og breytt öðrum
+                  upplýsingum um þína búð)
                 </p>
               </div>
               <div className={styles.skref2}>
+                <h2>Breyta og eyða vörum</h2>
                 <img className={styles.skref_img} src="skref2.png"></img>
                 <p className={styles.skref_p}>
                   {" "}
-                  Þú ert með yfir sýn yfir allar vörurnar þínar og getur breytt
-                  upplýsingum um hverja og eina vöru eða eytt henni{" "}
+                  Í <strong>mínar vörur</strong> ert þú með yfirsýn yfir allar
+                  vörurnar þínar og getur breytt upplýsingum um hverja og eina
+                  vöru eða eytt þeim út. Athugaðu að allar breytingar eru birtar
+                  samstundis í búðinni þinni.{" "}
                 </p>
               </div>
               <div className={styles.skref3}>
+                <h2>Yfirlitið</h2>
                 <img className={styles.skref_img} src="skref3.png"></img>
                 <p className={styles.skref_p}>
-                  Þú ert með yfirlit yfir pantanir, vörumagn og alla þína sölu
-                  og uppfærist yfirlitið um leið og vara er keypt
+                  í <strong>Yfirlit</strong> ert þú með yfirlit yfir pantanir,
+                  vörumagn og alla þína sölu og uppfærist yfirlitið í rauntíma
+                  um leið og vara er keypt.
                 </p>
               </div>
               <div className={styles.skref4}>
+                <h2>Búðin þín</h2>
                 <img className={styles.skref_img} src="skref4.png"></img>
                 <p className={styles.skref_p}>
-                  Þegar þú hefur bætti við vörum ertu komn með þína eigin
-                  netverlsun og getur byrjað að selja strax
+                  Um leið og þú hefur klárað nýskráningu ertu strax komin með
+                  þína eigin netverlsun aðgengilega á hlekknum sem þú valdir þér
+                  og getur byrjað að selja um leið og þú hefur bætt við vörum.
                 </p>
               </div>
             </div>

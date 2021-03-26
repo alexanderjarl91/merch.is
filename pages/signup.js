@@ -128,7 +128,7 @@ export default function Landing() {
                           </div>
                           <div>
                             <label className={styles.label}>
-                              Samfélagsmiðillinnn þinn
+                              Samfélagsmiðillinn þinn
                             </label>
                             <input
                               className={styles.input}
