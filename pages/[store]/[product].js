@@ -139,9 +139,9 @@ export default function Product() {
                 </p>
 
                 {orderSuccessful ? (
-                  <h2 style={{ color: "black" }}>
+                  <p className={styles.motekin}>
                     PÖNTUN MÓTTEKIN, TAKK FYRIR AÐ VERSLA!
-                  </h2>
+                  </p>
                 ) : (
                   <>
                     <h1 className={styles.product_price}>

@@ -246,6 +246,7 @@ export default function Settings() {
 
               <p className={styles.user_hlekkur}>
                 {" "}
+                Þinn hlekkur:{" "}
                 <a
                   href={`merch-is.vercel.app/${userData.store.url}`}
                   target="_blank"

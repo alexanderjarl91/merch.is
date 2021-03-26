@@ -17,7 +17,7 @@ export default function HowItWorks() {
             <div className={styles.main_grid}>
               <div className={styles.skref1}>
                 <h2>Uppfæra búðarupplýsingar</h2>
-                <img className={styles.skref_img} src="skref1.png"></img>
+                <img className={styles.skref_img} src="stillingar.png"></img>
                 <p className={styles.skref_p}>
                   Eftir að þú ert búin/nn að skrá þig inn getur þú farið í
                   stillingar og hlaðið upp logo-inu þínu (og breytt öðrum
@@ -26,7 +26,7 @@ export default function HowItWorks() {
               </div>
               <div className={styles.skref2}>
                 <h2>Breyta og eyða vörum</h2>
-                <img className={styles.skref_img} src="skref2.png"></img>
+                <img className={styles.skref_img} src="vorur.png"></img>
                 <p className={styles.skref_p}>
                   {" "}
                   Í <strong>mínar vörur</strong> ert þú með yfirsýn yfir allar
@@ -37,7 +37,7 @@ export default function HowItWorks() {
               </div>
               <div className={styles.skref3}>
                 <h2>Yfirlitið</h2>
-                <img className={styles.skref_img} src="skref3.png"></img>
+                <img className={styles.skref_img} src="yfirlit.png"></img>
                 <p className={styles.skref_p}>
                   í <strong>Yfirlit</strong> ert þú með yfirlit yfir pantanir,
                   vörumagn og alla þína sölu og uppfærist yfirlitið í rauntíma

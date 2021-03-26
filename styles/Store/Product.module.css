@@ -8,6 +8,12 @@
 .container {
   text-align: center;
 }
+.motekin {
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
 .store_logo {
   max-height: 200px;
   max-width: 300px;

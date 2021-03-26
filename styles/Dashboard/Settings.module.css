@@ -30,15 +30,18 @@
 }
 .user_name {
   grid-row: 1;
+  font-weight: 900;
 }
 .user_bio {
   grid-row: 2;
 }
 .user_url {
   grid-row: 3;
+  font-size: 16px;
 }
 .user_hlekkur {
   grid-row: 4;
+  font-style: italic;
 }
 .user_merch_linkur {
   background: transparent;
@@ -46,6 +49,7 @@
   font-size: 18px;
 }
 .store_button_change {
+  margin: 0 auto;
   margin-top: 20px;
   grid-row: 6;
   background-color: #252525;

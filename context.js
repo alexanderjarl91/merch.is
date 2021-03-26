@@ -140,8 +140,7 @@ export const UsersProvider = ({ children }) => {
           orders: [],
           store: {
             name: storeName,
-            logo:
-              "https://www.pngkit.com/png/detail/246-2467534_your-logo-here-png-your-brand-here-png.png",
+            logo: "https://i.ibb.co/tbPsmY0/logo.png",
             url: url,
             social: social,
             bio: "Hér getur þú skrifað kynningu á búðinni þinni",
