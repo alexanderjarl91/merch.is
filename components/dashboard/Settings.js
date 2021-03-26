@@ -247,11 +247,11 @@ export default function Settings() {
               <p className={styles.user_hlekkur}>
                 {" "}
                 <a
-                  href={`merch-is.vercel.com/${userData.store.url}`}
+                  href={`merch-is.vercel.app/${userData.store.url}`}
                   target="_blank"
                   className={styles.user_merch_linkur}
                 >
-                  merch-is.vercel.com/{userData.store.url}
+                  merch-is.vercel.app/{userData.store.url}
                 </a>
               </p>
 

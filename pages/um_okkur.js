@@ -25,11 +25,10 @@ function um_okkur() {
             </p>
             <br />
             <p>
-              tristique fermentum. Lacus tristique fermentum in imperdiet
-              convallis nibh eget. Diam felis, felis mi ligula ante eget.
-              Bibendum non venenatis amet adipiscing auctor tristique fermentum.
-              Lacus tristique fermentum in imperdiet convallis nibh eget. Diam
-              felis, felis mi ligula ante eget.
+              Í merch.is teyminu eru Alexander Jarl, Kristbjörg og Paula. Þessi
+              síða var gerð sem skólaverkefni í Vefskólanum og er ótengd
+              greiðslugátt. Allar fyrirspurnir beinast á
+              alexanderjarl91@gmail.com
             </p>
           </div>
         </div>

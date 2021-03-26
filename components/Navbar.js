@@ -47,7 +47,7 @@ export default function Navbar() {
               <li className={styles.nav_link}>
                 <Link
                   href={{
-                    pathname: "/HowItWorks",
+                    pathname: "/hvernig",
                   }}
                 >
                   <a

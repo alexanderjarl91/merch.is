@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import styles from "../styles/HowItWorks.module.css";
-import { BsArrowRight } from "react-icons/Bs";
 export default function HowItWorks() {
   return (
     <>
@@ -49,8 +48,7 @@ export default function HowItWorks() {
           </div>
 
           <p className={styles.scroll_text}>
-            Skrollaðu til hliðar til að sjá næstu mynd{" "}
-            <BsArrowRight className={styles.arrow_icon} />
+            Skrollaðu til hægri til að sjá næstu mynd{" "}
           </p>
         </div>
       </>
